@@ -41,6 +41,10 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #define debug(args...)
 #endif  //debugging macros
 
+ll call (ll l , ll h)
+{
+    return (h*(h+1)-l*(l-1))/2;
+} //returns l+(l+1)+(l+2)+...+(h-1)+h
 
 
 int main()
@@ -51,10 +55,36 @@ int main()
     #endif
 
     ll t=1,tc;
-    //sf(tc);
+    sf(tc);
     ll l,m,n;
-    while(~sf(n)) {
+    while(tc--) {
         ll i,j,k;
+        ll ans=0;
+        sf(n);
+
+        ll m=sqrt((double)n);
+        ll lastNum=n;
+
+        for(i=2;i<=m;i++)
+        {
+            l=n/i;
+            k=l-1;
+            ans+=k*i;
+            ll tot=call(l,lastNum)-l-lastNum;
+            if(i*i<n)
+            {
+                ans+=tot*(i-2);
+                ans+=l*(i-1);
+            }
+            if(i==m && i*i<n)
+            {
+                tot=call(i,l)-i-l;
+                ans+=tot*(i-1);
+            }
+            lastNum=l;
+
+        }
+        printf("Case %lld: %lld\n",t++,ans);
 
     }
     return 0;

@@ -47,14 +47,22 @@ int main()
 {
     //ios_base::sync_with_stdio(0); cin.tie(0);
     #ifdef redback
-        freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
+        //freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
     #endif
 
     ll t=1,tc;
-    //sf(tc);
+    sf(tc);
     ll l,m,n;
-    while(~sf(n)) {
+    while(tc--) {
         ll i,j,k;
+
+        sf(n);
+        llu ans=(llu)n*10;
+        ans/=9;
+        if(ans%10==0)
+            printf("Case %lld: %llu %llu\n",t++,ans-1,ans);
+        else
+            printf("Case %lld: %llu\n",t++,ans);
 
     }
     return 0;

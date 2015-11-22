@@ -51,11 +51,14 @@ int main()
     #endif
 
     ll t=1,tc;
-    //sf(tc);
-    ll l,m,n;
-    while(~sf(n)) {
+    sf(tc);
+    ll l,k,m,n;
+    while(tc--) {
         ll i,j,k;
+        sf2(k,l);
+        sf2(m,n);
 
+        printf("Case %lld: %lld\n",t++,__gcd(abs(k-m),abs(l-n))+1);
     }
     return 0;
 }
