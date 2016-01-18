@@ -27,9 +27,6 @@ typedef unsigned long long llu;
 #define mod       1000000007
 #define NN        100010
 
-//cout << setfill('0') << setw(3) << a << endl;
-//cout << fixed << setprecision(20) << a << endl;
-
 ll MaxVal;
 
 ll tree[NN];

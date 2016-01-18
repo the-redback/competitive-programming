@@ -1,19 +1,13 @@
-///=======================================//
-///    Author     : Maruf Tuhin           //
-///    School     : CUET CSE 11           //
-///    TopCoder   : the_redback           //
-///    Codeforces : maruf.2hin            //
-///    UVA        : Redback               //
-///    http://www.fb.com/maruf.2hin       //
-///=======================================//
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
-#include <cmath>
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+/**
+ *    @author     : Maruf Tuhin
+ *    @College    : CUET CSE 11
+ *    @Topcoder   : the_redback
+ *    @CodeForces : the_redback
+ *    @UVA        : the_redback
+ *    @link       : http://www.fb.com/maruf.2hin
+ */
+
+#include <bits/stdc++.h>
 using namespace std;
 #define MAX 111
 #define inf 9999999
