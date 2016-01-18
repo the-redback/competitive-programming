@@ -9,14 +9,7 @@ int main () {
     char c;
     scanf ( "%lld %lld %c", &a, &b, &c );
 
-    long long res = 0;
-    if ( c == '+' ) res = a + b;
-    if ( c == '-' ) res = a - b;
-    if ( c == '*' ) res = a * b;
-    if ( c == '/' ) res = a / b;
-    if ( c == '%' ) res = a % b;
-
-    printf ( "Case %d: %lld\n", ++cnt, res );
+    //Muhahaha
   }
 
   return 0;
