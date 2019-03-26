@@ -23,7 +23,7 @@ typedef unsigned long long llu;
 #define allr(x)      x.rbegin(),x.rend()
 #define mem(a, b)    memset(a,b,sizeof(a))
 #define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",&a)
+#define ssf(a)       scanf("%s",a)
 #define sf2(a, b)    scanf("%lld %lld",&a,&b)
 #define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
 #define inf          1e9
@@ -41,6 +41,8 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #define debug(args...)
 #endif  //debugging macros
 
+char a[110];
+int b[110];
 
 int main()
 {
@@ -50,11 +52,31 @@ int main()
 #endif
 
     ll t = 1, tc;
-    //sf(tc);
+    sf(tc);
     ll n, m;
-    while (~sf2(n,m)) {
-        ll i, j, k;
-        printf("%lld\n",n+m);
+    while (tc--) {
+        sf(n);
+        ssf(a);
+        mem(b,0);
+        ll i, j=0, k=0;
+
+        for(i=0;i<n;i++)
+        {
+            if(a[i]=='>')
+                break;
+            k++;
+        }
+
+        for(i=n-1;i>=0;i--)
+        {
+            if(a[i]=='<')
+                break;
+            j++;
+        }
+
+        ll ret=min(k,j);
+
+        printf("%lld\n",ret);
 
     }
     return 0;
