@@ -69,14 +69,18 @@ int main()
 
         ll ret=0,len=0,mx=0;
 
+        set<pair<ll,ll> > s;
+
         for(i=0;i<n;i++)
         {
-            ll tlen=v[i].first+len;
-            if(tlen * v[i].second >ret )
-            {
-                ret=tlen * v[i].second;
-                len=len+v[i].first;
+            s.insert(mp(v[i].first,i));
+            len+=v[i].first;
+            while(s.size()>m){
+                auto it = s.begin();
+                len-=it->first;
+                s.erase(it);
             }
+            ret=max(ret,len*v[i].second);
         }
 
         printf("%lld\n",ret);
