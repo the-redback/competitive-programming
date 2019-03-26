@@ -8,7 +8,7 @@
  *    @link : https://maruftuhin.com
  */
 
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 
 using namespace std;
 
@@ -41,8 +41,12 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #define debug(args...)
 #endif  //debugging macros
 
-char a[110];
-int b[110];
+vector<pair<ll,ll> >v;
+
+bool comp(pair<ll,ll> a, pair<ll,ll> b)
+{
+    return a.second>b.second;
+}
 
 int main()
 {
@@ -52,29 +56,28 @@ int main()
 #endif
 
     ll t = 1, tc;
-    sf(tc);
+    //sf(tc);
     ll n, m;
-    while (tc--) {
-        sf(n);
-        ssf(a);
-        mem(b,0);
-        ll i, j=0, k=0;
+    while (~sf2(n,m)) {
+        ll i, j, k;
+        for(i=0;i<n;i++)
+        {
+            sf2(j,k);
+            v.pb(mp(j,k));
+        }
+        sort(v.begin(),v.end(),comp);
+
+        ll ret=0,len=0,mx=0;
 
         for(i=0;i<n;i++)
         {
-            if(a[i]=='>')
-                break;
-            k++;
+            ll tlen=v[i].first+len;
+            if(tlen * v[i].second >ret )
+            {
+                ret=tlen * v[i].second;
+                len=len+v[i].first;
+            }
         }
-
-        for(i=n-1;i>=0;i--)
-        {
-            if(a[i]=='<')
-                break;
-            j++;
-        }
-
-        ll ret=min(k,j);
 
         printf("%lld\n",ret);
 
