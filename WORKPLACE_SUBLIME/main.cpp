@@ -22,14 +22,13 @@ typedef unsigned long long llu;
 #define all(x)       x.begin(),x.end()
 #define allr(x)      x.rbegin(),x.rend()
 #define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
+#define sf(a)        scanf("%d",&a)
 #define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
+#define sf2(a, b)    scanf("%d %d",&a,&b)
 #define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
-#define NN           100010
 
 
 #ifdef  redback
@@ -41,91 +40,110 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #define debug(args...)
 #endif  //debugging macros
 
-string str[1001];
-char tmp[101];
-ll a[1001];
-ll N;
-vector< pair<string, string> >v;
-ll fl;
+#define NN 10000
 
-ll rec(ll n) {
-	if (n >= N) {
-		//debug(">>>>>>>>>>>>>>>>>>>>>",n,v.size())
-		map<string, int> mmp;
-		for (int i = 0; i < v.size(); ++i) {
-			string x = v[i].first;
-			string y = v[i].second;
-		//	debug(x,y)
-			ll k = min(x.size() , y.size());
-			while (k > 0) {
-				string xx = x.substr(x.size()-k);
-				string yy = y.substr(y.size()-k);
-				if (xx == yy && mmp.find(xx) == mmp.end()) {
-		//			debug("--------------------------",xx,yy)
-					mmp[xx] = 1;
-					break;
-				}
-				k--;
-			}
-			if (k == 0) {
-				// no matching
-				return 0;
-			}
+bool p[NN + 7]; //Hashing
+vector<int>pr; //storing prime
+vector<int>ans;
+vector<int>v;
+set<int>pos;
+map<int, int>mmp;
 
-		}
-		if (fl < v.size()*2) {
-			fl = v.size()*2;
-		}
-		return v.size();
-	}
+int N;
 
-	ll res = 0;
+void sieve(int n) {
+    int i, j, k, l;
+    p[1] = 1;
+    pr.push_back(2);
+    for (i = 4; i <= n; i += 2)
+        p[i] = 1;
+    for (i = 3; i <= n; i += 2) {
+        if (p[i] == 0) {
+            pr.push_back(i);
+            for (j = i * i; j <= n; j += 2 * i)
+                p[j] = 1;
+        }
+    }
+}
 
-	for (int i = 0; i < N; i++) {
-		if (a[i] == -1) {
-			a[i] = 1;
-			res = max(res, rec(n + 1));
-			a[i] = -1;
-		}
-		for (int j = 0; j < N; j++) {
-			if (a[i] == -1 && a[j] == -1 && i!=j) {
-				a[i] = 1;
-				a[j] = 1;
-				v.pb(mp(str[i], str[j]));
-				res = max(res, rec(n + 2));
-				v.pop_back();
-				a[i] = -1;
-				a[j] = -1;
-			}
-		}
-	}
-	return res;
+void factor(int n) {
+    int k, i;
+    for (i = 0; i < pr.size() && pr[i]*pr[i] <= n; i++) {
+        k = pr[i];
+        if (n % k == 0) {
+            int j = n / k;
+            pos.insert(k);
+            pos.insert(j);
+            v.pb(k);
+            v.pb(j);
+            break;
+        }
+    }
+}
+
+bool poss(void) {
+    ans.clear();
+    ans.pb(v[0]);
+
+    for (int i = 1; i < v.size(); i += 2) {
+        if (i + 2 >= v.size() )
+            break;
+        if (v[i] == v[i + 1]) {
+            ans.pb(v[i]);
+        } else if (v[i] == v[i + 2]) {
+            ans.pb(v[i]);
+            swap(v[i + 1], v[i + 2]);
+        } else {
+            // no answer
+            return false;
+        }
+    }
+    ans.pb(v[v.size()-1]);
+    return true;
 }
 
 int main() {
 #ifdef redback
-	freopen("input.in", "r", stdin);
-	freopen("output.in", "w", stdout);
+    freopen("input.in", "r", stdin);
+    freopen("output.in", "w", stdout);
 #endif
+    sieve(NN);
 
-	ll t = 1, tc;
-	sf(tc);
-	ll n, m;
-	while (tc--) {
-		sf(n);
-		v.clear();
-		ll i, j, k;
-		for ( i = 0; i < n; ++i) {
-			scanf("%s", tmp);
-			str[i] = tmp;
-		}
+    int t = 1, tc;
+    sf(tc);
+    int n, m;
+    while (tc--) {
+        ans.clear();
+        v.clear();
+        pos.clear();
+        int i, j, k, l;
+        sf2(n, l);
+        N = n;
+        for (i = 0; i < l; i++) {
+            sf(k);
+            factor(k);
+        }
 
-		mem(a, -1);
-		N = n;
-		fl = 0;
-		ll res = rec(0);
-		printf("Case #%lld: %lld\n", t++, fl);
+        i = 0;
+        for (auto it = pos.begin(); it != pos.end(); it++, i++) {
+            mmp[*it] = i;
+        }
 
-	}
-	return 0;
+        if (!poss()) {
+            swap(v[0], v[1]);
+            poss();
+        }
+
+        printf("Case #%d: ", t++);
+
+
+
+        for (i = 0; i < ans.size(); i++) {
+            k = mmp[ans[i]];
+            printf("%c", k + 'A');
+        }
+        printf("\n");
+
+    }
+    return 0;
 }
