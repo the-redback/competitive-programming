@@ -34,57 +34,98 @@ typedef unsigned long long llu;
 
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
-#define debug(args...) {cout<<":: "; dbg,args; cerr<<endl;}
-struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<" ";return *this;}}dbg;
+#define debug(args...) {cout<<":: "; dbg,args; cout<<endl;}
+struct  debugger {template<typename T>debugger& operator , (const T& v) {cout << v << " "; return *this;}} dbg;
 #else
 #define bug
 #define debug(args...)
 #endif  //debugging macros
 
-vector<pair<ll,ll> >v;
+string str[1001];
+char tmp[101];
+ll a[1001];
+ll N;
+vector< pair<string, string> >v;
+ll fl;
 
-bool comp(pair<ll,ll> a, pair<ll,ll> b)
-{
-    return a.second>b.second;
+ll rec(ll n) {
+	if (n >= N) {
+		//debug(">>>>>>>>>>>>>>>>>>>>>",n,v.size())
+		map<string, int> mmp;
+		for (int i = 0; i < v.size(); ++i) {
+			string x = v[i].first;
+			string y = v[i].second;
+		//	debug(x,y)
+			ll k = min(x.size() , y.size());
+			while (k > 0) {
+				string xx = x.substr(x.size()-k);
+				string yy = y.substr(y.size()-k);
+				if (xx == yy && mmp.find(xx) == mmp.end()) {
+		//			debug("--------------------------",xx,yy)
+					mmp[xx] = 1;
+					break;
+				}
+				k--;
+			}
+			if (k == 0) {
+				// no matching
+				return 0;
+			}
+
+		}
+		if (fl < v.size()*2) {
+			fl = v.size()*2;
+		}
+		return v.size();
+	}
+
+	ll res = 0;
+
+	for (int i = 0; i < N; i++) {
+		if (a[i] == -1) {
+			a[i] = 1;
+			res = max(res, rec(n + 1));
+			a[i] = -1;
+		}
+		for (int j = 0; j < N; j++) {
+			if (a[i] == -1 && a[j] == -1 && i!=j) {
+				a[i] = 1;
+				a[j] = 1;
+				v.pb(mp(str[i], str[j]));
+				res = max(res, rec(n + 2));
+				v.pop_back();
+				a[i] = -1;
+				a[j] = -1;
+			}
+		}
+	}
+	return res;
 }
 
-int main()
-{
+int main() {
 #ifdef redback
-    freopen("input.in", "r", stdin);
-    freopen("output.in", "w", stdout);
+	freopen("input.in", "r", stdin);
+	freopen("output.in", "w", stdout);
 #endif
 
-    ll t = 1, tc;
-    //sf(tc);
-    ll n, m;
-    while (~sf2(n,m)) {
-        ll i, j, k;
-        for(i=0;i<n;i++)
-        {
-            sf2(j,k);
-            v.pb(mp(j,k));
-        }
-        sort(v.begin(),v.end(),comp);
+	ll t = 1, tc;
+	sf(tc);
+	ll n, m;
+	while (tc--) {
+		sf(n);
+		v.clear();
+		ll i, j, k;
+		for ( i = 0; i < n; ++i) {
+			scanf("%s", tmp);
+			str[i] = tmp;
+		}
 
-        ll ret=0,len=0,mx=0;
+		mem(a, -1);
+		N = n;
+		fl = 0;
+		ll res = rec(0);
+		printf("Case #%lld: %lld\n", t++, fl);
 
-        set<pair<ll,ll> > s;
-
-        for(i=0;i<n;i++)
-        {
-            s.insert(mp(v[i].first,i));
-            len+=v[i].first;
-            while(s.size()>m){
-                auto it = s.begin();
-                len-=it->first;
-                s.erase(it);
-            }
-            ret=max(ret,len*v[i].second);
-        }
-
-        printf("%lld\n",ret);
-
-    }
-    return 0;
+	}
+	return 0;
 }

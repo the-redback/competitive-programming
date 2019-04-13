@@ -8,7 +8,7 @@
  *    @link : https://maruftuhin.com
  */
 
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 
 using namespace std;
 
@@ -35,15 +35,14 @@ typedef unsigned long long llu;
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
 #define debug(args...) {cout<<":: "; dbg,args; cerr<<endl;}
-struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<" ";return *this;}}dbg;
+struct  debugger {template<typename T>debugger& operator , (const T& v) {cerr << v << " "; return *this;}} dbg;
 #else
 #define bug
 #define debug(args...)
 #endif  //debugging macros
 
 
-int main()
-{
+int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
@@ -54,7 +53,7 @@ int main()
     ll n, m;
     while (~sf(n)) {
         ll i, j, k;
-        printf("%lld\n",n);
+        printf("%lld\n", n);
 
     }
     return 0;
