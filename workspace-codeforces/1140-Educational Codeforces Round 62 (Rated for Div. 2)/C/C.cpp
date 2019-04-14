@@ -35,14 +35,21 @@ typedef unsigned long long llu;
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
 #define debug(args...) {cout<<":: "; dbg,args; cerr<<endl;}
-struct  debugger {template<typename T>debugger& operator , (const T& v) {cerr << v << " "; return *this;}} dbg;
+struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<" ";return *this;}}dbg;
 #else
 #define bug
 #define debug(args...)
 #endif  //debugging macros
 
+vector<pair<ll,ll> >v;
 
-int main() {
+bool comp(pair<ll,ll> a, pair<ll,ll> b)
+{
+    return a.second>b.second;
+}
+
+int main()
+{
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
@@ -51,9 +58,32 @@ int main() {
     ll t = 1, tc;
     //sf(tc);
     ll n, m;
-    while (~sf(n)) {
+    while (~sf2(n,m)) {
         ll i, j, k;
-        printf("%lld\n", n);
+        for(i=0;i<n;i++)
+        {
+            sf2(j,k);
+            v.pb(mp(j,k));
+        }
+        sort(v.begin(),v.end(),comp);
+
+        ll ret=0,len=0,mx=0;
+
+        set<pair<ll,ll> > s;
+
+        for(i=0;i<n;i++)
+        {
+            s.insert(mp(v[i].first,i));
+            len+=v[i].first;
+            while(s.size()>m){
+                auto it = s.begin();
+                len-=it->first;
+                s.erase(it);
+            }
+            ret=max(ret,len*v[i].second);
+        }
+
+        printf("%lld\n",ret);
 
     }
     return 0;

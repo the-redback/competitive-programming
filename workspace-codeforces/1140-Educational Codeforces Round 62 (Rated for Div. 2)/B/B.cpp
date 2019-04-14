@@ -8,7 +8,7 @@
  *    @link : https://maruftuhin.com
  */
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -34,26 +34,49 @@ typedef unsigned long long llu;
 
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
-#define debug(args...) {cout<<":: "; dbg,args; cout<<endl;}
-struct  debugger {template<typename T>debugger& operator , (const T& v) {cout << v << " "; return *this;}} dbg;
+#define debug(args...) {cout<<":: "; dbg,args; cerr<<endl;}
+struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<" ";return *this;}}dbg;
 #else
 #define bug
 #define debug(args...)
 #endif  //debugging macros
 
+char a[110];
+int b[110];
 
-int main() {
+int main()
+{
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
 #endif
 
     ll t = 1, tc;
-    //sf(tc);
+    sf(tc);
     ll n, m;
-    while (~sf(n)) {
-        ll i, j, k;
-        printf("%lld\n", n);
+    while (tc--) {
+        sf(n);
+        ssf(a);
+        mem(b,0);
+        ll i, j=0, k=0;
+
+        for(i=0;i<n;i++)
+        {
+            if(a[i]=='>')
+                break;
+            k++;
+        }
+
+        for(i=n-1;i>=0;i--)
+        {
+            if(a[i]=='<')
+                break;
+            j++;
+        }
+
+        ll ret=min(k,j);
+
+        printf("%lld\n",ret);
 
     }
     return 0;
