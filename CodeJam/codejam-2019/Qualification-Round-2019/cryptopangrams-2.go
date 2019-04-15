@@ -78,9 +78,7 @@ func main() {
 		track[k] = arr[l]
 		k++
 
-		for i = 0; i < l; i++ 
-		
-		{
+		for i = 0; i < l; i++ {
 			for j := 0; j < l-i; j++ {
 				if track[j].Cmp(&track[j+1]) > 0 {
 					track[j], track[j+1] = track[j+1], track[j]
