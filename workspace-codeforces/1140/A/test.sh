@@ -1,14 +1,5 @@
 #!/bin/bash
-set -x
 DBG=""
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-pushd $DIR
-function cleanup_test_stuff() {
-  popd
-}
-trap cleanup_test_stuff EXIT
-
 while getopts ":d" opt; do
   case $opt in
     d)
