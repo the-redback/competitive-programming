@@ -24,23 +24,19 @@ using namespace std;
 #define inf 1000000000
 #define NN 200010
 
-struct data
-{
+struct data {
     int totalsum, maxsum, leftmax, rightmax;
-    data(int k)
-    {
+    data(int k) {
         totalsum = maxsum = leftmax = rightmax = k;
     }
-    data()
-    {
+    data() {
 
     }
-}arr[NN];
+} arr[NN];
 
 int a[65010];
 
-data merge(data a, data b)
-{
+data merge(data a, data b) {
     data ret;
     ret.totalsum = (a.totalsum + b.totalsum);
     ret.maxsum = max(max(a.maxsum, b.maxsum), a.rightmax + b.leftmax);
@@ -49,16 +45,14 @@ data merge(data a, data b)
     return ret;
 }
 
-void init(int node, int low, int high)
-{
-    if(low==high)
-    {
+void init(int node, int low, int high) {
+    if (low == high) {
         arr[node] = data(a[low]);
         return;
     }
-    int left = node*2;
+    int left = node * 2;
     int right = left + 1;
-    int mid = (low + high)/2;
+    int mid = (low + high) / 2;
 
     init(left, low, mid);
     init(right, mid + 1, high);
@@ -66,20 +60,18 @@ void init(int node, int low, int high)
     return;
 }
 
-data query(int node, int low, int high, int rlow, int rhigh)
-{
-    if(low>=rlow && high<=rhigh)
+data query(int node, int low, int high, int rlow, int rhigh) {
+    if (low >= rlow && high <= rhigh)
         return arr[node];
-    int left = node*2;
+    int left = node * 2;
     int right = left + 1;
-    int mid = (low + high)/2;
+    int mid = (low + high) / 2;
 
-    if(rhigh<=mid)
+    if (rhigh <= mid)
         return query(left, low, mid, rlow, rhigh);
-    else if(rlow>mid)
+    else if (rlow > mid)
         return query(right, mid + 1, high, rlow, rhigh);
-    else
-    {
+    else {
         data L = query(left, low, mid, rlow, mid);
         data R = query(right, mid + 1, high, mid + 1, rhigh);
         return merge(L, R);
@@ -87,22 +79,19 @@ data query(int node, int low, int high, int rlow, int rhigh)
 
 }
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;
-    int res, u,w,p,n,x,y,z,m,q,r,v,zero;
+    int res, u, w, p, n, x, y, z, m, q, r, v, zero;
     //cin>>tc;
-    while(cin>>n)
-    {
-        for(i=1;i<=n;i++)
-            cin>>a[i];
+    while (cin >> n) {
+        for (i = 1; i <= n; i++)
+            cin >> a[i];
         init(1, 1, n);
-        cin>>k;
-        while(k--)
-        {
-            cin>>x>>y;
+        cin >> k;
+        while (k--) {
+            cin >> x >> y;
             data l = query(1, 1, n, x, y);
             printf("%d\n", l.maxsum);
         }

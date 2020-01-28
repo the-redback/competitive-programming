@@ -38,67 +38,57 @@ using namespace std;
 
 vector<int>Graph[NN];       //Graph Before BCC
 vector<int>newGraph[NN];    //Graph after BCC
-vector< pair<int,int> >edge;//Input edges
+vector< pair<int, int> >edge; //Input edges
 stack<int>mystack;          //order of nodes r visited
 int depth[NN];      //The depth(time) when a node is visited
 int par[NN];        //Parent of node
 int low[NN];        //A node connected with lowest timed node [if bcc exist]
 bool color[NN];     //Color if a node is visited or not
 int belong[NN];     //A node blongs to which BCC
-int Time,bcc;
+int Time, bcc;
 
-int dfs(int u)
-{
-    low[u]=depth[u]=++Time;
-    color[u]=true;
+int dfs(int u) {
+    low[u] = depth[u] = ++Time;
+    color[u] = true;
     mystack.push(u);
-    int i,v;
-    for(i=0; i<Graph[u].size(); i++)
-    {
-        v=Graph[u][i];
-        if(!color[v])
-        {
-            par[v]=u;
+    int i, v;
+    for (i = 0; i < Graph[u].size(); i++) {
+        v = Graph[u][i];
+        if (!color[v]) {
+            par[v] = u;
             dfs(v);
-            low[u]=min(low[u],low[v]);
-        }
-        else if(v!=par[u])
-            low[u]=min(low[u],depth[v]);
+            low[u] = min(low[u], low[v]);
+        } else if (v != par[u])
+            low[u] = min(low[u], depth[v]);
     }
-    if(low[u]==depth[u])
-    {
+    if (low[u] == depth[u]) {
         bcc++;
-        do
-        {
-            v=mystack.top();
+        do {
+            v = mystack.top();
             mystack.pop();
-            belong[v]=bcc;
-        }
-        while(u!=v);
+            belong[v] = bcc;
+        } while (u != v);
     }
     return 0;
 }
 
-int findbcc(int n)
-{
-    mem(depth,0);
-    mem(par,-1);
-    mem(low,0);
-    mem(color,0);
-    mystack=stack<int>();
-    Time=bcc=0;
+int findbcc(int n) {
+    mem(depth, 0);
+    mem(par, -1);
+    mem(low, 0);
+    mem(color, 0);
+    mystack = stack<int>();
+    Time = bcc = 0;
 
-    for(int i=0; i<n; i++)  //lowest node=0
-        if(!color[i])
+    for (int i = 0; i < n; i++) //lowest node=0
+        if (!color[i])
             dfs(i);
-    int Highest_Node=bcc;
+    int Highest_Node = bcc;
 
-    for(int i=0;i<edge.size();i++)
-    {
-        int u=belong[edge[i].first];
-        int v=belong[edge[i].second];
-        if(u!=v)
-        {
+    for (int i = 0; i < edge.size(); i++) {
+        int u = belong[edge[i].first];
+        int v = belong[edge[i].second];
+        if (u != v) {
             newGraph[u].pb(v);
             newGraph[v].pb(u);
         }
@@ -106,44 +96,38 @@ int findbcc(int n)
     return Highest_Node;
 }
 
-int Print_NewGraph(int n)
-{
-    int i,j;
-    for(i=1;i<=n;i++)   //lowest node=1
-    {
-        if(newGraph[i].size())
-        {
-            printf("%d :",i);
-            for(j=0;j<newGraph[i].size();j++)
-                printf(" %d",newGraph[i][j]);
+int Print_NewGraph(int n) {
+    int i, j;
+    for (i = 1; i <= n; i++) { //lowest node=1
+        if (newGraph[i].size()) {
+            printf("%d :", i);
+            for (j = 0; j < newGraph[i].size(); j++)
+                printf(" %d", newGraph[i][j]);
             puts("");
         }
     }
     return 0;
 }
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
-    int t=1,tc;
-    cin>>tc;          //Test Case
-    int i,j,k,l,m,n;
+    int t = 1, tc;
+    cin >> tc;        //Test Case
+    int i, j, k, l, m, n;
     int e;
-    while(tc--)
-    {
-        cin>>n>>e;
-        for(i=0; i<e; i++)
-        {
-            cin>>k>>l;
+    while (tc--) {
+        cin >> n >> e;
+        for (i = 0; i < e; i++) {
+            cin >> k >> l;
             Graph[k].pb(l);
             Graph[l].pb(k);
-            edge.pb(mp(k,l));
+            edge.pb(mp(k, l));
         }
-        printf("Case %d:\n",t++);
-        k=findbcc(n);
+        printf("Case %d:\n", t++);
+        k = findbcc(n);
         Print_NewGraph(k);
-        for(i=0; i<=n; i++)
-            Graph[i].clear(),newGraph[i].clear();
+        for (i = 0; i <= n; i++)
+            Graph[i].clear(), newGraph[i].clear();
         edge.clear();
     }
     return 0;

@@ -18,92 +18,79 @@ using namespace std;
 #define eps 1e-9
 #define NN 1050
 
-/* 
+/*
 ======[ Input and Operation ]===========
 1. 0 x y v - add v to all numbers in the range of x to y (inclusive).
 2. 1 x y   - Total sum in x,y
 
 */
 
-struct data
-{
+struct data {
     long long sum;
     long long xtra;
-}tree[300010];
+} tree[300010];
 
-void update(int node, int low, int high, int rlow, int rhigh, int value)
-{
-    if(low>=rlow && high<=rhigh)
-    {
-        tree[node].sum += (high-low+1)*value;
+void update(int node, int low, int high, int rlow, int rhigh, int value) {
+    if (low >= rlow && high <= rhigh) {
+        tree[node].sum += (high - low + 1) * value;
         tree[node].xtra += value;
         return;
     }
-    int left = node*2;
-    int right = left+1;
-    int mid = (low+high)/2;
-
-    if(rhigh <= mid)
-        update(left, low, mid, rlow, rhigh, value);
-    else if(rlow > mid)
-        update(right, mid+1, high, rlow, rhigh, value);
-    else
-    {
-        update(left, low, mid, rlow, mid, value);
-        update(right, mid+1, high, mid+1, rhigh, value);
-    }
-    tree[node].sum = tree[left].sum+ tree[right].sum+ tree[node].xtra*(high-low+1);
-}
-
-long long query(int node, int low, int high, int rlow, int rhigh, long long carry)
-{
-    if(low>=rlow && high<=rhigh)
-    {
-        return tree[node].sum + carry*(high-low+1);
-    }
-    int left = node*2;
+    int left = node * 2;
     int right = left + 1;
-    int mid = (low + high)/2;
+    int mid = (low + high) / 2;
 
-    long long p1=0, p2=0;
-    if(rhigh<=mid)
-        p1=query(left, low, mid, rlow, rhigh, carry+tree[node].xtra);
-    else if(rlow>mid)
-        p2=query(right, mid+1, high, rlow, rhigh, carry+tree[node].xtra);
-    else
-    {
-        p1=query(left, low, mid, rlow, mid, carry+tree[node].xtra);
-        p2=query(right, mid+1, high, mid+1, rhigh, carry+tree[node].xtra);
+    if (rhigh <= mid)
+        update(left, low, mid, rlow, rhigh, value);
+    else if (rlow > mid)
+        update(right, mid + 1, high, rlow, rhigh, value);
+    else {
+        update(left, low, mid, rlow, mid, value);
+        update(right, mid + 1, high, mid + 1, rhigh, value);
     }
-    return p1+p2;
+    tree[node].sum = tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
+}
+
+long long query(int node, int low, int high, int rlow, int rhigh, long long carry) {
+    if (low >= rlow && high <= rhigh) {
+        return tree[node].sum + carry * (high - low + 1);
+    }
+    int left = node * 2;
+    int right = left + 1;
+    int mid = (low + high) / 2;
+
+    long long p1 = 0, p2 = 0;
+    if (rhigh <= mid)
+        p1 = query(left, low, mid, rlow, rhigh, carry + tree[node].xtra);
+    else if (rlow > mid)
+        p2 = query(right, mid + 1, high, rlow, rhigh, carry + tree[node].xtra);
+    else {
+        p1 = query(left, low, mid, rlow, mid, carry + tree[node].xtra);
+        p2 = query(right, mid + 1, high, mid + 1, rhigh, carry + tree[node].xtra);
+    }
+    return p1 + p2;
 }
 
 
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
-    int tc, t=1;
-    cin>>tc;
-    while(tc--)
-    {
+    int tc, t = 1;
+    cin >> tc;
+    while (tc--) {
         int n, q;
-        cin>>n>>q;
+        cin >> n >> q;
         printf("Case %d:\n", t++);
         mem(tree, 0);
-        while(q--)
-        {
+        while (q--) {
             int i, j, k, l;
-            cin>>i;
-            if(i==0)
-            {
-                cin>>j>>k>>l;
-                update(1, 1, n, j+1, k+1, l);
-            }
-            else if(i==1)
-            {
-                cin>>j>>k;
-                long long ans=query(1, 1, n, j+1, k+1, 0);
+            cin >> i;
+            if (i == 0) {
+                cin >> j >> k >> l;
+                update(1, 1, n, j + 1, k + 1, l);
+            } else if (i == 1) {
+                cin >> j >> k;
+                long long ans = query(1, 1, n, j + 1, k + 1, 0);
                 printf("%lld\n", ans);
             }
         }

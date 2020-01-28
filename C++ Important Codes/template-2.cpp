@@ -29,18 +29,16 @@ typedef unsigned long long llu;
 #define read(a)   scanf("%lld",&a)
 
 
-int main()
-{
+int main() {
     //ios_base::sync_with_stdio(0); cin.tie(0);
-    #ifdef redback
-        freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
-    #endif
+#ifdef redback
+    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
+#endif
 
-    ll t=1,tc;
+    ll t = 1, tc;
     //read(tc);
-    ll i,j,k,l,m,n;
-    while(tc--)
-    {
+    ll i, j, k, l, m, n;
+    while (tc--) {
 
     }
     return 0;

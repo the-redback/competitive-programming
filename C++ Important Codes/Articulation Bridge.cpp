@@ -33,74 +33,66 @@ using namespace std;
 #define NN 10010
 
 vector<int>e[NN];
-vector< pair<int,int> >bridge;
+vector< pair<int, int> >bridge;
 int depth[NN];
 int par[NN];
 int low[NN];
 bool color[NN];
 int Time;
 
-int dfs(int u)
-{
-    low[u]=depth[u]=++Time;
-    color[u]=true;
+int dfs(int u) {
+    low[u] = depth[u] = ++Time;
+    color[u] = true;
     int i;
-    for(i=0; i<e[u].size(); i++)
-    {
-        int v=e[u][i];
-        if(!color[v])
-        {
-            par[v]=u;
+    for (i = 0; i < e[u].size(); i++) {
+        int v = e[u][i];
+        if (!color[v]) {
+            par[v] = u;
             dfs(v);
-            low[u]=min(low[u],low[v]);
-            if(depth[u]<low[v])
-                bridge.pb(mp(u,v));
-        }
-        else if(v!=par[u])
-            low[u]=min(low[u],depth[v]);
+            low[u] = min(low[u], low[v]);
+            if (depth[u] < low[v])
+                bridge.pb(mp(u, v));
+        } else if (v != par[u])
+            low[u] = min(low[u], depth[v]);
     }
     return 0;
 }
 
-int articulation_Point(int n)
-{
-    mem(depth,0);
-    mem(par,-1);
-    mem(low,0);
-    mem(color,0);
-    Time=0;
+int articulation_Point(int n) {
+    mem(depth, 0);
+    mem(par, -1);
+    mem(low, 0);
+    mem(color, 0);
+    Time = 0;
     bridge.clear();
 
-    for(int i=0; i<n; i++)
-        if(!color[i])
+    for (int i = 0; i < n; i++)
+        if (!color[i])
             dfs(i);
 
-    int ans=bridge.size();
-    printf("%d critical links\n",ans);
-    for(int i=0; i<bridge.size(); i++)
-        printf("%d - %d\n",bridge[i].first,bridge[i].second);
+    int ans = bridge.size();
+    printf("%d critical links\n", ans);
+    for (int i = 0; i < bridge.size(); i++)
+        printf("%d - %d\n", bridge[i].first, bridge[i].second);
     return 0;
 }
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
-    int t=1,tc;
-    cin>>tc;          //Test Case
-    int i,j,k,l,m,n;
-    int node,edge;
-    while(tc--)
-    {
-        cin>>node>>edge;
-        for(i=0; i<edge; i++)
-        {
-            cin>>k>>l;
+    int t = 1, tc;
+    cin >> tc;        //Test Case
+    int i, j, k, l, m, n;
+    int node, edge;
+    while (tc--) {
+        cin >> node >> edge;
+        for (i = 0; i < edge; i++) {
+            cin >> k >> l;
             e[k].pb(l);
             e[l].pb(k);
         }
-        printf("Case %d:\n",t++);
+        printf("Case %d:\n", t++);
         articulation_Point(node);
-        for(i=0; i<=node; i++)
+        for (i = 0; i <= node; i++)
             e[i].clear();
     }
     return 0;

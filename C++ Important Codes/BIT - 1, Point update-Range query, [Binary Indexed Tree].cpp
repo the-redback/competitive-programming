@@ -45,70 +45,57 @@ ll MaxVal;
 ll tree[NN];
 ll arr[NN];
 
-ll update(ll idx,ll val)
-{
-    while(idx<=MaxVal)
-    {
-        tree[idx]+=val;
-        idx+=idx & (-idx);
+ll update(ll idx, ll val) {
+    while (idx <= MaxVal) {
+        tree[idx] += val;
+        idx += idx & (-idx);
     }
     return 0;
 }
 
-ll query(ll idx)
-{
-    ll sum=0;
-    while(idx>0)
-    {
-        sum+=tree[idx];
-        idx-=idx & (-idx);
+ll query(ll idx) {
+    ll sum = 0;
+    while (idx > 0) {
+        sum += tree[idx];
+        idx -= idx & (-idx);
     }
     return sum;
 }
 
-main()
-{
+main() {
     //ios_base::sync_with_stdio(0); cin.tie(0);
-    int t=1,tc;
-    scanf("%d",&tc);
+    int t = 1, tc;
+    scanf("%d", &tc);
 
-    ll i,j,k,l,m,n;
-    while(tc--)
-    {
-        scanf("%lld %lld",&n,&m);
-        mem(tree,0);
-        MaxVal=n;
-        for(i=1;i<=n;i++)
-        {
-            scanf("%lld",&arr[i]);
-            update(i,arr[i]);
+    ll i, j, k, l, m, n;
+    while (tc--) {
+        scanf("%lld %lld", &n, &m);
+        mem(tree, 0);
+        MaxVal = n;
+        for (i = 1; i <= n; i++) {
+            scanf("%lld", &arr[i]);
+            update(i, arr[i]);
         }
-        printf("Case %d:\n",t++);
-        while(m--)
-        {
-            scanf("%lld",&j);
-            if(j==1)
-            {
-                scanf("%lld",&k);
+        printf("Case %d:\n", t++);
+        while (m--) {
+            scanf("%lld", &j);
+            if (j == 1) {
+                scanf("%lld", &k);
                 k++;
-                update(k,-arr[k]);
-                printf("%lld\n",arr[k]);
-                arr[k]=0;
-            }
-            else if(j==2)
-            {
-                scanf("%lld %lld",&k,&l);
+                update(k, -arr[k]);
+                printf("%lld\n", arr[k]);
+                arr[k] = 0;
+            } else if (j == 2) {
+                scanf("%lld %lld", &k, &l);
                 k++;
-                update(k,l);
-                arr[k]+=l;
-            }
-            else
-            {
-                scanf("%lld %lld",&k,&l);
-                k++,l++;
-                ll temp=query(l);
-                temp-=query(k-1);
-                printf("%lld\n",temp);
+                update(k, l);
+                arr[k] += l;
+            } else {
+                scanf("%lld %lld", &k, &l);
+                k++, l++;
+                ll temp = query(l);
+                temp -= query(k - 1);
+                printf("%lld\n", temp);
             }
         }
     }

@@ -40,64 +40,54 @@ bool color[MAX];
 int belong[MAX];        //A node blongs to which SCC
 vector<int> G[MAX];     //Graph Store
 stack<int>mystack;      //order of nodes r visited
-int time,top,scc;
+int time, top, scc;
 
-void tarjan(int u)
-{
-    int v,i;
-    depth[u]=Lowlink[u]=++time;
-    color[u]=true;
+void tarjan(int u) {
+    int v, i;
+    depth[u] = Lowlink[u] = ++time;
+    color[u] = true;
     mystack.push(u);
-    Flag[u]=true;
-    for(i=0; i<G[u].size(); i++)
-    {
-        v=G[u][i];
-        if(!color[v])
-        {
+    Flag[u] = true;
+    for (i = 0; i < G[u].size(); i++) {
+        v = G[u][i];
+        if (!color[v]) {
             tarjan(v);
-            Lowlink[u]=min(Lowlink[u],Lowlink[v]);
-        }
-        else if(Flag[v])
-            Lowlink[u]=min(Lowlink[u],depth[v]);
+            Lowlink[u] = min(Lowlink[u], Lowlink[v]);
+        } else if (Flag[v])
+            Lowlink[u] = min(Lowlink[u], depth[v]);
     }
-    if(Lowlink[u]==depth[u])
-    {
+    if (Lowlink[u] == depth[u]) {
         scc++;
-        do
-        {
-            v=mystack.top(),mystack.pop();
-            Flag[v]=false;
-            belong[v]=scc;
-        }
-        while(u!=v);
+        do {
+            v = mystack.top(), mystack.pop();
+            Flag[v] = false;
+            belong[v] = scc;
+        } while (u != v);
     }
 }
 
-void findSCC(int n)
-{
-    mystack=stack<int>();
-    scc=top=time=0;
-    mem(depth,-1);
-    mem(Flag,0);
-    mem(color,0);
-    mem(Lowlink,126);
-    for(int i=1; i<=n; i++)
-        if(!color[i])
+void findSCC(int n) {
+    mystack = stack<int>();
+    scc = top = time = 0;
+    mem(depth, -1);
+    mem(Flag, 0);
+    mem(color, 0);
+    mem(Lowlink, 126);
+    for (int i = 1; i <= n; i++)
+        if (!color[i])
             tarjan(i);
 }
 
-int main()
-{
-    int node,edge;
-    cin>>node>>edge;
-    for(int i=0; i<edge; i++)
-    {
-        int k,l;
-        cin>>k>>l;
+int main() {
+    int node, edge;
+    cin >> node >> edge;
+    for (int i = 0; i < edge; i++) {
+        int k, l;
+        cin >> k >> l;
         G[k].pb(l);
     }
     findSCC(node);
-    cout<<scc;
+    cout << scc;
 
     return 0;
 }

@@ -37,72 +37,63 @@ vector<int>arr;              //topological sorted node
 vector<int>Graph[NN];        //Graph Before SCC
 vector<int>transGraph[NN];   //Transpose Graph Before SCC
 vector<int>newGraph[NN];     //New Graph After SCC
-vector<pair<int,int> >v;     //Edges Before SCC
+vector<pair<int, int> >v;    //Edges Before SCC
 int id[NN];                  //Id of Nodes After SCC
 int amount[NN];              //Amount of original node
-                             // in a SCC node
+// in a SCC node
 
 
-int dfs_1st(int u)
-{
-    color[u]=true;
-    for(int i=0;i<Graph[u].size();i++)
-    {
-        if(!color[Graph[u][i]])
+int dfs_1st(int u) {
+    color[u] = true;
+    for (int i = 0; i < Graph[u].size(); i++) {
+        if (!color[Graph[u][i]])
             dfs_1st(Graph[u][i]);
     }
     arr.pb(u);
 }
 
-int dfs_2nd(int u,int k)
-{
-    color[u]=true;
-    id[u]=k;
+int dfs_2nd(int u, int k) {
+    color[u] = true;
+    id[u] = k;
 
-    for(int i=0;i<transGraph[u].size();i++)
-    {
-        if(!color[transGraph[u][i]])
-            dfs_2nd(transGraph[u][i],k);
+    for (int i = 0; i < transGraph[u].size(); i++) {
+        if (!color[transGraph[u][i]])
+            dfs_2nd(transGraph[u][i], k);
     }
 }
 
-int scc(int n)
-{
+int scc(int n) {
     arr.clear();
-    mem(color,0);
-    int i,j,k,l;
+    mem(color, 0);
+    int i, j, k, l;
 
-    for(i=1;i<=n;i++)    //Topological Sort
-        if(color[i]==0)
+    for (i = 1; i <= n; i++) //Topological Sort
+        if (color[i] == 0)
             dfs_1st(i);
 
     reverse(all(arr));
 
-    mem(id,-1);
-    mem(color,0);
-    k=0;
+    mem(id, -1);
+    mem(color, 0);
+    k = 0;
 
-    for(i=0;i<arr.size();i++)  //Identify SCC
-    {
-        if(!color[arr[i]])
-        {
-            dfs_2nd(arr[i],k+1);
-            amount[id[arr[i]]]=1; //Amount of actual node
-                                  //in SCC node
+    for (i = 0; i < arr.size(); i++) { //Identify SCC
+        if (!color[arr[i]]) {
+            dfs_2nd(arr[i], k + 1);
+            amount[id[arr[i]]] = 1; //Amount of actual node
+            //in SCC node
             k++;
-        }
-        else
+        } else
             amount[id[arr[i]]]++;
     }
 
-    int node=k;      //Number of SCC node
+    int node = k;    //Number of SCC node
 
-    for(i=0;i<v.size();i++)  //Build SCC graph
-    {
-        k=v[i].first;
-        l=v[i].second;
+    for (i = 0; i < v.size(); i++) { //Build SCC graph
+        k = v[i].first;
+        l = v[i].second;
 
-        if(id[k]!=id[l])
+        if (id[k] != id[l])
             newGraph[id[k]].pb(id[l]);
     }
 
@@ -110,35 +101,31 @@ int scc(int n)
 }
 
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
-    int t=1,tc;
-    int i,j,k,l,m,n,man;
+    int t = 1, tc;
+    int i, j, k, l, m, n, man;
 
-    cin>>tc;    //Test Case
-    while(tc--)
-    {
-        cin>>n>>m; //n=node, m=edge
+    cin >> tc;  //Test Case
+    while (tc--) {
+        cin >> n >> m; //n=node, m=edge
 
-        for(i=0;i<=n;i++)
-        {
+        for (i = 0; i <= n; i++) {
             Graph[i].clear();
             transGraph[i].clear();
             newGraph[i].clear();
         }
         v.clear();
 
-        for(i=0;i<m;i++)
-        {
-            cin>>k>>l;
+        for (i = 0; i < m; i++) {
+            cin >> k >> l;
             Graph[k].pb(l);
             transGraph[l].pb(k);
-            v.pb(make_pair(k,l));
+            v.pb(make_pair(k, l));
         }
 
-        int sum=scc(n);
-        printf("Case %d: %d\n",t++,sum);
+        int sum = scc(n);
+        printf("Case %d: %d\n", t++, sum);
     }
     return 0;
 }

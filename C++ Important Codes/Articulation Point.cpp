@@ -36,74 +36,66 @@ vector<int>e[NN];
 int depth[NN];
 int par[NN];
 int low[NN];
-bool color[NN],Flag[NN];
+bool color[NN], Flag[NN];
 int Time;
 
-int dfs(int u)
-{
-    low[u]=depth[u]=++Time;
-    color[u]=true;
-    int i,call=0;
-    for(i=0; i<e[u].size(); i++)
-    {
-        int v=e[u][i];
-        if(!color[v])
-        {
+void dfs(int u) {
+    low[u] = depth[u] = ++Time;
+    color[u] = true;
+    int i, call = 0;
+    for (i = 0; i < e[u].size(); i++) {
+        int v = e[u][i];
+        if (!color[v]) {
             call++;
-            par[v]=u;
+            par[v] = u;
             dfs(v);
-            low[u]=min(low[u],low[v]);
-            if(depth[u]<=low[v])
-                Flag[u]=true;
-        }
-        else if(v!=par[u])
-            low[u]=min(low[u],depth[v]);
+            low[u] = min(low[u], low[v]);
+            if (depth[u] <= low[v])
+                Flag[u] = true;
+        } else if (v != par[u])
+            low[u] = min(low[u], depth[v]);
     }
-    if(par[u]==-1)
-        Flag[u]=(call>1);
+    if (par[u] == -1)
+        Flag[u] = (call > 1);
 }
 
-int articulation_Point(int n)
-{
-    mem(depth,0);
-    mem(par,-1);
-    mem(low,0);
-    mem(color,0);
-    mem(Flag,0);
-    Time=0;
+int articulation_Point(int n) {
+    mem(depth, 0);
+    mem(par, -1);
+    mem(low, 0);
+    mem(color, 0);
+    mem(Flag, 0);
+    Time = 0;
 
-    for(int i=1; i<=n; i++)
-        if(!color[i])
+    for (int i = 1; i <= n; i++)
+        if (!color[i])
             dfs(i);
 
-    int ans=0;
-    for(int i=1; i<=n; i++)
-        if(Flag[i])
+    int ans = 0;
+    for (int i = 1; i <= n; i++)
+        if (Flag[i])
             ans++;
     return ans;
 }
 
-main()
-{
+int main() {
     ios_base::sync_with_stdio(false);
-    int t=1,tc;
-    cin>>tc;          //Test Case
-    int i,j,k,l,m,n;
-    int node,edge;
-    while(tc--)
-    {
-        cin>>node>>edge;
-        for(i=0; i<edge; i++)
-        {
-            cin>>k>>l;
+    int t = 1, tc;
+    cin >> tc;        //Test Case
+    int i, j, k, l, m, n;
+    int node, edge;
+    while (tc--) {
+        cin >> node >> edge;
+        for (i = 0; i < edge; i++) {
+            cin >> k >> l;
             e[k].pb(l);
             e[l].pb(k);
         }
 
-        int ans=articulation_Point(node);
-        printf("Case %d: %d\n",t++,ans);
+        int ans = articulation_Point(node);
+        printf("Case %d: %d\n", t++, ans);
 
-        for(i=0; i<=node; i++)
+        for (i = 0; i <= node; i++)
             e[i].clear();
     }
     return 0;
