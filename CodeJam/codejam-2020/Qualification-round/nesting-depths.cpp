@@ -8,7 +8,7 @@
  *    @link : https://maruftuhin.com
  */
 
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 
 using namespace std;
 
@@ -31,21 +31,46 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0);
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
 #endif
-
     ll t = 1, tc;
-    //cin >> tc ;
+    cin >> tc ;
     ll n, m;
-    while (cin >> n ) {
-        ll i, j, k;
+    while ( tc--) {
+        string str;
+        cin >> str;
 
+        ll order = 0;
+        string ans = "";
+        int j = 0;
 
-        cout << n << "\n";
+        for (int i = 0; i < str.size(); ++i) {
+            int k = str[i] - '0';
+            if (order == k) {
+                ans += str[i];
+            } else if ( order < k) {
+                while (order < k) {
+                    ans += '(';
+                    order++;
+                }
+                ans += str[i];
+            }  else if ( order > k) {
+                while (order > k) {
+                    ans += ')';
+                    order--;
+                }
+                ans += str[i];
+            }
+        }
 
+        while (order > 0) {
+            ans += ')';
+            order--;
+        }
+
+        printf("Case #%d: %s\n", t++, ans.c_str());
     }
     return 0;
 }
