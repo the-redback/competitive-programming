@@ -19,18 +19,25 @@ while getopts ":d" opt; do
   esac
 done
 
-if ! g++ -g -std=c++11 $DBG main.cpp; then
+if ! g++ -g -std=c++11 $DBG main.cpp -o main.o; then
     exit
 fi
 INPUT_NAME=input-outputs/input
 OUTPUT_NAME=input-outputs/output
 MY_NAME=input-outputs/my_output
+
+if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+  time_cmd=`which time`  
+else
+  time_cmd=`which gtime`
+fi
+
 rm -R $MY_NAME* &>/dev/null
 for test_file in $INPUT_NAME*
 do
     i=$((${#INPUT_NAME}))
     test_case=${test_file:$i}
-    if ! `which gtime` -o time.out -f "(%es)" ./a.out < $INPUT_NAME$test_case > $MY_NAME$test_case; then
+    if ! $time_cmd -o time.out -f "(%es)" ./main.o < $INPUT_NAME$test_case > $MY_NAME$test_case; then
         echo [1m[31mSample test \#$test_case: Runtime Error[0m `cat time.out`
         echo ========================================
         echo Sample Input \#$test_case
