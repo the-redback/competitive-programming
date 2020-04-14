@@ -10,6 +10,6 @@ g++ -std=c++11 stdc++.h
 
 
 # Speed up compiler time of c++
-# ./script.sh main.cpp
+# ./bits-script.sh main.cpp
 
 # and use > #include "bits/stdc++.h"
