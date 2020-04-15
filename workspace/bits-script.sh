@@ -15,6 +15,9 @@ cp $directory bits/
 cd bits
 g++ -std=c++11 stdc++.h
 
+echo "Operation executed successfully"
+echo "Now, use #include \"bits/stdc++.h\" in sourcecode for faster compilation"
+
 # Speed up compiler time of c++
 # ./bits-script.sh
 
