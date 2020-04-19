@@ -32,10 +32,6 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
-#ifdef redback
-    freopen("input.in", "r", stdin);
-    freopen("output.in", "w", stdout);
-#endif
 
     ll t = 1, tc;
     //cin >> tc ;
@@ -43,9 +39,7 @@ int main() {
     while (cin >> n ) {
         ll i, j, k;
 
-
         cout << n << "\n";
-
     }
     return 0;
 }

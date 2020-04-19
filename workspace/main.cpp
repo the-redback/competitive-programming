@@ -31,10 +31,10 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 
 
 int main() {
-#ifdef redback
-    freopen("input.in", "r", stdin);
-    freopen("output.in", "w", stdout);
-#endif
+// #ifdef redback
+//     freopen("input.in", "r", stdin);
+//     freopen("output.in", "w", stdout);
+// #endif
     ll t = 1, tc;
     cin>> tc ;
     ll n, m;

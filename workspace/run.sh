@@ -1,9 +1,11 @@
 #!/bin/bash
-set -eou pipefail
-
-program=$1
-input_file=$2
-output_file=$3
+set -xeou pipefail
+program=main.cpp
+input_file=input
+output_file=my_output
+if [ $# -eq 1 ]; then
+    program=$1
+fi
 
 if [[ "$(uname 2>/dev/null)" == "Linux" ]]; then
   time_cmd=$(which time)

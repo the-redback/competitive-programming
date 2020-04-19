@@ -44,12 +44,12 @@ export output_binary=${program_file%.c*}.o
 
 echo $program_file $output_binary
 
-if ! g++ -g -std=c++11 $DBG $program_file -o $output_binary; then
+if ! g++ -std=c++11 $DBG $program_file -o $output_binary; then
   exit
 fi
-INPUT_NAME=input-outputs/input
-OUTPUT_NAME=input-outputs/output
-MY_NAME=input-outputs/my_output
+INPUT_NAME=input
+OUTPUT_NAME=output
+MY_NAME=my_output
 
 if [[ "$(uname 2>/dev/null)" == "Linux" ]]; then
   time_cmd=$(which time)
