@@ -37,7 +37,7 @@ fi
 
 output_binary=${program_file%.c*}.o
 
-g++ -std=c++11 $DBG $program_file -o $output_binary
+g++ -std=c++14 $DBG $program_file -o $output_binary
 
 $time_cmd -p ./$output_binary <$input_file >$output_file
 

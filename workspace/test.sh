@@ -44,7 +44,7 @@ export output_binary=${program_file%.c*}.o
 
 echo $program_file $output_binary
 
-if ! g++ -std=c++11 $DBG $program_file -o $output_binary; then
+if ! g++ -std=c++14 $DBG $program_file -o $output_binary; then
   exit
 fi
 INPUT_NAME=input
