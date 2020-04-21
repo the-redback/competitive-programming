@@ -13,6 +13,7 @@
 using namespace std;
 
 typedef long long ll;
+
 #define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
@@ -30,46 +31,74 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
+ll leng(ll x, ll y) {
+    ll sum = 1;
+    ll len = 1;
+    ll l   = abs(x) + abs(y);
+
+    for (ll i = 1; sum < l;) {
+        i *= 2;
+        sum += i;
+        len++;
+    }
+    debug(len, sum) return len;
+}
+
+string str;
+
+bool rec(int x, int y, int len) {
+    debug(x, y, len) debug(1 << len) if (x == 0 && y == 0) {
+        if (len != 0) return false;
+        return true;
+    }
+    if (len == 0) {
+        return false;
+    }
+    ll xx = x, yy = y;
+    if (abs(x) > abs(y)) {
+        if (x > 0) {
+            str += 'E';
+            xx -= 1 << len - 1;
+        } else {
+            str += 'W';
+            xx += 1 << len - 1;
+        }
+    } else {
+        if (y > 0) {
+            str += 'N';
+            yy -= 1 << len - 1;
+        } else {
+            str += 'S';
+            yy += 1 << len - 1;
+        }
+    }
+    return rec(xx, yy, len - 1);
+}
+
 int main() {
-	// #ifdef redback
-	//     freopen("input.in", "r", stdin);
-	//     freopen("output.in", "w", stdout);
-	// #endif
-	ll t = 1, tc;
-	cin >> tc;
-	ll n, m;
-	while (tc--) {
-		string str;
-		cin >> str;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 
-		ll     order = 0;
-		string ans   = "";
-		int    j     = 0;
+    ll t = 1, tc;
+    cin >> tc;
+    ll n, m;
+    while (tc--) {
+        ll i, j, k, l;   // v
+        ll x, y;         // b
+        cin >> x >> y;   // a
 
-		for (int i = 0; i < str.size(); ++i) {
-			int k = str[i] - '0';
-			if (order == k) {
-				ans += str[i];
-			} else if (order < k) {
-				while (order < k) {
-					ans += '(';
-					order++;
-				}
-				ans += str[i];
-			} else if (order > k) {
-				while (order > k) {
-					ans += ')';
-					order--;
-				}
-				ans += str[i];
-			}
-		}
+        str       = "";
+        ll   len  = leng(x, y);
+        bool poss = rec(x, y, len);
 
-		while (order > 0) {
-			ans += ')';
-			order--;
-		}
-		printf("Case #%d: %s\n", t++, ans.c_str());
-	}
-	return 0;
+        if (!poss) {
+            printf("Case #%d: IMPOSSIBLE\n", t++);
+            continue;
+        }
+
+        printf("Case #%d: ", t++);
+        reverse(str.begin(), str.end());
+        printf("%s\n", str.c_str());
+    }
+    return 0;
 }

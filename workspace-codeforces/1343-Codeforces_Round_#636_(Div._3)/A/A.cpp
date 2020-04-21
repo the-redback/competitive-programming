@@ -8,7 +8,7 @@
  *    @link : https://maruftuhin.com
  */
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -36,12 +36,24 @@ int main() {
     ios::sync_with_stdio(false); cin.tie(0);
 
     ll t = 1, tc;
-    //cin >> tc ;
+    cin >> tc ;
     ll n, m;
-    while (cin >> n ) {
+    while (tc-- ) {
+        cin >> n;
         ll i, j, k;
+        ll ans=0;
 
-        cout << n << "\n";
+        for ( i = 1; i < 30; i++)
+        {
+            k = n / ((2 << i) - 1);
+            if (n%k==0 ){
+                ans = k;
+                break;
+            }
+
+        }
+
+        cout << ans << "\n";
     }
     return 0;
 }
