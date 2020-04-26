@@ -32,7 +32,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 
 ll a[NN], b[NN];
 
-void solve() {
+void solve(ll tc) {
     ll i, j, k, n;
     cin >> n;
 
@@ -69,7 +69,7 @@ int main() {
     cin >> tc;
     ll n, m;
     while (tc--) {
-        solve();
+        solve(t++);
     }
     return 0;
 }
