@@ -61,7 +61,7 @@ rm -R $MY_NAME* &>/dev/null
 for test_file in $INPUT_NAME*; do
   i=$((${#INPUT_NAME}))
   test_case=${test_file:$i}
-  if ! $time_cmd -o time.out -f "(%es)" ./$output_binary <$INPUT_NAME$test_case >$MY_NAME$test_case; then
+  if ! $time_cmd -o time.out -f "(%es)" ./$output_binary <$INPUT_NAME$test_case | tee $MY_NAME$test_case >/dev/null; then
     echo [1m[31mSample test \#$test_case: Runtime Error[0m $(cat time.out)
     echo ========================================
     echo Sample Input \#$test_case

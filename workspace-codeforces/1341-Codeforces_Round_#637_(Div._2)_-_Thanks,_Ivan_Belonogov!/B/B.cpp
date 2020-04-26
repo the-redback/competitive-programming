@@ -66,6 +66,7 @@ int main() {
             debug(j, i, i - k + 1, freq[i],
                   freq[i - k + 1]) if (freq[i] > freq[i - 1]) j--;
             if (j > ret) {
+                
                 ret  = j;
                 left = i - k + 2;
             }
@@ -73,4 +74,7 @@ int main() {
         cout << ret + 1 << " " << left << "\n";
     }
     return 0;
+
+
+    
 }
