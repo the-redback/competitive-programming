@@ -30,6 +30,51 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
+void solve(ll n, ll k) {
+    ll         i, j;
+    vector<ll> a(n);
+    vector<ll> f(k + 1);
+    vector<ll> ck(k + 1);
+
+    ll sum1 = n;
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+        f[a[i]]++;
+    }
+
+    for (i = 1; i <= k; i++) {
+        cin >> ck[i];
+    }
+
+    ll pos = 0;
+    for (i = 1; i <= k; i++) {
+        ll l = ceil(sum1 / ((1.0) * ck[i]));
+        pos  = max(pos, l);
+        if (f[i]) {
+            sum1 -= f[i];
+        }
+    }
+
+    vector<ll> ans[pos];
+    sort(a.begin(), a.end());
+
+    j = 0;
+    for (i = 0; i < n; i++) {
+        j %= pos;
+        ans[j].push_back(a[i]);
+        j++;
+    }
+
+    cout << pos << "\n";
+    for (i = 0; i < pos; i++) {
+        cout << ans[i].size();
+        for (j = 0; j < ans[i].size(); j++) {
+            cout << " " << ans[i][j];
+        }
+        cout << "\n";
+    }
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -38,51 +83,7 @@ int main() {
     // cin >> tc;
     ll n, m, k;
     while (cin >> n >> k) {
-        ll         i, j;
-        vector<ll> a(n + 2);
-        vector<ll> f(k + 2);
-        vector<ll> ck(k + 2);
-
-        ll sum1 = n;
-        for (i = 0; i < n; i++) {
-            cin >> a[i];
-            f[a[i]]++;
-            debug(i, a[i])
-        }
-        ll sum2 = 0;
-        for (i = 1; i <= k; i++) {
-            cin >> ck[i];
-            sum2 += ck[i];
-            debug(i, ck[i])
-        }
-
-        ll pos = 1;
-        for (i = 1; i <= k; i++) {
-            ll l                          = ceil(sum1 / ((1.0) * sum2));
-            debug(sum1, sum2, l, pos) pos = max(pos, l);
-            sum1 -= f[i] * i;
-            sum2 -= ck[i];
-        }
-
-        vector<ll> ans[pos + 2];
-        vector<ll> chk(pos + 2);
-
-        for (i = 1; i <= k; i++) {
-            ll fr = ceil(f[i] / 1.0 * pos);
-            for (j = 0; j < pos && ck[i] > 0; j++) {
-                ans[j].push_back(min(fr, ck[i]));
-                ck[i] -= fr;
-            }
-        }
-
-        cout << pos << "\n";
-        for (i = 0; i < pos; i++) {
-            cout << ans[i].size();
-            for (j = 0; j < ans[i].size(); j++) {
-                cout << " " << ans[i][j];
-            }
-            cout << "\n";
-        }
+        solve(n, k);
     }
     return 0;
 }
