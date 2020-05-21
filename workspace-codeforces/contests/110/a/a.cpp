@@ -30,15 +30,43 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
+void solve(ll tc, string str) {
+    ll i, j, k;
+    ll n = 0;
+    for (i = 0; i < str.size(); i++) {
+        if (str[i] == '4' || str[i] == '7') {
+            n++;
+        }
+    }
+
+    if (n == 0) {
+        cout << "NO\n";
+        return;
+    }
+
+    while (n > 0) {
+        k = n % 10;
+        n /= 10;
+        if (k != 4 && k != 7) {
+            cout << "NO\n";
+            return;
+        }
+    }
+
+    cout << "YES\n";
+    return;
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t = 1, tc = 1;
-    cout << "1\n";
-    for (ll i = 0; i < 66666; i++) {
-        cout << "123";
+    ll t = 1, tc;
+    // cin >> tc;
+    ll     n, m;
+    string str;
+    while (cin >> str) {
+        solve(t++, str);
     }
-    cout << "\n";
-     return 0;
+    return 0;
 }
