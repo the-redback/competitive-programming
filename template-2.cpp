@@ -43,17 +43,18 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 int main() {
-	// #ifdef redback
-	// 	freopen("input.in", "r", stdin);
-	// 	freopen("output.in", "w", stdout);
-	// #endif
+    // #ifdef redback
+    // 	freopen("input.in", "r", stdin);
+    // 	freopen("output.in", "w", stdout);
+    // #endif
 
-	ll t = 1, tc;
-	// sf(tc);
-	ll n, m;
-	while (~sf(n)) {
-		ll i, j, k;
-		printf("%lld\n", n);
-	}
-	return 0;
+    ll t = 1, tc;
+    cin >> tc;
+    ll n, m;
+    while (tc--) {
+        cin >> n;
+        ll i, j, k;
+        printf("%lld\n", n);
+    }
+    return 0;
 }

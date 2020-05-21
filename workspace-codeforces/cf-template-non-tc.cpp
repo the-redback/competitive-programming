@@ -30,8 +30,9 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
-void solve(ll tc, ll n) {
+void solve(ll n) {
     ll i, j, k;
+    ll m;
 
     cout << n << "\n";
     return;
@@ -45,7 +46,7 @@ int main() {
     // cin >> tc;
     ll n, m;
     while (cin >> n) {
-        solve(t++, n);
+        solve(n);
     }
     return 0;
 }
