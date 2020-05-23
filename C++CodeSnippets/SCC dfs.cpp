@@ -39,8 +39,7 @@ vector<int>transGraph[NN];   //Transpose Graph Before SCC
 vector<int>newGraph[NN];     //New Graph After SCC
 vector<pair<int, int> >v;    //Edges Before SCC
 int id[NN];                  //Id of Nodes After SCC
-int amount[NN];              //Amount of original node
-// in a SCC node
+int amount[NN];              //Amount of original node in a SCC node
 
 
 int dfs_1st(int u) {
