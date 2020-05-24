@@ -1,0 +1,8 @@
+zbac
+-1
+aaa
+ab
+a
+-1
+aaaa
+cb

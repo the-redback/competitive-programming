@@ -1,0 +1,34 @@
+8
+2 4
+abac
+zbab
+2 4
+aaaa
+bbbb
+3 3
+baa
+aaa
+aab
+2 2
+ab
+bb
+3 1
+a
+b
+c
+10 10
+aaaaaaaaaa
+bbbbbbbbbb
+cccccccccc
+dddddddddd
+eeeeeeeeee
+ffffffffff
+gggggggggg
+hhhhhhhhhh
+iiiiiiiiii
+jjjjjjjjjj
+1 4
+aaaa
+2 2
+ab
+cd
