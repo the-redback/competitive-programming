@@ -50,7 +50,7 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-void solve(ll t) {
+void solve() {
     ll i, j, k;
     ll n, m;
     cin >> n;
@@ -67,7 +67,7 @@ int main() {
     cin >> tc;
     ll n, m;
     while (tc--) {
-        solve(t++);
+        solve();
     }
     return 0;
 }
