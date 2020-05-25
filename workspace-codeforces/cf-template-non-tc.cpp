@@ -9,26 +9,46 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
 typedef long long ll;
+#define xx        first
+#define yy        second
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
 #define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
-#define NN        200010
+#define NN        100010
 
-// clang-format off
-#ifdef  redback
-#define bug printf("line=%d\n",__LINE__);
-#define debug(args...) {cout<<":: "; dbg,args; cout<<endl;}
-struct  debugger {template<typename T>debugger& operator , (const T& v) {cout << v << " "; return *this;}} dbg;
+/* -------------------------------------------------------------------------- */
+/*                              Debugging Macros                              */
+/* -------------------------------------------------------------------------- */
+#ifdef redback
+#include "prettyprint.hpp"
+#define dbg(...)                        \
+    cout << "L-" << __LINE__ << " :: "; \
+    _print_out(#__VA_ARGS__, __VA_ARGS__);
+template <typename T>
+void _print_out(const char* name, T&& arg1) {
+    cout << name << " = " << arg1 << endl;
+}
+template <typename T1, typename... Args>
+void _print_out(const char* names, T1&& arg1, Args&&... args) {
+    const char* comma = strchr(names + 1, ',');
+    cout.write(names, comma - names) << " = " << arg1 << " | ";
+    _print_out(comma + 1, args...);
+}
+template <typename T>
+void _print_out(const char* name, T a[], int n) {
+    cout << name << " = " << pretty_print_array(a, n) << endl;
+}
 #else
-#define bug
-#define debug(args...)
-#endif  //debugging macros
-// clang-format on
+#define dbg(args...)
+#endif
+/* -------------------------------------------------------------------------- */
 
 void solve(ll n) {
     ll i, j, k;

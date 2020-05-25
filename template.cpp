@@ -53,15 +53,11 @@ void _print_out(const char* name, T a[], int n) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    // #ifdef redback
-    // 	freopen("input.in", "r", stdin);
-    // 	freopen("output.in", "w", stdout);
-    // #endif
 
     ll t = 1, tc;
-    // cin >> tc ;
+    cin >> tc;
     ll n, m;
-    while (cin >> n) {
+    while (tc--) {
         ll i, j, k;
 
         cout << n << "\n";
