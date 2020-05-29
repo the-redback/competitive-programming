@@ -8,27 +8,26 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
-#define meminf(a) memset(a,126,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define meminf(a) memset(a, 126, sizeof(a))
 #define inf       1e11
 #define eps       1e-9
 #define mod       10007
 #define NN        10010
 
-//cout << setfill('0') << setw(3) << a << endl;
-//cout << fixed << setprecision(20) << a << endl;
+// cout << setfill('0') << setw(3) << a << endl;
+// cout << fixed << setprecision(20) << a << endl;
 
 /*
 
@@ -38,15 +37,15 @@ KTH a b k : ask for the k-th node on the path from node a to node b
 
 */
 
-ll par[NN];      //Parent
-ll level[NN];    //level in tree
-bool color[NN];   //DFS color
-ll dist[NN];     //distance from root
-ll P[NN][20];    //Sparse table
-vector<ll>g[NN]; //Gragh store
-vector<ll>cost[NN];
+ll par[NN];         // Parent
+ll level[NN];       // level in tree
+bool color[NN];     // DFS color
+ll dist[NN];        // distance from root
+ll P[NN][20];       // Sparse table
+vector<ll> g[NN];   // Gragh store
+vector<ll> cost[NN];
 
-//1 based index.
+// 1 based index.
 
 void dfs(ll u) {
     ll i, v;
@@ -65,28 +64,21 @@ void dfs(ll u) {
 }
 
 ll lca_query(ll p, ll q) {
-    if (level[p] < level[q])
-        swap(p, q);
+    if (level[p] < level[q]) swap(p, q);
     ll i, j, k, log;
     log = 1;
     while (1) {
         ll next = log + 1;
-        if (1 << next > level[p])
-            break;
+        if (1 << next > level[p]) break;
         log++;
     }
     for (i = log; i >= 0; i--)
-        if (level[p] - (1 << i) >= level[q])
-            p = P[p][i];
-    if (p == q)
-        return p;
+        if (level[p] - (1 << i) >= level[q]) p = P[p][i];
+    if (p == q) return p;
     for (i = log; i >= 0; i--)
-        if (P[p][i] != -1 && P[p][i] != P[q][i])
-            p = P[p][i], q = P[q][i];
+        if (P[p][i] != -1 && P[p][i] != P[q][i]) p = P[p][i], q = P[q][i];
     return par[p];
-
 }
-
 
 void lca_init(ll n) {
     mem(color, 0);
@@ -97,13 +89,11 @@ void lca_init(ll n) {
 
     ll i, j;
 
-    for (i = 1; i <= n; i++)
-        P[i][0] = par[i];
+    for (i = 1; i <= n; i++) P[i][0] = par[i];
 
     for (j = 1; 1 << j <= n; j++)
         for (i = 1; i <= n; i++)
-            if (P[i][j - 1] != -1)
-                P[i][j] = P[P[i][j - 1]][j - 1];
+            if (P[i][j - 1] != -1) P[i][j] = P[P[i][j - 1]][j - 1];
 
     return;
 }
@@ -125,8 +115,7 @@ ll KTH(ll p, ll q, ll k) {
     if (temp >= k) {
         ll LVL = level[p] - k;
         for (j = 20; j >= 0; j--)
-            if (level[p] - (1 << j) >= LVL)
-                p = P[p][j];
+            if (level[p] - (1 << j) >= LVL) p = P[p][j];
         return p;
     }
     k -= temp;
@@ -135,15 +124,14 @@ ll KTH(ll p, ll q, ll k) {
     temp -= k;
     ll LVL = level[q] - temp;
     for (j = 15; j >= 0; j--)
-        if (level[q] - (1 << j) >= LVL)
-            q = P[q][j];
+        if (level[q] - (1 << j) >= LVL) q = P[q][j];
     return q;
 }
 
 char s[10];
 
 main() {
-    //ios_base::sync_with_stdio(0); cin.tie(0);
+    // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     scanf("%d", &tc);
     ll i, j, k, l, n;
@@ -166,8 +154,7 @@ main() {
 
         while (1) {
             scanf("%s", s);
-            if (strcmp(s, "DONE") == 0)
-                break;
+            if (strcmp(s, "DONE") == 0) break;
             if (strcmp(s, "DIST") == 0) {
                 scanf("%lld %lld", &k, &l);
                 ll ret = DIST(k, l);
@@ -178,9 +165,8 @@ main() {
                 printf("%lld\n", ret);
             }
         }
-        //if(tc)
+        // if(tc)
         puts("");
-
     }
     return 0;
 }

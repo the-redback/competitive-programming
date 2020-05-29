@@ -1,24 +1,10 @@
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
-#define inf 10000000
-#define mem(a,b) memset(a,b,sizeof(a))
-#define NN 10010
+#define inf       10000000
+#define mem(a, b) memset(a, b, sizeof(a))
+#define NN        10010
 int root[NN + 7];
 int rank[NN + 7];
 
@@ -26,13 +12,9 @@ struct edge {
     int u, v, w;
 };
 
-vector<edge>e;
+vector<edge> e;
 
-
-bool comp(edge n, edge m) {
-    return n.w > m.w;
-}
-
+bool comp(edge n, edge m) { return n.w > m.w; }
 
 void init(int n) {
     for (int i = 1; i <= n; i++) {
@@ -41,21 +23,17 @@ void init(int n) {
     }
 }
 
-
 int find(int u) {
-    if (u != root[u])
-        root[u] = find(root[u]);
+    if (u != root[u]) root[u] = find(root[u]);
     return root[u];
 }
-
 
 void Union(int u, int v) {
     if (rank[u] > rank[v])
         root[v] = u;
     else {
         root[u] = v;
-        if (rank[u] == rank[v])
-            rank[v]++;
+        if (rank[u] == rank[v]) rank[v]++;
     }
 }
 
@@ -76,7 +54,7 @@ int mst(int n) {
 }
 
 main() {
-    //freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
+    // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     ios_base::sync_with_stdio(false);
     int i, j, k, l, n, r, c, u, v, w;
     edge ed;
@@ -96,4 +74,3 @@ main() {
 
     return 0;
 }
-

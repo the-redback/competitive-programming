@@ -10,22 +10,21 @@ int ternary_search(int k, int l, int s) {
     int midleft, midright;
 
     while (high - low > 3) {
-        midleft = low + (high - low) / 3 ;
-        midright = high - (high - low ) / 3;
+        midleft = low + (high - low) / 3;
+        midright = high - (high - low) / 3;
 
         int area1 = area(k, l, midleft);
         int area2 = area(k, l, midright);
 
-        if ( area1 < area2 )
-            low = midleft ;
+        if (area1 < area2)
+            low = midleft;
         else
-            high = midright ;
+            high = midright;
     }
 
     for (int i = low; i <= high; i++) {
         int temp = area(k, l, i);
-        if (s <= temp )
-            return i + 1;
+        if (s <= temp) return i + 1;
     }
     return 0;
 }

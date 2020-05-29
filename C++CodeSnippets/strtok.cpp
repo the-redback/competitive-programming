@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
-int main () {
+int main() {
     char str[] = "cuet, cse- society. Hahaha";
-    char * pch;
+    char* pch;
     char a[100][100];
     int i = 0;
-    pch = strtok (str, " ,.-");
+    pch = strtok(str, " ,.-");
     while (pch != NULL) {
         strcpy(a[i], pch);
-        printf ("%s\n", a[i++]);
-        pch = strtok (NULL, " ,.-");
+        printf("%s\n", a[i++]);
+        pch = strtok(NULL, " ,.-");
     }
     return 0;
 }

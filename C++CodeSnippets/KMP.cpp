@@ -8,29 +8,28 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
 #define NN        1000010
 
-#define read(a)   scanf("%lld",&a)
+#define read(a) scanf("%lld", &a)
 
-ll fail[NN];  //Highest Prefix which equals as postfix at i.
-char s[NN];   //Main String.
-char p[NN];   //Find P-string in main string.
+ll fail[NN];   // Highest Prefix which equals as postfix at i.
+char s[NN];    // Main String.
+char p[NN];    // Find P-string in main string.
 
 void failure(void) {
     ll i, j, k, l;
@@ -39,12 +38,10 @@ void failure(void) {
     fail[0] = 0;
     ll q = 0;
 
-    for (i = 1; i < m; i++) { //starts from 1, not 0.
-        while (q > 0 && p[i] != p[q])
-            q = fail[q - 1];
+    for (i = 1; i < m; i++) {   // starts from 1, not 0.
+        while (q > 0 && p[i] != p[q]) q = fail[q - 1];
 
-        if (p[i] == p[q])
-            q++;
+        if (p[i] == p[q]) q++;
         fail[i] = q;
     }
     return;
@@ -59,19 +56,16 @@ ll KMP(void) {
     ll q = 0;
 
     for (i = 0; i < l; i++) {
-        while (q > 0 && s[i] != p[q])
-            q = fail[q - 1];
+        while (q > 0 && s[i] != p[q]) q = fail[q - 1];
 
-        if (s[i] == p[q])
-            q++;
+        if (s[i] == p[q]) q++;
         if (q == m) {
             q = fail[q - 1];
-            cnt++; //we got one substring
+            cnt++;   // we got one substring
         }
     }
     return cnt;
 }
-
 
 main() {
 #ifdef redback
@@ -86,8 +80,6 @@ main() {
         scanf("%s", &p);
         ll ans = KMP();
         printf("Case %lld: %lld\n", t++, ans);
-
     }
     return 0;
 }
-

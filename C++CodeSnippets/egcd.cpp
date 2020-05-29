@@ -1,4 +1,4 @@
-int sii, si, tii, ti; // ii=i-1, i=i, s/t=i+1
+int sii, si, tii, ti;   // ii=i-1, i=i, s/t=i+1
 int egcd(int a, int b) {
     int r, q, s, t;
     sii = 1, si = 0;
@@ -12,5 +12,5 @@ int egcd(int a, int b) {
         tii = ti, ti = t;
         a = b, b = r;
     }
-    return a; //  return a, sii, tii
+    return a;   //  return a, sii, tii
 }

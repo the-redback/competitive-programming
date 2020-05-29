@@ -1,18 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
-#include <stdlib.h>
-#include <vector>
-#include <stack>
-#include <queue>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
-#define mem(x,y) memset(x,y,sizeof(x));
 
-vector <int> v;
-vector <int> L;
-vector <int> I;
-stack <int> ans;
+#define mem(x, y) memset(x, y, sizeof(x));
+
+vector<int> v;
+vector<int> L;
+vector<int> I;
+stack<int> ans;
 
 void prework(void) {
     I.clear();
@@ -21,8 +15,7 @@ void prework(void) {
     k = 2000000000;
     I.push_back(-1 * k);
 
-    for (i = 0; i < v.size(); i++)
-        L.push_back(1);
+    for (i = 0; i < v.size(); i++) L.push_back(1);
     return;
 }
 
@@ -57,7 +50,7 @@ void show(void) {
         }
     }
     ans.push(v[j]);
-    for (i = j - 1; i >= 0 ; i--) {
+    for (i = j - 1; i >= 0; i--) {
         if (v[i] < v[j] && L[i] == L[j] - 1) {
             ans.push(v[i]);
             j = i;
@@ -77,7 +70,7 @@ main() {
     getchar();
     getchar();
     while (T--) {
-        //input taking methode in uva 497
+        // input taking methode in uva 497
         t++;
         v.clear();
         while (gets(a) && strlen(a)) {
@@ -86,8 +79,7 @@ main() {
         }
         if (v.size()) {
             prework();
-            if (t != 1)
-                puts("");
+            if (t != 1) puts("");
             printf("Max hits: %d\n", LIS());
             show();
         }

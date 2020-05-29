@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 int compare(string a, string b) {
     if (a.size() > b.size()) return 1;
     if (a.size() < b.size()) return -1;

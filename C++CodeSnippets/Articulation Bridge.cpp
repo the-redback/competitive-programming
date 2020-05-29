@@ -1,4 +1,4 @@
-//Undirected Graph
+// Undirected Graph
 /**
  *    @author     : Maruf Tuhin
  *    @School     : CUET CSE 11
@@ -7,33 +7,19 @@
  *    @UVA        : the_redback
  *    @link       : http://www.fb.com/maruf.2hin
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 10010
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        10010
 
-vector<int>e[NN];
-vector< pair<int, int> >bridge;
+vector<int> e[NN];
+vector<pair<int, int> > bridge;
 int depth[NN];
 int par[NN];
 int low[NN];
@@ -50,8 +36,7 @@ int dfs(int u) {
             par[v] = u;
             dfs(v);
             low[u] = min(low[u], low[v]);
-            if (depth[u] < low[v])
-                bridge.pb(mp(u, v));
+            if (depth[u] < low[v]) bridge.pb(mp(u, v));
         } else if (v != par[u])
             low[u] = min(low[u], depth[v]);
     }
@@ -67,8 +52,7 @@ int articulation_Point(int n) {
     bridge.clear();
 
     for (int i = 0; i < n; i++)
-        if (!color[i])
-            dfs(i);
+        if (!color[i]) dfs(i);
 
     int ans = bridge.size();
     printf("%d critical links\n", ans);
@@ -80,7 +64,7 @@ int articulation_Point(int n) {
 int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
-    cin >> tc;        //Test Case
+    cin >> tc;   // Test Case
     int i, j, k, l, m, n;
     int node, edge;
     while (tc--) {
@@ -92,8 +76,7 @@ int main() {
         }
         printf("Case %d:\n", t++);
         articulation_Point(node);
-        for (i = 0; i <= node; i++)
-            e[i].clear();
+        for (i = 0; i <= node; i++) e[i].clear();
     }
     return 0;
 }

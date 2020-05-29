@@ -1,5 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
 
 char a[1001][10000];
+
 void swap(char b[10000]) {
     int temp, i, j, l;
     l = strlen(b);
@@ -9,6 +12,7 @@ void swap(char b[10000]) {
         b[j] = temp;
     }
 }
+
 void work(char a[10000], char b[10000], int n) {
     int i, j, onhand = 0, k, l;
     l = strlen(a);
@@ -33,11 +37,9 @@ main() {
     strcpy(a[1], "1");
     for (i = 2; i < 1001; i++) {
         work(a[i - 1], a[i], i);
-
     }
     while (scanf("%d", &n) == 1) {
         printf("%d!\n%s\n", n, a[n]);
-
     }
     return 0;
 }

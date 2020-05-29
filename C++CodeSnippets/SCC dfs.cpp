@@ -6,47 +6,30 @@
  *    @UVA        : the_redback
  *    @link       : http://www.fb.com/maruf.2hin
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 50050
-
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        50050
 
 int color[NN];
-vector<int>arr;              //topological sorted node
-vector<int>Graph[NN];        //Graph Before SCC
-vector<int>transGraph[NN];   //Transpose Graph Before SCC
-vector<int>newGraph[NN];     //New Graph After SCC
-vector<pair<int, int> >v;    //Edges Before SCC
-int id[NN];                  //Id of Nodes After SCC
-int amount[NN];              //Amount of original node in a SCC node
-
+vector<int> arr;              // topological sorted node
+vector<int> Graph[NN];        // Graph Before SCC
+vector<int> transGraph[NN];   // Transpose Graph Before SCC
+vector<int> newGraph[NN];     // New Graph After SCC
+vector<pair<int, int> > v;    // Edges Before SCC
+int id[NN];                   // Id of Nodes After SCC
+int amount[NN];               // Amount of original node in a SCC node
 
 int dfs_1st(int u) {
     color[u] = true;
     for (int i = 0; i < Graph[u].size(); i++) {
-        if (!color[Graph[u][i]])
-            dfs_1st(Graph[u][i]);
+        if (!color[Graph[u][i]]) dfs_1st(Graph[u][i]);
     }
     arr.pb(u);
 }
@@ -56,8 +39,7 @@ int dfs_2nd(int u, int k) {
     id[u] = k;
 
     for (int i = 0; i < transGraph[u].size(); i++) {
-        if (!color[transGraph[u][i]])
-            dfs_2nd(transGraph[u][i], k);
+        if (!color[transGraph[u][i]]) dfs_2nd(transGraph[u][i], k);
     }
 }
 
@@ -66,9 +48,8 @@ int scc(int n) {
     mem(color, 0);
     int i, j, k, l;
 
-    for (i = 1; i <= n; i++) //Topological Sort
-        if (color[i] == 0)
-            dfs_1st(i);
+    for (i = 1; i <= n; i++)   // Topological Sort
+        if (color[i] == 0) dfs_1st(i);
 
     reverse(all(arr));
 
@@ -76,38 +57,36 @@ int scc(int n) {
     mem(color, 0);
     k = 0;
 
-    for (i = 0; i < arr.size(); i++) { //Identify SCC
+    for (i = 0; i < arr.size(); i++) {   // Identify SCC
         if (!color[arr[i]]) {
             dfs_2nd(arr[i], k + 1);
-            amount[id[arr[i]]] = 1; //Amount of actual node
-            //in SCC node
+            amount[id[arr[i]]] = 1;   // Amount of actual node
+            // in SCC node
             k++;
         } else
             amount[id[arr[i]]]++;
     }
 
-    int node = k;    //Number of SCC node
+    int node = k;   // Number of SCC node
 
-    for (i = 0; i < v.size(); i++) { //Build SCC graph
+    for (i = 0; i < v.size(); i++) {   // Build SCC graph
         k = v[i].first;
         l = v[i].second;
 
-        if (id[k] != id[l])
-            newGraph[id[k]].pb(id[l]);
+        if (id[k] != id[l]) newGraph[id[k]].pb(id[l]);
     }
 
-    return node;  //Number of SCC node.
+    return node;   // Number of SCC node.
 }
-
 
 main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int i, j, k, l, m, n, man;
 
-    cin >> tc;  //Test Case
+    cin >> tc;   // Test Case
     while (tc--) {
-        cin >> n >> m; //n=node, m=edge
+        cin >> n >> m;   // n=node, m=edge
 
         for (i = 0; i <= n; i++) {
             Graph[i].clear();

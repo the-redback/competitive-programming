@@ -7,31 +7,17 @@
  *    @link       : http://www.fb.com/maruf.2hin
  */
 
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define pp(x) pop_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 1050
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define pp(x)     pop_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        1050
 
 struct P {
     double x, y;
@@ -39,43 +25,28 @@ struct P {
         x = X;
         y = Y;
     }
-    P() {
-
-    }
+    P() {}
 };
 
-vector<P>v;
+vector<P> v;
 
-P MV(P a, P b) {
-    return P(b.x - a.x, b.y - a.y);
-}
+P MV(P a, P b) { return P(b.x - a.x, b.y - a.y); }
 
-double DP(P a, P b) {
-    return a.x * b.x + a.y * b.y;
-}
+double DP(P a, P b) { return a.x * b.x + a.y * b.y; }
 
-double CP(P a, P b) {
-    return a.x * b.y - a.y * b.x;
-}
+double CP(P a, P b) { return a.x * b.y - a.y * b.x; }
 
-double A(P a) {
-    return sqrt(a.x * a.x + a.y * a.y);
-}
+double A(P a) { return sqrt(a.x * a.x + a.y * a.y); }
 
-P ADD(P a, P b) {
-    return P(a.x + b.x, a.y + b.y);
-}
+P ADD(P a, P b) { return P(a.x + b.x, a.y + b.y); }
 
-P LV(P a, double l) {
-    return P(a.x * l / A(a), a.y * l / A(a));
-}
+P LV(P a, double l) { return P(a.x * l / A(a), a.y * l / A(a)); }
 
 P pvt;
 
-bool comp(P a, P b) { //False hoile sort korbe
+bool comp(P a, P b) {   // False hoile sort korbe
     long long c = CP(MV(pvt, a), MV(pvt, b));
-    if (c)
-        return c > 0;
+    if (c) return c > 0;
     return A(MV(pvt, a)) < A(MV(pvt, b));
 }
 
@@ -90,7 +61,7 @@ void checkPvt(void) {
     }
 }
 
-vector<P>q;
+vector<P> q;
 
 void go(void) {
     q.clear();
@@ -104,10 +75,8 @@ void go(void) {
         } else
             break;
     }
-    for (int i = 0; i < q.size(); i++)
-        v.pb(q[i]);
+    for (int i = 0; i < q.size(); i++) v.pb(q[i]);
 }
-
 
 main() {
     ios_base::sync_with_stdio(false);

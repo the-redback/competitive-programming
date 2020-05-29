@@ -10,13 +10,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(), x.end()
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
 #define mem(a, b) memset(a, b, sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 1050
+#define inf       1e9
+#define eps       1e-9
+#define NN        1050
 
 /*
 ======[ Input and Operation ]===========
@@ -48,10 +48,12 @@ void update(int node, int low, int high, int rlow, int rhigh, int value) {
         update(left, low, mid, rlow, mid, value);
         update(right, mid + 1, high, mid + 1, rhigh, value);
     }
-    tree[node].sum = tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
+    tree[node].sum =
+        tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
 }
 
-long long query(int node, int low, int high, int rlow, int rhigh, long long carry) {
+long long query(int node, int low, int high, int rlow, int rhigh,
+                long long carry) {
     if (low >= rlow && high <= rhigh) {
         return tree[node].sum + carry * (high - low + 1);
     }
@@ -66,12 +68,11 @@ long long query(int node, int low, int high, int rlow, int rhigh, long long carr
         p2 = query(right, mid + 1, high, rlow, rhigh, carry + tree[node].xtra);
     else {
         p1 = query(left, low, mid, rlow, mid, carry + tree[node].xtra);
-        p2 = query(right, mid + 1, high, mid + 1, rhigh, carry + tree[node].xtra);
+        p2 = query(right, mid + 1, high, mid + 1, rhigh,
+                   carry + tree[node].xtra);
     }
     return p1 + p2;
 }
-
-
 
 main() {
     ios_base::sync_with_stdio(false);

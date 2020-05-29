@@ -1,4 +1,4 @@
-//The Graph is bi-directional/undirected.
+// The Graph is bi-directional/undirected.
 /**
  *    @author     : Maruf Tuhin
  *    @School     : CUET CSE 11
@@ -7,32 +7,18 @@
  *    @UVA        : the_redback
  *    @link       : http://www.fb.com/maruf.2hin
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 10010
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        10010
 
-vector<int>e[NN];
+vector<int> e[NN];
 int depth[NN];
 int par[NN];
 int low[NN];
@@ -50,13 +36,11 @@ void dfs(int u) {
             par[v] = u;
             dfs(v);
             low[u] = min(low[u], low[v]);
-            if (depth[u] <= low[v])
-                Flag[u] = true;
+            if (depth[u] <= low[v]) Flag[u] = true;
         } else if (v != par[u])
             low[u] = min(low[u], depth[v]);
     }
-    if (par[u] == -1)
-        Flag[u] = (call > 1);
+    if (par[u] == -1) Flag[u] = (call > 1);
 }
 
 int articulation_Point(int n) {
@@ -68,20 +52,18 @@ int articulation_Point(int n) {
     Time = 0;
 
     for (int i = 1; i <= n; i++)
-        if (!color[i])
-            dfs(i);
+        if (!color[i]) dfs(i);
 
     int ans = 0;
     for (int i = 1; i <= n; i++)
-        if (Flag[i])
-            ans++;
+        if (Flag[i]) ans++;
     return ans;
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
-    cin >> tc;        //Test Case
+    cin >> tc;   // Test Case
     int i, j, k, l, m, n;
     int node, edge;
     while (tc--) {
@@ -95,8 +77,7 @@ int main() {
         int ans = articulation_Point(node);
         printf("Case %d: %d\n", t++, ans);
 
-        for (i = 0; i <= node; i++)
-            e[i].clear();
+        for (i = 0; i <= node; i++) e[i].clear();
     }
     return 0;
 }

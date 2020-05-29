@@ -1,4 +1,4 @@
-long long nCr(int n, int r) { //
+long long nCr(int n, int r) {   //
     int k, l;
     k = max((r, n - r));
     l = min((r, n - r));

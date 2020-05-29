@@ -8,27 +8,26 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
-#define meminf(a) memset(a,126,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define meminf(a) memset(a, 126, sizeof(a))
 #define inf       1e11
 #define eps       1e-9
 #define mod       1000000007
 #define NN        30100
 
-//cout << setfill('0') << setw(3) << a << endl;
-//cout << fixed << setprecision(20) << a << endl;
+// cout << setfill('0') << setw(3) << a << endl;
+// cout << fixed << setprecision(20) << a << endl;
 
 /*
 ================[ Theme ]=======================
@@ -51,18 +50,15 @@ void mult(ll a[3][3], ll b[3][3]) {
     mem(temp, 0);
     for (i = 0; i < 2; i++)
         for (j = 0; j < 2; j++)
-            for (k = 0; k < 2; k++)
-                temp[i][j] += a[i][k] * b[k][j];
+            for (k = 0; k < 2; k++) temp[i][j] += a[i][k] * b[k][j];
     for (i = 0; i < 2; i++)
-        for (j = 0; j < 2; j++)
-            a[i][j] = temp[i][j] % M;
+        for (j = 0; j < 2; j++) a[i][j] = temp[i][j] % M;
     return;
 }
 
 void BigMat(ll a[3][3], int pos) {
     int i, j, k;
-    if (pos == 1)
-        return;
+    if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
         mult(a, m);
@@ -74,7 +70,8 @@ void BigMat(ll a[3][3], int pos) {
 }
 
 main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     int t = 1, tc;
     cin >> tc;
     ll i, j, k, l, n;
@@ -114,8 +111,7 @@ main() {
         mem(temp, 0);
         for (i = 0; i < 2; i++)
             for (j = 0; j < 1; j++)
-                for (k = 0; k < 2; k++)
-                    temp[i][j] += a[i][k] * m[k][j];
+                for (k = 0; k < 2; k++) temp[i][j] += a[i][k] * m[k][j];
         printf("Case %d: %lld\n", t++, temp[1][0] % M);
     }
     return 0;

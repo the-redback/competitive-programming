@@ -6,28 +6,15 @@
  *    @UVA        : Redback
  *    @link       : http://www.fb.com/maruf.2hin
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
+using namespace std;
 
 using namespace std;
-#define inf HUGE_VAL
-#define mem(a,b) memset(a,b,sizeof(a))
-#define mod 1000000007
+#define inf       HUGE_VAL
+#define mem(a, b) memset(a, b, sizeof(a))
+#define mod       1000000007
 
 main() {
-	ios_base::sync_with_stdio(false);
-	...............
+    ios_base::sync_with_stdio(false);
+    // ...............
 }

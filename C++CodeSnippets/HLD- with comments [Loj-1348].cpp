@@ -4,38 +4,39 @@ you are given a tree (a connected graph with no cycles) with n nodes,
 nodes represent places, edges represent roads. In each node,
 initially there are an arbitrary number of genies.
 But the numbers of genies change in time.
-So, you are given a tree, the number of genies in each node and several queries of two types. They are:
+So, you are given a tree, the number of genies in each node and several queries
+of two types. They are:
 
-1)      0 i j, it means that you have to find the total number of genies in the nodes that occur in path from node i to j (0 <= i, j < n).
-2)      1 i v, it means that number of genies in node i is changed to v (0 <= i < n, 0 <= v <= 1000).
+1)      0 i j, it means that you have to find the total number of genies in the
+nodes that occur in path from node i to j (0 <= i, j < n). 2)      1 i v, it
+means that number of genies in node i is changed to v (0 <= i < n, 0 <= v <=
+1000).
 */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
 #define NN        50010
 
-#define read(a)   scanf("%lld",&a)
-
+#define read(a) scanf("%lld", &a)
 
 #define root 0
-#define LN 16
+#define LN   16
 
-vector <ll> adj[NN];
+vector<ll> adj[NN];
 ll baseArray[NN], ptr, value[NN];
 ll chainNo, chainInd[NN], chainHead[NN], posInBase[NN];
 ll depth[NN], par[NN][LN], subsize[NN];
@@ -65,7 +66,6 @@ void make_tree(ll node, ll low, ll high) {
  * Point update. Update a single element of the segment tree.
  */
 void update_tree(ll node, ll low, ll high, ll ind, ll val) {
-
     if (low == ind && low == high) {
         seg[node] = val;
         return;
@@ -80,7 +80,7 @@ void update_tree(ll node, ll low, ll high, ll ind, ll val) {
         update_tree(right, mid + 1, high, ind, val);
 
     seg[node] = seg[left] + seg[right];
-    return ;
+    return;
 }
 
 /*
@@ -88,14 +88,12 @@ void update_tree(ll node, ll low, ll high, ll ind, ll val) {
  * Given S and E, it will return the maximum value in the range [S,E)
  */
 ll query_tree(ll node, ll low, ll high, ll rlow, ll rhigh) {
-
     if (low >= rlow && high <= rhigh) {
         return seg[node];
     }
     ll left = node << 1;
     ll right = left | 1;
     ll mid = (low + high) >> 1;
-
 
     if (rhigh <= mid)
         return query_tree(left, low, mid, rlow, rhigh);
@@ -111,8 +109,9 @@ ll query_tree(ll node, ll low, ll high, ll rlow, ll rhigh) {
 /*
  * query_up:
  * It takes two nodes u and v, condition is that v is an ancestor of u
- * We query the chain in which u is present till chain head, then move to next chain up
- * We do that way till u and v are in the same chain, we query for that part of chain and break
+ * We query the chain in which u is present till chain head, then move to next
+ * chain up We do that way till u and v are in the same chain, we query for that
+ * part of chain and break
  */
 
 ll query_up(ll u, ll v) {
@@ -121,18 +120,22 @@ ll query_up(ll u, ll v) {
     while (1) {
         uchain = chainInd[u];
         if (uchain == vchain) {
-            // Both u and v are in the same chain, so we need to query from u to v, update answer and break.
-            // We break because we came from u up till v, we are done
-            //if(u==v) break;
+            // Both u and v are in the same chain, so we need to query from u to
+            // v, update answer and break. We break because we came from u up
+            // till v, we are done
+            // if(u==v) break;
             ans += query_tree(1, 1, ptr - 1, posInBase[v], posInBase[u]);
             // Above is call to segment tree query function
             break;
         }
-        ans += query_tree(1, 1, ptr - 1, posInBase[chainHead[uchain]], posInBase[u]);
-        // Above is call to segment tree query function. We do from chainHead of u till u. That is the whole chain from
-        // start till head. We then update the answer
-        u = chainHead[uchain]; // move u to u's chainHead
-        u = par[u][0]; //Then move to its parent, that means we changed chains
+        ans += query_tree(1, 1, ptr - 1, posInBase[chainHead[uchain]],
+                          posInBase[u]);
+        // Above is call to segment tree query function. We do from chainHead of
+        // u till u. That is the whole chain from start till head. We then
+        // update the answer
+        u = chainHead[uchain];   // move u to u's chainHead
+        u = par[u][0];   // Then move to its parent, that means we changed
+                         // chains
     }
     return ans;
 }
@@ -142,16 +145,11 @@ ll query_up(ll u, ll v) {
  * Takes two nodes u, v and returns Lowest Common Ancestor of u, v
  */
 ll LCA(ll u, ll v) {
-
-
-    if (depth[u] < depth[v])
-        swap(u, v);
+    if (depth[u] < depth[v]) swap(u, v);
     ll diff = depth[u] - depth[v];
     for (ll i = 0; i < LN; i++)
-        if ( (diff >> i) & 1 )
-            u = par[u][i];
-    if (u == v)
-        return u;
+        if ((diff >> i) & 1) u = par[u][i];
+    if (u == v) return u;
     for (ll i = LN - 1; i >= 0; i--)
         if (par[u][i] != par[v][i]) {
             u = par[u][i];
@@ -162,12 +160,13 @@ ll LCA(ll u, ll v) {
 
 ll query(ll u, ll v) {
     /*
-     * We have a query from u to v, we break it into two queries, u to LCA(u,v) and LCA(u,v) to v
+     * We have a query from u to v, we break it into two queries, u to LCA(u,v)
+     * and LCA(u,v) to v
      */
     ll lca = LCA(u, v);
-    ll ans = query_up(u, lca); // One part of path
-    ll ans2 = query_up(v, lca); // another part of path
-    return ans + ans2 - query_up(lca, lca); // take the maximum of both paths
+    ll ans = query_up(u, lca);                // One part of path
+    ll ans2 = query_up(v, lca);               // another part of path
+    return ans + ans2 - query_up(lca, lca);   // take the maximum of both paths
 }
 
 /*
@@ -175,7 +174,7 @@ ll query(ll u, ll v) {
  * We just need to find its position in segment tree and update it
  */
 void change(ll u, ll val) {
-    //ll u = otherEnd[i];
+    // ll u = otherEnd[i];
     update_tree(1, 1, ptr - 1, posInBase[u], val);
 }
 
@@ -192,10 +191,11 @@ void change(ll u, ll val) {
  */
 void HLD(ll curNode, ll prev) {
     if (chainHead[chainNo] == -1) {
-        chainHead[chainNo] = curNode; // Assign chain head
+        chainHead[chainNo] = curNode;   // Assign chain head
     }
     chainInd[curNode] = chainNo;
-    posInBase[curNode] = ptr; // Position of this node in baseArray which we will use in Segtree
+    posInBase[curNode] = ptr;   // Position of this node in baseArray which we
+                                // will use in Segtree
     baseArray[ptr++] = value[curNode];
 
     ll sc = -1, ncost;
@@ -266,9 +266,12 @@ int main() {
         }
 
         chainNo = 0;
-        dfs(root, -1); // We set up subsize, depth and parent for each node
-        HLD(root, -1); // We decomposed the tree and created baseArray
-        make_tree(1, 1, ptr - 1); // We use baseArray and construct the needed segment tree
+        dfs(root, -1);   // We set up subsize, depth and parent for each node
+        HLD(root, -1);   // We decomposed the tree and created baseArray
+        make_tree(
+            1, 1,
+            ptr -
+                1);   // We use baseArray and construct the needed segment tree
 
         // Below Dynamic programming code is for LCA.
         for (ll lev = 1; lev <= LN - 1; lev++) {

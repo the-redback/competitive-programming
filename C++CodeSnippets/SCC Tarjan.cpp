@@ -6,40 +6,25 @@
  *    @UVA        : the_redback
  *    @link       : http://www.fb.com/maruf.2hin
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 1050
-#define MAX 1000000
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        1050
+#define MAX       1000000
 
-
-bool Flag[MAX];         //If a node already belongs to a scc or not.
-int depth[MAX];         //The time when a node is visited
-int Lowlink[MAX];       //A node connected with lowest timed node [if scc exist]
+bool Flag[MAX];     // If a node already belongs to a scc or not.
+int depth[MAX];     // The time when a node is visited
+int Lowlink[MAX];   // A node connected with lowest timed node [if scc exist]
 bool color[MAX];
-int belong[MAX];        //A node blongs to which SCC
-vector<int> G[MAX];     //Graph Store
-stack<int>mystack;      //order of nodes r visited
+int belong[MAX];      // A node blongs to which SCC
+vector<int> G[MAX];   // Graph Store
+stack<int> mystack;   // order of nodes r visited
 int time, top, scc;
 
 void tarjan(int u) {
@@ -74,8 +59,7 @@ void findSCC(int n) {
     mem(color, 0);
     mem(Lowlink, 126);
     for (int i = 1; i <= n; i++)
-        if (!color[i])
-            tarjan(i);
+        if (!color[i]) tarjan(i);
 }
 
 int main() {
@@ -91,7 +75,6 @@ int main() {
 
     return 0;
 }
-
 
 /*
 Input:

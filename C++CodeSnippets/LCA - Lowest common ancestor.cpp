@@ -8,35 +8,34 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
-#define meminf(a) memset(a,126,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define meminf(a) memset(a, 126, sizeof(a))
 #define inf       1e11
 #define eps       1e-9
 #define mod       10007
 #define NN        10010
 
-//cout << setfill('0') << setw(3) << a << endl;
-//cout << fixed << setprecision(20) << a << endl;
+// cout << setfill('0') << setw(3) << a << endl;
+// cout << fixed << setprecision(20) << a << endl;
 
-ll par[NN];      //Parent
-ll level[NN];    //level in tree
-bool color[NN];   //DFS color
-ll P[NN][20];    //Sparse table
-vector<ll>g[NN]; //Gragh store
+ll par[NN];         // Parent
+ll level[NN];       // level in tree
+bool color[NN];     // DFS color
+ll P[NN][20];       // Sparse table
+vector<ll> g[NN];   // Gragh store
 
-//1 based index.
+// 1 based index.
 
 void dfs(ll u) {
     ll i, v;
@@ -54,28 +53,21 @@ void dfs(ll u) {
 }
 
 ll lca_query(ll p, ll q) {
-    if (level[p] < level[q])
-        swap(p, q);
+    if (level[p] < level[q]) swap(p, q);
     ll i, j, k, log;
     log = 1;
     while (1) {
         ll next = log + 1;
-        if (1 << next > level[p])
-            break;
+        if (1 << next > level[p]) break;
         log++;
     }
     for (i = log; i >= 0; i--)
-        if (level[p] - (1 << i) >= level[q])
-            p = P[p][i];
-    if (p == q)
-        return p;
+        if (level[p] - (1 << i) >= level[q]) p = P[p][i];
+    if (p == q) return p;
     for (i = log; i >= 0; i--)
-        if (P[p][i] != -1 && P[p][i] != P[q][i])
-            p = P[p][i], q = P[q][i];
+        if (P[p][i] != -1 && P[p][i] != P[q][i]) p = P[p][i], q = P[q][i];
     return par[p];
-
 }
-
 
 void lca_init(ll n) {
     mem(color, 0);
@@ -85,28 +77,24 @@ void lca_init(ll n) {
 
     ll i, j;
 
-    for (i = 1; i <= n; i++)
-        P[i][0] = par[i];
+    for (i = 1; i <= n; i++) P[i][0] = par[i];
 
     for (j = 1; 1 << j <= n; j++)
         for (i = 1; i <= n; i++)
-            if (P[i][j - 1] != -1)
-                P[i][j] = P[P[i][j - 1]][j - 1];
+            if (P[i][j - 1] != -1) P[i][j] = P[P[i][j - 1]][j - 1];
 
     return;
 }
 
-
 main() {
-    //ios_base::sync_with_stdio(0); cin.tie(0);
+    // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     scanf("%d", &tc);
     ll i, j, k, l, n;
     ll r;
     while (tc--) {
         scanf("%lld", &n);
-        for (i = 0; i <= n; i++)
-            g[i].clear();
+        for (i = 0; i <= n; i++) g[i].clear();
 
         for (i = 0; i < n - 1; i++) {
             scanf("%lld %lld", &k, &l);
@@ -119,11 +107,9 @@ main() {
         while (r--) {
             cin >> k >> l;
             cout << lca_query(k, l) << "\n";
-
         }
-        //if(tc)
+        // if(tc)
         puts("");
-
     }
     return 0;
 }

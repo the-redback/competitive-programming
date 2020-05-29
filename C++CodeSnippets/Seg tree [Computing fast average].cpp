@@ -8,26 +8,24 @@
  */
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
 #define ft        first
 #define sd        second
 #define mp        make_pair
 #define pb(x)     push_back(x)
-#define all(x)    x.begin(),x.end()
-#define allr(x)   x.rbegin(),x.rend()
-#define mem(a,b)  memset(a,b,sizeof(a))
+#define all(x)    x.begin(), x.end()
+#define allr(x)   x.rbegin(), x.rend()
+#define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
 #define NN        100010
 
-#define read(a)   scanf("%lld",&a)
-
+#define read(a) scanf("%lld", &a)
 
 struct data {
     ll sum;
@@ -94,7 +92,7 @@ ll query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
     ll mid = (low + high) / 2;
 
     ll p1 = 0, p2 = 0;
-    if ((high - low + 1)*tree[node].xtra == tree[node].sum )
+    if ((high - low + 1) * tree[node].xtra == tree[node].sum)
         carry = tree[node].xtra;
     if (rhigh <= mid)
         p1 = query(left, low, mid, rlow, rhigh, carry);
@@ -106,8 +104,6 @@ ll query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
     }
     return p1 + p2;
 }
-
-
 
 main() {
     ios_base::sync_with_stdio(false);
@@ -130,7 +126,7 @@ main() {
                 ll res = (k - j + 1);
                 ll gcd = __gcd(res, ans);
                 if (res / gcd > 1)
-                    printf("%lld/%lld\n", ans / gcd, res / gcd );
+                    printf("%lld/%lld\n", ans / gcd, res / gcd);
                 else
                     printf("%lld\n", ans / gcd);
             }

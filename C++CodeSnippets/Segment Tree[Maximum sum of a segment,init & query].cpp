@@ -6,32 +6,19 @@
  *    @UVA        : the_redback
  *    @link       : maruf.2hin@gmail.com
  */
-#include<cstdio>
-#include<cstring>
-#include<cmath>
-#include<iostream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define mem(a,b) memset(a,b,sizeof(a))
-#define pb push_back
-#define pp pop_back
-#define inf 1000000000
-#define NN 200010
+#define mem(a, b) memset(a, b, sizeof(a))
+#define pb        push_back
+#define pp        pop_back
+#define inf       1000000000
+#define NN        200010
 
 struct data {
     int totalsum, maxsum, leftmax, rightmax;
-    data(int k) {
-        totalsum = maxsum = leftmax = rightmax = k;
-    }
-    data() {
-
-    }
+    data(int k) { totalsum = maxsum = leftmax = rightmax = k; }
+    data() {}
 } arr[NN];
 
 int a[65010];
@@ -61,8 +48,7 @@ void init(int node, int low, int high) {
 }
 
 data query(int node, int low, int high, int rlow, int rhigh) {
-    if (low >= rlow && high <= rhigh)
-        return arr[node];
+    if (low >= rlow && high <= rhigh) return arr[node];
     int left = node * 2;
     int right = left + 1;
     int mid = (low + high) / 2;
@@ -76,7 +62,6 @@ data query(int node, int low, int high, int rlow, int rhigh) {
         data R = query(right, mid + 1, high, mid + 1, rhigh);
         return merge(L, R);
     }
-
 }
 
 main() {
@@ -84,10 +69,9 @@ main() {
     int t, tc;
     int i, j, k;
     int res, u, w, p, n, x, y, z, m, q, r, v, zero;
-    //cin>>tc;
+    // cin>>tc;
     while (cin >> n) {
-        for (i = 1; i <= n; i++)
-            cin >> a[i];
+        for (i = 1; i <= n; i++) cin >> a[i];
         init(1, 1, n);
         cin >> k;
         while (k--) {

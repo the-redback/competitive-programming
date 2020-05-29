@@ -1,8 +1,10 @@
-#define NIL -1
-#define white 0
-#define gray 1
-#define black 2
+#include <bits/stdc++.h>
 using namespace std;
+
+#define NIL   -1
+#define white 0
+#define gray  1
+#define black 2
 
 int dis[MAX];
 int parent[MAX];
@@ -34,8 +36,7 @@ void BFS(int s, int v) {
     }
 
     printf("\n***distances***\n");
-    for (int i = 1; i <= v; i++)
-        printf("distance[%d]= %d\n", i, dis[i]);
+    for (int i = 1; i <= v; i++) printf("distance[%d]= %d\n", i, dis[i]);
     return;
 }
 
