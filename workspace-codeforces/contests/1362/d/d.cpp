@@ -12,8 +12,8 @@
 using namespace std;
 
 typedef long long ll;
-#define xx        first
-#define yy        second
+#define ft        first
+#define sd        second
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
@@ -49,14 +49,15 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+vector<pair<ll, ll>> v;
+vector<int> e[500010];
+vector<int> th(500010);
+bitset<500010> fl, vis;
 
 void solve(ll n) {
     ll i, j, k;
     ll m;
     cin >> m;
-    vector<ll> e[n + 10];
-    vector<pair<ll, ll>> v;
-    vector<ll>th(n+10);
 
     for (i = 0; i < m; i++) {
         cin >> k >> j;
@@ -66,22 +67,37 @@ void solve(ll n) {
 
     for (i = 1; i <= n; i++) {
         cin >> k;
-        th[i]=k;
+        th[i] = k;
         v.pb(make_pair(k, i));
     }
 
     sort(all(v));
 
     for (i = 0; i < n; i++) {
-        k = v[i].second;
+        ll xx = v[i].second;
+        dbg(i, xx, v[i]);
+        fl.reset();
 
-        for (j = 0; j < e[k].size(); j++) {
-            if (e[k][j] != v[i].second && th[e[k][j]] == v[i].first) {
-                dbg(i,v[i],k,e[k][j]);
+        for (j = 0; j < e[xx].size(); j++) {
+            ll yy = e[xx][j];
+            if (th[yy] == th[xx]) {
+                dbg(i, v[i], k, e[xx][j]);
+                cout << "-1\n";
+                return;
+            }
+            if (vis[yy] != 0) {
+                fl[th[yy]] = 1;
+            }
+        }
+        for (j = 1; j < v[i].first; j++) {
+            if (fl[j] == 0) {
+                dbg(xx, th[xx], v[i].first, j, fl[j]);
                 cout << "-1\n";
                 return;
             }
         }
+        fl[v[i].first] = 1;
+        vis[xx] = 1;
     }
 
     for (i = 0; i < n; i++) {
