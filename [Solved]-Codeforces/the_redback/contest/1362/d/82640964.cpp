@@ -12,12 +12,12 @@
 using namespace std;
 
 typedef long long ll;
-#define ft        first
-#define sd        second
+#define xx        first
+#define yy        second
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) comemset(a, b, sizeof(a))
+#define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
@@ -50,16 +50,36 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-vector<pair<ll, ll>> v;
+int vis[500010];
 vector<int> e[500010];
 vector<int> th(500010);
-bitset<500010> fl, vis;
+bitset<500010> fl;
+
+ll flag;
+
+ll dfs(ll u, ll val) {
+    vis[u] = val;
+
+    for (ll i = 0; i < e[u].size(); i++) {
+        ll v = e[u][i];
+        if (th[u] == th[v]) {
+            flag = 1;
+        }
+        if (vis[v] == -1) {
+            dfs(u, val);
+        }
+    }
+    return 0;
+}
 
 void solve(ll n) {
     ll i, j, k;
     ll m;
     cin >> m;
-    
+    vector<pair<ll, ll>> v;
+    mem(vis, -1);
+    flag = 0;
+
     for (i = 0; i < m; i++) {
         cin >> k >> j;
         e[k].pb(j);
@@ -72,11 +92,20 @@ void solve(ll n) {
         v.pb(make_pair(k, i));
     }
 
-    sort(all(v));    
+    mem(vis, -1);
+
+    // j = 1;
+    // for (i = 1; i < n; i++) {
+    //     if (vis[i] == -1) {
+    //         dfs(i, j++);
+    //     }
+    // }
+
+    sort(all(v));
 
     for (i = 0; i < n; i++) {
         ll xx = v[i].second;
-        dbg(i, xx, v[i]);
+        dbg(i,xx,v[i]);
         fl.reset();
 
         for (j = 0; j < e[xx].size(); j++) {
@@ -86,11 +115,10 @@ void solve(ll n) {
                 cout << "-1\n";
                 return;
             }
-            if (vis[yy] != 0) {
-                fl[th[yy]] = 1;
+            if(vis[yy]!=0){
+                fl[th[yy]]=1;
             }
         }
-        
         for (j = 1; j < v[i].first; j++) {
             if (fl[j] == 0) {
                 dbg(xx, th[xx], v[i].first, j, fl[j]);
@@ -98,11 +126,9 @@ void solve(ll n) {
                 return;
             }
         }
-        
         fl[v[i].first] = 1;
-        vis[xx] = 1;
+        vis[xx]=1;
     }
-    
 
     for (i = 0; i < n; i++) {
         cout << v[i].second << " ";

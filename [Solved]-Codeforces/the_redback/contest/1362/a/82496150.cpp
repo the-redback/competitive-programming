@@ -12,8 +12,8 @@
 using namespace std;
 
 typedef long long ll;
-#define ft        first
-#define sd        second
+#define xx        first
+#define yy        second
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()

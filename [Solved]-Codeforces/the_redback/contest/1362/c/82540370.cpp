@@ -12,8 +12,8 @@
 using namespace std;
 
 typedef long long ll;
-#define ft        first
-#define sd        second
+#define xx        first
+#define yy        second
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
@@ -55,7 +55,25 @@ void solve() {
     ll n, m;
     cin >> n;
 
-    cout << n << "\n";
+    ll sum = 0;
+    ll ans = -1;
+    for (i = 63; i >= 0; i--) {
+        if (n & 1ll << i) {
+            if (ans == -1) {
+                ans = 1;
+                sum += ans;
+                continue;
+            }
+            ans *= 2;
+            ans++;
+            sum += ans;
+        } else if (ans != -1) {
+            ans *= 2;
+            sum += ans;
+        }
+    }
+
+    cout << sum << "\n";
     return;
 }
 

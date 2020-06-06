@@ -12,8 +12,8 @@
 using namespace std;
 
 typedef long long ll;
-#define ft        first
-#define sd        second
+#define xx        first
+#define yy        second
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
@@ -49,31 +49,62 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+vector<pair<ll, ll>> v;
+vector<int> e[500010];
+vector<int> th(500010);
+bitset<500010> fl, vis;
 
-void solve() {
+void solve(ll n) {
     ll i, j, k;
-    ll n, m;
-    cin >> n;
+    ll m;
+    cin >> m;
 
-    ll sum = 0;
-    ll ans = -1;
-    for (i = 63; i >= 0; i--) {
-        if (n & 1ll << i) {
-            if (ans == -1) {
-                ans = 1;
-                sum += ans;
-                continue;
-            }
-            ans *= 2;
-            ans++;
-            sum += ans;
-        } else if (ans != -1) {
-            ans *= 2;
-            sum += ans;
-        }
+    for (i = 0; i < m; i++) {
+        cin >> k >> j;
+        e[k].pb(j);
+        e[j].pb(k);
     }
 
-    cout << sum << "\n";
+    for (i = 1; i <= n; i++) {
+        cin >> k;
+        th[i] = k;
+        v.pb(make_pair(k, i));
+    }
+
+    sort(all(v));
+
+    for (i = 0; i < n; i++) {
+        ll xx = v[i].second;
+        dbg(i, xx, v[i]);
+        fl.reset();
+
+        for (j = 0; j < e[xx].size(); j++) {
+            ll yy = e[xx][j];
+            if (th[yy] == th[xx]) {
+                dbg(i, v[i], k, e[xx][j]);
+                cout << "-1\n";
+                return;
+            }
+            if (vis[yy] != 0) {
+                fl[th[yy]] = 1;
+            }
+        }
+        for (j = 1; j < v[i].first; j++) {
+            if (fl[j] == 0) {
+                dbg(xx, th[xx], v[i].first, j, fl[j]);
+                cout << "-1\n";
+                return;
+            }
+        }
+        fl[v[i].first] = 1;
+        vis[xx] = 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        cout << v[i].second << " ";
+    }
+
+    cout << "\n";
     return;
 }
 
@@ -82,10 +113,10 @@ int main() {
     cin.tie(0);
 
     ll t = 1, tc;
-    cin >> tc;
+    // cin >> tc;
     ll n, m;
-    while (tc--) {
-        solve();
+    while (cin >> n) {
+        solve(n);
     }
     return 0;
 }
