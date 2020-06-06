@@ -17,7 +17,7 @@ typedef long long ll;
 #define pb(x)     push_back(x)
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
+#define mem(a, b) comemset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
 #define mod       1000000007
@@ -49,6 +49,7 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+
 vector<pair<ll, ll>> v;
 vector<int> e[500010];
 vector<int> th(500010);
@@ -58,7 +59,7 @@ void solve(ll n) {
     ll i, j, k;
     ll m;
     cin >> m;
-
+    
     for (i = 0; i < m; i++) {
         cin >> k >> j;
         e[k].pb(j);
@@ -71,7 +72,7 @@ void solve(ll n) {
         v.pb(make_pair(k, i));
     }
 
-    sort(all(v));
+    sort(all(v));    
 
     for (i = 0; i < n; i++) {
         ll xx = v[i].second;
@@ -89,6 +90,7 @@ void solve(ll n) {
                 fl[th[yy]] = 1;
             }
         }
+        
         for (j = 1; j < v[i].first; j++) {
             if (fl[j] == 0) {
                 dbg(xx, th[xx], v[i].first, j, fl[j]);
@@ -96,9 +98,11 @@ void solve(ll n) {
                 return;
             }
         }
+        
         fl[v[i].first] = 1;
         vis[xx] = 1;
     }
+    
 
     for (i = 0; i < n; i++) {
         cout << v[i].second << " ";

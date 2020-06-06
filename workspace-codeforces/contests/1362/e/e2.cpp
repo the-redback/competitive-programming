@@ -29,21 +29,21 @@ typedef long long ll;
 #ifdef redback
 #include "prettyprint.hpp"
 #define dbg(...)                        \
-    cout << "L-" << __LINE__ << " :: "; \
+    cerr << "L-" << __LINE__ << " :: "; \
     _print_out(#__VA_ARGS__, __VA_ARGS__);
 template <typename T>
 void _print_out(const char* name, T&& arg1) {
-    cout << name << " = " << arg1 << endl;
+    cerr << name << " = " << arg1 << endl;
 }
 template <typename T1, typename... Args>
 void _print_out(const char* names, T1&& arg1, Args&&... args) {
     const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 << " | ";
+    cerr.write(names, comma - names) << " = " << arg1 << " | ";
     _print_out(comma + 1, args...);
 }
 template <typename T>
 void _print_out(const char* name, T a[], int n) {
-    cout << name << " = " << pretty_print_array(a, n) << endl;
+    cerr << name << " = " << pretty_print_array(a, n) << endl;
 }
 #else
 #define dbg(args...)
@@ -51,8 +51,7 @@ void _print_out(const char* name, T a[], int n) {
 /* -------------------------------------------------------------------------- */
 const ll NN = 1e6 + 10;
 const ll mod = 1e9 + 7;
-ll fr[NN];
-vector<ll> v;
+vector<ll> fr(NN);
 
 ll bigMod(ll a, ll b) {
     ll r = 1;
@@ -64,20 +63,30 @@ ll bigMod(ll a, ll b) {
     return r % mod;
 }
 
+ll chkPower(ll x, ll p) {
+    ll sum = 1;
+    while (p) {
+        sum *= x;
+        if (sum > 1e6) {
+            return -1;
+        }
+        p--;
+    }
+    return sum;
+}
+
 void solve() {
     ll i, j, k;
     ll n, m;
     ll p;
     cin >> n >> p;
-    ll mx = 0;
-    v.clear();
+    vector<ll> v;
     for (i = 0; i < n; i++) {
         cin >> k;
         if (fr[k] == 0) {
             v.pb(k);
         }
         fr[k]++;
-        mx = max(mx, k);
     }
     ll fl = 0;
     if (p == 1) {
@@ -88,54 +97,57 @@ void solve() {
             cout << "0\n";
         }
     }
+    sort(all(v));
 
-    for (i = mx; i >= 0 && !fl; i--) {
-        dbg(i, fr[i]);
-        if (fr[i] % 2 == 0) {
+    for (i = v.size() - 1; i >= 0 && !fl; i--) {
+        ll cur = v[i];
+        if (fr[cur] % 2 == 0) {
             continue;
         }
         ll need = 1;
         ll ok = 0;
         for (j = i - 1; j >= 0; j--) {
-            dbg(j, need, p);
-            need *= p;
+            ll ch = chkPower(p, v[j + 1] - v[j]);
+            if (ch == -1) {
+                ok = 0;
+                break;
+            }
+            need *= ch;
+
             if (need > 1e6) {
                 ok = 0;
                 break;
             }
-            ll have = fr[j];
+            ll have = fr[v[j]];
             if (have >= need) {
                 i = j + 1;
-                fr[j] -= need;
+                fr[v[j]] -= need;
                 ok = 1;
                 break;
             }
-            need -= have;
+            need = need - have;
         }
-        dbg(need, i, j);
 
         if (!ok) {
-            ll prev = bigMod(p, i);
-            // ll next = 0;
+            ll prev = bigMod(p, v[i]);
+            ll next = 0;
             for (int j = i - 1; j >= 0; j--) {
-                if (fr[j] != 0) {
-                    ll tmp = bigMod(p, j);
-                    prev = ((prev - (tmp * fr[j]) % mod) + mod) % mod;
-                }
+                ll tmp = bigMod(p, v[j]);
+                next = (next + (tmp * fr[v[j]]) % mod) % mod;
             }
-            // dbg(i, prev, next);
-            // ll ans = ((prev - next)%mod +mod)%mod;
-            cout << prev << "\n";
+            ll ans = ((prev - next) % mod + mod) % mod;
+            cout << ans << "\n";
             break;
         }
     }
     if (!fl && i < 0) {
         cout << "0\n";
     }
-
     for (i = 0; i < v.size(); i++) {
         fr[v[i]] = 0;
     }
+
+    return;
 }
 
 int main() {

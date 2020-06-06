@@ -20,3 +20,33 @@ int main() {
     }
     return 0;
 }
+
+
+// another way of bigmod
+const int mod = 1e9 + 7;
+int my_pow(int a, int b) {
+    int r = 1;
+    while (b) {
+        if (b % 2) r = (long long)r * a % mod;
+        b /= 2;
+        a = (long long)a * a % mod;
+    }
+    return r;
+}
+
+// Another way
+const int MOD = 1e9 + 7;
+int Pow_log(int x, int p) {
+    int ans = 1;
+    while(p) {
+        if(p % 2) {
+            ans = (1LL * ans * x) % MOD;
+            p--;
+        }
+        else {
+            x = (1LL * x * x) % MOD;
+            p >>= 1;
+        }
+    }
+    return ans;
+}
