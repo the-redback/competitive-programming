@@ -51,12 +51,43 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-void solve() {
+void solve(ll n) {
     ll i, j, k;
-    ll n, m;
-    cin >> n;
+    ll m;
+    vector<ll> v(n + 1);
+    vector<ll> p(n + 1);
+    vector<ll> v1, p1;
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        v[k] = i;
+        dbg(k);
+        v1.pb(k);
+    }
 
-    cout << n << "\n";
+    ll cnt = 0;
+    ll in = 0;
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        j = i - v[k];
+        if (j < 0) j += n;
+        p[j]++;
+        dbg(k, v[k], p[j], cnt);
+        if (cnt < p[j]) {
+            cnt = max(cnt, p[j]);
+            in = j;
+        }
+
+        p1.pb(k);
+    }
+
+    ll sum = 0;
+
+    for (i = 0; i < n; i++) {
+        j = (i + in) % n;
+        if (v1[i] == p1[j]) sum++;
+    }
+
+    cout << sum << "\n";
     return;
 }
 
@@ -65,10 +96,10 @@ int main() {
     cin.tie(0);
 
     ll t = 1, tc;
-    cin >> tc;
+    // cin >> tc;
     ll n, m;
-    while (tc--) {
-        solve();
+    while (cin >> n) {
+        solve(n);
     }
     return 0;
 }

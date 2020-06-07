@@ -51,12 +51,28 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-void solve() {
+void solve(ll n) {
     ll i, j, k;
-    ll n, m;
-    cin >> n;
+    ll m;
 
-    cout << n << "\n";
+    vector<ll> v(n);
+    for (i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+
+    sort(allr(v));
+    ll sum = v[v.size() - 1];
+    ll ini = 0, inj = 0;
+    for (ll i = v.size() - 1; i >= 0; i--) {
+        for (ll j = i - 1; j >= 0; j--) {
+            sum = max(sum, v[i] | v[j]);
+            for (int k = j - 1; k >= 0; k--) {
+                sum = max(sum, v[i] | v[j] | v[k]);
+            }
+        }
+    }
+
+    cout << sum << "\n";
     return;
 }
 
@@ -65,10 +81,10 @@ int main() {
     cin.tie(0);
 
     ll t = 1, tc;
-    cin >> tc;
+    // cin >> tc;
     ll n, m;
-    while (tc--) {
-        solve();
+    while (cin >> n) {
+        solve(n);
     }
     return 0;
 }

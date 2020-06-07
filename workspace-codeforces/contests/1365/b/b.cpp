@@ -50,13 +50,50 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+vector<ll> v, p;
+
+ll isSorted() {
+    sort(all(p));
+    for (ll i = 0; i < p.size(); i++) {
+        if (p[i] != v[i]) return 0;
+    }
+    return 1;
+}
 
 void solve() {
     ll i, j, k;
     ll n, m;
+    v.clear();
+    p.clear();
     cin >> n;
 
-    cout << n << "\n";
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        v.pb(k);
+        p.pb(k);
+    }
+
+    ll o = 0, z = 0;
+
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        if (k == 0)
+            z++;
+        else
+            o++;
+    }
+
+    dbg(o, z, v);
+
+    if (o == 0 || z == 0) {
+        if (isSorted())
+            cout << "Yes\n";
+        else
+            cout << "No\n";
+        return;
+    }
+
+    cout << "Yes\n";
     return;
 }
 

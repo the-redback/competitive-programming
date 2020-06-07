@@ -50,13 +50,77 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+char a[60][60];
+bool vis[60][60];
+
+int dx[] = {-1, 0, 0, 1};
+int dy[] = {0, -1, 1, 0};
+ll R, C;
+
+void rec(ll i, ll j) {
+    vis[i][j] = 1;
+
+    for (int k = 0; k < 4; k++) {
+        ll x = i + dx[k];
+        ll y = j + dy[k];
+        if (x < 0 || y < 0 || x >= R || y >= C || a[x][y] == '#' || vis[x][y]) {
+            continue;
+        }
+        rec(x, y);
+    }
+    return;
+}
+
+void chk(ll r, ll c) {
+    for (int k = 0; k < 4; k++) {
+        ll x = r + dx[k];
+        ll y = c + dy[k];
+        if (x < 0 || y < 0 || x >= R || y >= C) {
+            continue;
+        }
+        if (a[x][y] == '.') {
+            a[x][y] = '#';
+        }
+    }
+}
 
 void solve() {
     ll i, j, k;
     ll n, m;
-    cin >> n;
+    cin >> n >> m;
+    R = n;
+    C = m;
 
-    cout << n << "\n";
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            if (a[i][j] == 'B') {
+                chk(i, j);
+            }
+        }
+    }
+
+    mem(vis, 0);
+    if (a[n - 1][m - 1] != '#') {
+        rec(n - 1, m - 1);
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            if (a[i][j] == 'G' && vis[i][j] != 1) {
+                cout << "No\n";
+                return;
+            } else if (a[i][j] == 'B' && vis[i][j] == 1) {
+                cout << "No\n";
+                return;
+            }
+        }
+    }
+
+    cout << "Yes\n";
     return;
 }
 

@@ -18,10 +18,11 @@ typedef long long ll;
 #define all(x)    x.begin(), x.end()
 #define allr(x)   x.rbegin(), x.rend()
 #define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
 #define eps       1e-9
-#define mod       1000000007
-#define NN        100010
+
+const ll inf = 1e9;
+const ll mod = 1e9 + 7;
+const ll NN = 1e5 + 10;
 
 /* -------------------------------------------------------------------------- */
 /*                              Debugging Macros                              */
