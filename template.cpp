@@ -12,16 +12,18 @@
 using namespace std;
 
 typedef long long ll;
-#define ft        first
-#define sd        second
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
+
+#define ft first
+#define sd second
+#define pb(x) push_back(x)
+#define all(x) x.begin(), x.end()
+#define allr(x) x.rbegin(), x.rend()
 #define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define mod       1000000007
-#define NN        100010
+#define eps 1e-9
+
+const ll inf = 1e9;
+const ll mod = 1e9 + 7;
+const ll NN = 1e5 + 10;
 
 /* -------------------------------------------------------------------------- */
 /*                              Debugging Macros                              */
