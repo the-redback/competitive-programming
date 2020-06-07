@@ -55,8 +55,37 @@ void solve() {
     ll i, j, k;
     ll n, m;
     cin >> n;
+    vector<pair<ll, ll>> pa, pb;
+    ll dx, dy;
+    vector<ll> v(n + 1), v1(n + 1);
 
-    cout << n << "\n";
+    for (i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    for (i = 0; i < n; i++) {
+        cin >> v1[i];
+    }
+    if (n % 2) {
+        if (v[n / 2] != v1[n / 2]) {
+            cout << "No\n";
+            return;
+        }
+    }
+    for (i = 0; i <= (n - 1) / 2; i++) {
+        pa.emplace_back(min(v[i], v[n - 1 - i]), max(v[i], v[n - 1 - i]));
+        pb.emplace_back(min(v1[i], v1[n - 1 - i]), max(v1[i], v1[n - 1 - i]));
+    }
+
+    sort(all(pa));
+    sort(all(pb));
+    for (i = 0; i < pa.size(); i++) {
+        if (pa[i].first != pb[i].first || pa[i].second != pb[i].second) {
+            cout << "No\n";
+            return;
+        }
+    }
+
+    cout << "Yes\n";
     return;
 }
 
