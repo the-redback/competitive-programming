@@ -56,6 +56,7 @@ vector<ll> curZero(NN), curOne(NN);
 bitset<NN> vis;
 
 ll dfs(ll u, ll val) {
+    dbg(u, val, a[u]);
     vis[u] = 1;
 
     val = min(val, a[u]);
