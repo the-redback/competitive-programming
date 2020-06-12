@@ -54,13 +54,9 @@ void _print_out(const char* name, T a[], int n) {
 void solve() {
     ll i, j, k;
     ll n, m;
-    cin >> n >> m;
-    ll sum = (m + n) / 3;
+    cin >> n;
 
-    if (sum > m || sum > n)
-        sum = min(m, n);
-
-    cout << sum << "\n";
+    cout << n << "\n";
     return;
 }
 

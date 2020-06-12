@@ -22,6 +22,7 @@ typedef long long ll;
 
 const ll inf = 1e9;
 const ll mod = 1e9 + 7;
+const ll NN = 1e5 + 10;
 
 /* -------------------------------------------------------------------------- */
 /*                              Debugging Macros                              */
@@ -49,66 +50,13 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
-const ll NN = 1e7;
 
-bool p[NN + 7];   // Hashing
-int pr[NN + 7];   // storing prime
-
-void sieve(ll n) {
-    ll i, j, k, l;
-    p[1] = 1;
-    for (i = 4; i <= n; i += 2) {
-        p[i] = 1;
-        pr[i] = 2;
-    }
-    for (i = 3; i <= n; i += 2) {
-        if (p[i] == 0) {
-            for (j = i + i; j <= n; j += i) {
-                p[j] = 1;
-                pr[j] = i;
-            }
-        }
-    }
-}
-
-ll a[500010], b[500010];
-
-void solve(ll n) {
+void solve() {
     ll i, j, k;
-    ll m;
-    for (i = 0; i < n; i++) {
-        cin >> k;
-        if (pr[k] == 0) {
-            a[i] = -1;
-            b[i] = -1;
-            continue;
-        }
-        j = k / pr[k];
-        while (j % pr[k] == 0) {
-            j /= pr[k];
-        }
-        if (j > 1 && __gcd(j + pr[k], k) == 1) {
-            a[i] = pr[k];
-            b[i] = j;
-        } else {
-            a[i] = -1;
-            b[i] = -1;
-        }
-    }
+    ll n, m;
+    cin >> n;
 
-    for (i = 0; i < n; i++) {
-        if (i)
-            cout << " ";
-        cout << a[i];
-    }
-    cout << "\n";
-    for (i = 0; i < n; i++) {
-        if (i)
-            cout << " ";
-        cout << b[i];
-    }
-    cout << "\n";
-
+    cout << n << "\n";
     return;
 }
 
@@ -116,12 +64,11 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    sieve(NN);
     ll t = 1, tc;
-    // cin >> tc;
+    cin >> tc;
     ll n, m;
-    while (cin >> n) {
-        solve(n);
+    while (tc--) {
+        solve();
     }
     return 0;
 }

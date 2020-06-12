@@ -51,83 +51,12 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-ll dp[35][35][35][35];
-
-ll a[35][35];
-
-// void rec(ll i,ll j,ll r,ll c){
-//     if(i>r || j>c){
-//         return;
-//     }
-
-//     ll &tc=dp[i][j][r][c];
-
-//     if(tc != 0){
-//         return;
-//     }
-
-//     tc=1;
-
-//     if(dp[])
-
-//     if(i+1 <= r){
-
-//     }
-
-// }
-
-// ll check(ll on1, ll on2, ll zr1, ll zr2) {
-//     ll
-// }
-
 void solve() {
     ll i, j, k;
     ll n, m;
-    cin >> n >> m;
+    cin >> n;
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < m; j++) {
-            cin >> a[i][j];
-        }
-    }
-
-    ll sum = 0;
-    ll r, c;
-
-    for (i = 0; i < (n + m - 1) / 2; i++) {
-        ll on1 = 0, on2 = 0, zr1 = 0, zr2 = 0;
-        dbg("--------------", i);
-        for (r = min(i, n - 1), c = max(i - n + 1, 0ll); r >= 0 && c < m;
-             r--, c++) {
-            dbg(r, c, n - 1 - r, m - 1 - c);
-            dbg(a[r][c], a[n - 1 - r][m - 1 - c]);
-            if (a[r][c] == 1) {
-                on1++;
-            } else {
-                zr1++;
-            }
-
-            if (a[n - 1 - r][m - 1 - c] == 1) {
-                on2++;
-            } else {
-                zr2++;
-            }
-        }
-        sum += min(on1 + on2, zr1 + zr2);
-    }
-
-    // if ((n + m - 1) % 2 == 1) {
-    //     ll on1 = 0, on2 = 0, zr1 = 0, zr2 = 0;
-    //     for (r = n / 2, c = m / 2; r >= 0 && c >= 0; r--, c--) {
-    //         dbg(r, c, n - 1 - r, m - 1 - c);
-    //         dbg(a[r][c], a[n - 1 - r][m - 1 - c]);
-    //         if (a[r][c] != a[n - r - 1][m - c - 1]) {
-    //             sum++;
-    //         }
-    //     }
-    // }
-
-    cout << sum << "\n";
+    cout << n << "\n";
     return;
 }
 

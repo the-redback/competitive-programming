@@ -54,26 +54,9 @@ void _print_out(const char* name, T a[], int n) {
 void solve() {
     ll i, j, k;
     ll n, m;
-    ll x;
-    cin >> n >> x >> m;
+    cin >> n;
 
-    ll xx = -1, yy = -1;
-    for (i = 0; i < m; i++) {
-        cin >> k >> j;
-        if (xx == -1) {
-            if (x >= k && x <= j) {
-                xx = k;
-                yy = j;
-            }
-        } else if (xx >= k && xx <= j || yy >= k && yy <= j) {
-            xx = min(xx, k);
-            yy = max(yy, j);
-        }
-    }
-
-    ll ans = (yy - xx) + 1;
-
-    cout << ans << "\n";
+    cout << n << "\n";
     return;
 }
 
