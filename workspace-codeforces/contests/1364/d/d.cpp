@@ -50,20 +50,99 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+vector<ll> e[NN], ans;
+ll color[NN];
+ll dist[NN];
+ll x, fl;
+ll cnt;
+
+ll dfs(ll u, ll l) {
+    dist[u] = l;
+    color[u] = l % 2;
+
+    for (auto v : e[u]) {
+        if (color[v] != -1) {
+            if (l + 1 - dist[v] > 2 && l + 1 - dist[v] <= x) {
+                cnt = l + 1 - dist[v];
+                if (ans.size() < cnt)
+                    ans.pb(u);
+                fl = 1;
+                return l;
+            }
+            if (color[v] == color[u]) {
+                color[u] = 2;
+            }
+        } else {
+            ll ret = dfs(v, l + 1);
+            if (ret != 0) {
+                if (ans.size() < cnt)
+                    ans.pb(u);
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+ll sol1(ll u, ll n, ll k) {
+    ans.clear();
+    for (ll i = 1; i <= n && ans.size() < k; i++) {
+        if (color[i] == u) {
+            ans.pb(i);
+        }
+    }
+
+    cout << "1\n";
+    for (auto v : ans) {
+        cout << v << " ";
+    }
+    return 0;
+}
 
 void solve(ll n) {
     ll i, j, k;
     ll m;
+    cin >> m >> x;
 
-    cout << n << "\n";
-    return;
+    for (i = 0; i < m; i++) {
+        cin >> k >> j;
+        e[k].pb(j);
+        e[j].pb(k);
+    }
+
+    mem(color, -1);
+    fl = 0;
+    dfs(1, 0);
+    if (fl) {
+        cout << "2\n";
+        cout << (int)ans.size() << "\n";
+        for (auto v : ans) {
+            cout << v << " ";
+        }
+
+        cout << "\n";
+        return;
+    }
+
+    ll des = ceil(x / 2.0);
+    vector<ll> dd(5);
+    for (i = 1; i <= n; i++) {
+        dd[color[i]]++;
+    }
+
+    for (i = 0; i <= 2; i++) {
+        if (dd[i] >= des) {
+            sol1(i, n, des);
+            return;
+        }
+    }
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll n;
+    ll n, m;
     cin >> n;
     solve(n);
     return 0;

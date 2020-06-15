@@ -51,11 +51,32 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-void solve(ll n) {
+void solve() {
     ll i, j, k;
-    ll m;
+    ll n, m;
+    cin >> n;
+    vector<ll> a(n);
+    vector<ll> v;
 
-    cout << n << "\n";
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    v.pb(a[0]);
+    for (i = 1; i < n - 1; i++) {
+        if (a[i] > a[i - 1] && a[i] > a[i + 1])   // local maxima
+            v.pb(a[i]);
+        else if (a[i] < a[i - 1] && a[i] < a[i + 1])   // local minima
+            v.pb(a[i]);
+    }
+    v.pb(a[n - 1]);
+
+    cout << (int)v.size() << "\n";
+    for (auto val : v) {
+        cout << val << " ";
+    }
+    cout << "\n";
+
     return;
 }
 
@@ -63,8 +84,11 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll n;
-    cin >> n;
-    solve(n);
+    ll t = 1, tc;
+    cin >> tc;
+    ll n, m;
+    while (tc--) {
+        solve();
+    }
     return 0;
 }

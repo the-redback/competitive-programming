@@ -54,14 +54,103 @@ void _print_out(const char* name, T a[], int n) {
 void solve(ll n) {
     ll i, j, k;
     ll m;
+    ll x = 1, y = 2;
+    cout << "? " << x << " " << y << "\n";
+    cout.flush();
 
-    cout << n << "\n";
+    ll prev;
+    cin >> prev;
+    if (prev == -1) {
+        return;
+    }
+
+    for (i = 3; i <= n; i++) {
+        ll z = i;
+        cout << "? " << y << " " << z << "\n";
+        cout.flush();
+
+        ll sec;
+        cin >> sec;
+        if (sec == -1) {
+            return;
+        }
+
+        if (sec < prev) {
+            x = z;
+            prev = sec;
+        } else if (sec > prev) {
+            // z is no good. keep previous x and y;
+            continue;
+        } else {
+            // throw y away. It can't be zero.
+            y = z;
+            cout << "? " << x << " " << y << "\n";
+            cout.flush();
+
+            cin >> prev;
+            if (prev == -1) {
+                return;
+            }
+        }
+    }
+
+    ll sec = prev;
+    while (sec == prev) {
+        k = 1 + rand() % n;
+        if (k == x || k == y)
+            continue;
+        cout << "? " << x << " " << k << "\n";
+        cout.flush();
+
+        cin >> prev;
+        if (prev == -1) {
+            return;
+        }
+
+        cout << "? " << y << " " << k << "\n";
+        cout.flush();
+
+        cin >> sec;
+        if (sec == -1) {
+            return;
+        }
+    }
+
+    ll z;
+    if (sec < prev) {
+        z = y;
+    } else {
+        z = x;
+    }
+
+    vector<ll> v(n + 1);
+
+    for (i = 1; i <= n; i++) {
+        if (i == z)
+            continue;
+        cout << "? " << z << " " << i << "\n";
+        cout.flush();
+
+        cin >> v[i];
+        if (v[i] == -1) {
+            return;
+        }
+    }
+    v[z] = 0;
+
+    cout << "!";
+
+    for (i = 1; i <= n; i++) {
+        cout << " " << v[i];
+    }
+
+    cout << "\n";
     return;
 }
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(0);
+    // cin.tie(0);
 
     ll n;
     cin >> n;

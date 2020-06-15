@@ -54,8 +54,53 @@ void _print_out(const char* name, T a[], int n) {
 void solve(ll n) {
     ll i, j, k;
     ll m;
+    vector<ll> a(n), v;
+    set<ll> ans;
+    ll l[n + 1];
+    mem(l, -1);
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+        l[a[i]] = i;
+    }
 
-    cout << n << "\n";
+    ll last = -1;
+
+    for (int i = n - 1; i > 0; i--) {
+        if (last == -1) {
+            last = i + 1;
+        }
+
+        if (a[i - 1] < a[i] && ans.find(a[i - 1]) == ans.end()) {
+            ans.insert(a[i - 1]);
+            v.pb(a[i - 1]);
+            continue;
+        }
+        if (last > a[i]) {
+            while (l[last] > i || ans.find(last) != ans.end()) {
+                last--;
+            }
+            ans.insert(last);
+            v.pb(last);
+            last--;
+            continue;
+        }
+    }
+
+    last = 0;
+    while (last <= n && (l[last] >= 0 || ans.find(last) != ans.end())) {
+        last++;
+    }
+    if (last < 0)
+        last = n;
+    ans.insert(last);
+    v.pb(last);
+
+    reverse(all(v));
+    for (i = 0; i < n; i++) {
+        cout << v[i] << " ";
+    }
+
+    cout << "\n";
     return;
 }
 
@@ -63,8 +108,12 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll n;
-    cin >> n;
-    solve(n);
+    ll t = 1, tc;
+    // cin >> tc;
+    ll n, m;
+    while (cin >> n) {
+        solve(n);
+    }
+
     return 0;
 }
