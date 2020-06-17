@@ -56,45 +56,44 @@ void solve() {
     ll n, m;
     string str;
     cin >> str;
+
     string ans;
     cin >> n;
-    vector<ll> v(n);
+    vector<ll> v(n), fr(26);
     for (i = 0; i < n; i++) {
         cin >> v[i];
         ans += " ";
     }
-
-    sort(all(str));
+    for (i = 0; i < str.size(); i++) {
+        fr[str[i] - 'a']++;
+    }
 
     for (i = 0; i < n; i++) {
-        ll cnt = 0;
-        ll mn = inf;
+        vector<ll> zeros;
+
         for (j = 0; j < n; j++) {
-            if (v[j] < mn) {
-                cnt = 1;
-                mn = v[j];
-            } else if (v[j] == mn)
-                cnt++;
+            if (v[j] == 0) {
+                zeros.pb(j);
+            }
+        }
+        if (zeros.empty()) {
+            break;
         }
 
-        if (mn == inf)
-            break;
+        ll cnt = (int)zeros.size();
 
-        ll in;
-        for (int j = str.size() - 1; j - cnt + 1 >= 0; j--)
-            if (str[j] == str[j - cnt + 1]) {
-                in = j;
+        ll ch;
+        for (int j = 25; j >= 0; j--) {
+            if (fr[j] >= cnt) {
+                ch = j;
+                fr[j] = 0;
                 break;
             }
+            fr[j] = 0;
+        }
 
-        vector<ll> vv;
-        for (j = 0; j < n; j++)
-            if (v[j] == mn) {
-                ans[j] = str[in];
-                vv.pb(j);
-            }
-
-        for (auto j : vv) {
+        for (auto j : zeros) {
+            ans[j] = ch + 'a';
             v[j] = inf;
             for (k = 0; k < n; k++) {
                 if (v[k] == inf)
@@ -102,17 +101,6 @@ void solve() {
                 v[k] -= abs(j - k);
             }
         }
-
-        string s = "";
-        for (int j = in - 1; j >= 0; j--)
-            if (str[j] != str[in]) {
-                in = j;
-                break;
-            }
-
-        for (j = 0; j <= in; j++) s += str[j];
-
-        str = s;
     }
 
     cout << ans << "\n";
