@@ -80,6 +80,7 @@ void solve(ll m) {
     ll low = 1;
     ll high = mx;
     ll ans;
+
     while (low <= high) {
         ll mid = (low + high) / 2;
         if (check(mid, 0) || check(mid, 1)) {
