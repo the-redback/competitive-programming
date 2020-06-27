@@ -53,19 +53,24 @@ void dfs(ll u) {
 }
 
 ll lca_query(ll p, ll q) {
-    if (level[p] < level[q]) swap(p, q);
+    if (level[p] < level[q])
+        swap(p, q);
     ll i, j, k, log;
     log = 1;
     while (1) {
         ll next = log + 1;
-        if (1 << next > level[p]) break;
+        if (1 << next > level[p])
+            break;
         log++;
     }
     for (i = log; i >= 0; i--)
-        if (level[p] - (1 << i) >= level[q]) p = P[p][i];
-    if (p == q) return p;
+        if (level[p] - (1 << i) >= level[q])
+            p = P[p][i];
+    if (p == q)
+        return p;
     for (i = log; i >= 0; i--)
-        if (P[p][i] != -1 && P[p][i] != P[q][i]) p = P[p][i], q = P[q][i];
+        if (P[p][i] != -1 && P[p][i] != P[q][i])
+            p = P[p][i], q = P[q][i];
     return par[p];
 }
 
@@ -81,7 +86,8 @@ void lca_init(ll n) {
 
     for (j = 1; 1 << j <= n; j++)
         for (i = 1; i <= n; i++)
-            if (P[i][j - 1] != -1) P[i][j] = P[P[i][j - 1]][j - 1];
+            if (P[i][j - 1] != -1)
+                P[i][j] = P[P[i][j - 1]][j - 1];
 
     return;
 }

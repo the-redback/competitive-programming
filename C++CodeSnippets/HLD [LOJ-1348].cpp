@@ -107,11 +107,14 @@ ll query_up(ll u, ll v) {   // v is an ancestor of u
 }
 
 ll LCA(ll u, ll v) {
-    if (depth[u] < depth[v]) swap(u, v);
+    if (depth[u] < depth[v])
+        swap(u, v);
     ll diff = depth[u] - depth[v];
     for (ll i = 0; i < LN; i++)
-        if ((diff >> i) & 1) u = par[u][i];
-    if (u == v) return u;
+        if ((diff >> i) & 1)
+            u = par[u][i];
+    if (u == v)
+        return u;
     for (ll i = LN - 1; i >= 0; i--)
         if (par[u][i] != par[v][i]) {
             u = par[u][i];
@@ -127,7 +130,9 @@ ll query(ll u, ll v) {
     return ans + ans2 - query_up(lca, lca);   // take the maximum of both paths
 }
 
-void change(ll u, ll val) { update_tree(1, 1, ptr - 1, posInBase[u], val); }
+void change(ll u, ll val) {
+    update_tree(1, 1, ptr - 1, posInBase[u], val);
+}
 
 void HLD(ll curNode, ll prev) {
     if (chainHead[chainNo] == -1) {

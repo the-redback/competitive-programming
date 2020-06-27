@@ -28,7 +28,8 @@ main() {
         for (i = 0; i < n; i++) {
             cin >> k;
             res ^= k;
-            if (k == 1) cnt++;
+            if (k == 1)
+                cnt++;
         }
         if (cnt == n) {
             if (!res)

@@ -59,7 +59,8 @@ void findSCC(int n) {
     mem(color, 0);
     mem(Lowlink, 126);
     for (int i = 1; i <= n; i++)
-        if (!color[i]) tarjan(i);
+        if (!color[i])
+            tarjan(i);
 }
 
 int main() {

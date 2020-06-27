@@ -32,13 +32,15 @@ int main() {
     int tc, t;
     int n, m;
     while (~scanf("%d%d", &n, &m)) {
-        if (n == 0 && m == 0) return 0;
+        if (n == 0 && m == 0)
+            return 0;
         mem(view, -1);
         for (i = 0; i < m; i++) scanf("%d%d", &k, &l), e[k].pb(l);
         fl = 0;
         for (i = 1; i <= n; i++) {
             f = i;
-            if (view[i] == -1) dfs(i);
+            if (view[i] == -1)
+                dfs(i);
         }
         if (fl)
             printf("IMPOSSIBLE\n");

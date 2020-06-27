@@ -79,7 +79,8 @@ main() {
         }
         if (v.size()) {
             prework();
-            if (t != 1) puts("");
+            if (t != 1)
+                puts("");
             printf("Max hits: %d\n", LIS());
             show();
         }

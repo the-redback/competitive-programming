@@ -25,7 +25,8 @@ int dijkstra(int n) {
         q.pop();
         int u = top.u;
 
-        if (u == n) return d[n];
+        if (u == n)
+            return d[n];
         for (int i = 0; i < (int)g[u].size(); i++) {
             int v = g[u][i];
             if (d[u] + cost[u][i] < d[v]) {

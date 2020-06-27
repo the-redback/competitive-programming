@@ -11,10 +11,13 @@ struct edge {
 };
 
 vector<edge> e;
-bool comp(edge n, edge m) { return n.w > m.w; }
+bool comp(edge n, edge m) {
+    return n.w > m.w;
+}
 
 int root(int n) {
-    if (pr[n] == n) return n;
+    if (pr[n] == n)
+        return n;
     return root(pr[n]);
 }
 

@@ -1,7 +1,6 @@
 // courtesy: https://codeforces.com/blog/entry/78116
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
 const int N = 500043;

@@ -1,7 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 i64 dp[70][70];
 i64 nCr(int n, int r) {
-    if (r == 1) return n;
-    if (n == r) return 1;
+    if (r == 1)
+        return n;
+    if (n == r)
+        return 1;
     if (dp[n][r] != -1)
         return dp[n][r];
     else {

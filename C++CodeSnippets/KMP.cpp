@@ -41,7 +41,8 @@ void failure(void) {
     for (i = 1; i < m; i++) {   // starts from 1, not 0.
         while (q > 0 && p[i] != p[q]) q = fail[q - 1];
 
-        if (p[i] == p[q]) q++;
+        if (p[i] == p[q])
+            q++;
         fail[i] = q;
     }
     return;
@@ -58,7 +59,8 @@ ll KMP(void) {
     for (i = 0; i < l; i++) {
         while (q > 0 && s[i] != p[q]) q = fail[q - 1];
 
-        if (s[i] == p[q]) q++;
+        if (s[i] == p[q])
+            q++;
         if (q == m) {
             q = fail[q - 1];
             cnt++;   // we got one substring

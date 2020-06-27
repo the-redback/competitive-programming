@@ -58,7 +58,8 @@ void mult(ll a[3][3], ll b[3][3]) {
 
 void BigMat(ll a[3][3], int pos) {
     int i, j, k;
-    if (pos == 1) return;
+    if (pos == 1)
+        return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
         mult(a, m);

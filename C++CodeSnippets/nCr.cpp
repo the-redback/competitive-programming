@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 long long nCr(int n, int r) {   //
     int k, l;
     k = max((r, n - r));

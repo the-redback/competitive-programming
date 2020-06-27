@@ -24,7 +24,8 @@ int ternary_search(int k, int l, int s) {
 
     for (int i = low; i <= high; i++) {
         int temp = area(k, l, i);
-        if (s <= temp) return i + 1;
+        if (s <= temp)
+            return i + 1;
     }
     return 0;
 }

@@ -48,7 +48,8 @@ void init(int node, int low, int high) {
 }
 
 data query(int node, int low, int high, int rlow, int rhigh) {
-    if (low >= rlow && high <= rhigh) return arr[node];
+    if (low >= rlow && high <= rhigh)
+        return arr[node];
     int left = node * 2;
     int right = left + 1;
     int mid = (low + high) / 2;

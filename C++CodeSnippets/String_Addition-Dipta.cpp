@@ -15,7 +15,8 @@ string add(string a, string b) {
         carry = tmp / 10;
         ans += (tmp % 10) + '0';
     }
-    if (carry) ans += '1';
+    if (carry)
+        ans += '1';
     reverse(ans.begin(), ans.end());
     return ans;
 }

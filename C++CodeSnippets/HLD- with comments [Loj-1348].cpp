@@ -145,11 +145,14 @@ ll query_up(ll u, ll v) {
  * Takes two nodes u, v and returns Lowest Common Ancestor of u, v
  */
 ll LCA(ll u, ll v) {
-    if (depth[u] < depth[v]) swap(u, v);
+    if (depth[u] < depth[v])
+        swap(u, v);
     ll diff = depth[u] - depth[v];
     for (ll i = 0; i < LN; i++)
-        if ((diff >> i) & 1) u = par[u][i];
-    if (u == v) return u;
+        if ((diff >> i) & 1)
+            u = par[u][i];
+    if (u == v)
+        return u;
     for (ll i = LN - 1; i >= 0; i--)
         if (par[u][i] != par[v][i]) {
             u = par[u][i];

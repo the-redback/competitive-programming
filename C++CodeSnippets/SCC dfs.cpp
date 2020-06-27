@@ -29,7 +29,8 @@ int amount[NN];               // Amount of original node in a SCC node
 int dfs_1st(int u) {
     color[u] = true;
     for (int i = 0; i < Graph[u].size(); i++) {
-        if (!color[Graph[u][i]]) dfs_1st(Graph[u][i]);
+        if (!color[Graph[u][i]])
+            dfs_1st(Graph[u][i]);
     }
     arr.pb(u);
 }
@@ -39,7 +40,8 @@ int dfs_2nd(int u, int k) {
     id[u] = k;
 
     for (int i = 0; i < transGraph[u].size(); i++) {
-        if (!color[transGraph[u][i]]) dfs_2nd(transGraph[u][i], k);
+        if (!color[transGraph[u][i]])
+            dfs_2nd(transGraph[u][i], k);
     }
 }
 
@@ -49,7 +51,8 @@ int scc(int n) {
     int i, j, k, l;
 
     for (i = 1; i <= n; i++)   // Topological Sort
-        if (color[i] == 0) dfs_1st(i);
+        if (color[i] == 0)
+            dfs_1st(i);
 
     reverse(all(arr));
 
@@ -73,7 +76,8 @@ int scc(int n) {
         k = v[i].first;
         l = v[i].second;
 
-        if (id[k] != id[l]) newGraph[id[k]].pb(id[l]);
+        if (id[k] != id[l])
+            newGraph[id[k]].pb(id[l]);
     }
 
     return node;   // Number of SCC node.

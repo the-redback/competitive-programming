@@ -44,7 +44,8 @@ void factor(int n) {
             count++;
         }
         fact[i] = max(fact[i], count);
-        if (n == 1) break;
+        if (n == 1)
+            break;
     }
     if (n > 1) {
         mx = max(n, mx);

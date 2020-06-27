@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool comp(int a, int b) { return a > b; }
+bool comp(int a, int b) {
+    return a > b;
+}
 
 main() {
     int a[100];

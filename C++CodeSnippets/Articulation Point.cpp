@@ -36,11 +36,13 @@ void dfs(int u) {
             par[v] = u;
             dfs(v);
             low[u] = min(low[u], low[v]);
-            if (depth[u] <= low[v]) Flag[u] = true;
+            if (depth[u] <= low[v])
+                Flag[u] = true;
         } else if (v != par[u])
             low[u] = min(low[u], depth[v]);
     }
-    if (par[u] == -1) Flag[u] = (call > 1);
+    if (par[u] == -1)
+        Flag[u] = (call > 1);
 }
 
 int articulation_Point(int n) {
@@ -52,11 +54,13 @@ int articulation_Point(int n) {
     Time = 0;
 
     for (int i = 1; i <= n; i++)
-        if (!color[i]) dfs(i);
+        if (!color[i])
+            dfs(i);
 
     int ans = 0;
     for (int i = 1; i <= n; i++)
-        if (Flag[i]) ans++;
+        if (Flag[i])
+            ans++;
     return ans;
 }
 

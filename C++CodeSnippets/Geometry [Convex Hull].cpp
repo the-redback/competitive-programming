@@ -30,23 +30,36 @@ struct P {
 
 vector<P> v;
 
-P MV(P a, P b) { return P(b.x - a.x, b.y - a.y); }
+P MV(P a, P b) {
+    return P(b.x - a.x, b.y - a.y);
+}
 
-double DP(P a, P b) { return a.x * b.x + a.y * b.y; }
+double DP(P a, P b) {
+    return a.x * b.x + a.y * b.y;
+}
 
-double CP(P a, P b) { return a.x * b.y - a.y * b.x; }
+double CP(P a, P b) {
+    return a.x * b.y - a.y * b.x;
+}
 
-double A(P a) { return sqrt(a.x * a.x + a.y * a.y); }
+double A(P a) {
+    return sqrt(a.x * a.x + a.y * a.y);
+}
 
-P ADD(P a, P b) { return P(a.x + b.x, a.y + b.y); }
+P ADD(P a, P b) {
+    return P(a.x + b.x, a.y + b.y);
+}
 
-P LV(P a, double l) { return P(a.x * l / A(a), a.y * l / A(a)); }
+P LV(P a, double l) {
+    return P(a.x * l / A(a), a.y * l / A(a));
+}
 
 P pvt;
 
 bool comp(P a, P b) {   // False hoile sort korbe
     long long c = CP(MV(pvt, a), MV(pvt, b));
-    if (c) return c > 0;
+    if (c)
+        return c > 0;
     return A(MV(pvt, a)) < A(MV(pvt, b));
 }
 

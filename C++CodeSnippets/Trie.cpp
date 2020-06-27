@@ -14,7 +14,8 @@ void insert(char* str, int len) {
     node* curr = root;
     for (int i = 0; i < len; i++) {
         int id = str[i] - 'a';
-        if (curr->next[id] == NULL) curr->next[id] = new node();
+        if (curr->next[id] == NULL)
+            curr->next[id] = new node();
         curr = curr->next[id];
     }
     curr->endmark = true;
@@ -24,7 +25,8 @@ bool search(char* str, int len) {
     node* curr = root;
     for (int i = 0; i < len; i++) {
         int id = str[i] - 'a';
-        if (curr->next[id] == NULL) return false;
+        if (curr->next[id] == NULL)
+            return false;
         curr = curr->next[id];
     }
     return curr->endmark;
@@ -32,12 +34,10 @@ bool search(char* str, int len) {
 
 void del(node* cur) {
     for (int i = 0; i < 26; i++)
-        if (cur->next[i]) del(cur->next[i]);
+        if (cur->next[i])
+            del(cur->next[i]);
     delete (cur);
 }
-
-// << >> == != >= <= -> <- ++ /=
-// ~= ## ### <> |=> <!-- ~~> ->>
 
 int main() {
     // NUMBER OF WORDS

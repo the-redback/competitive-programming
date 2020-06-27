@@ -51,7 +51,8 @@ void factor(int n) {
             count++;
         }
         fact[i] = max(fact[i], count);
-        if (n == 1) break;
+        if (n == 1)
+            break;
     }
     if (n > 1) {
         mx = max(n, mx);
@@ -61,7 +62,8 @@ void factor(int n) {
 
 int bigmod(int m, int n) {
     int sum;
-    if (n == 0) return 1;
+    if (n == 0)
+        return 1;
     if (n % 2 == 0) {
         sum = bigmod(m, n / 2);
         return ((sum % mod) * (sum % mod)) % mod;
@@ -79,7 +81,8 @@ int LCM(void) {   // LCM of elemets of arr with mod
     for (i = 0; i < arr.size(); i++) factor(arr[i]);
     sum = 1;
     for (i = 2; i <= mx; i++)
-        if (fact[i]) sum = (sum * bigmod(i, fact[i])) % mod;
+        if (fact[i])
+            sum = (sum * bigmod(i, fact[i])) % mod;
     return sum;
 }
 

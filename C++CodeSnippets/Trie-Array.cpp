@@ -66,7 +66,8 @@ bool Search(string arr) {   /// Search arr string
     int node = 0;
     for (int i = 0; i < arr.size(); i++) {
         int id = arr[i] - 'a';
-        if (tree[node].next[id] == -1) return false;
+        if (tree[node].next[id] == -1)
+            return false;
         node = tree[node].next[id];
     }
     return tree[node].endmark;

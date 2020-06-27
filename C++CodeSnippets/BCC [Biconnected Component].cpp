@@ -67,7 +67,8 @@ int findbcc(int n) {
     Time = bcc = 0;
 
     for (int i = 0; i < n; i++)   // lowest node=0
-        if (!color[i]) dfs(i);
+        if (!color[i])
+            dfs(i);
     int Highest_Node = bcc;
 
     for (int i = 0; i < edge.size(); i++) {
