@@ -74,41 +74,78 @@ void solve() {
             odd[i] = odd[i - 1] + v[i];
             even[i] = even[i - 1];
         }
+        // dbg(odd[i],even[i]);
     }
+    odd[n] = odd[n - 1];
+    even[n] = even[n - 1];
 
-    ll left_1 = 0, left_2 = 1, right = 0;
+    dbg(odd, n + 1);
+    dbg(even, n + 1);
+
+    ll last = 0, right = 0;
     ll total = even[n - 1];
-    ll res = total;
+    ll res = even[n - 1];
 
     for (i = 1; i < n; i++) {
+        if (i % 2 == 0)
+            continue;
+
         ll tmp1 = 0, tmp2 = 0;
-        ll single_even = 0, single_odd = 0;
-        ll long_even = 0, long_odd = 0;
+        ll l1 = 0, l2 = 0;
 
-        if (i % 2 == 0 && v[i] < v[i - 1]) {
-            single_even = v[i];
-            single_odd = v[i - 1];
-
-            long_even = even[i] - even[left_2];
-            long_odd = odd[i] - odd[left_2] + v[left_2];
-        } else if (i % 2 == 1 && v[i] > v[i - 1]) {
-            single_even = v[i - 1];
-            single_odd = v[i];
-
-            long_even = even[i] - even[left_1] + v[left_1];
-            long_odd = odd[i] - odd[left_1];
+        if (v[i] <= v[i - 1]) {
+            continue;
         }
 
-        tmp1 = total - single_even + single_odd;
-        tmp2 = total - long_even + long_odd;
-        res = max(res, max(tmp1, tmp2));
+        ll singleEv = v[i - 1];
+        ll singleOdd = v[i];
+
+        ll longTEv = even[i] - even[last] + v[last];
+        ll longTOdd = odd[i] - odd[last];
+
+        tmp1 = total - singleEv + singleOdd;
+        tmp2 = total - longTEv + longTOdd;
 
         if (tmp1 > tmp2) {
-            if (i % 2 == 0)
-                left_2 = i - 1;
-            else
-                left_1 = i - 1;
+            last = i - 1;
         }
+
+        res = max(res, max(tmp1, tmp2));
+        dbg(res, tmp1, tmp2, i);
+    }
+
+    last = 1;
+
+    for (i = 2; i < n; i++) {
+        if (i % 2 == 1)
+            continue;
+
+        dbg(i);
+
+        ll tmp1 = 0, tmp2 = 0;
+        ll l1 = 0, l2 = 0;
+        // ll longTOdd = 0;
+
+        if (v[i] >= v[i - 1]) {
+            continue;
+        }
+        ll singleEv = v[i];
+        ll singleOdd = v[i - 1];
+
+        ll longTEv = even[i] - even[last];
+        ll longTOdd = odd[i] - odd[last] + v[last];
+
+        tmp1 = total - singleEv + singleOdd;
+        dbg(total,singleEv,singleOdd)
+
+        tmp2 = total - longTEv + longTOdd;
+
+        if (tmp1 > tmp2) {
+            last = i - 1;
+        }
+
+        res = max(res, max(tmp1, tmp2));
+        dbg(res, tmp1, tmp2, singleEv, longTOdd);
     }
 
     cout << res << "\n";
