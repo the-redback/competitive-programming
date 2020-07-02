@@ -50,13 +50,48 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+ll mat[505][505];
 
-void solve() {
+void solve(ll n) {
     ll i, j, k;
-    ll n, m;
-    cin >> n;
+    ll m;
+    vector<ll> v, ans;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            cin >> mat[i][j];
+        }
+    }
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        v.pb(k);
+    }
+    reverse(all(v));
 
-    cout << n << "\n";
+    for (k = 0; k < n; k++) {
+        ll sum = 0;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                ll vi = v[i];
+                ll vj = v[j];
+                ll vk = v[k];
+                if (mat[vi][vj] > mat[vi][vk] + mat[vk][vj]) {
+                    mat[vi][vj] = mat[vi][vk] + mat[vk][vj];
+                }
+                if (i <= k && j <= k) {
+                    sum += mat[vi][vj];
+                }
+            }
+        }
+        ans.pb(sum);
+    }
+
+    reverse(all(ans));
+
+    for (auto val : ans) {
+        cout << val << " ";
+    }
+
+    cout << "\n";
     return;
 }
 
@@ -64,11 +99,8 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t = 1, tc;
-    cin >> tc;
-    ll n, m;
-    while (tc--) {
-        solve();
-    }
+    ll n;
+    cin >> n;
+    solve(n);
     return 0;
 }

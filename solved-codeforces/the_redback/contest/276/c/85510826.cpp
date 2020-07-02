@@ -51,12 +51,36 @@ void _print_out(const char* name, T a[], int n) {
 #endif
 /* -------------------------------------------------------------------------- */
 
-void solve() {
+void solve(ll n) {
     ll i, j, k;
-    ll n, m;
-    cin >> n;
+    ll m, q;
+    cin >> q;
+    vector<ll> a(n), fr(n);
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    for (i = 0; i < q; i++) {
+        cin >> j >> k;
+        fr[j - 1]++;
 
-    cout << n << "\n";
+        if (k != n) fr[k]--;
+    }
+
+    ll carry = 0;
+    for (i = 0; i < n; i++) {
+        carry += fr[i];
+        fr[i] = carry;
+    }
+
+    sort(all(fr));
+    sort(all(a));
+
+    ll ans = 0;
+    for (i = 0; i < n; i++) {
+        ans += a[i] * fr[i];
+    }
+
+    cout << ans << "\n";
     return;
 }
 
@@ -64,11 +88,8 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t = 1, tc;
-    cin >> tc;
-    ll n, m;
-    while (tc--) {
-        solve();
-    }
+    ll n;
+    cin >> n;
+    solve(n);
     return 0;
 }
