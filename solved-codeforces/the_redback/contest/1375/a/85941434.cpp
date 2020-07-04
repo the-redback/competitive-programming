@@ -50,13 +50,69 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
+vector<ll> v;
+
+void ans() {
+    for (ll i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << "\n";
+}
 
 void solve() {
     ll i, j, k;
     ll n, m;
+    v.clear();
     cin >> n;
 
-    cout << n << "\n";
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        v.pb(k);
+        if (i % 2)
+            v[i] = -1 * abs(v[i]);
+        else
+            v[i] = abs(v[i]);
+    }
+
+    ll pos = 0, neg = 0, zero = 0;
+    for (i = 1; i < n; i++) {
+        k = v[i] - v[i - 1];
+        if (k > 0) {
+            pos++;
+        } else if (k < 0)
+            neg++;
+        else
+            zero++;
+    }
+
+    dbg(pos, neg, zero);
+    if (pos + zero >= neg && neg + zero >= pos) {
+        ans();
+        return;
+    }
+
+    for (i = 0; i < n; i++) {
+        if (i % 2 == 0)
+            v[i] = -1 * abs(v[i]);
+        else
+            v[i] = abs(v[i]);
+    }
+    pos = 0, neg = 0, zero = 0;
+    for (i = 1; i < n; i++) {
+        k = v[i] - v[i - 1];
+        if (k > 0) {
+            pos++;
+        } else if (k < 0)
+            neg++;
+        else
+            zero++;
+    }
+
+    if (pos + zero >= neg && neg + zero >= pos) {
+        ans();
+        return;
+    }
+
     return;
 }
 
