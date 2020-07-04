@@ -50,54 +50,32 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
-vector<ll> b, p;
-ll a;
+vector<ll> v;
 
-ll check(ll n) {
-    ll sum = 0;
-    for (ll i = n, j = b.size() - 1; i >= 0 && j >= 0; i--, j--) {
-        sum += max(0ll, p[i] - b[j]);
+void ans() {
+    for (ll i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
     }
-    return a >= sum;
+    cout << "\n";
 }
 
-void solve(ll n) {
+void solve() {
     ll i, j, k;
-    ll m;
-    cin >> m >> a;
+    ll n, m;
+    v.clear();
+    cin >> n;
+
     for (i = 0; i < n; i++) {
         cin >> k;
-        b.pb(k);
-    }
-    for (i = 0; i < m; i++) {
-        cin >> k;
-        p.pb(k);
-    }
-
-    sort(all(b));
-    sort(all(p));
-
-    ll low = 0, high = min(n - 1, m - 1);
-    ll mx = -1;
-    while (low <= high) {
-        ll mid = (low + high) / 2;
-
-        if (check(mid)) {
-            mx = max(mx, mid);
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
+        v.pb(k);
+        if (i % 2)
+            v[i] = -1 * abs(v[i]);
+        else
+            v[i] = abs(v[i]);
     }
 
-    ll sum = 0;
-    for (i = 0; i <= mx; i++) {
-        sum += p[i];
-    }
+    ans();
 
-    ll rem = max(sum - a, 0ll);
-
-    cout << mx + 1 << " " << rem << "\n";
     return;
 }
 
@@ -105,8 +83,11 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll n;
-    cin >> n;
-    solve(n);
+    ll t = 1, tc;
+    cin >> tc;
+    ll n, m;
+    while (tc--) {
+        solve();
+    }
     return 0;
 }
