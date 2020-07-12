@@ -25,7 +25,7 @@ const ll inf = 1e9;
 const ll mod = 1e9 + 7;
 const ll NN = 1e5 + 10;
 
-// Debugging micros
+// debugging macros
 #ifdef redback
 #include "prettyprint.hpp"
 #else
@@ -41,8 +41,9 @@ int main() {
     ll n, m;
     while (tc--) {
         ll i, j, k;
+        ll ans = 0;
 
-        cout << n << "\n";
+        cout << ans << "\n";
     }
     return 0;
 }

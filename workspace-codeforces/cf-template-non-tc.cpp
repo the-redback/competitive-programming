@@ -24,38 +24,18 @@ const ll inf = 1e9;
 const ll mod = 1e9 + 7;
 const ll NN = 1e5 + 10;
 
-/* -------------------------------------------------------------------------- */
-/*                              Debugging Macros                              */
-/* -------------------------------------------------------------------------- */
+// debugging macros
 #ifdef redback
 #include "prettyprint.hpp"
-#define dbg(...)                        \
-    cout << "L-" << __LINE__ << " :: "; \
-    _print_out(#__VA_ARGS__, __VA_ARGS__);
-template <typename T>
-void _print_out(const char* name, T&& arg1) {
-    cout << name << " = " << arg1 << endl;
-}
-template <typename T1, typename... Args>
-void _print_out(const char* names, T1&& arg1, Args&&... args) {
-    const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 << " | ";
-    _print_out(comma + 1, args...);
-}
-template <typename T>
-void _print_out(const char* name, T a[], int n) {
-    cout << name << " = " << pretty_print_array(a, n) << endl;
-}
 #else
 #define dbg(args...)
 #endif
-/* -------------------------------------------------------------------------- */
 
 void solve(ll n) {
     ll i, j, k;
-    ll m;
+    ll m, ans = 0;
 
-    cout << n << "\n";
+    cout << ans << "\n";
     return;
 }
 
