@@ -1,3 +1,0 @@
-[submodule "workspace-codeforces/parser"]
-	path = workspace-codeforces/parser
-	url = git@github.com:the-redback/codeforces-parser.git
