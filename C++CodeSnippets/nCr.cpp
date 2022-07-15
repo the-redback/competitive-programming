@@ -12,7 +12,7 @@ long long nCr(int n, int r) {   //
         sum *= i;
         if (j <= l && sum % j == 0) {
             sum /= j;
-            j++;
+            j++; 
         }
     }
     return sum;
