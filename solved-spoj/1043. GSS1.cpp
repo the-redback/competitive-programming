@@ -1,10 +1,11 @@
 /**
- *    @author     : Maruf Tuhin
- *    @School     : CUET CSE 11
- *    @Topcoder   : the_redback
- *    @CodeForces : the_redback
- *    @UVA        : the_redback
- *    @link       : maruf.2hin@gmail.com
+ *                                   ____
+ *       ____ ___  ____ ________  __/ __/
+ *      / __ `__ \/ __ `/ ___/ / / / /_
+ *     / / / / / / /_/ / /  / /_/ / __/
+ *    /_/ /_/ /_/\__,_/_/   \__,_/_/
+ *
+ *    @link : https://the-redback.com
  */
 
 #include <algorithm>

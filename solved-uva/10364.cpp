@@ -1,12 +1,11 @@
 /**
+ *                                   ____
+ *       ____ ___  ____ ________  __/ __/
+ *      / __ `__ \/ __ `/ ___/ / / / /_
+ *     / / / / / / /_/ / /  / /_/ / __/
+ *    /_/ /_/ /_/\__,_/_/   \__,_/_/
  *
- *    @author     : Maruf Tuhin
- *    @School     : CUET CSE 11
- *    @TOPCODER   : the_redback
- *    @CodeForces : maruf.2hin
- *    @UVA        : Redback
- *    @link       : http://www.fb.com/maruf.2hin
- *
+ *    @link : https://the-redback.com
  */
 //#include <bits/stdc++.h>
 #include<cstdio>

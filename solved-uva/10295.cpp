@@ -1,10 +1,11 @@
 /**
- *    @author     : Maruf Tuhin
- *    @School     : CUET CSE 11
- *    @Topcoder   : the_redback
- *    @Codeforces : the_redback
- *    @UVA        : Redback
- *    @link       : http://www.fb.com/maruf.2hin
+ *                                   ____
+ *       ____ ___  ____ ________  __/ __/
+ *      / __ `__ \/ __ `/ ___/ / / / /_
+ *     / / / / / / /_/ / /  / /_/ / __/
+ *    /_/ /_/ /_/\__,_/_/   \__,_/_/
+ *
+ *    @link : https://the-redback.com
  */
 #include<cstring>
 #include<cstdlib>
