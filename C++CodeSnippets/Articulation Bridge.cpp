@@ -36,8 +36,7 @@ int dfs(int u) {
             par[v] = u;
             dfs(v);
             low[u] = min(low[u], low[v]);
-            if (depth[u] < low[v])
-                bridge.pb(mp(u, v));
+            if (depth[u] < low[v]) bridge.pb(mp(u, v));
         } else if (v != par[u])
             low[u] = min(low[u], depth[v]);
     }
@@ -53,8 +52,7 @@ int articulation_Point(int n) {
     bridge.clear();
 
     for (int i = 0; i < n; i++)
-        if (!color[i])
-            dfs(i);
+        if (!color[i]) dfs(i);
 
     int ans = bridge.size();
     printf("%d critical links\n", ans);

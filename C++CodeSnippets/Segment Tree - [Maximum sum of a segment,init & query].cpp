@@ -1,30 +1,23 @@
-/**
- *    @author     : Maruf Tuhin
- *    @School     : CUET CSE 11
- *    @Topcoder   : the_redback
- *    @CodeForces : the_redback
- *    @UVA        : the_redback
- *    @link       : maruf.2hin@gmail.com
- */
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mem(a, b) memset(a, b, sizeof(a))
-#define pb        push_back
-#define pp        pop_back
-#define inf       1000000000
-#define NN        200010
+#define inf 1000000000
+#define NN  200010
 
-struct data {
+struct Data {
     int totalsum, maxsum, leftmax, rightmax;
-    data(int k) { totalsum = maxsum = leftmax = rightmax = k; }
-    data() {}
-} arr[NN];
+    Data(int k) { totalsum = maxsum = leftmax = rightmax = k; }
+    Data() {
+        totalsum = 0;
+        maxsum = leftmax = rightmax = -inf;
+    }
+};
 
+Data tree[NN];
 int a[65010];
 
-data merge(data a, data b) {
-    data ret;
+Data merge(Data a, Data b) {
+    Data ret;
     ret.totalsum = (a.totalsum + b.totalsum);
     ret.maxsum = max(max(a.maxsum, b.maxsum), a.rightmax + b.leftmax);
     ret.leftmax = max(a.leftmax, a.totalsum + b.leftmax);
@@ -34,38 +27,37 @@ data merge(data a, data b) {
 
 void init(int node, int low, int high) {
     if (low == high) {
-        arr[node] = data(a[low]);
+        tree[node] = Data(a[low]);
         return;
     }
+
     int left = node * 2;
     int right = left + 1;
     int mid = (low + high) / 2;
 
     init(left, low, mid);
     init(right, mid + 1, high);
-    arr[node] = merge(arr[left], arr[right]);
+    tree[node] = merge(tree[left], tree[right]);
     return;
 }
 
-data query(int node, int low, int high, int rlow, int rhigh) {
-    if (low >= rlow && high <= rhigh)
-        return arr[node];
+Data query(int node, int low, int high, int qlow, int qhigh) {
+    // No Overlap
+    if (qhigh < low || qlow > high) return Data();
+
+    // Complete overlap
+    if (qlow <= low && high <= qhigh) return tree[node];
+
     int left = node * 2;
     int right = left + 1;
     int mid = (low + high) / 2;
 
-    if (rhigh <= mid)
-        return query(left, low, mid, rlow, rhigh);
-    else if (rlow > mid)
-        return query(right, mid + 1, high, rlow, rhigh);
-    else {
-        data L = query(left, low, mid, rlow, mid);
-        data R = query(right, mid + 1, high, mid + 1, rhigh);
-        return merge(L, R);
-    }
+    Data L = query(left, low, mid, qlow, qhigh);
+    Data R = query(right, mid + 1, high, qlow, qhigh);
+    return merge(L, R);
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;
@@ -77,7 +69,7 @@ main() {
         cin >> k;
         while (k--) {
             cin >> x >> y;
-            data l = query(1, 1, n, x, y);
+            Data l = query(1, 1, n, x, y);
             printf("%d\n", l.maxsum);
         }
     }
@@ -85,6 +77,7 @@ main() {
 }
 
 /*
+problem: https://www.spoj.com/problems/GSS1/
 Input:
 3
 -1 2 3

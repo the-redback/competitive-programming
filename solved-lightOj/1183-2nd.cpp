@@ -1,41 +1,28 @@
-/**
- *    @author     : Maruf Tuhin
- *    @College    : CUET CSE 11
- *    @Topcoder   : the_redback
- *    @CodeForces : the_redback
- *    @UVA        : the_redback
- *    @link       : http://www.fb.com/maruf.2hin
- */
-
 #include <bits/stdc++.h>
+
 using namespace std;
 
 typedef long long ll;
-typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
 #define inf       1e9
 #define eps       1e-9
-#define mod       1000000007
 #define NN        100010
 
 #define read(a) scanf("%lld", &a)
 
-struct data {
+struct Data {
     ll sum;
     ll xtra;
-} tree[300010];
+};
+
+Data tree[300010];
+ll a[NN];
 
 void init(ll node, ll low, ll high) {
+    tree[node].xtra = -1;
+
     if (low == high) {
-        tree[node].sum = 0;
-        tree[node].xtra = -1;
+        tree[node].sum = a[low];
         return;
     }
     ll left = node * 2;
@@ -44,46 +31,52 @@ void init(ll node, ll low, ll high) {
 
     init(left, low, mid);
     init(right, mid + 1, high);
-    tree[node].sum = tree[left].sum + tree[right].sum;
-    tree[node].xtra = -1;
+    tree[node].sum = tree[node * 2].sum + tree[node * 2 + 1].sum;
     return;
 }
 
-void update(ll node, ll low, ll high, ll rlow, ll rhigh, ll value) {
-    if (low >= rlow && high <= rhigh) {
+void update(ll node, ll low, ll high, ll qlow, ll qhigh, ll value) {
+    // No overlap
+    if (qhigh < low || qlow > high) return;
+
+    // Complete overlap
+    if (qlow <= low && high <= qhigh) {
         tree[node].sum = (high - low + 1) * value;
         tree[node].xtra = value;
         return;
     }
+
     ll left = node * 2;
     ll right = left + 1;
     ll mid = (low + high) / 2;
 
+    // Lazy propagation
     if (tree[node].xtra != -1) {
         tree[left].xtra = tree[node].xtra;
         tree[right].xtra = tree[node].xtra;
+
         tree[left].sum = (mid - low + 1) * tree[left].xtra;
         tree[right].sum = (high - mid) * tree[right].xtra;
+
         tree[node].xtra = -1;
     }
 
-    if (rhigh <= mid)
-        update(left, low, mid, rlow, rhigh, value);
-    else if (rlow > mid)
-        update(right, mid + 1, high, rlow, rhigh, value);
-    else {
-        update(left, low, mid, rlow, mid, value);
-        update(right, mid + 1, high, mid + 1, rhigh, value);
-    }
+    update(left, low, mid, qlow, qhigh, value);
+    update(right, mid + 1, high, qlow, qhigh, value);
+
     tree[node].sum = tree[left].sum + tree[right].sum;
 }
 
-ll query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
+ll query(ll node, ll low, ll high, ll qlow, ll qhigh, ll carry) {
+    // No overlap
+    if (qhigh < low || qlow > high) return 0;
+
     if (carry != -1) {
-        return (rhigh - rlow + 1) * carry;
+        return (min(high, qhigh) - max(low, qlow) + 1) * carry;
     }
 
-    if (low >= rlow && high <= rhigh) {
+    // Complete overlap
+    if (qlow <= low && high <= qhigh) {
         return tree[node].sum;
     }
 
@@ -91,21 +84,16 @@ ll query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
     ll right = left + 1;
     ll mid = (low + high) / 2;
 
-    ll p1 = 0, p2 = 0;
     if ((high - low + 1) * tree[node].xtra == tree[node].sum)
         carry = tree[node].xtra;
-    if (rhigh <= mid)
-        p1 = query(left, low, mid, rlow, rhigh, carry);
-    else if (rlow > mid)
-        p2 = query(right, mid + 1, high, rlow, rhigh, carry);
-    else {
-        p1 = query(left, low, mid, rlow, mid, carry);
-        p2 = query(right, mid + 1, high, mid + 1, rhigh, carry);
-    }
+
+    ll p1 = query(left, low, mid, qlow, qhigh, carry);
+    ll p2 = query(right, mid + 1, high, qlow, qhigh, carry);
+
     return p1 + p2;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     ll tc, t = 1;
     cin >> tc;
@@ -113,10 +101,13 @@ main() {
         ll n, q;
         cin >> n >> q;
         printf("Case %d:\n", t++);
+
+        memset(a, 0, sizeof(a));
         init(1, 1, n);
         while (q--) {
             ll i, j, k, l;
             cin >> i;
+
             if (i == 1) {
                 cin >> j >> k >> l;
                 update(1, 1, n, j + 1, k + 1, l);
@@ -125,6 +116,7 @@ main() {
                 ll ans = query(1, 1, n, j + 1, k + 1, -1);
                 ll res = (k - j + 1);
                 ll gcd = __gcd(res, ans);
+
                 if (res / gcd > 1)
                     printf("%lld/%lld\n", ans / gcd, res / gcd);
                 else
@@ -134,3 +126,5 @@ main() {
     }
     return 0;
 }
+
+// https://lightoj.com/problem/computing-fast-average
