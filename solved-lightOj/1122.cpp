@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 int a[20],N,cont,M;
 void call(int taken,int last)

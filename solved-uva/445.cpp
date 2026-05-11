@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
 main()
 {
     char a[135];

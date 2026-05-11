@@ -1,6 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
+#include <bits/stdc++.h>
 int prime(int n)
 {
     int i;

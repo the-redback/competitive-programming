@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 const int max=101;
 int x[max],y[max];
 

@@ -1,10 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
-#include <cmath>
-#include <algorithm>
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 class TypingDistance

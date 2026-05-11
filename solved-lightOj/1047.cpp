@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<string.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 int dp[21][3];
 int a[21][3];

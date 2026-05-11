@@ -1,8 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <cmath>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 vector <int>v;
 int array[20];

@@ -8,16 +8,7 @@
  *    @link : https://the-redback.com
  */
 
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <cstring>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <stack>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define mem(a, b) memset(a, b, sizeof(a))

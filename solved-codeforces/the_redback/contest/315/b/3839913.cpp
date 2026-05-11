@@ -1,7 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 __int64 a[100002],b[100002];
 main()

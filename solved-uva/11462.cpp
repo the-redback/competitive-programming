@@ -1,6 +1,4 @@
-#include <iostream>
-#include<stdio.h>
-#include <cstdlib>
+#include <bits/stdc++.h>
     int a[2000001];
 int compare_ints(const void* a, const void* b)   // comparison function
 {

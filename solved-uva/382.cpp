@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 int check(int n)
 {
     int i,j,count=1;

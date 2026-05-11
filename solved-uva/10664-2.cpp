@@ -1,7 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 int a[25],N,n;
 int dp[25][200];

@@ -1,4 +1,4 @@
-#include<cstdio>
+#include <bits/stdc++.h>
 using namespace std;
 long b[1000001],c[1000001];
 int main()

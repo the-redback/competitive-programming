@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <math.h>
+#include <bits/stdc++.h>
 main()
 {
     int a,i,t;

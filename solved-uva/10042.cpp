@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<math.h>
-#include <string.h>
+#include <bits/stdc++.h>
 int pr[105001];
 int prime(long n)
 {

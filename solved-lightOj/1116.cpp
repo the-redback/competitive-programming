@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <math.h>
+#include <bits/stdc++.h>
 main()
 {
     long long n,m,a,b;

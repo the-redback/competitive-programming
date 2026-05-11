@@ -1,5 +1,5 @@
 // C++ program for Merge Sort
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Merges two subarrays of array[].

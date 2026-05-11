@@ -110,7 +110,6 @@ main()
  *    @link       : http://www.fb.com/maruf.2hin
  */
 
-#include <bits/stdc++.h>
 
 using namespace std;
 

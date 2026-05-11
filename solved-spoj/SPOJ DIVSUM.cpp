@@ -1,7 +1,4 @@
-#include <string.h>
-#include <stdio.h>
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 bool pr[10000];
 

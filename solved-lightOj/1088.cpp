@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 long arr[100010];

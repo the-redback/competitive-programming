@@ -1,5 +1,4 @@
-#include<stdio.h>
-#include<math.h>
+#include <bits/stdc++.h>
 long p;
 long check(long m,long n)
 {

@@ -1,7 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
     char a[1000005];
     int b[1000005];

@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
-#include <stdlib.h>
-#include <vector>
-#include <stack>
-#include <queue>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 main()

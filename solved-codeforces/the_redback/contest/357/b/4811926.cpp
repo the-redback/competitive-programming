@@ -1,13 +1,4 @@
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cmath>
-#include<iostream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<algorithm>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 vector<int>v[100010];
 vector<int>v1;

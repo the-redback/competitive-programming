@@ -1,10 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <string>
-#include <iostream>
-#include <vector>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 vector <int> call(vector <int> v,int n,int m)
 {

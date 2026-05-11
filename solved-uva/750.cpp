@@ -1,6 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int a[10],n=8,I=1,X,Y;

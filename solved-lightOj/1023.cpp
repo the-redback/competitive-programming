@@ -1,9 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <cmath>
-#include <algorithm>
-#include <vector>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 vector <char>v;
 char arr[]={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};

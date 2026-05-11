@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <cstring>
-#include <algorithm>
-#include <stdlib.h>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 int dp[201][101];
 int a[201][101];

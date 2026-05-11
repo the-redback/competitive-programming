@@ -1,9 +1,4 @@
-#include <algorithm>
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
-#include <map>
-#include <set>
+#include <bits/stdc++.h>
 #define N 100010
 #define M 1000010
 #define For(i,x,y) for (i=x;i<=y;i++)

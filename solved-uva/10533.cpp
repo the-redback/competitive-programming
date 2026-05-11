@@ -1,5 +1,4 @@
-#include <cstdio>
-#include <math.h>
+#include <bits/stdc++.h>
 int a[1000001];
 int check(int n)
 {

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
 
 const int max=10000;
 char x[max],y[max];

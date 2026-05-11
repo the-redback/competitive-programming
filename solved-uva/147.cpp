@@ -1,9 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-#include <cmath>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 #define mem(x,y) memset(x,y,sizeof(x));
 int a[]={5,10,20,50,100,200,500,1000,2000,5000,10000};

@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <vector>
-#include <algorithm>
-#include <ctype.h>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 #define mem(x,y) memset(x,y,sizeof(x));
 

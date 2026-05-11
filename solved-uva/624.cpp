@@ -1,7 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 int m,k;
 int a[25];

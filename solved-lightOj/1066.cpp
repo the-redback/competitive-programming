@@ -1,13 +1,4 @@
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cmath>
-#include<iostream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<algorithm>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 char a[100][100];
 int visit[20][20];

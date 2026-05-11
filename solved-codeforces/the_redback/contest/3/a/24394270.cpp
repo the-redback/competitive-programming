@@ -1,15 +1,4 @@
-#include <iostream>
-#include <map>
-#include <algorithm>
-#include <fstream>
-#include <cstring>
-#include <cmath>
-#include <cctype>
-#include <string>
-#include <cstdio>
-#include <vector>
-#include <stack>
-#include <bitset>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()

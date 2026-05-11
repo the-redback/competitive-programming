@@ -1,6 +1,4 @@
-#include <iostream>
-#include<stdio.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 int a[2000001];
 
 int main()

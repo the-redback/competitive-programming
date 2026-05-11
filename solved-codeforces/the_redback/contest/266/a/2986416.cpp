@@ -1,6 +1,5 @@
 
-#include <string.h>
-#include <stdio.h>
+#include <bits/stdc++.h>
 
 main()
 {

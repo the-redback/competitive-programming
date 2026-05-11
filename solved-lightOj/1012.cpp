@@ -8,7 +8,7 @@
  *    @link : https://the-redback.com
  */
 
- #include <stdio.h>
+#include <bits/stdc++.h>
 char a[200][200];
 int N,M;
 int dirx[]= {-1,0,0,1};

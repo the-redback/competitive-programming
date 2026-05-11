@@ -1,6 +1,4 @@
-#include <string.h>
-#include <stdio.h>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 char a[1000],b[1000],c[1000];
 int l;

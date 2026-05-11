@@ -7,19 +7,7 @@
  *
  *    @link : https://the-redback.com
  */
-#include <iostream>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <iostream>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <string>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 int dx[]={-1,-1,-1,0,0,1,1,1};
 int dy[]={-1,0,1,-1,1,-1,0,1};

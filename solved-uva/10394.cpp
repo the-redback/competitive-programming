@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 
 int const max=18410011;
 int const min=100001;

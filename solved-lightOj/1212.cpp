@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <algorithm>
-#include <queue>
-#include <iostream>
-#include <deque>
+#include <bits/stdc++.h>
 using namespace std;
 main()
 {

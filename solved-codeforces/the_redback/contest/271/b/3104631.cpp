@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 bool pr[1000006];
 void sieve(long n)

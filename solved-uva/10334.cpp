@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <cstring>
+#include <bits/stdc++.h>
 const int max=1111;
 char a[1001][max];
 

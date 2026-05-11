@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 main()
 {
     int n,i,j,k,r,c;

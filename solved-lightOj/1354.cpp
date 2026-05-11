@@ -1,5 +1,4 @@
-#include <cstdio>
-#include <cstdlib>
+#include <bits/stdc++.h>
 int swap(char a[],int n)
 {
     int i,j,t;

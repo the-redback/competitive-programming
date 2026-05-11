@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <cstdlib>
+#include <bits/stdc++.h>
 using namespace std;
 int arr[500001],ab[500001];
 int compare(const void *a, const void *b)

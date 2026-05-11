@@ -1,7 +1,4 @@
-#include<cstdio>
-#include <cstring>
-#include <algorithm>
-#include <math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 bool a[1001];

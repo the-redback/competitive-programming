@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <vector>
-#include <queue>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 vector <int> v[201];
 int N,flag;

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
 
 void add(char b[201],char b1[201],char b2[201])
 {

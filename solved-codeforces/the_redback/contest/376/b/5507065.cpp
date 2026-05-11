@@ -7,19 +7,7 @@
  *
  *    @link : https://the-redback.com
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<string>
-#include<vector>
-#include<stack>
-#include<queue>
-#include<map>
-#include<set>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define inf HUGE_VAL

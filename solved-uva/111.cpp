@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 const int max=25;
 int x[max],y[max];
 int c[max][max];

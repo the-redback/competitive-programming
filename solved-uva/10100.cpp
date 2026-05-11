@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<string.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 char a[1001];
 char b[1001];

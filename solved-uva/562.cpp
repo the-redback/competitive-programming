@@ -1,8 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 int a[111];
 int N,K;

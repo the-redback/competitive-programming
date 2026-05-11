@@ -7,14 +7,7 @@
  *
  *    @link : https://the-redback.com
  */
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cmath>
-#include<iostream>
-#include<string>
-#include<vector>
-#include<algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 main()

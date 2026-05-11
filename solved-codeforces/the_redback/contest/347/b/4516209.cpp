@@ -1,16 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <iostream>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <string>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 main()

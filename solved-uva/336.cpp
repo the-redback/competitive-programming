@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <vector>
-#include <queue>
-#include <algorithm>
-#include <string.h>
-#include <map>
+#include <bits/stdc++.h>
 using namespace std;
 vector <int> v[50];
 vector <int>taken;

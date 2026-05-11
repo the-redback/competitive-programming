@@ -1,27 +1,7 @@
-#include <cstring>
-#include <map>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <sstream>
-#include <iostream>
-#include <iomanip>
-#include <cstdio>
-#include <cmath>
-#include <cstdlib>
-#include <ctime>
-#include <algorithm>
-#include <vector>
-#include <set>
-#include <complex>
-#include <list>
-#include <climits>
-#include <cctype>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-#include <ext/hash_set>
-#include <ext/hash_map>
 
 using namespace __gnu_cxx;
 

@@ -3,8 +3,7 @@
 /* -------------------------------------------------------------------------- */
 // Note that by default C++ creates a max-heap 
 // for priority queue 
-#include <iostream> 
-#include <queue> 
+#include <bits/stdc++.h>
 
 using namespace std; 
 
@@ -52,8 +51,6 @@ int main ()
 /*                                  Min Heap                                  */
 /* -------------------------------------------------------------------------- */
 // C++ program to demonstrate min heap 
-#include <iostream> 
-#include <queue> 
 
 using namespace std; 
 
@@ -102,7 +99,6 @@ int main ()
 // C++ program to create a priority queue of pairs. 
 // By default a max heap is created ordered 
 // by first element of pair. 
-#include <bits/stdc++.h> 
 
 using namespace std; 
 
@@ -131,7 +127,6 @@ int main()
 // C++ program to create a priority queue of pairs. 
 // We can create a min heap by passing adding two 
 // parameters, vector and greater(). 
-#include <bits/stdc++.h> 
 
 using namespace std; 
 

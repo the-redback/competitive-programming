@@ -1,5 +1,4 @@
- #include <stdio.h>
-#include <cstring>
+#include <bits/stdc++.h>
 
 
 main()

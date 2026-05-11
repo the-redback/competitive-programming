@@ -1,8 +1,5 @@
 
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 int a[7];
 int call(int i,int rem)

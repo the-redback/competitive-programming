@@ -1,6 +1,5 @@
 // A C++ program to demonstrate common Binary Heap Operations
-#include<iostream>
-#include<climits>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Prototype of a utility function to swap two integers

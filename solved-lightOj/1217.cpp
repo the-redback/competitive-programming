@@ -6,14 +6,7 @@
 ///    UVA        : Redback               //
 ///    http://www.fb.com/maruf.2hin       //
 ///=======================================//
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
-#include <cmath>
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 #define MAX 1010
 #define inf 999999

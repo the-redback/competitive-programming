@@ -6,21 +6,7 @@
 ///    UVA        : Redback               //
 ///    http://www.fb.com/maruf.2hin       //
 ///=======================================//
-#include<cstdio>
-#include<cstring>
-#include<cstdlib>
-#include<cctype>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<vector>
-#include<queue>
-#include<map>
-#include<algorithm>
-#include<set>
-#include<sstream>
-#include<stack>
+#include <bits/stdc++.h>
 using namespace std;
 #define inf 999999999;
 vector<long>v;

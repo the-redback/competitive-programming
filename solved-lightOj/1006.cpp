@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 long long dp[10001];
 int a, b, c, d, e, f;
 long long fn( int n )

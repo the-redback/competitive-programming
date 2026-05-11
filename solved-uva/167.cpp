@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 int b[10][10];
 int a[10],I=1,n=8,sum;

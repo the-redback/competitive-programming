@@ -1,9 +1,4 @@
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <string>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 class DerivativeSequence
 {

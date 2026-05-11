@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
 char a[100000000];
 char b[100000000];
 void work(char b[])
