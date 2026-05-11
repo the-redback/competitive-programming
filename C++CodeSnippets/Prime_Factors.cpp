@@ -1,7 +1,7 @@
-#define NN 47000
+#define NN 10010
 
-bool p[NN + 7];   // Hashing
-vector<int> pr;   // storing prime
+bool p[NN + 7];  // Hashing
+vector<int> pr;  // storing prime
 void sieve(int n) {
     int i, j, k, l;
     p[1] = 1;

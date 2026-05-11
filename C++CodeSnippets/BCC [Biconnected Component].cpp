@@ -15,23 +15,17 @@ will Be connected after deleting exactly one edge.*/
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        10010
+#define NN 10010
 
-vector<int> Graph[NN];          // Graph Before BCC
-vector<int> newGraph[NN];       // Graph after BCC
-vector<pair<int, int> > edge;   // Input edges
-stack<int> mystack;             // order of nodes r visited
-int depth[NN];                  // The depth(time) when a node is visited
-int par[NN];                    // Parent of node
-int low[NN];      // A node connected with lowest timed node [if bcc exist]
-bool color[NN];   // Color if a node is visited or not
-int belong[NN];   // A node blongs to which BCC
+vector<int> Graph[NN];         // Graph Before BCC
+vector<int> newGraph[NN];      // Graph after BCC
+vector<pair<int, int> > edge;  // Input edges
+stack<int> mystack;            // order of nodes r visited
+int depth[NN];                 // The depth(time) when a node is visited
+int par[NN];                   // Parent of node
+int low[NN];     // A node connected with lowest timed node [if bcc exist]
+bool color[NN];  // Color if a node is visited or not
+int belong[NN];  // A node blongs to which BCC
 int Time, bcc;
 
 int dfs(int u) {
@@ -60,24 +54,23 @@ int dfs(int u) {
 }
 
 int findbcc(int n) {
-    mem(depth, 0);
-    mem(par, -1);
-    mem(low, 0);
-    mem(color, 0);
+    memset(depth, 0, sizeof(depth));
+    memset(par, -1, sizeof(par));
+    memset(low, 0, sizeof(low));
+    memset(color, 0, sizeof(color));
     mystack = stack<int>();
     Time = bcc = 0;
 
-    for (int i = 0; i < n; i++)   // lowest node=0
-        if (!color[i])
-            dfs(i);
+    for (int i = 0; i < n; i++)  // lowest node=0
+        if (!color[i]) dfs(i);
     int Highest_Node = bcc;
 
     for (int i = 0; i < edge.size(); i++) {
         int u = belong[edge[i].first];
         int v = belong[edge[i].second];
         if (u != v) {
-            newGraph[u].pb(v);
-            newGraph[v].pb(u);
+            newGraph[u].push_back(v);
+            newGraph[v].push_back(u);
         }
     }
     return Highest_Node;
@@ -85,7 +78,7 @@ int findbcc(int n) {
 
 int Print_NewGraph(int n) {
     int i, j;
-    for (i = 1; i <= n; i++) {   // lowest node=1
+    for (i = 1; i <= n; i++) {  // lowest node=1
         if (newGraph[i].size()) {
             printf("%d :", i);
             for (j = 0; j < newGraph[i].size(); j++)
@@ -99,16 +92,16 @@ int Print_NewGraph(int n) {
 main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
-    cin >> tc;   // Test Case
+    cin >> tc;  // Test Case
     int i, j, k, l, m, n;
     int e;
     while (tc--) {
         cin >> n >> e;
         for (i = 0; i < e; i++) {
             cin >> k >> l;
-            Graph[k].pb(l);
-            Graph[l].pb(k);
-            edge.pb(mp(k, l));
+            Graph[k].push_back(l);
+            Graph[l].push_back(k);
+            edge.push_back(make_pair(k, l));
         }
         printf("Case %d:\n", t++);
         k = findbcc(n);

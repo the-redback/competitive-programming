@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mem(x, y) memset(x, y, sizeof(x));
-
 vector<int> v;
 vector<int> L;
 vector<int> I;
@@ -79,8 +77,7 @@ main() {
         }
         if (v.size()) {
             prework();
-            if (t != 1)
-                puts("");
+            if (t != 1) puts("");
             printf("Max hits: %d\n", LIS());
             show();
         }

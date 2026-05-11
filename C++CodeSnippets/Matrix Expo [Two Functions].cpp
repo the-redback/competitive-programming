@@ -14,26 +14,12 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define meminf(a) memset(a, 126, sizeof(a))
-#define inf       1e11
-#define eps       1e-9
-#define mod       10007
-#define NN        30100
-
 // cout << setfill('0') << setw(3) << a << endl;
 // cout << fixed << setprecision(20) << a << endl;
 
 /*
     f(n+1)= a1*f(n) + b1*f(n-1)+ c1*g(n-2)
     g(n+1)= a2*g(n) + b2*g(n-1)+ c2*f(n-2)
-
 
    |a1 b1 0  0  0  c1 |^k   |f(2)|   |f(k+2)|
    |1  0  0  0  0  0  |     |f(1)|   |f(k+1)|
@@ -53,7 +39,7 @@ ll g[4], f[4];
 void mult(ll a[8][8], ll b[8][8]) {
     ll temp[8][8];
     int i, j, k;
-    mem(temp, 0);
+    memset(temp, 0, sizeof(temp));
     for (i = 0; i < 6; i++)
         for (j = 0; j < 6; j++)
             for (k = 0; k < 6; k++) temp[i][j] += a[i][k] * b[k][j];
@@ -64,8 +50,7 @@ void mult(ll a[8][8], ll b[8][8]) {
 
 void BigMat(ll a[8][8], int pos) {
     int i, j, k;
-    if (pos == 1)
-        return;
+    if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
         mult(a, m);
@@ -78,8 +63,8 @@ void BigMat(ll a[8][8], int pos) {
 
 void init(ll a[8][8]) {
     ll i, j, k;
-    mem(a, 0);
-    mem(m, 0);
+    memset(a, 0, sizeof(a));
+    memset(m, 0, sizeof(m));
     m[0][0] = a1, m[0][1] = b1, m[0][5] = c1;
     m[1][0] = 1, m[2][1] = 1;
     m[3][2] = c2, m[3][3] = a2, m[3][4] = b2;
@@ -118,7 +103,7 @@ main() {
             }
             init(a);
             BigMat(a, n);
-            mem(temp, 0);
+            memset(temp, 0, sizeof(temp));
             for (i = 0; i < 6; i++)
                 for (j = 0; j < 1; j++)
                     for (k = 0; k < 6; k++) temp[i][j] += a[i][k] * b[k][j];

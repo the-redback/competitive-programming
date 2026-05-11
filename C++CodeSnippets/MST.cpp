@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define inf       10000000
-#define mem(a, b) memset(a, b, sizeof(a))
-#define NN        10010
+#define NN 10010
 int pr[NN + 7];
 
 struct edge {
@@ -11,13 +9,10 @@ struct edge {
 };
 
 vector<edge> e;
-bool comp(edge n, edge m) {
-    return n.w > m.w;
-}
+bool comp(edge n, edge m) { return n.w > m.w; }
 
 int root(int n) {
-    if (pr[n] == n)
-        return n;
+    if (pr[n] == n) return n;
     return root(pr[n]);
 }
 

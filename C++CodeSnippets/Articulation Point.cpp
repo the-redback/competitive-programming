@@ -11,13 +11,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        10010
+#define NN 10010
 
 vector<int> e[NN];
 int depth[NN];
@@ -37,46 +31,42 @@ void dfs(int u) {
             par[v] = u;
             dfs(v);
             low[u] = min(low[u], low[v]);
-            if (depth[u] <= low[v])
-                Flag[u] = true;
+            if (depth[u] <= low[v]) Flag[u] = true;
         } else if (v != par[u])
             low[u] = min(low[u], depth[v]);
     }
-    if (par[u] == -1)
-        Flag[u] = (call > 1);
+    if (par[u] == -1) Flag[u] = (call > 1);
 }
 
 int articulation_Point(int n) {
-    mem(depth, 0);
-    mem(par, -1);
-    mem(low, 0);
-    mem(color, 0);
-    mem(Flag, 0);
+    memset(depth, 0, sizeof(depth));
+    memset(par, -1, sizeof(par));
+    memset(low, 0, sizeof(low));
+    memset(color, 0, sizeof(color));
+    memset(Flag, 0, sizeof(Flag));
     Time = 0;
 
     for (int i = 1; i <= n; i++)
-        if (!color[i])
-            dfs(i);
+        if (!color[i]) dfs(i);
 
     int ans = 0;
     for (int i = 1; i <= n; i++)
-        if (Flag[i])
-            ans++;
+        if (Flag[i]) ans++;
     return ans;
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
-    cin >> tc;   // Test Case
+    cin >> tc;  // Test Case
     int i, j, k, l, m, n;
     int node, edge;
     while (tc--) {
         cin >> node >> edge;
         for (i = 0; i < edge; i++) {
             cin >> k >> l;
-            e[k].pb(l);
-            e[l].pb(k);
+            e[k].push_back(l);
+            e[l].push_back(k);
         }
 
         int ans = articulation_Point(node);

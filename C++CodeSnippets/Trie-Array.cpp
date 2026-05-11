@@ -14,19 +14,6 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define mod       1000000007
-#define NN        1000000
-
-#define read(a) scanf("%lld", &a)
 /*
 
 Dictionary contains N words.
@@ -49,26 +36,25 @@ struct trie {
 
 vector<trie> tree;
 
-void Insert(string arr, int start) {   /// Insert arr string
+void Insert(string arr, int start) {  /// Insert arr string
     ll node = 0;
     for (ll i = start; i < arr.size(); i++) {
         ll id = arr[i] - 'a';
 
         if (tree[node].next[id] == -1) {
             tree[node].next[id] = (int)tree.size();
-            tree.pb(trie());
+            tree.push_back(trie());
         }
         node = tree[node].next[id];
     }
-    tree[node].endmark = 1;   /// endmark marks the ending of a string
+    tree[node].endmark = 1;  /// endmark marks the ending of a string
 }
 
-bool Search(string arr) {   /// Search arr string
+bool Search(string arr) {  /// Search arr string
     int node = 0;
     for (int i = 0; i < arr.size(); i++) {
         int id = arr[i] - 'a';
-        if (tree[node].next[id] == -1)
-            return false;
+        if (tree[node].next[id] == -1) return false;
         node = tree[node].next[id];
     }
     return tree[node].endmark;
@@ -83,19 +69,19 @@ int main() {
     char arr[100];
 
     ll t = 1, tc;
-    read(tc);   /// Test case
+    scanf("%lld", &tc);  /// Test case
     ll i, j, k, l, m, n;
     while (tc--) {
-        tree.pb(trie());   /// Root node actually.
+        tree.push_back(trie());  /// Root node actually.
 
-        read(n);   /// No of word in dictionary.
+        scanf("%lld", &n);  /// No of word in dictionary.
         ll flag = 1;
         for (i = 0; i < n; i++) {
             scanf("%s", &arr);
-            Insert(arr, 0);   /// Insert arr string into dictionary.
+            Insert(arr, 0);  /// Insert arr string into dictionary.
         }
 
-        read(m);   /// No of queries.
+        scanf("%lld", &m);  /// No of queries.
         for (i = 0; i < m; i++) {
             scanf("%s", &arr);
             if (Search(arr))
@@ -104,7 +90,7 @@ int main() {
                 puts("No");
         }
 
-        tree.clear();   /// Delete The Memory.
+        tree.clear();  /// Delete The Memory.
     }
     return 0;
 }

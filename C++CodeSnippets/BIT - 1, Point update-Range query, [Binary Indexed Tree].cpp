@@ -14,18 +14,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define meminf(a) memset(a, 126, sizeof(a))
-#define inf       1e11
-#define eps       1e-9
-#define mod       1000000007
-#define NN        100010
+#define NN 10010
 
 // cout << setfill('0') << setw(3) << a << endl;
 // cout << fixed << setprecision(20) << a << endl;
@@ -70,7 +59,7 @@ main() {
     ll i, j, k, l, m, n;
     while (tc--) {
         scanf("%lld %lld", &n, &m);
-        mem(tree, 0);
+        memset(tree, 0, sizeof(tree));
         MaxVal = n;
         for (i = 1; i <= n; i++) {
             scanf("%lld", &arr[i]);

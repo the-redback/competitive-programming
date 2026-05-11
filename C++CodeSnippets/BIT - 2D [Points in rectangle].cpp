@@ -14,18 +14,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define meminf(a) memset(a, 126, sizeof(a))
-#define inf       1e11
-#define eps       1e-9
-#define mod       10007
-#define NN        1010
+#define NN 10010
 
 // cout << setfill('0') << setw(3) << a << endl;
 // cout << fixed << setprecision(20) << a << endl;
@@ -81,8 +70,8 @@ main() {
     while (tc--) {
         printf("Case %d:\n", t++);
         cin >> n;
-        mem(flag, 0);
-        mem(tree, 0);
+        memset(flag, 0, sizeof(flag));
+        memset(tree, 0, sizeof(tree));
         max_x = max_y = 1001;
         while (n--) {
             cin >> j;

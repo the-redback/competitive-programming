@@ -14,19 +14,6 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define meminf(a) memset(a, 126, sizeof(a))
-#define inf       1e11
-#define eps       1e-9
-#define mod       1000000007
-#define NN        30100
-
 // cout << setfill('0') << setw(3) << a << endl;
 // cout << fixed << setprecision(20) << a << endl;
 
@@ -48,7 +35,7 @@ ll m[3][3];
 void mult(ll a[3][3], ll b[3][3]) {
     ll temp[3][3];
     int i, j, k;
-    mem(temp, 0);
+    memset(temp, 0, sizeof(temp));
     for (i = 0; i < 2; i++)
         for (j = 0; j < 2; j++)
             for (k = 0; k < 2; k++) temp[i][j] += a[i][k] * b[k][j];
@@ -59,8 +46,7 @@ void mult(ll a[3][3], ll b[3][3]) {
 
 void BigMat(ll a[3][3], int pos) {
     int i, j, k;
-    if (pos == 1)
-        return;
+    if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
         mult(a, m);
@@ -110,7 +96,7 @@ main() {
         m[0][0] = bb;
         m[1][0] = aa;
         ll temp[3][3];
-        mem(temp, 0);
+        memset(temp, 0, sizeof(temp));
         for (i = 0; i < 2; i++)
             for (j = 0; j < 1; j++)
                 for (k = 0; k < 2; k++) temp[i][j] += a[i][k] * m[k][j];

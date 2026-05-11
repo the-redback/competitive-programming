@@ -10,14 +10,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        1050
-
 main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
@@ -29,8 +21,7 @@ main() {
         for (i = 0; i < n; i++) {
             cin >> k;
             res ^= k;
-            if (k == 1)
-                cnt++;
+            if (k == 1) cnt++;
         }
         if (cnt == n) {
             if (!res)

@@ -4,9 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define NN 47000
-bool p[NN + 7];   // Hashing
-vector<int> pr;   // storing prime
+#define NN 10010
+bool p[NN + 7];  // Hashing
+vector<int> pr;  // storing prime
 void sieve(int n) {
     int i, j, k, l;
     p[1] = 1;
@@ -24,8 +24,8 @@ void sieve(int n) {
 /*                                 For Hashing                                */
 /* -------------------------------------------------------------------------- */
 
-#define NN 47000
-bool p[NN + 7];   // Hashing
+#define NN 10010
+bool p[NN + 7];  // Hashing
 void sieve(int n) {
     int i, j, k, l;
     p[1] = 1;
@@ -42,13 +42,10 @@ void sieve(int n) {
 /* -------------------------------------------------------------------------- */
 
 bool isprime(long long n) {
-    if (n == 2)
-        return 1;
-    if (n == 1 || n % 2 == 0)
-        return 0;
+    if (n == 2) return 1;
+    if (n == 1 || n % 2 == 0) return 0;
     for (ll i = 3; i * i <= n; i += 2)
-        if (n % i == 0)
-            return 0;
+        if (n % i == 0) return 0;
     return 1;
 }
 
@@ -65,8 +62,7 @@ int factor(int n) {
             n /= k;
             count++;
         }
-        if (n == 1)
-            break;
+        if (n == 1) break;
     }
     if (n > 1) {
         count++;
@@ -86,14 +82,12 @@ int get_factors(int n) {
         k = pr[i];
         count = 0;
 
-        if (n % k == 0)
-            facts[r].push_back(k);
+        if (n % k == 0) facts[r].push_back(k);
         while (n % k == 0) {
             n /= k;
             count++;
         }
-        if (n == 1)
-            break;
+        if (n == 1) break;
     }
     if (n > 1 && n != r) {
         facts[r].push_back(n);

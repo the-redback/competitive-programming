@@ -4,11 +4,7 @@ using namespace std;
 
 typedef long long ll;
 
-#define inf       1e9
-#define eps       1e-9
-#define NN        100010
-
-#define read(a) scanf("%lld", &a)
+#define NN 10010
 
 struct Data {
     ll sum;

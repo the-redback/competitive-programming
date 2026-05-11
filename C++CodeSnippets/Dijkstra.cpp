@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mx 100002
-vector<int> g[mx], cost[mx];
+#define NN 100002
+
+vector<int> g[NN], cost[NN];
 struct node {
     int u, w;
     node(int a, int b) {
@@ -12,10 +13,10 @@ struct node {
     bool operator<(const node& p) const { return w > p.w; }
 };
 
-int d[mx], par[mx];
+int d[NN], par[NN];
 
 int dijkstra(int n) {
-    memset(d, 63, sizeof(d));   // huge value=63
+    memset(d, 63, sizeof(d));  // huge value=63
     memset(par, -1, sizeof(par));
     priority_queue<node> q;
     q.push(node(1, 0));
@@ -25,8 +26,7 @@ int dijkstra(int n) {
         q.pop();
         int u = top.u;
 
-        if (u == n)
-            return d[n];
+        if (u == n) return d[n];
         for (int i = 0; i < (int)g[u].size(); i++) {
             int v = g[u][i];
             if (d[u] + cost[u][i] < d[v]) {

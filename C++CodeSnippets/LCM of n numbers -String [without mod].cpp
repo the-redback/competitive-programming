@@ -10,8 +10,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define inf       HUGE_VAL
-#define mem(a, b) memset(a, b, sizeof(a))
+#define inf 1e9
 
 bool pr[106];
 vector<int> prim;
@@ -45,8 +44,7 @@ void factor(int n) {
             count++;
         }
         fact[i] = max(fact[i], count);
-        if (n == 1)
-            break;
+        if (n == 1) break;
     }
     if (n > 1) {
         mx = max(n, mx);
@@ -79,7 +77,7 @@ main() {
     cin >> tc;
     while (tc--) {
         cin >> n;
-        mem(fact, 0);
+        memset(fact, 0, sizeof(fact));
         mx = -inf;
         while (n--) {
             cin >> k;

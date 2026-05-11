@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define inf 1000000000
-#define NN  200010
+#define inf 1e9
+#define NN 10010
 
 struct Data {
     int totalsum, maxsum, leftmax, rightmax;

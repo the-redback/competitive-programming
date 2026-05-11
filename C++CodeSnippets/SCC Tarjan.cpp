@@ -10,22 +10,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        1050
-#define MAX       1000000
-
-bool Flag[MAX];     // If a node already belongs to a scc or not.
-int depth[MAX];     // The time when a node is visited
-int Lowlink[MAX];   // A node connected with lowest timed node [if scc exist]
-bool color[MAX];
-int belong[MAX];      // A node blongs to which SCC
-vector<int> G[MAX];   // Graph Store
-stack<int> mystack;   // order of nodes r visited
+bool Flag[1000000];    // If a node already belongs to a scc or not.
+int depth[1000000];    // The time when a node is visited
+int Lowlink[1000000];  // A node connected with lowest timed node [if scc exist]
+bool color[1000000];
+int belong[1000000];     // A node blongs to which SCC
+vector<int> G[1000000];  // Graph Store
+stack<int> mystack;      // order of nodes r visited
 int time, top, scc;
 
 void tarjan(int u) {
@@ -55,13 +46,12 @@ void tarjan(int u) {
 void findSCC(int n) {
     mystack = stack<int>();
     scc = top = time = 0;
-    mem(depth, -1);
-    mem(Flag, 0);
-    mem(color, 0);
-    mem(Lowlink, 126);
+    memset(depth, -1, sizeof(depth));
+    memset(Flag, 0, sizeof(Flag));
+    memset(color, 0, sizeof(color));
+    memset(Lowlink, 126, sizeof(Lowlink));
     for (int i = 1; i <= n; i++)
-        if (!color[i])
-            tarjan(i);
+        if (!color[i]) tarjan(i);
 }
 
 int main() {
@@ -70,7 +60,7 @@ int main() {
     for (int i = 0; i < edge; i++) {
         int k, l;
         cin >> k >> l;
-        G[k].pb(l);
+        G[k].push_back(l);
     }
     findSCC(node);
     cout << scc;

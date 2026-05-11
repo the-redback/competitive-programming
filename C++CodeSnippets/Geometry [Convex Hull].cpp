@@ -11,14 +11,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define pp(x)     pop_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        1050
+#define inf 1e9
 
 struct P {
     double x, y;
@@ -31,36 +24,23 @@ struct P {
 
 vector<P> v;
 
-P MV(P a, P b) {
-    return P(b.x - a.x, b.y - a.y);
-}
+P MV(P a, P b) { return P(b.x - a.x, b.y - a.y); }
 
-double DP(P a, P b) {
-    return a.x * b.x + a.y * b.y;
-}
+double DP(P a, P b) { return a.x * b.x + a.y * b.y; }
 
-double CP(P a, P b) {
-    return a.x * b.y - a.y * b.x;
-}
+double CP(P a, P b) { return a.x * b.y - a.y * b.x; }
 
-double A(P a) {
-    return sqrt(a.x * a.x + a.y * a.y);
-}
+double A(P a) { return sqrt(a.x * a.x + a.y * a.y); }
 
-P ADD(P a, P b) {
-    return P(a.x + b.x, a.y + b.y);
-}
+P ADD(P a, P b) { return P(a.x + b.x, a.y + b.y); }
 
-P LV(P a, double l) {
-    return P(a.x * l / A(a), a.y * l / A(a));
-}
+P LV(P a, double l) { return P(a.x * l / A(a), a.y * l / A(a)); }
 
 P pvt;
 
-bool comp(P a, P b) {   // False hoile sort korbe
+bool comp(P a, P b) {  // False hoile sort korbe
     long long c = CP(MV(pvt, a), MV(pvt, b));
-    if (c)
-        return c > 0;
+    if (c) return c > 0;
     return A(MV(pvt, a)) < A(MV(pvt, b));
 }
 
@@ -80,16 +60,16 @@ vector<P> q;
 void go(void) {
     q.clear();
     int n = v.size();
-    q.pb(v[n - 1]);
-    v.pp();
+    q.push_back(v[n - 1]);
+    v.pop_back();
     for (int i = v.size() - 1; i >= 0; i--) {
         if (CP(MV(v[0], q[q.size() - 1]), MV(v[0], v[i])) == 0) {
-            q.pb(v[i]);
-            v.pp();
+            q.push_back(v[i]);
+            v.pop_back();
         } else
             break;
     }
-    for (int i = 0; i < q.size(); i++) v.pb(q[i]);
+    for (int i = 0; i < q.size(); i++) v.push_back(q[i]);
 }
 
 main() {
@@ -104,7 +84,7 @@ main() {
         v.clear();
         for (i = 0; i < n; i++) {
             cin >> k >> l;
-            v.pb(P(k, l));
+            v.push_back(P(k, l));
         }
         checkPvt();
         sort(v.begin(), v.end(), comp);

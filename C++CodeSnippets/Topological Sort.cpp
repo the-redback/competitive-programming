@@ -1,11 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mem(a, b) memset(a, b, sizeof(a))
-#define pb        push_back
-#define pp        pop_back
-#define inf       1000000000
-#define NN        1000010
+#define NN 10010
 
 vector<int> e[NN + 7], v;
 int view[NN + 7];
@@ -24,7 +20,7 @@ void dfs(int u) {
         }
     }
     view[u] = 1;
-    v.pb(u);
+    v.push_back(u);
 }
 
 int main() {
@@ -32,15 +28,13 @@ int main() {
     int tc, t;
     int n, m;
     while (~scanf("%d%d", &n, &m)) {
-        if (n == 0 && m == 0)
-            return 0;
-        mem(view, -1);
-        for (i = 0; i < m; i++) scanf("%d%d", &k, &l), e[k].pb(l);
+        if (n == 0 && m == 0) return 0;
+        memset(view, -1, sizeof(view));
+        for (i = 0; i < m; i++) scanf("%d%d", &k, &l), e[k].push_back(l);
         fl = 0;
         for (i = 1; i <= n; i++) {
             f = i;
-            if (view[i] == -1)
-                dfs(i);
+            if (view[i] == -1) dfs(i);
         }
         if (fl)
             printf("IMPOSSIBLE\n");

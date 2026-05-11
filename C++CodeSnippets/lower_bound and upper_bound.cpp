@@ -1,8 +1,8 @@
 int bs_upper_bound(int a[], int n, int x) {
     int l = 0;
-    int h = n; // Not n - 1
+    int h = n;  // Not n - 1
     while (l < h) {
-        int mid =  l + (h - l) / 2;
+        int mid = l + (h - l) / 2;
         if (x >= a[mid]) {
             l = mid + 1;
         } else {
@@ -14,16 +14,15 @@ int bs_upper_bound(int a[], int n, int x) {
 
 int bs_lower_bound(int a[], int n, int x) {
     int l = 0;
-    int h = n; // Not n - 1
+    int h = n;  // Not n - 1
     while (l < h) {
-        int mid =  l + (h - l) / 2;
+        int mid = l + (h - l) / 2;
         if (x > a[mid]) {
             l = mid + 1;
         } else {
-            h = mid;            
+            h = mid;
         }
     }
     return l;
 }
 //==========================================
-

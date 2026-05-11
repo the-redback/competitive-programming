@@ -14,19 +14,6 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft        first
-#define sd        second
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define allr(x)   x.rbegin(), x.rend()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define meminf(a) memset(a, 126, sizeof(a))
-#define inf       1e11
-#define eps       1e-9
-#define mod       10007
-#define NN        30100
-
 /*
     f(n)= a*f(n-1) + b*f(n-3) +c, if(n > 2)
         = 0                      if(n <= 2)
@@ -48,19 +35,18 @@ ll m[5][5];
 void mult(ll a[5][5], ll b[5][5]) {
     ll temp[5][5];
     int i, j, k;
-    mem(temp, 0);
+    memset(temp, 0, sizeof(temp));
     for (i = 0; i < 4; i++)
         for (j = 0; j < 4; j++)
             for (k = 0; k < 4; k++) temp[i][j] += a[i][k] * b[k][j];
     for (i = 0; i < 4; i++)
-        for (j = 0; j < 4; j++) a[i][j] = temp[i][j] % mod;
+        for (j = 0; j < 4; j++) a[i][j] = temp[i][j] % 10007;
     return;
 }
 
 void BigMat(ll a[5][5], int pos) {
     int i, j, k;
-    if (pos == 1)
-        return;
+    if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
         mult(a, m);
@@ -103,12 +89,12 @@ main() {
 
         ll temp[5][5];
 
-        mem(temp, 0);
+        memset(temp, 0, sizeof(temp));
         for (i = 0; i < 4; i++)
             for (j = 0; j < 1; j++)
                 for (k = 0; k < 4; k++) temp[i][j] += a[i][k] * b[k][j];
 
-        printf("Case %d: %lld\n", t++, temp[2][0] % mod);
+        printf("Case %d: %lld\n", t++, temp[2][0] % 10007);
     }
     return 0;
 }

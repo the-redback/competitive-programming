@@ -1,22 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define NIL   -1
-#define white 0
-#define gray  1
-#define black 2
+#define NN 10010
 
-int dis[MAX];
-int parent[MAX];
-int color[MAX];
-vector<int> g[MAX];
+int dis[NN];
+int parent[NN];
+int color[NN];
+vector<int> g[NN];
 
 void BFS(int s, int v) {
     int len, x, k;
     queue<int> Q;
-    parent[s] = NIL;
+    parent[s] = -1;
     dis[s] = 0;
-    color[s] = gray;
+    color[s] = 1;
 
     Q.push(s);
     while (!Q.empty()) {
@@ -24,14 +21,14 @@ void BFS(int s, int v) {
         Q.pop();
         len = g[x].size();
         for (int i = 0; i < len; i++)
-            if (g[x][i] && color[g[x][i]] == white) {
+            if (g[x][i] && color[g[x][i]] == 0) {
                 k = g[x][i];
-                color[k] = gray;
+                color[k] = 1;
                 dis[k] = dis[x] + 1;
                 parent[k] = x;
                 Q.push(k);
             }
-        color[x] = black;
+        color[x] = 2;
         printf("%d ", x);
     }
 

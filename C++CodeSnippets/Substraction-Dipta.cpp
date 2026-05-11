@@ -14,8 +14,10 @@ int compare(string a, string b) {
 string remove_leading_zeros(string str) {
     int zero = 0;
     for (int i = 0; i < str.size(); i++) {
-        if (str[i] == '0') zero++;
-        else break;
+        if (str[i] == '0')
+            zero++;
+        else
+            break;
     }
     if (zero == str.size()) return "0";
     return str.substr(zero);
@@ -29,8 +31,10 @@ string subtract(string a, string b) {
     string ans;
     int tmp, borrow = 0;
     for (int i = a.size() - 1, j = b.size() - 1; i >= 0 || j >= 0; i--, j--) {
-        if (j < 0) tmp = a[i] - '0';
-        else tmp = a[i] - b[j];
+        if (j < 0)
+            tmp = a[i] - '0';
+        else
+            tmp = a[i] - b[j];
         if (borrow) {
             tmp--;
             borrow = 0;
@@ -46,4 +50,3 @@ string subtract(string a, string b) {
     if (cmp == -1) ans = "-" + ans;
     return ans;
 }
-

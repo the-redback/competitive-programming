@@ -3,10 +3,8 @@ using namespace std;
 
 string subtract(string a, string b) {
     int cmp = compare(a, b);
-    if (cmp == 0)
-        return "0";
-    if (cmp == -1)
-        swap(a, b);
+    if (cmp == 0) return "0";
+    if (cmp == -1) swap(a, b);
 
     string ans;
     int tmp, borrow = 0;
@@ -27,7 +25,6 @@ string subtract(string a, string b) {
     }
     reverse(ans.begin(), ans.end());
     ans = remove_leading_zeros(ans);
-    if (cmp == -1)
-        ans = "-" + ans;
+    if (cmp == -1) ans = "-" + ans;
     return ans;
 }

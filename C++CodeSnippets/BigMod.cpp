@@ -5,8 +5,7 @@ using namespace std;
 long p;
 long check(long m, long n) {
     int sum;
-    if (n == 0)
-        return 1;
+    if (n == 0) return 1;
     if (n % 2 == 0) {
         sum = check(m, n / 2);
         return ((sum % p) * (sum % p)) % p;
@@ -30,8 +29,7 @@ const int mod = 1e9 + 7;
 int my_pow(int a, int b) {
     int r = 1;
     while (b) {
-        if (b % 2)
-            r = (long long)r * a % mod;
+        if (b % 2) r = (long long)r * a % mod;
         b /= 2;
         a = (long long)a * a % mod;
     }

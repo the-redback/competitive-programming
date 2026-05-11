@@ -1,1 +1,1 @@
-memset(tree,0,sizeof(int)*(n+1));
+memset(tree, 0, sizeof(int) * (n + 1));

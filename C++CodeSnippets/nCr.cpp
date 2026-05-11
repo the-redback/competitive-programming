@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long nCr(int n, int r) {   //
+long long nCr(int n, int r) {  //
     int k, l;
     k = max((r, n - r));
     l = min((r, n - r));
@@ -12,7 +12,7 @@ long long nCr(int n, int r) {   //
         sum *= i;
         if (j <= l && sum % j == 0) {
             sum /= j;
-            j++; 
+            j++;
         }
     }
     return sum;

@@ -3,9 +3,6 @@ using namespace std;
 
 typedef long long ll;
 
-#define inf 1e9
-#define NN  1050
-
 struct data {
     ll sum;
     ll xtra;

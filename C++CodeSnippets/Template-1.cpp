@@ -10,15 +10,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll        long long
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        1050
-
 main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);

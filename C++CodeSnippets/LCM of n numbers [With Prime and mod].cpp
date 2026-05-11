@@ -10,14 +10,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp        make_pair
-#define pb(x)     push_back(x)
-#define all(x)    x.begin(), x.end()
-#define mem(a, b) memset(a, b, sizeof(a))
-#define inf       1e9
-#define eps       1e-9
-#define NN        100010
-#define mod       1000000007
+#define inf 1e9
+#define NN 10010
 
 vector<int> arr;
 
@@ -52,8 +46,7 @@ void factor(int n) {
             count++;
         }
         fact[i] = max(fact[i], count);
-        if (n == 1)
-            break;
+        if (n == 1) break;
     }
     if (n > 1) {
         mx = max(n, mx);
@@ -63,41 +56,39 @@ void factor(int n) {
 
 int bigmod(int m, int n) {
     int sum;
-    if (n == 0)
-        return 1;
+    if (n == 0) return 1;
     if (n % 2 == 0) {
         sum = bigmod(m, n / 2);
-        return ((sum % mod) * (sum % mod)) % mod;
+        return ((sum % 1000000007) * (sum % 1000000007)) % 1000000007;
     } else {
         sum = bigmod(m, n - 1);
-        return ((m % mod) * (sum % mod)) % mod;
+        return ((m % 1000000007) * (sum % 1000000007)) % 1000000007;
     }
 }
 
-int LCM(void) {   // LCM of elemets of arr with mod
+int LCM(void) {  // LCM of elemets of arr with 1000000007
     long long sum;
     int i, j, k;
     mx = -inf;
-    mem(fact, 0);
+    memset(fact, 0, sizeof(fact));
     for (i = 0; i < arr.size(); i++) factor(arr[i]);
     sum = 1;
     for (i = 2; i <= mx; i++)
-        if (fact[i])
-            sum = (sum * bigmod(i, fact[i])) % mod;
+        if (fact[i]) sum = (sum * bigmod(i, fact[i])) % 1000000007;
     return sum;
 }
 
 main() {
-    ios_base::sync_with_stdio(0);   // cin.tie(0);
+    ios_base::sync_with_stdio(0);  // cin.tie(0);
     int t, tc;
     cin >> tc;
     int cnt = 0, sum = 0;
     int i, j, k, l, n, m;
-    sieve(345);   // Sieve
+    sieve(345);  // Sieve
     while (tc--) {
         cin >> n;
         arr.clear();
-        for (i = 1; i <= n; i++) cin >> k, arr.pb(k);
+        for (i = 1; i <= n; i++) cin >> k, arr.push_back(k);
         sum = LCM();
         printf("%d\n", sum);
     }

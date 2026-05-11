@@ -2,9 +2,7 @@
 using namespace std;
 
 typedef long long ll;
-#define inf       10000000
-#define mem(a, b) memset(a, b, sizeof(a))
-#define NN        10010
+#define NN 10010
 int root[NN + 7];
 int rank[NN + 7];
 
@@ -14,9 +12,7 @@ struct edge {
 
 vector<edge> e;
 
-bool comp(edge n, edge m) {
-    return n.w > m.w;
-}
+bool comp(edge n, edge m) { return n.w > m.w; }
 
 void init(int n) {
     for (int i = 1; i <= n; i++) {
@@ -26,8 +22,7 @@ void init(int n) {
 }
 
 int find(int u) {
-    if (u != root[u])
-        root[u] = find(root[u]);
+    if (u != root[u]) root[u] = find(root[u]);
     return root[u];
 }
 
@@ -36,8 +31,7 @@ void Union(int u, int v) {
         root[v] = u;
     else {
         root[u] = v;
-        if (rank[u] == rank[v])
-            rank[v]++;
+        if (rank[u] == rank[v]) rank[v]++;
     }
 }
 

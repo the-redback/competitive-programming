@@ -9,8 +9,6 @@ class Solution {
 
 // Fast I/O; 4 ms. Just add the following line
 
-
-
 static int noio = []() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -18,7 +16,5 @@ static int noio = []() {
     return 0;
 }();
 
-
 static bool _foo = ios::sync_with_stdio(false);
 static ostream* _bar = cin.tie(NULL);
-
