@@ -25,7 +25,7 @@ int mx;
 int fact[NN];
 void sieve(int n) {
     memset(pr, 0, sizeof(pr));
-    long i, j, k, l;
+    long i, j;
     pr[1] = 1;
     prim.push_back(2);
     for (i = 4; i <= n; i += 2) pr[i] = 1;
@@ -72,7 +72,7 @@ int bigmod(int m, int n) {
 
 int LCM(void) {  // LCM of elemets of arr with 1000000007
     long long sum;
-    int i, j, k;
+    int i;
     mx = -inf;
     memset(fact, 0, sizeof(fact));
     for (i = 0; i < arr.size(); i++) factor(arr[i]);
@@ -84,10 +84,10 @@ int LCM(void) {  // LCM of elemets of arr with 1000000007
 
 int main() {
     ios_base::sync_with_stdio(0);  // cin.tie(0);
-    int t, tc;
+    int tc;
     cin >> tc;
-    int cnt = 0, sum = 0;
-    int i, j, k, l, n, m;
+    int sum = 0;
+    int i, k, n;
     sieve(345);  // Sieve
     while (tc--) {
         cin >> n;

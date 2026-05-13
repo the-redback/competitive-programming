@@ -20,7 +20,7 @@ vector<int> adj[MAXN];
 int dist[MAXN];
 int parent[MAXN];
 
-void bfs(int source, int numOfNodes) {
+void bfs(int source, int /*numOfNodes*/) {
     memset(dist, -1, sizeof(dist));
     memset(parent, -1, sizeof(parent));
 

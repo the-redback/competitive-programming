@@ -60,9 +60,8 @@ Data query(int node, int low, int high, int qlow, int qhigh) {
 
 int main() {
     ios_base::sync_with_stdio(false);
-    int t, tc;
-    int i, j, k;
-    int res, u, w, p, n, x, y, z, m, q, r, v, zero;
+    int i, k;
+    int n, x, y;
     // cin>>tc;
     while (cin >> n) {
         for (i = 1; i <= n; i++) cin >> a[i];

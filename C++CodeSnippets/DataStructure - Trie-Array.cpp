@@ -67,14 +67,13 @@ int main() {
 
     char arr[100];
 
-    ll t = 1, tc;
+    ll tc;
     cin >> tc;  /// Test case
-    ll i, j, k, l, m, n;
+    ll i, m, n;
     while (tc--) {
         tree.push_back(trie());  /// Root node actually.
 
         cin >> n;  /// No of word in dictionary.
-        ll flag = 1;
         for (i = 0; i < n; i++) {
             cin >> arr;
             Insert(arr, 0);  /// Insert arr string into dictionary.

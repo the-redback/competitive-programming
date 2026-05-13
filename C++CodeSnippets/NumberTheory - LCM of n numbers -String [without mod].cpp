@@ -23,7 +23,7 @@ int fact[10001];
 
 void sieve(int n) {
     memset(pr, 0, sizeof(pr));
-    long i, j, k, l;
+    long i, j;
     pr[1] = 1;
     prim.push_back(2);
     for (i = 4; i <= n; i += 2) pr[i] = 1;
@@ -76,7 +76,7 @@ void mult(int n, int r) {
 int main() {
     ios_base::sync_with_stdio(false);
     sieve(101);
-    int n, k, i, m, c;
+    int n, k, i;
     int tc, t = 1;
     cin >> tc;
     while (tc--) {

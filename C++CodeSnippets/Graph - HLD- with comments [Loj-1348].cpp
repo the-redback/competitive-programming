@@ -185,7 +185,7 @@ void HLD(ll curNode, ll prev) {
                                // will use in Segtree
     baseArray[ptr++] = value[curNode];
 
-    ll sc = -1, ncost;
+    ll sc = -1;
     // Loop to find special child
     for (ll i = 0; i < adj[curNode].size(); i++)
         if (adj[curNode][i] != prev) {
@@ -243,7 +243,7 @@ int main() {
         }
 
         for (ll i = 1; i < n; i++) {
-            ll u, v, c;
+            ll u, v;
             cin >> u >> v;
             adj[u].push_back(v);
             adj[v].push_back(u);

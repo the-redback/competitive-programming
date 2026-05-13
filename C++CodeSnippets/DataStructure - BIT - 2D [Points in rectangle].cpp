@@ -66,9 +66,8 @@ int main() {
     cin.tie(0);
     int t = 1, tc;
     cin >> tc;
-    int i, j, k, l, n;
+    int j, n;
     int x1, x2, y1, y2;
-    int r;
     while (tc--) {
         cout << "Case " << t++ << ":" << "\n";
         cin >> n;

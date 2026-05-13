@@ -48,7 +48,7 @@ void dfs(ll u) {
 
 ll lca_query(ll p, ll q) {
     if (level[p] < level[q]) swap(p, q);
-    ll i, j, k, log;
+    ll i, log;
     log = 1;
     while (1) {
         ll next = log + 1;
@@ -82,9 +82,9 @@ void lca_init(ll n) {
 
 int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
-    int t = 1, tc;
+    int tc;
     cin >> tc;
-    ll i, j, k, l, n;
+    ll i, k, l, n;
     ll r;
     while (tc--) {
         cin >> n;

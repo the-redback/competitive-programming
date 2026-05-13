@@ -45,7 +45,7 @@ int dfs_2nd(int u, int k) {
 int scc(int n) {
     arr.clear();
     memset(color, 0, sizeof(color));
-    int i, j, k, l;
+    int i, k, l;
 
     for (i = 1; i <= n; i++)  // Topological Sort
         if (color[i] == 0) dfs_1st(i);
@@ -81,7 +81,7 @@ int scc(int n) {
 int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
-    int i, j, k, l, m, n, man;
+    int i, k, l, m, n;
 
     cin >> tc;  // Test Case
     while (tc--) {

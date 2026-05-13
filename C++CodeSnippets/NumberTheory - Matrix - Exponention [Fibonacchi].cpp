@@ -47,7 +47,6 @@ void mult(ll a[3][3], ll b[3][3]) {
 }
 
 void BigMat(ll a[3][3], int pos) {
-    int i, j, k;
     if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
@@ -64,7 +63,7 @@ int main() {
     cin.tie(0);
     int t = 1, tc;
     cin >> tc;
-    ll i, j, k, l, n;
+    ll i, j, k, n;
     ll aa, bb;
     while (tc--) {
         cin >> aa >> bb >> n >> M;

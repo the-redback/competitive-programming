@@ -51,7 +51,6 @@ void mult(ll a[8][8], ll b[8][8]) {
 }
 
 void BigMat(ll a[8][8], int pos) {
-    int i, j, k;
     if (pos == 1) return;
     if (pos % 2 == 1) {
         BigMat(a, pos - 1);
@@ -64,7 +63,7 @@ void BigMat(ll a[8][8], int pos) {
 }
 
 void init(ll a[8][8]) {
-    ll i, j, k;
+    ll i, j;
     memset(a, 0, sizeof(a));
     memset(m, 0, sizeof(m));
     m[0][0] = a1, m[0][1] = b1, m[0][5] = c1;
@@ -80,7 +79,7 @@ int main() {
     cin.tie(0);
     int t = 1, tc;
     cin >> tc;
-    ll i, j, k, l, n;
+    ll i, j, k, n;
 
     ll r;
     while (tc--) {

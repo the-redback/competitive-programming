@@ -65,7 +65,7 @@ int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     cin >> tc;  // Test Case
-    int i, j, k, l, m, n;
+    int i, k, l;
     int node, edge;
     while (tc--) {
         cin >> node >> edge;
