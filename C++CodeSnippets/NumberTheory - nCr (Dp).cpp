@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <cstring>
+#include <iostream>
 using namespace std;
 
 long long dp[70][70];

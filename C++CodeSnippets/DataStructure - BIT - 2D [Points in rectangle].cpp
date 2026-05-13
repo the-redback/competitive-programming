@@ -8,7 +8,10 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <tuple>
 using namespace std;
 
 typedef long long ll;
@@ -59,7 +62,7 @@ int query(int idx, int idy) {
     return sum;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t = 1, tc;

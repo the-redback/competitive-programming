@@ -8,7 +8,12 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #define NN 10010

@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <string>
 using namespace std;
 
 string s1, s2;

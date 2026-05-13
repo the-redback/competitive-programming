@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <cctype>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 using namespace std;
 
 void dec2other(char a[], char b[], int m) {

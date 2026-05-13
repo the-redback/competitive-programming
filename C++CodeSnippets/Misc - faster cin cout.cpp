@@ -7,12 +7,12 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 using namespace std;
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     // ...............
 }

@@ -8,7 +8,10 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cmath>
+#include <algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 struct Point {

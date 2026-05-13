@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 const int MAXN = 100005;

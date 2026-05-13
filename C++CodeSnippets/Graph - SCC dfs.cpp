@@ -7,7 +7,12 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #define NN 10010
@@ -74,7 +79,7 @@ int scc(int n) {
     return node;  // Number of SCC node.
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int i, j, k, l, m, n, man;

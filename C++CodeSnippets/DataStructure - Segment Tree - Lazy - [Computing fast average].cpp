@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <numeric>
 
 using namespace std;
 
@@ -111,12 +115,12 @@ int main() {
                 cin >> j >> k;
                 ll ans = query(1, 1, n, j + 1, k + 1, -1);
                 ll res = (k - j + 1);
-                ll gcd = __gcd(res, ans);
+                ll g = gcd(res, ans);
 
-                if (res / gcd > 1)
-                    printf("%lld/%lld\n", ans / gcd, res / gcd);
+                if (res / g > 1)
+                    printf("%lld/%lld\n", ans / g, res / g);
                 else
-                    printf("%lld\n", ans / gcd);
+                    printf("%lld\n", ans / g);
             }
         }
     }

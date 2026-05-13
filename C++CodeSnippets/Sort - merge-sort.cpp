@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 void merge(vector<int> &nums, int left, int mid, int right) {

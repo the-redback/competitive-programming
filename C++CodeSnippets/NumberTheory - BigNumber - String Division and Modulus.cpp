@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <string>
 using namespace std;
 
 long long divide(string &a, long long divisor, string &result) {

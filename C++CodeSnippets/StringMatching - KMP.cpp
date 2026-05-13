@@ -8,7 +8,9 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 vector<int> buildFailure(string& p) {

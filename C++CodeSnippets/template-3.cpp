@@ -8,7 +8,8 @@
  *    @link : https://the-redback.com
  */
 
-#include "bits/stdc++.h"
+#include <iostream>
+#include <tuple>
 
 using namespace std;
 

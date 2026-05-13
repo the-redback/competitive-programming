@@ -7,7 +7,11 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <stack>
+#include <vector>
 using namespace std;
 
 const int MAXN = 1000000;

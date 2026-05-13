@@ -8,7 +8,10 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <tuple>
 using namespace std;
 
 typedef long long ll;
@@ -73,7 +76,7 @@ void init(ll a[8][8]) {
         for (j = 0; j < 6; j++) a[i][j] = m[i][j];
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t = 1, tc;

@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <stack>
 using namespace std;
 
 // #pragma GCC target("avx2")

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <numeric>
 using namespace std;
 
 int x, y;

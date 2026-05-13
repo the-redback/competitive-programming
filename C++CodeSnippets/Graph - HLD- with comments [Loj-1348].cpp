@@ -13,7 +13,10 @@ means that number of genies in node i is changed to v (0 <= i < n, 0 <= v <=
 1000).
 */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <set>
+#include <vector>
 using namespace std;
 
 typedef long long ll;

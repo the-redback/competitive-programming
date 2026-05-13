@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <cstdio>
 
 #define NN 500003
 

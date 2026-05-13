@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
 #define inf 1e9

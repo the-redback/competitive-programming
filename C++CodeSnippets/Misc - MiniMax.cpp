@@ -1,10 +1,11 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
 using namespace std;
 
 int pr[NN + 7];
 int a[NN + 7][NN + 7];
 
-main() {
+int main() {
     int i, j, k, l, n, r, c, count;
     int tc, t = 1;
     int u, v, w;

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
 long long nCr(int n, int r) {

@@ -13,7 +13,13 @@ will Be connected after deleting exactly one edge.*/
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <stack>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #define NN 10010
@@ -90,7 +96,7 @@ int Print_NewGraph(int n) {
     return 0;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     cin >> tc;   // Test Case

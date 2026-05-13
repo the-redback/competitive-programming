@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <string>
 using namespace std;
 
 int compare(string a, string b) {

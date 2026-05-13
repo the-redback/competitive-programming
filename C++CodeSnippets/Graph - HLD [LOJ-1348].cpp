@@ -8,7 +8,10 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <set>
+#include <vector>
 using namespace std;
 
 typedef long long ll;

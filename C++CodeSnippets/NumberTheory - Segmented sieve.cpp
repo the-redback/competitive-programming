@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 unsigned base[46656 / 64], segment[100032 / 64], primes[4830];

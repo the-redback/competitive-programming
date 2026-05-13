@@ -7,10 +7,11 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int k, l, n;

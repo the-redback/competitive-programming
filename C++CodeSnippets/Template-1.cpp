@@ -7,10 +7,11 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <iostream>
+#include <tuple>
 using namespace std;
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t, tc;

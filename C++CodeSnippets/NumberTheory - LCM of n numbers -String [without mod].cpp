@@ -7,7 +7,12 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 #define inf 1e9
@@ -69,7 +74,7 @@ void mult(int n, int r) {
     }
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     sieve(101);
     int n, k, i, m, c;

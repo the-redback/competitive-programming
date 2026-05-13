@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
 int main() {
     char str[] = "cuet, cse- society. Hahaha";
     char* pch;

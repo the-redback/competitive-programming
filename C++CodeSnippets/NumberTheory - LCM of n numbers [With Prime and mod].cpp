@@ -7,7 +7,12 @@
  *
  *    @link : https://the-redback.com
  */
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+#include <tuple>
+#include <vector>
 using namespace std;
 
 #define inf 1e9
@@ -78,7 +83,7 @@ int LCM(void) {  // LCM of elemets of arr with 1000000007
     return sum;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);  // cin.tie(0);
     int t, tc;
     cin >> tc;

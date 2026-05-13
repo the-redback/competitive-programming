@@ -8,7 +8,8 @@
  *    @link : https://the-redback.com
  */
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
 using namespace std;
 
 typedef long long ll;
@@ -51,7 +52,7 @@ ll query(ll idx) {
     return sum;
 }
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     scanf("%d", &tc);

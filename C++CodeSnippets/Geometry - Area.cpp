@@ -1,3 +1,7 @@
+#include <cmath>
+#include <vector>
+using namespace std;
+
 double polygonArea(vector<Point>& polygon) {
     double area = 0;
 

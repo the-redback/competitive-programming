@@ -1,6 +1,10 @@
 // header files
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <functional>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
