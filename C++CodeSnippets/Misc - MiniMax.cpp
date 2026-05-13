@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 
 int pr[NN + 7];
@@ -9,7 +10,7 @@ int main() {
     int i, j, k, l, n, r, c, count;
     int tc, t = 1;
     int u, v, w;
-    while (~scanf("%d%d%d", &n, &r, &l)) {
+    while (cin >> n >> r >> l) {
         if (n == 0 && r == 0 && l == 0) return 0;
         for (i = 0; i <= n; i++) {
             for (j = 0; j <= n; j++) a[i][j] = inf;
@@ -17,7 +18,7 @@ int main() {
         }
 
         while (r--) {
-            scanf("%d%d%d", &u, &v, &w);
+            cin >> u >> v >> w;
             a[u][v] = w;
             a[v][u] = w;
         }
@@ -28,15 +29,15 @@ int main() {
                     a[i][j] = min(a[i][j], max(a[i][k], a[k][j]));
 
         if (t != 1) puts("");
-        printf("Case #%d\n", t++);
+        cout << "Case #" << t++ << "\n";
 
         while (l--) {
-            scanf("%d%d", &n, &r);
+            cin >> n >> r;
             int sum = a[n][r];
             if (sum >= inf)
-                puts("no path");
+                cout << "no path" << "\n";
             else
-                printf("%d\n", sum);
+                cout << sum << "\n";
         }
     }
     return 0;

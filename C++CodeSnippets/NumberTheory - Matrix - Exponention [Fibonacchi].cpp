@@ -8,7 +8,6 @@
  *    @link : https://the-redback.com
  */
 
-#include <cstdio>
 #include <cstring>
 #include <iostream>
 #include <tuple>
@@ -71,11 +70,11 @@ int main() {
         cin >> aa >> bb >> n >> M;
 
         if (n == 0) {
-            printf("Case %d: %lld\n", t++, aa);
+            cout << "Case " << t++ << ": " << aa << "\n";
             continue;
         }
         if (n == 1) {
-            printf("Case %d: %lld\n", t++, bb);
+            cout << "Case " << t++ << ": " << bb << "\n";
             continue;
         }
 
@@ -103,7 +102,7 @@ int main() {
         for (i = 0; i < 2; i++)
             for (j = 0; j < 1; j++)
                 for (k = 0; k < 2; k++) temp[i][j] += a[i][k] * m[k][j];
-        printf("Case %d: %lld\n", t++, temp[1][0] % M);
+        cout << "Case " << t++ << ": " << temp[1][0] % M << "\n";
     }
     return 0;
 }

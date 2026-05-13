@@ -8,7 +8,7 @@
  *    @link : https://the-redback.com
  */
 
-#include <cstdio>
+#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -71,25 +71,25 @@ int main() {
     char arr[100];
 
     ll t = 1, tc;
-    scanf("%lld", &tc);  /// Test case
+    cin >> tc;  /// Test case
     ll i, j, k, l, m, n;
     while (tc--) {
         tree.push_back(trie());  /// Root node actually.
 
-        scanf("%lld", &n);  /// No of word in dictionary.
+        cin >> n;  /// No of word in dictionary.
         ll flag = 1;
         for (i = 0; i < n; i++) {
-            scanf("%s", &arr);
+            cin >> arr;
             Insert(arr, 0);  /// Insert arr string into dictionary.
         }
 
-        scanf("%lld", &m);  /// No of queries.
+        cin >> m;  /// No of queries.
         for (i = 0; i < m; i++) {
-            scanf("%s", &arr);
+            cin >> arr;
             if (Search(arr))
-                puts("Yes");
+                cout << "Yes" << "\n";
             else
-                puts("No");
+                cout << "No" << "\n";
         }
 
         tree.clear();  /// Delete The Memory.

@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <algorithm>
 #include <iostream>
 using namespace std;
@@ -72,7 +71,7 @@ int main() {
         while (k--) {
             cin >> x >> y;
             Data l = query(1, 1, n, x, y);
-            printf("%d\n", l.maxsum);
+            cout << l.maxsum << "\n";
         }
     }
     return 0;

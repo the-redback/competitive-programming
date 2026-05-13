@@ -138,32 +138,32 @@ int main() {
 
     c = a + b;  // adding a and b
     c.print();  // printing the Bigint
-    puts("");   // newline
+    cout << "" << "\n";   // newline
 
     c = a - b;  // subtracting b from a
     c.print();  // printing the Bigint
-    puts("");   // newline
+    cout << "" << "\n";   // newline
 
     c = a * b;  // multiplying a and b
     c.print();  // printing the Bigint
-    puts("");   // newline
+    cout << "" << "\n";   // newline
 
     c = a / b;  // dividing a by b
     c.print();  // printing the Bigint
-    puts("");   // newline
+    cout << "" << "\n";   // newline
 
     c = a % b;  // a modulo b
     c.print();  // printing the Bigint
-    puts("");   // newline
+    cout << "" << "\n";   // newline
 
     /////////////////////////////////
     // Using conditional operators //
     /////////////////////////////////
 
     if (a == b)
-        puts("equal");  // checking equality
+        cout << "equal" << "\n";  // checking equality
     else
-        puts("not equal");
+        cout << "not equal" << "\n";
 
     if (a < b) puts("a is smaller than b");  // checking less than operator
 

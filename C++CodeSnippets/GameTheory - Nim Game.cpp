@@ -7,7 +7,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <iostream>
 using namespace std;
 
@@ -24,9 +23,9 @@ int main() {
             res ^= k;
         }
         if (res)
-            printf("Case %d: Alice\n", t++);  // First move
+            cout << "Case " << t++ << ": Alice" << "\n";  // First move
         else
-            printf("Case %d: Bob\n", t++);
+            cout << "Case " << t++ << ": Bob" << "\n";
     }
     return 0;
 }

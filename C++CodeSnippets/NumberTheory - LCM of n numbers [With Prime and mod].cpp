@@ -7,7 +7,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -95,7 +94,7 @@ int main() {
         arr.clear();
         for (i = 1; i <= n; i++) cin >> k, arr.push_back(k);
         sum = LCM();
-        printf("%d\n", sum);
+        cout << sum << "\n";
     }
     return 0;
 }

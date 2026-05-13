@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <cstring>
 #include <iostream>
 using namespace std;
@@ -58,7 +57,7 @@ int main() {
     while (tc--) {
         int n, q;
         cin >> n >> q;
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
         memset(tree, 0, sizeof(tree));
         while (q--) {
             int i, j, k, l;
@@ -69,7 +68,7 @@ int main() {
             } else if (i == 1) {
                 cin >> j >> k;
                 ll ans = query(1, 1, n, j + 1, k + 1, 0);
-                printf("%lld\n", ans);
+                cout << ans << "\n";
             }
         }
     }

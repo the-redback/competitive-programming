@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -100,7 +99,7 @@ int main() {
     while (tc--) {
         ll n, q;
         cin >> n >> q;
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
 
         memset(a, 0, sizeof(a));
         init(1, 1, n);
@@ -118,9 +117,9 @@ int main() {
                 ll g = gcd(res, ans);
 
                 if (res / g > 1)
-                    printf("%lld/%lld\n", ans / g, res / g);
+                    cout << ans / g << "/" << res / g << "\n";
                 else
-                    printf("%lld\n", ans / g);
+                    cout << ans / g << "\n";
             }
         }
     }

@@ -9,7 +9,6 @@
  */
 
 #include <cmath>
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -84,15 +83,15 @@ void lca_init(ll n) {
 int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
-    scanf("%d", &tc);
+    cin >> tc;
     ll i, j, k, l, n;
     ll r;
     while (tc--) {
-        scanf("%lld", &n);
+        cin >> n;
         for (i = 0; i <= n; i++) g[i].clear();
 
         for (i = 0; i < n - 1; i++) {
-            scanf("%lld %lld", &k, &l);
+            cin >> k >> l;
             g[k].push_back(l);
             g[l].push_back(k);
         }
@@ -104,7 +103,7 @@ int main() {
             cout << lca_query(k, l) << "\n";
         }
         // if(tc)
-        puts("");
+        cout << "" << "\n";
     }
     return 0;
 }

@@ -9,9 +9,9 @@
  */
 
 #include <cmath>
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
+#include <iostream>
 #include <iterator>
 #include <vector>
 using namespace std;
@@ -128,18 +128,18 @@ char s[10];
 int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
-    scanf("%d", &tc);
+    cin >> tc;
     ll i, j, k, l, n;
     ll r;
     while (tc--) {
-        scanf("%lld", &n);
+        cin >> n;
         for (i = 0; i <= n; i++) {
             g[i].clear();
             cost[i].clear();
         }
 
         for (i = 0; i < n - 1; i++) {
-            scanf("%lld %lld %lld", &k, &l, &r);
+            cin >> k >> l >> r;
             g[k].push_back(l);
             g[l].push_back(k);
             cost[k].push_back(r);
@@ -148,20 +148,20 @@ int main() {
         lca_init(n);
 
         while (1) {
-            scanf("%s", s);
+            cin >> s;
             if (strcmp(s, "DONE") == 0) break;
             if (strcmp(s, "DIST") == 0) {
-                scanf("%lld %lld", &k, &l);
+                cin >> k >> l;
                 ll ret = DIST(k, l);
-                printf("%lld\n", ret);
+                cout << ret << "\n";
             } else {
-                scanf("%lld %lld %lld", &k, &l, &r);
+                cin >> k >> l >> r;
                 ll ret = KTH(k, l, r);
-                printf("%lld\n", ret);
+                cout << ret << "\n";
             }
         }
         // if(tc)
-        puts("");
+        cout << "" << "\n";
     }
     return 0;
 }

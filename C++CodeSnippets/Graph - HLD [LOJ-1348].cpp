@@ -10,6 +10,7 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <iostream>
 #include <set>
 #include <vector>
 using namespace std;
@@ -167,11 +168,11 @@ int main() {
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif
     ll tc, t = 1;
-    scanf("%lld ", &tc);
+    cin >> tc;
     while (tc--) {
         ptr = 1;
         ll n;
-        scanf("%lld", &n);
+        cin >> n;
         // Cleaning step, new test case
         for (ll i = 0; i <= n; i++) {
             adj[i].clear();
@@ -180,12 +181,12 @@ int main() {
         }
 
         for (ll i = 0; i < n; i++) {
-            scanf("%lld", &value[i]);
+            cin >> value[i];
         }
 
         for (ll i = 1; i < n; i++) {
             ll u, v, c;
-            scanf("%lld %lld", &u, &v);
+            cin >> u >> v;
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
@@ -206,19 +207,19 @@ int main() {
         }
 
         ll q;
-        scanf("%lld", &q);
-        printf("Case %lld:\n", t++);
+        cin >> q;
+        cout << "Case " << t++ << ":" << "\n";
 
         while (q--) {
             ll tp;
-            scanf("%lld", &tp);
+            cin >> tp;
 
             ll a, b;
 
-            scanf("%lld %lld", &a, &b);
+            cin >> a >> b;
             if (tp == 0) {
                 ll ans = query(a, b);
-                printf("%lld\n", ans);
+                cout << ans << "\n";
             } else {
                 change(a, b);
             }

@@ -1,5 +1,6 @@
-#include <cstdio>
 #include <cstring>
+#include <iostream>
+using namespace std;
 int main() {
     char str[] = "cuet, cse- society. Hahaha";
     char* pch;
@@ -8,7 +9,7 @@ int main() {
     pch = strtok(str, " ,.-");
     while (pch != NULL) {
         strcpy(a[i], pch);
-        printf("%s\n", a[i++]);
+        cout << a[i++] << "\n";
         pch = strtok(NULL, " ,.-");
     }
     return 0;

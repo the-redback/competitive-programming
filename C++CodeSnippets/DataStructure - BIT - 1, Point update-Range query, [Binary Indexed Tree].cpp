@@ -8,8 +8,8 @@
  *    @link : https://the-redback.com
  */
 
-#include <cstdio>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 typedef long long ll;
@@ -55,37 +55,37 @@ ll query(ll idx) {
 int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
-    scanf("%d", &tc);
+    cin >> tc;
 
     ll i, j, k, l, m, n;
     while (tc--) {
-        scanf("%lld %lld", &n, &m);
+        cin >> n >> m;
         memset(tree, 0, sizeof(tree));
         MaxVal = n;
         for (i = 1; i <= n; i++) {
-            scanf("%lld", &arr[i]);
+            cin >> arr[i];
             update(i, arr[i]);
         }
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
         while (m--) {
-            scanf("%lld", &j);
+            cin >> j;
             if (j == 1) {
-                scanf("%lld", &k);
+                cin >> k;
                 k++;
                 update(k, -arr[k]);
-                printf("%lld\n", arr[k]);
+                cout << arr[k] << "\n";
                 arr[k] = 0;
             } else if (j == 2) {
-                scanf("%lld %lld", &k, &l);
+                cin >> k >> l;
                 k++;
                 update(k, l);
                 arr[k] += l;
             } else {
-                scanf("%lld %lld", &k, &l);
+                cin >> k >> l;
                 k++, l++;
                 ll temp = query(l);
                 temp -= query(k - 1);
-                printf("%lld\n", temp);
+                cout << temp << "\n";
             }
         }
     }

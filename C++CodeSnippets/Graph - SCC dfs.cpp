@@ -7,7 +7,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -103,7 +102,7 @@ int main() {
         }
 
         int sum = scc(n);
-        printf("Case %d: %d\n", t++, sum);
+        cout << "Case " << t++ << ": " << sum << "\n";
     }
     return 0;
 }

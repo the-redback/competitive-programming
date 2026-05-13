@@ -8,7 +8,6 @@
  *    @link : https://the-redback.com
  */
 
-#include <cstdio>
 #include <cstring>
 #include <iostream>
 #include <tuple>
@@ -71,7 +70,7 @@ int main() {
     int x1, x2, y1, y2;
     int r;
     while (tc--) {
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
         cin >> n;
         memset(flag, 0, sizeof(flag));
         memset(tree, 0, sizeof(tree));
@@ -94,7 +93,7 @@ int main() {
                 temp -= query(x2, y1 - 1);
                 temp -= query(x1 - 1, y2);
                 temp += query(x1 - 1, y1 - 1);
-                printf("%d\n", temp);
+                cout << temp << "\n";
             }
         }
     }

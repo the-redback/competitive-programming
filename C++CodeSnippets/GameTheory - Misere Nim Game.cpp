@@ -7,7 +7,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <iostream>
 using namespace std;
 
@@ -26,14 +25,14 @@ int main() {
         }
         if (cnt == n) {
             if (!res)
-                printf("Case %d: Alice\n", t++);
+                cout << "Case " << t++ << ": Alice" << "\n";
             else
-                printf("Case %d: Bob\n", t++);
+                cout << "Case " << t++ << ": Bob" << "\n";
         } else {
             if (res)
-                printf("Case %d: Alice\n", t++);
+                cout << "Case " << t++ << ": Alice" << "\n";
             else
-                printf("Case %d: Bob\n", t++);
+                cout << "Case " << t++ << ": Bob" << "\n";
         }
     }
     return 0;

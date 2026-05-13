@@ -8,7 +8,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -74,7 +73,7 @@ int main() {
         }
 
         int ans = articulation_Point(node);
-        printf("Case %d: %d\n", t++, ans);
+        cout << "Case " << t++ << ": " << ans << "\n";
 
         for (i = 0; i <= node; i++) e[i].clear();
     }

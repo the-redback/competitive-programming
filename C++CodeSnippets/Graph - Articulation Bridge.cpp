@@ -8,7 +8,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -55,9 +54,9 @@ int articulation_Point(int n) {
         if (!color[i]) dfs(i);
 
     int ans = bridge.size();
-    printf("%d critical links\n", ans);
+    cout << ans << " critical links" << "\n";
     for (int i = 0; i < bridge.size(); i++)
-        printf("%d - %d\n", bridge[i].first, bridge[i].second);
+        cout << bridge[i].first << " - " << bridge[i].second << "\n";
     return 0;
 }
 
@@ -74,7 +73,7 @@ int main() {
             e[k].push_back(l);
             e[l].push_back(k);
         }
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
         articulation_Point(node);
         for (i = 0; i <= node; i++) e[i].clear();
     }

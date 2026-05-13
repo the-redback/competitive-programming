@@ -13,7 +13,6 @@ will Be connected after deleting exactly one edge.*/
  *    @link : https://the-redback.com
  */
 
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -87,10 +86,10 @@ int Print_NewGraph(int n) {
     int i, j;
     for (i = 1; i <= n; i++) {   // lowest node=1
         if (newGraph[i].size()) {
-            printf("%d :", i);
+            cout << i << " :";
             for (j = 0; j < newGraph[i].size(); j++)
-                printf(" %d", newGraph[i][j]);
-            puts("");
+                cout << " " << newGraph[i][j];
+            cout << "" << "\n";
         }
     }
     return 0;
@@ -110,7 +109,7 @@ int main() {
             Graph[l].push_back(k);
             edge.push_back(make_pair(k, l));
         }
-        printf("Case %d:\n", t++);
+        cout << "Case " << t++ << ":" << "\n";
         k = findbcc(n);
         Print_NewGraph(k);
         for (i = 0; i <= n; i++) Graph[i].clear(), newGraph[i].clear();

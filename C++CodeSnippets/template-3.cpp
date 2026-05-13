@@ -8,6 +8,7 @@
  *    @link : https://the-redback.com
  */
 
+#include <cstdio>
 #include <iostream>
 #include <tuple>
 

@@ -1,4 +1,5 @@
-#include <cstdio>
+#include <iostream>
+using namespace std;
 
 #define NN 500003
 
@@ -9,10 +10,10 @@ int main() {
     for (i = 1; i < NN; i++) {
         for (j = 2 * i; j < NN; j += i) Sum[j] += i;
     }
-    scanf("%ld", &t);
+    cin >> t;
     while (t--) {
-        scanf("%ld", &n);
-        printf("%ld\n", Sum[n]);
+        cin >> n;
+        cout << Sum[n] << "\n";
     }
     return 0;
 }

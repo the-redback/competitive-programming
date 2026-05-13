@@ -7,7 +7,6 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstdio>
 #include <cstring>
 #include <algorithm>
 #include <iostream>
@@ -95,7 +94,7 @@ int main() {
             }
         }
         reverse(s.begin(), s.end());
-        printf("Case %d: %s\n", t++, s.c_str());
+        cout << "Case " << t++ << ": " << s.c_str() << "\n";
     }
     return 0;
 }

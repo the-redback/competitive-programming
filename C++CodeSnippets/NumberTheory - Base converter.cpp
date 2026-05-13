@@ -1,8 +1,9 @@
 #include <cctype>
 #include <cmath>
-#include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <iostream>
+#include <string>
 using namespace std;
 
 void dec2other(char a[], char b[], int m) {
@@ -32,18 +33,19 @@ void other2dec(char a[], char b[], int n) {
         sum += k * pow(n, j);
         j++;
     }
-    sprintf(b, "%lld", sum);
+    string temp = to_string(sum);
+    strcpy(b, temp.c_str());
 }
 
 int main() {
     char a[100], b[100];
     int i, j, k, l, m, n;
-    printf("CURRENT base: ");
-    scanf("%d", &n);
-    printf("\nNumber: ");
-    scanf("%s", &a);
-    printf("\nREQUIRED base: ");
-    scanf("%d", &m);
+    cout << "CURRENT base: ";
+    cin >> n;
+    cout << "\n" << "Number: ";
+    cin >> a;
+    cout << "\n" << "REQUIRED base: ";
+    cin >> m;
     for (i = 0; a[i] != 0; i++) {
         a[i] = toupper(a[i]);
         if (a[i] >= 'A')
@@ -51,20 +53,20 @@ int main() {
         else
             k = a[i] - '0';
         if (k >= n) {
-            printf("\n** Oops!!! Sorry...... %s is not of %d base.\n\n", a, n);
+            cout << "\n" << "** Oops!!! Sorry...... " << a << " is not of " << n << " base." << "\n" << "\n";
             return 0;
         }
     }
     if (n == 10) {
         dec2other(a, b, m);
-        printf("\nNumber in %d base: %s\n\n", m, b);
+        cout << "\n" << "Number in " << m << " base: " << b << "\n" << "\n";
     } else if (m == 0) {
         other2dec(a, b, n);
-        printf("\nNumber in %d base: %s\n\n", m, b);
+        cout << "\n" << "Number in " << m << " base: " << b << "\n" << "\n";
     } else {
         other2dec(a, b, n);
         dec2other(b, a, m);
-        printf("\nNumber in %d base: %s\n\n", m, a);
+        cout << "\n" << "Number in " << m << " base: " << a << "\n" << "\n";
     }
     return 0;
 }

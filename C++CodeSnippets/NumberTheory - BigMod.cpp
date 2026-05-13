@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
 
 //(m^n)%p;
@@ -17,9 +17,9 @@ long check(long m, long n) {
 
 int main() {
     long m, n, sum;
-    while (scanf("%ld %ld %ld", &m, &n, &p) == 3) {
+    while (cin >> m >> n >> p) {
         sum = check(m, n);
-        printf("%ld\n", sum);
+        cout << sum << "\n";
     }
     return 0;
 }
