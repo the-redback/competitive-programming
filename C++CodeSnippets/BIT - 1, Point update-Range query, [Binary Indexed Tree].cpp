@@ -90,3 +90,56 @@ main() {
     }
     return 0;
 }
+
+/*
+Sample Input
+------------
+1
+5 5
+1 2 3 4 5
+3 0 4
+2 2 10
+3 1 3
+1 2
+3 0 4
+
+Sample Output
+-------------
+Case 1:
+15
+19
+13
+12
+
+Explanation
+-----------
+Initial array:
+[1, 2, 3, 4, 5]
+
+Query 1:
+3 0 4
+Sum from index 0 to 4 = 15
+
+Query 2:
+2 2 10
+Add 10 to index 2
+
+Updated array:
+[1, 2, 13, 4, 5]
+
+Query 3:
+3 1 3
+Sum from index 1 to 3 = 19
+
+Query 4:
+1 2
+Remove and print value at index 2
+Printed value = 13
+
+Updated array:
+[1, 2, 0, 4, 5]
+
+Query 5:
+3 0 4
+Sum from index 0 to 4 = 12
+*/

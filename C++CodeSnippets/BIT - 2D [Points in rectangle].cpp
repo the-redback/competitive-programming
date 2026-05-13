@@ -97,3 +97,38 @@ main() {
     }
     return 0;
 }
+
+/*
+Sample Input
+------------
+1
+6
+0 1 1
+0 2 3
+0 4 5
+1 1 1 4 5
+0 1 1
+1 2 2 4 5
+
+Sample Output
+-------------
+Case 1:
+3
+2
+
+Explanation
+-----------
+Inserted points:
+(1,1), (2,3), (4,5)
+
+Query 1:
+Rectangle from (1,1) to (4,5)
+Points inside = 3
+
+Duplicate insertion:
+(1,1) is ignored
+
+Query 2:
+Rectangle from (2,2) to (4,5)
+Points inside = 2
+*/
