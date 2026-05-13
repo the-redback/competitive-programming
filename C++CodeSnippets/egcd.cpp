@@ -1,16 +1,43 @@
-int sii, si, tii, ti;  // ii=i-1, i=i, s/t=i+1
-int egcd(int a, int b) {
-    int r, q, s, t;
-    sii = 1, si = 0;
-    tii = 0, ti = 1;
+#include <bits/stdc++.h>
+using namespace std;
+
+int x, y;
+
+int extendedGCD(int a, int b) {
+    int x1 = 1, y1 = 0;
+    int x2 = 0, y2 = 1;
+
     while (b > 0) {
-        q = a / b;
-        r = a % b;
-        s = sii - (q * si);
-        t = tii - (q * ti);
-        sii = si, si = s;
-        tii = ti, ti = t;
-        a = b, b = r;
+        int q = a / b;
+        int r = a % b;
+
+        int nx = x1 - q * x2;
+        int ny = y1 - q * y2;
+
+        x1 = x2;
+        x2 = nx;
+
+        y1 = y2;
+        y2 = ny;
+
+        a = b;
+        b = r;
     }
-    return a;  //  return a, sii, tii
+
+    x = x1;
+    y = y1;
+
+    return a;
+}
+
+int main() {
+    int a = 30;
+    int b = 18;
+
+    int gcd = extendedGCD(a, b);
+
+    cout << gcd << '\n';
+    cout << x << " " << y << '\n';
+
+    return 0;
 }

@@ -1,39 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int dp[70000];
-int a[20][20];
+const int MAXN = 20;
+const int MAXMASK = 1 << 16;
+
 int n;
+int a[MAXN][MAXN];
+int dp[MAXMASK];
 
 int go(int x, int mask) {
-    if (x >= n) {
+    if (x >= n)
         return 0;
-    }
-    int& t = dp[mask];
-    if (t != -1) {
-        return t;
-    }
-    int k = 0;
+
+    int& tc = dp[mask];
+    if (tc != -1)
+        return tc;
+
+    tc = 0;
     for (int i = 0; i < n; i++) {
         if ((mask & (1 << i)) == 0) {
-            k = max(k, go(x + 1, mask | 1 << i) + a[x][i]);
+            tc = max(tc, go(x + 1, mask | 1 << i) + a[x][i]);
         }
     }
-    dp[mask] = k;
-
-    return dp[mask];
+    return tc;
 }
 
-main() {
-    int tc, t = 1;
-    scanf("%d", &tc);
-    while (tc--) {
-        scanf("%d", &n);
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++) scanf("%d", &a[i][j]);
+int main() {
+    int testCases;
+    cin >> testCases;
+
+    for (int tc = 1; tc <= testCases; tc++) {
+        cin >> n;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                cin >> a[i][j];
+            }
+        }
         memset(dp, -1, sizeof(dp));
         int sum = go(0, 0);
-        printf("Case %d: %d\n", t++, sum);
+        cout << "Case " << tc << ": "
+             << sum << '\n';
     }
     return 0;
 }

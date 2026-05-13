@@ -1,21 +1,15 @@
-double area(void) {
-    double total = 0.0; /* total area so far */
-    int i, j;           /* counters */
-    // V is storage of polygon points
-    for (i = 0; i < v.size(); i++) {
-        j = (i + 1) % v.size();
-        total += (v[i].x * v[j].y) - (v[j].x * v[i].y);
+double polygonArea(vector<Point>& polygon) {
+    double area = 0;
+
+    for (int i = 0; i < polygon.size(); i++) {
+        int j = (i + 1) % polygon.size();
+
+        area += polygon[i].x * polygon[j].y - polygon[j].x * polygon[i].y;
     }
 
-    return (total / 2.0);
+    return abs(area) / 2.0;
 }
 
-// == == == = [ Triangle Area ] == == == == == == =
-unsigned long long area(int x, int y, int z) {
-    unsigned long long total = 0; /* total area so far */
-    int i, j;                     /* counters */
-
-    total = CP(MV(v[x], v[y]), MV(v[x], v[z]));
-
-    return (total / 2);
+double triangleArea(Point a, Point b, Point c) {
+    return abs(crossProduct(makeVector(a, b), makeVector(a, c))) / 2.0;
 }

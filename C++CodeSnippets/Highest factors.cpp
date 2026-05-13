@@ -1,24 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long b[1000001], c[1000001];
-int main() {
-    long i, j, m, mx, t;
-    b[1] = 1;
-    mx = 0;
-    c[1] = 1;
-    for (i = 2; i < 1000001; i++) {
-        for (j = i; j < 1000001; j += i) b[j]++;
-        if (b[i] >= mx) {
-            mx = b[i];
-            m = i;
+const int MAXN = 1000000;
+
+int divisors[MAXN + 1];
+int best[MAXN + 1];
+
+void preprocess() {
+    int mx = 0;
+    int num = 1;
+
+    for (int i = 1; i <= MAXN; i++) {
+
+        for (int j = i; j <= MAXN; j += i) {
+            divisors[j]++;
         }
-        c[i] = m;
+
+        if (divisors[i] >= mx) {
+            mx = divisors[i];
+            num = i;
+        }
+
+        best[i] = num;
     }
-    scanf("%ld", &t);
-    while (t--) {
-        scanf("%ld", &m);
-        printf("%ld\n", c[m]);
+}
+
+int main() {
+    preprocess();
+
+    int tc;
+    cin >> tc;
+
+    while (tc--) {
+        int n;
+        cin >> n;
+
+        cout << best[n] << '\n';
     }
+
     return 0;
 }

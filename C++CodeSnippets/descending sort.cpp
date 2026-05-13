@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool comp(int a, int b) { return a > b; }
+bool comp(int a, int b) {
+    return a > b;
+}
 
-main() {
-    int a[100];
-    int i;
-    for (i = 0; i < 5; i++) {
-        scanf("%d", &a[i]);
+int main() {
+    vector<int> nums = {5, 1, 4, 2, 3};
+    sort(nums.begin(), nums.end(), comp);
+
+    for (int num : nums) {
+        cout << num << " ";
     }
-    std::sort(a, a + 5, comp);
-    for (i = 0; i < 5; i++) {
-        printf("%d ", a[i]);
-    }
+    cout << '\n';
     return 0;
 }

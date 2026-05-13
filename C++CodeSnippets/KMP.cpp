@@ -11,64 +11,60 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-typedef unsigned long long llu;
+vector<int> buildFailure(string& p) {
+    int m = p.size();
 
-#define NN 10010
+    vector<int> fail(m, 0);
 
-ll fail[NN];  // Highest Prefix which equals as postfix at i.
-char s[NN];   // Main String.
-char p[NN];   // Find P-string in main string.
+    int q = 0;
 
-void failure(void) {
-    ll i, j, k, l;
-    ll m = strlen(p);
+    for (int i = 1; i < m; i++) {
+        while (q > 0 && p[i] != p[q]) {
+            q = fail[q - 1];
+        }
 
-    fail[0] = 0;
-    ll q = 0;
+        if (p[i] == p[q]) {
+            q++;
+        }
 
-    for (i = 1; i < m; i++) {  // starts from 1, not 0.
-        while (q > 0 && p[i] != p[q]) q = fail[q - 1];
-
-        if (p[i] == p[q]) q++;
         fail[i] = q;
     }
-    return;
+
+    return fail;
 }
 
-ll KMP(void) {
-    ll i, j, k, l, cnt = 0;
-    ll m = strlen(p);
-    l = strlen(s);
+int KMP(string& s, string& p) {
+    int n = s.size();
+    int m = p.size();
 
-    failure();
-    ll q = 0;
+    vector<int> fail = buildFailure(p);
 
-    for (i = 0; i < l; i++) {
-        while (q > 0 && s[i] != p[q]) q = fail[q - 1];
+    int q = 0;
+    int cnt = 0;
 
-        if (s[i] == p[q]) q++;
-        if (q == m) {
+    for (int i = 0; i < n; i++) {
+        while (q > 0 && s[i] != p[q]) {
             q = fail[q - 1];
-            cnt++;  // we got one substring
+        }
+
+        if (s[i] == p[q]) {
+            q++;
+        }
+
+        if (q == m) {
+            cnt++;
+            q = fail[q - 1];
         }
     }
+
     return cnt;
 }
 
 int main() {
-#ifdef redback
-    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
-#endif
+    string s = "abababa";
+    string p = "aba";
 
-    ll t = 1, tc;
-    scanf("%lld", &tc);
-    ll i, j, k, l, m, n;
-    while (tc--) {
-        scanf("%s", &s);
-        scanf("%s", &p);
-        ll ans = KMP();
-        printf("Case %lld: %lld\n", t++, ans);
-    }
+    cout << KMP(s, p) << '\n';
+
     return 0;
 }

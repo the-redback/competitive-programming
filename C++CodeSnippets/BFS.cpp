@@ -1,56 +1,59 @@
+/**
+ *                                   ____
+ *       ____ ___  ____ ________  __/ __/
+ *      / __ `__ \/ __ `/ ___/ / / / /_
+ *     / / / / / / /_/ / /  / /_/ / __/
+ *    /_/ /_/ /_/\__,_/_/   \__,_/_/
+ *
+ *    @link : https://the-redback.com
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 
-#define NN 10010
+const int MAXN = 100005;
 
-int dis[NN];
-int parent[NN];
-int color[NN];
-vector<int> g[NN];
+vector<int> adj[MAXN];
+int distanceArr[MAXN];
+int parent[MAXN];
 
-void BFS(int s, int v) {
-    int len, x, k;
-    queue<int> Q;
-    parent[s] = -1;
-    dis[s] = 0;
-    color[s] = 1;
+void bfs(int source, int numOfNodes) {
+    memset(distanceArr, -1, sizeof(distanceArr));
+    memset(parent, -1, sizeof(parent));
 
-    Q.push(s);
-    while (!Q.empty()) {
-        x = Q.front();
-        Q.pop();
-        len = g[x].size();
-        for (int i = 0; i < len; i++)
-            if (g[x][i] && color[g[x][i]] == 0) {
-                k = g[x][i];
-                color[k] = 1;
-                dis[k] = dis[x] + 1;
-                parent[k] = x;
-                Q.push(k);
+    queue<int> q;
+    distanceArr[source] = 0;
+    q.push(source);
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+
+        for (int v : adj[u]) {
+            if (distanceArr[v] == -1) {
+                distanceArr[v] = distanceArr[u] + 1;
+                parent[v] = u;
+
+                q.push(v);
             }
-        color[x] = 2;
-        printf("%d ", x);
+        }
     }
-
-    printf("\n***distances***\n");
-    for (int i = 1; i <= v; i++) printf("distance[%d]= %d\n", i, dis[i]);
-    return;
 }
 
 int main() {
-    int v, e, s, d;
-    printf("Enter no of vertices: ");
-    scanf("%d", &v);
-    printf("Enter no of edges: ");
-    scanf("%d", &e);
-    for (int i = 1; i <= e; i++) {
-        printf("Enter source and destination: ");
-        scanf("%d %d", &s, &d);
-        g[s].push_back(d);
-        g[d].push_back(s);
+    int nodes, edges;
+    cin >> nodes >> edges;
+
+    for (int i = 0; i < edges; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u); // Remove for directed graph
     }
-    printf("Enter source of graph: ");
-    scanf("%d", &s);
-    BFS(s, v);
+
+    int source;
+    cin >> source;
+    bfs(source, nodes);
+
     return 0;
 }
