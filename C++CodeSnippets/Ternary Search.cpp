@@ -1,30 +1,33 @@
-
 /*
     some points are given initially. Now, we have to find a area consists
     with K,L no points and third one which area is equal or gretter than S.
 
 */
 
-int ternary_search(int k, int l, int s) {
-    int low = 0, high = v.size() - 1;
-    int midleft, midright;
+int ternarySearch(int k, int l, int s) {
+    int low = 0;
+    int high = v.size() - 1;
 
     while (high - low > 3) {
-        midleft = low + (high - low) / 3;
-        midright = high - (high - low) / 3;
 
-        int area1 = area(k, l, midleft);
-        int area2 = area(k, l, midright);
+        int midLeft = low + (high - low) / 3;
+        int midRight = high - (high - low) / 3;
 
-        if (area1 < area2)
-            low = midleft;
-        else
-            high = midright;
+        int areaLeft = area(k, l, midLeft);
+        int areaRight = area(k, l, midRight);
+
+        if (areaLeft < areaRight) {
+            low = midLeft;
+        } else {
+            high = midRight;
+        }
     }
 
     for (int i = low; i <= high; i++) {
-        int temp = area(k, l, i);
-        if (s <= temp) return i + 1;
+        if (area(k, l, i) >= s) {
+            return i;
+        }
     }
-    return 0;
+
+    return -1;
 }

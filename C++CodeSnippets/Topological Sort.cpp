@@ -1,49 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define NN 10010
+const int MAXN = 100005;
 
-vector<int> e[NN + 7], v;
-int view[NN + 7];
-int f, fl;
+vector<int> g[MAXN];
+vector<int> topo;
+int visited[MAXN];
+
+bool hasCycle = false;
 
 void dfs(int u) {
-    int i, k, l;
-    view[u] = 0;
-    for (i = 0; i < e[u].size(); i++) {
-        if (view[e[u][i]] == -1)
-            dfs(e[u][i]);
-        else if (view[e[u][i]] == 0) {
-            // then there is a cycle;
-            fl = 1;
+    visited[u] = 1;
+
+    for (int v: g[u]) {
+        if (visited[v] == 0) {
+            dfs(v);
+        } else if (visited[v] == 1) {
+            hasCycle = true;
             return;
         }
     }
-    view[u] = 1;
-    v.push_back(u);
+    visited[u] = 2;
+    topo.push_back(u);
 }
 
 int main() {
-    int i, j, k, l;
-    int tc, t;
-    int n, m;
-    while (~scanf("%d%d", &n, &m)) {
-        if (n == 0 && m == 0) return 0;
-        memset(view, -1, sizeof(view));
-        for (i = 0; i < m; i++) scanf("%d%d", &k, &l), e[k].push_back(l);
-        fl = 0;
-        for (i = 1; i <= n; i++) {
-            f = i;
-            if (view[i] == -1) dfs(i);
+    int nodes, edges;
+    cin >> nodes >> edges;
+
+    for (int i = 0; i < edges; i++) {
+        int u, v;
+        cin >> u >> v;
+        g[u].push_back(v);
+    }
+    memset(visited, 0, sizeof(visited));
+
+    for (int i = 1; i <= nodes; i++) {
+        if (visited[i] == 0) {
+            dfs(i);
         }
-        if (fl)
-            printf("IMPOSSIBLE\n");
-        else {
-            reverse(v.begin(), v.end());
-            for (i = 0; i < v.size(); i++) printf("%d\n", v[i]);
+    }
+
+    if (hasCycle) {
+        cout << "IMPOSSIBLE\n";
+    } else {
+        reverse(topo.begin(), topo.end());
+        for (int node: topo) {
+            cout << node << '\n';
         }
-        v.clear();
-        for (i = 0; i <= n; i++) e[i].clear();
     }
     return 0;
 }

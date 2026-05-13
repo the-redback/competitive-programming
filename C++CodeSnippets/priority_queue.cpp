@@ -1,140 +1,113 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 /* -------------------------------------------------------------------------- */
 /*                                  Max Heap                                  */
 /* -------------------------------------------------------------------------- */
-// Note that by default C++ creates a max-heap
-// for priority queue
-#include <bits/stdc++.h>
 
-using namespace std;
-
-void showpq(priority_queue<int> gq) {
-    priority_queue<int> g = gq;
-    while (!g.empty()) {
-        cout << '\t' << g.top();
-        g.pop();
+void printMaxHeap(priority_queue<int> pq) {
+    while (!pq.empty()) {
+        cout << pq.top() << " ";
+        pq.pop();
     }
     cout << '\n';
 }
-
-int main() {
-    priority_queue<int> gquiz;
-    gquiz.push(10);
-    gquiz.push(30);
-    gquiz.push(20);
-    gquiz.push(5);
-    gquiz.push(1);
-
-    cout << "The priority queue gquiz is : ";
-    showpq(gquiz);
-
-    cout << "\ngquiz.size() : " << gquiz.size();
-    cout << "\ngquiz.top() : " << gquiz.top();
-
-    cout << "\ngquiz.pop() : ";
-    gquiz.pop();
-    showpq(gquiz);
-
-    return 0;
-}
-
-// The priority queue gquiz is :     30    20    10    5    1
-
-// gquiz.size() : 5
-// gquiz.top() : 30
-// gquiz.pop() :     20    10    5    1
 
 /* -------------------------------------------------------------------------- */
 /*                                  Min Heap                                  */
 /* -------------------------------------------------------------------------- */
-// C++ program to demonstrate min heap
 
-using namespace std;
+void printMinHeap(
+    priority_queue<int,
+        vector<int>,
+        greater<int> > pq) {
+    while (!pq.empty()) {
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    cout << '\n';
+}
 
-void showpq(priority_queue<int, vector<int>, greater<int>> gq) {
-    priority_queue<int, vector<int>, greater<int>> g = gq;
-    while (!g.empty()) {
-        cout << '\t' << g.top();
-        g.pop();
+/* -------------------------------------------------------------------------- */
+/*                              Max Heap of Pair                              */
+/* -------------------------------------------------------------------------- */
+
+void printMaxPairHeap(
+    priority_queue<pair<int, int> > pq) {
+    while (!pq.empty()) {
+        pair<int, int> top = pq.top();
+
+        cout << "(" << top.first << ", "
+                << top.second << ") ";
+        pq.pop();
+    }
+    cout << '\n';
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Min Heap of Pair                              */
+/* -------------------------------------------------------------------------- */
+
+void printMinPairHeap(
+    priority_queue<pair<int, int>,
+        vector<pair<int, int> >,
+        greater<pair<int, int> > > pq) {
+    while (!pq.empty()) {
+        pair<int, int> top = pq.top();
+
+        cout << "(" << top.first << ", "
+                << top.second << ") ";
+        pq.pop();
     }
     cout << '\n';
 }
 
 int main() {
-    priority_queue<int, vector<int>, greater<int>> gquiz;
-    gquiz.push(10);
-    gquiz.push(30);
-    gquiz.push(20);
-    gquiz.push(5);
-    gquiz.push(1);
+    // Max Heap
 
-    cout << "The priority queue gquiz is : ";
-    showpq(gquiz);
+    priority_queue<int> maxHeap;
 
-    cout << "\ngquiz.size() : " << gquiz.size();
-    cout << "\ngquiz.top() : " << gquiz.top();
+    maxHeap.push(10);
+    maxHeap.push(30);
+    maxHeap.push(20);
+    maxHeap.push(5);
 
-    cout << "\ngquiz.pop() : ";
-    gquiz.pop();
-    showpq(gquiz);
+    printMaxHeap(maxHeap);
+
+    // Min Heap
+
+    priority_queue<int,
+        vector<int>,
+        greater<int> > minHeap;
+
+    minHeap.push(10);
+    minHeap.push(30);
+    minHeap.push(20);
+    minHeap.push(5);
+
+    printMinHeap(minHeap);
+
+    // Max Heap of Pair
+
+    priority_queue<pair<int, int> > maxPairHeap;
+
+    maxPairHeap.push({10, 200});
+    maxPairHeap.push({20, 100});
+    maxPairHeap.push({15, 400});
+
+    printMaxPairHeap(maxPairHeap);
+
+    // Min Heap of Pair
+
+    priority_queue<pair<int, int>,
+        vector<pair<int, int> >,
+        greater<pair<int, int> > > minPairHeap;
+
+    minPairHeap.push({10, 200});
+    minPairHeap.push({20, 100});
+    minPairHeap.push({15, 400});
+
+    printMinPairHeap(minPairHeap);
 
     return 0;
 }
-// The priority queue gquiz is :     1    5    10    20    30
-
-// gquiz.size() : 5
-// gquiz.top() : 1
-// gquiz.pop() :     5    10    20    30
-
-/* -------------------------------------------------------------------------- */
-/*                              Max heap of Pair                              */
-/* -------------------------------------------------------------------------- */
-// C++ program to create a priority queue of pairs.
-// By default a max heap is created ordered
-// by first element of pair.
-
-using namespace std;
-
-// Driver program to test methods of graph class
-int main() {
-    // By default a max heap is created ordered
-    // by first element of pair.
-    priority_queue<pair<int, int>> pq;
-
-    pq.push(make_pair(10, 200));
-    pq.push(make_pair(20, 100));
-    pq.push(make_pair(15, 400));
-
-    pair<int, int> top = pq.top();
-    cout << top.first << " " << top.second;
-    return 0;
-}
-
-// 20 100
-
-/* -------------------------------------------------------------------------- */
-/*                              Min Heap of Pairs                             */
-/* -------------------------------------------------------------------------- */
-
-// C++ program to create a priority queue of pairs.
-// We can create a min heap by passing adding two
-// parameters, vector and greater().
-
-using namespace std;
-
-typedef pair<int, int> pi;
-
-// Driver program to test methods of graph class
-int main() {
-    // By default a min heap is created ordered
-    // by first element of pair.
-    priority_queue<pi, vector<pi>, greater<pi>> pq;
-
-    pq.push(make_pair(10, 200));
-    pq.push(make_pair(20, 100));
-    pq.push(make_pair(15, 400));
-
-    pair<int, int> top = pq.top();
-    cout << top.first << " " << top.second;
-    return 0;
-}
-// 10 200

@@ -1,38 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
-string multiplyTwoNumbers(string num1, string num2) {
-    if (num1 == "0" || num2 == "0") {
+
+string multiply(string a, string b) {
+    if (a == "0" || b == "0") {
         return "0";
     }
-    string product(num1.size() + num2.size(), 0);
-    for (int i = num1.size() - 1; i >= 0; i--) {
-        for (int j = num2.size() - 1; j >= 0; j--) {
-            int n = (num1[i] - '0') * (num2[j] - '0') + product[i + j + 1];
-            product[i + j + 1] = n % 10;
-            product[i + j] += n / 10;
+    vector<int> product(a.size() + b.size(), 0);
+
+    for (int i = a.size() - 1; i >= 0; i--) {
+        for (int j = b.size() - 1; j >= 0; j--) {
+            int value = (a[i] - '0') * (b[j] - '0') + product[i + j + 1];
+
+            product[i + j + 1] = value % 10;
+            product[i + j] += value / 10;
         }
     }
-    for (int i = 0; i < product.size(); i++) {
-        product[i] += '0';
+
+    string result;
+
+    for (int num: product) {
+        if (!(result.empty() && num == 0)) {
+            result.push_back(num + '0');
+        }
     }
-    if (product[0] == '0') {
-        return product.substr(1);
-    }
-    return product;
+
+    return result;
 }
+
 int main() {
-    string num1 = "34";
-    string num2 = "57";
-    if ((num1.at(0) == '-' || num2.at(0) == '-') &&
-        (num1.at(0) != '-' || num2.at(0) != '-')) {
-        cout << "-";
-    }
-    if (num1.at(0) == '-') {
-        num1 = num1.substr(1);
-    }
-    if (num2.at(0) == '-') {
-        num2 = num2.substr(1);
-    }
-    cout << multiplyTwoNumbers(num1, num2) << endl;
+    string a = "34";
+    string b = "57";
+
+    cout << multiply(a, b) << '\n';
+
     return 0;
 }

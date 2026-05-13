@@ -1,45 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char a[1001][10000];
+string factorial[1001];
 
-void swap(char b[10000]) {
-    int temp, i, j, l;
-    l = strlen(b);
-    for (i = 0, j = l - 1; i < l / 2; i++, j--) {
-        temp = b[i];
-        b[i] = b[j];
-        b[j] = temp;
+string multiply(string a, int n) {
+    string result;
+    int carry = 0;
+
+    for (int i = a.size() - 1; i >= 0; i--) {
+        int value = (a[i] - '0') * n + carry;
+
+        result.push_back((value % 10) + '0');
+        carry = value / 10;
+    }
+
+    while (carry > 0) {
+        result.push_back((carry % 10) + '0');
+        carry /= 10;
+    }
+
+    reverse(result.begin(), result.end());
+
+    return result;
+}
+
+void preprocess() {
+    factorial[0] = "1";
+
+    for (int i = 1; i <= 1000; i++) {
+        factorial[i] = multiply(factorial[i - 1], i);
     }
 }
 
-void work(char a[10000], char b[10000], int n) {
-    int i, j, onhand = 0, k, l;
-    l = strlen(a);
-    for (i = l - 1, j = 0; i >= 0; i--) {
-        k = ((a[i] - 48) * n) + onhand;
-        b[j] = (k % 10) + 48;
-        onhand = k / 10;
-        j++;
-    }
-    while (onhand > 0) {
-        b[j] = (onhand % 10) + 48;
-        onhand /= 10;
-        j++;
-    }
-    b[j] = '\0';
-    swap(b);
-}
+int main() {
+    preprocess();
 
-main() {
-    int i, j, n;
-    strcpy(a[0], "1");
-    strcpy(a[1], "1");
-    for (i = 2; i < 1001; i++) {
-        work(a[i - 1], a[i], i);
+    int n;
+
+    while (cin >> n) {
+        cout << n << "! : ";
+        cout << factorial[n] << '\n';
     }
-    while (scanf("%d", &n) == 1) {
-        printf("%d!\n%s\n", n, a[n]);
-    }
+
     return 0;
 }

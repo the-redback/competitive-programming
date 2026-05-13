@@ -1,21 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-i64 dp[70][70];
-i64 nCr(int n, int r) {
+long long dp[70][70];
+
+long long nCr(int n, int r) {
+    if (r < 0 || r > n) return 0;
+    if (r == 0 || n == r) return 1;
     if (r == 1) return n;
-    if (n == r) return 1;
-    if (dp[n][r] != -1)
-        return dp[n][r];
-    else {
-        dp[n][r] = nCr(n - 1, r) + nCr(n - 1, r - 1);
-        return dp[n][r];
-    }
+
+    long long &memo = dp[n][r];
+    if (memo != -1)
+        return memo;
+
+    memo = nCr(n - 1, r) + nCr(n - 1, r - 1);
+    return memo;
 }
 
 int main() {
-    // init dp table with -1
-    for (int i = 0; i < 70; i++)
-        for (int j = 0; j < 70; j++) dp[i][j] = -1;
-    printf("%d\n", nCr(20, 2));
+    memset(dp, -1, sizeof(dp));
+    cout << nCr(20, 2) << '\n';
+    return 0;
 }

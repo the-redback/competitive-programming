@@ -1,74 +1,89 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define NN 10010
-int root[NN + 7];
-int rank[NN + 7];
+const int MAXN = 100005;
+
+int parent[MAXN];
+int rank[MAXN];
 
 struct edge {
     int u, v, w;
 };
 
-vector<edge> e;
+vector<edge> edges;
 
-bool comp(edge n, edge m) { return n.w > m.w; }
+bool compare(edge a, edge b) {
+    return a.w > b.w;
+}
 
-void init(int n) {
-    for (int i = 1; i <= n; i++) {
-        root[i] = i;
+void init(int nodes) {
+    for (int i = 1; i <= nodes; i++) {
+        parent[i] = i;
         rank[i] = 0;
     }
 }
 
 int find(int u) {
-    if (u != root[u]) root[u] = find(root[u]);
-    return root[u];
+    if (u != parent[u]) {
+        parent[u] = find(parent[u]);
+    }
+
+    return parent[u];
 }
 
 void Union(int u, int v) {
-    if (rank[u] > rank[v])
-        root[v] = u;
-    else {
-        root[u] = v;
-        if (rank[u] == rank[v]) rank[v]++;
+    if (rank[u] > rank[v]) {
+        parent[v] = u;
+    } else {
+        parent[u] = v;
+
+        if (rank[u] == rank[v]) {
+            rank[v]++;
+        }
     }
 }
 
-int mst(int n) {
-    init(n);
-    int i, j, k;
-    sort(e.begin(), e.end(), comp);
-    int count = 0, sum = 0;
-    for (i = 0; i < e.size(); i++) {
-        int u = find(e[i].u);
-        int v = find(e[i].v);
+int mst(int nodes) {
+    init(nodes);
+
+    sort(edges.begin(), edges.end(), compare);
+
+    int removedCost = 0;
+
+    for (edge e: edges) {
+        int u = find(e.u);
+        int v = find(e.v);
+
         if (u != v) {
             Union(u, v);
-        } else
-            sum += e[i].w;
+        } else {
+            removedCost += e.w;
+        }
     }
-    return sum;
+
+    return removedCost;
 }
 
-main() {
-    // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
-    ios_base::sync_with_stdio(false);
-    int i, j, k, l, n, r, c, u, v, w;
-    edge ed;
-    int tc, t = 1, x = -1, m;
+int main() {
+    int tc;
     cin >> tc;
+
     while (tc--) {
-        cin >> n >> m;
-        while (m--) {
-            cin >> ed.u >> ed.v >> ed.w;
-            e.push_back(ed);
+        int nodes, edgesCount;
+        cin >> nodes >> edgesCount;
+
+        edges.clear();
+
+        for (int i = 0; i < edgesCount; i++) {
+            edge e;
+
+            cin >> e.u >> e.v >> e.w;
+
+            edges.push_back(e);
         }
-        int sum = mst(n);
-        cout << sum << "\n";
-        e.clear();
+
+        cout << mst(nodes) << '\n';
     }
-    cin >> n;
 
     return 0;
 }

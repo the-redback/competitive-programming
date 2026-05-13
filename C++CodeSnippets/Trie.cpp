@@ -3,60 +3,103 @@ using namespace std;
 
 struct node {
     bool endmark;
-    node* next[26 + 1];
+    node *next[26];
+
     node() {
         endmark = false;
-        for (int i = 0; i < 26; i++) next[i] = NULL;
+        for (int i = 0; i < 26; i++) {
+            next[i] = nullptr;
+        }
     }
-}* root;
+};
 
-void insert(char* str, int len) {
-    node* curr = root;
-    for (int i = 0; i < len; i++) {
-        int id = str[i] - 'a';
-        if (curr->next[id] == NULL) curr->next[id] = new node();
+node *root = new node();
+
+void insert(string &s) {
+    node *curr = root;
+
+    for (char ch: s) {
+        int id = ch - 'a';
+        if (curr->next[id] == nullptr) {
+            curr->next[id] = new node();
+        }
         curr = curr->next[id];
     }
     curr->endmark = true;
 }
 
-bool search(char* str, int len) {
-    node* curr = root;
-    for (int i = 0; i < len; i++) {
-        int id = str[i] - 'a';
-        if (curr->next[id] == NULL) return false;
+bool search(string &s) {
+    node *curr = root;
+    for (char ch: s) {
+        int id = ch - 'a';
+        if (curr->next[id] == nullptr) {
+            return false;
+        }
         curr = curr->next[id];
     }
     return curr->endmark;
 }
 
-void del(node* cur) {
-    for (int i = 0; i < 26; i++)
-        if (cur->next[i]) del(cur->next[i]);
-    delete (cur);
+void removeTrie(node *curr) {
+    for (int i = 0; i < 26; i++) {
+        if (curr->next[i] != nullptr) {
+            removeTrie(curr->next[i]);
+        }
+    }
+    delete curr;
 }
 
 int main() {
-    // NUMBER OF WORDS
-    root = new node();
-    int num_word;
-    cin >> num_word;
-    for (int i = 1; i <= num_word; i++) {
-        char str[50];
-        scanf("%s", str);
-        insert(str, strlen(str));
+    int n;
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        string s;
+        cin >> s;
+        insert(s);
     }
-    // NUMBER OF QUERY"
-    int query;
-    cin >> query;
-    for (int i = 1; i <= query; i++) {
-        char str[50];
-        scanf("%s", str);
-        if (search(str, strlen(str)))
-            puts("FOUND");
-        else
-            puts("NOT FOUND");
+
+    int q;
+    cin >> q;
+
+    while (q--) {
+        string s;
+        cin >> s;
+
+        if (search(s)) {
+            cout << "FOUND\n";
+        } else {
+            cout << "NOT FOUND\n";
+        }
     }
-    del(root);  // destroy trie;
+
+    removeTrie(root);
+
     return 0;
 }
+
+/*
+Sample Input:
+5
+apple
+app
+bat
+ball
+cat
+6
+app
+apple
+bat
+bad
+ball
+dog
+
+Output:
+FOUND
+FOUND
+FOUND
+NOT FOUND
+FOUND
+NOT FOUND
+
+*/

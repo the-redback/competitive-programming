@@ -1,16 +1,29 @@
-unsigned long long a[NN + 7];
-void sieve(void) {
-    int i, j, k, n = 2237;
-    for (i = 2; i < NN; i++) a[i] = i;
-    for (i = 2; i < NN; i += 2) {
-        a[i] *= (2 - 1);
-        a[i] /= 2;
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAXN = 1000000;
+
+unsigned long long phi[MAXN + 1];
+
+void sieve() {
+    for (int i = 1; i <= MAXN; i++) {
+        phi[i] = i;
     }
-    for (i = 3; i < NN; i += 2)
-        if (a[i] == i) {
-            for (j = i; j < NN; j += i) {
-                a[j] *= (i - 1);
-                a[j] /= i;
+
+    for (int i = 2; i <= MAXN; i++) {
+        if (phi[i] == i) {
+            for (int j = i; j <= MAXN; j += i) {
+                phi[j] *= (i - 1);
+                phi[j] /= i;
             }
         }
+    }
+}
+
+int main() {
+    sieve();
+
+    cout << phi[10] << '\n';
+
+    return 0;
 }
