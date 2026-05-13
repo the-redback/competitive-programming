@@ -7,8 +7,8 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <tuple>
 #include <vector>

@@ -4,14 +4,15 @@ using namespace std;
 
 class Solution {
 public:
-    int b_search(vector<int> &ans, int n) {
+    int b_search(vector<int>& ans, int n) {
         int low = 0;
         int high = ans.size() - 1;
 
         while (low < high) {
             int mid = (low + high) / 2;
-            if (ans[mid] == n)
+            if (ans[mid] == n) {
                 return mid;
+            }
             if (ans[mid] < n) {
                 low = mid + 1;
             } else {
@@ -21,11 +22,11 @@ public:
         return low;
     }
 
-    int lengthOfLIS(vector<int> &nums) {
+    int lengthOfLIS(vector<int>& nums) {
         if (nums.empty()) return 0;
         vector<int> ans;
 
-        for (auto num: nums) {
+        for (auto num : nums) {
             if (ans.empty() || ans.back() < num)
                 ans.push_back(num);
             else {

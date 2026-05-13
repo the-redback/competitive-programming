@@ -8,8 +8,8 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <vector>
 using namespace std;

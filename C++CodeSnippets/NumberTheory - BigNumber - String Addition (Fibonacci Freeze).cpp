@@ -45,9 +45,7 @@ int main() {
     int n;
 
     while (cin >> n) {
-        cout << "The Fibonacci number for "
-                << n << " is "
-                << fib[n] << '\n';
+        cout << "The Fibonacci number for " << n << " is " << fib[n] << '\n';
     }
 
     return 0;

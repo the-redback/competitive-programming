@@ -9,7 +9,6 @@ int ternarySearch(int k, int l, int s) {
     int high = v.size() - 1;
 
     while (high - low > 3) {
-
         int midLeft = low + (high - low) / 3;
         int midRight = high - (high - low) / 3;
 

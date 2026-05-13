@@ -1,5 +1,5 @@
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -9,12 +9,14 @@ string s1, s2;
 int dp[1005][1005];
 
 int lcs(int i, int j) {
-    if (i < 0 || j < 0)
+    if (i < 0 || j < 0) {
         return 0;
+    }
 
-    int &tc = dp[i][j];
-    if (tc != -1)
+    int& tc = dp[i][j];
+    if (tc != -1) {
         return tc;
+    }
 
     tc = 0;
     if (s1[i] == s2[j]) {

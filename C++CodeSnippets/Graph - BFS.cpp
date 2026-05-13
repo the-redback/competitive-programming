@@ -32,7 +32,7 @@ void bfs(int source, int numOfNodes) {
         int u = q.front();
         q.pop();
 
-        for (int v: adj[u]) {
+        for (int v : adj[u]) {
             if (dist[v] == -1) {
                 dist[v] = dist[u] + 1;
                 parent[v] = u;
@@ -51,7 +51,7 @@ int main() {
         int u, v;
         cin >> u >> v;
         adj[u].push_back(v);
-        adj[v].push_back(u); // Remove for directed graph
+        adj[v].push_back(u);  // Remove for directed graph
     }
 
     int source;

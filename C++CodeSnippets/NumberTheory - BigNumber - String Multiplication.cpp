@@ -20,7 +20,7 @@ string multiply(string a, string b) {
 
     string result;
 
-    for (int num: product) {
+    for (int num : product) {
         if (!(result.empty() && num == 0)) {
             result.push_back(num + '0');
         }

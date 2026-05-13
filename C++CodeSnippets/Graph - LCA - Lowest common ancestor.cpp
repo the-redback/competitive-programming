@@ -8,9 +8,9 @@
  *    @link : https://the-redback.com
  */
 
+#include <algorithm>
 #include <cmath>
 #include <cstring>
-#include <algorithm>
 #include <iostream>
 #include <vector>
 using namespace std;

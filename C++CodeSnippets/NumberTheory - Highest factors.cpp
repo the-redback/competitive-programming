@@ -11,7 +11,6 @@ void preprocess() {
     int num = 1;
 
     for (int i = 1; i <= MAXN; i++) {
-
         for (int j = i; j <= MAXN; j += i) {
             divisors[j]++;
         }

@@ -13,8 +13,8 @@ means that number of genies in node i is changed to v (0 <= i < n, 0 <= v <=
 1000).
 */
 
-#include <cstdio>
 #include <algorithm>
+#include <cstdio>
 #include <iostream>
 #include <set>
 #include <vector>
@@ -117,14 +117,12 @@ ll query_up(ll u, ll v) {
             // Above is call to segment tree query function
             break;
         }
-        ans += query_tree(1, 1, ptr - 1, posInBase[chainHead[uchain]],
-                          posInBase[u]);
+        ans += query_tree(1, 1, ptr - 1, posInBase[chainHead[uchain]], posInBase[u]);
         // Above is call to segment tree query function. We do from chainHead of
         // u till u. That is the whole chain from start till head. We then
         // update the answer
         u = chainHead[uchain];  // move u to u's chainHead
-        u = par[u][0];  // Then move to its parent, that means we changed
-                        // chains
+        u = par[u][0];          // Then move to its parent, that means we changed chains
     }
     return ans;
 }
@@ -227,9 +225,6 @@ void dfs(ll cur, ll prev, ll _depth = 0) {
 }
 
 int main() {
-#ifdef redback
-    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
-#endif
     ll tc, t = 1;
     cin >> tc;
     while (tc--) {
@@ -255,17 +250,16 @@ int main() {
         }
 
         chainNo = 0;
-        dfs(0, -1);  // We set up subsize, depth and parent for each node
-        HLD(0, -1);  // We decomposed the tree and created baseArray
-        make_tree(
-            1, 1,
-            ptr - 1);  // We use baseArray and construct the needed segment tree
+        dfs(0, -1);                // We set up subsize, depth and parent for each node
+        HLD(0, -1);                // We decomposed the tree and created baseArray
+        make_tree(1, 1, ptr - 1);  // We use baseArray and construct the needed segment tree
 
         // Below Dynamic programming code is for LCA.
         for (ll lev = 1; lev <= 16 - 1; lev++) {
             for (ll i = 0; i < n; i++) {
-                if (par[i][lev - 1] != -1)
+                if (par[i][lev - 1] != -1) {
                     par[i][lev] = par[par[i][lev - 1]][lev - 1];
+                }
             }
         }
 

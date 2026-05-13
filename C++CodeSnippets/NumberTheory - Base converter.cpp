@@ -53,7 +53,9 @@ int main() {
         else
             k = a[i] - '0';
         if (k >= n) {
-            cout << "\n" << "** Oops!!! Sorry...... " << a << " is not of " << n << " base." << "\n" << "\n";
+            cout << "\n"
+                 << "** Oops!!! Sorry...... " << a << " is not of " << n << " base." << "\n"
+                 << "\n";
             return 0;
         }
     }

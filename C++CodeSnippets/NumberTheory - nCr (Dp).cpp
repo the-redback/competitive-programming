@@ -9,9 +9,10 @@ long long nCr(int n, int r) {
     if (r == 0 || n == r) return 1;
     if (r == 1) return n;
 
-    long long &memo = dp[n][r];
-    if (memo != -1)
+    long long& memo = dp[n][r];
+    if (memo != -1) {
         return memo;
+    }
 
     memo = nCr(n - 1, r) + nCr(n - 1, r - 1);
     return memo;

@@ -8,8 +8,8 @@
  *    @link : https://the-redback.com
  */
 
-#include <cmath>
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -27,17 +27,11 @@ struct Point {
 vector<Point> points, hull;
 Point pivot;
 
-Point makeVector(Point a, Point b) {
-    return Point(b.x - a.x, b.y - a.y);
-}
+Point makeVector(Point a, Point b) { return Point(b.x - a.x, b.y - a.y); }
 
-double crossProduct(Point a, Point b) {
-    return a.x * b.y - a.y * b.x;
-}
+double crossProduct(Point a, Point b) { return a.x * b.y - a.y * b.x; }
 
-double magnitude(Point a) {
-    return sqrt(a.x * a.x + a.y * a.y);
-}
+double magnitude(Point a) { return sqrt(a.x * a.x + a.y * a.y); }
 
 bool compare(Point a, Point b) {
     double cross = crossProduct(makeVector(pivot, a), makeVector(pivot, b));
@@ -73,8 +67,7 @@ void convexHull() {
         while (hull.size() >= 2) {
             int n = hull.size();
 
-            double cross = crossProduct(makeVector(hull[n - 2], hull[n - 1]),
-                                        makeVector(hull[n - 2], points[i]));
+            double cross = crossProduct(makeVector(hull[n - 2], hull[n - 1]), makeVector(hull[n - 2], points[i]));
 
             if (cross <= 0) {
                 hull.pop_back();

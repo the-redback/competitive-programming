@@ -7,8 +7,8 @@
  *
  *    @link : https://the-redback.com
  */
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -38,7 +38,7 @@ void tarjan(int u) {
 
     st.push(u);
 
-    for (int v: g[u]) {
+    for (int v : g[u]) {
         if (!visited[v]) {
             tarjan(v);
 
@@ -98,17 +98,12 @@ int main() {
 
     findSCC(nodes);
 
-    cout << "Number of SCC: "
-            << sccCount
-            << '\n';
+    cout << "Number of SCC: " << sccCount << '\n';
 
     cout << "\nNode -> Component\n";
 
     for (int i = 1; i <= nodes; i++) {
-        cout << i
-                << " -> "
-                << component[i]
-                << '\n';
+        cout << i << " -> " << component[i] << '\n';
     }
 
     return 0;

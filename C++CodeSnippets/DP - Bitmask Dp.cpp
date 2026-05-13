@@ -1,5 +1,5 @@
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 using namespace std;
 
@@ -11,12 +11,14 @@ int a[MAXN][MAXN];
 int dp[MAXMASK];
 
 int go(int x, int mask) {
-    if (x >= n)
+    if (x >= n) {
         return 0;
+    }
 
     int& tc = dp[mask];
-    if (tc != -1)
+    if (tc != -1) {
         return tc;
+    }
 
     tc = 0;
     for (int i = 0; i < n; i++) {
@@ -40,8 +42,7 @@ int main() {
         }
         memset(dp, -1, sizeof(dp));
         int sum = go(0, 0);
-        cout << "Case " << tc << ": "
-             << sum << '\n';
+        cout << "Case " << tc << ": " << sum << '\n';
     }
     return 0;
 }

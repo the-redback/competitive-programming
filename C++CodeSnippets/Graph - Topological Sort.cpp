@@ -1,5 +1,5 @@
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -15,7 +15,7 @@ bool hasCycle = false;
 void dfs(int u) {
     visited[u] = 1;
 
-    for (int v: g[u]) {
+    for (int v : g[u]) {
         if (visited[v] == 0) {
             dfs(v);
         } else if (visited[v] == 1) {
@@ -48,7 +48,7 @@ int main() {
         cout << "IMPOSSIBLE\n";
     } else {
         reverse(topo.begin(), topo.end());
-        for (int node: topo) {
+        for (int node : topo) {
             cout << node << '\n';
         }
     }

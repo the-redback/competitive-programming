@@ -1,5 +1,5 @@
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -14,9 +14,7 @@ int par[MAXN];
 
 struct node {
     int u, w;
-    bool operator<(const node& p) const {
-        return w > p.w;
-    }
+    bool operator<(const node& p) const { return w > p.w; }
 };
 
 // If destination is -1, calculates distance to all the nodes.

@@ -1,12 +1,12 @@
 #include <string>
 using namespace std;
 
-long long divide(string &a, long long divisor, string &result) {
+long long divide(string& a, long long divisor, string& result) {
     result.clear();
 
     long long remainder = 0;
 
-    for (char ch: a) {
+    for (char ch : a) {
         remainder = remainder * 10 + (ch - '0');
 
         if (remainder >= divisor || !result.empty()) {

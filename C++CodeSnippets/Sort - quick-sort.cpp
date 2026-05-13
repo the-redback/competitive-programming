@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-int partition(vector<int> &nums, int left, int right) {
+int partition(vector<int>& nums, int left, int right) {
     int pivot = nums[right];
 
     int l = left;
@@ -18,7 +18,7 @@ int partition(vector<int> &nums, int left, int right) {
     return l;
 }
 
-void quickSort(vector<int> &nums, int left, int right) {
+void quickSort(vector<int>& nums, int left, int right) {
     if (left >= right) {
         return;
     }
@@ -29,13 +29,12 @@ void quickSort(vector<int> &nums, int left, int right) {
     quickSort(nums, pivotIndex + 1, right);
 }
 
-
 int main() {
     // Quick Sort
     vector<int> nums = {10, 7, 8, 9, 1, 5};
     quickSort(nums, 0, nums.size() - 1);
     cout << "Sorted array:\n";
-    for (int num: nums) {
+    for (int num : nums) {
         cout << num << " ";
     }
     cout << '\n';

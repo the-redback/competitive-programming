@@ -1,5 +1,5 @@
-#include <cstring>
 #include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <numeric>
 
@@ -83,8 +83,9 @@ ll query(ll node, ll low, ll high, ll qlow, ll qhigh, ll carry) {
     ll right = left + 1;
     ll mid = (low + high) / 2;
 
-    if ((high - low + 1) * tree[node].xtra == tree[node].sum)
+    if ((high - low + 1) * tree[node].xtra == tree[node].sum) {
         carry = tree[node].xtra;
+    }
 
     ll p1 = query(left, low, mid, qlow, qhigh, carry);
     ll p2 = query(right, mid + 1, high, qlow, qhigh, carry);

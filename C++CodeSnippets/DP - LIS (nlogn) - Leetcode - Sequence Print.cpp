@@ -9,14 +9,15 @@ private:
     vector<int> lisLength;
 
 public:
-    int b_search(vector<int> &ans, int n) {
+    int b_search(vector<int>& ans, int n) {
         int low = 0;
         int high = ans.size() - 1;
 
         while (low < high) {
             int mid = (low + high) / 2;
-            if (ans[mid] == n)
+            if (ans[mid] == n) {
                 return mid;
+            }
 
             if (ans[mid] < n) {
                 low = mid + 1;
@@ -27,7 +28,7 @@ public:
         return low;
     }
 
-    int lengthOfLIS(vector<int> &nums) {
+    int lengthOfLIS(vector<int>& nums) {
         if (nums.empty()) return 0;
 
         vector<int> ans;
@@ -47,7 +48,7 @@ public:
         return ans.size();
     }
 
-    vector<int> buildLIS(vector<int> &nums) {
+    vector<int> buildLIS(vector<int>& nums) {
         vector<int> sequence;
         int n = nums.size();
         if (n == 0) return sequence;
@@ -81,19 +82,17 @@ public:
 int main() {
     Solution sol;
 
-    vector<int> nums =
-            {10, 9, 2, 5, 3, 7, 101, 18};
+    vector<int> nums = {10, 9, 2, 5, 3, 7, 101, 18};
 
     int length = sol.lengthOfLIS(nums);
 
-    cout << "LIS Length: "
-            << length << '\n';
+    cout << "LIS Length: " << length << '\n';
 
     vector<int> lis = sol.buildLIS(nums);
 
     cout << "LIS: ";
 
-    for (int num: lis) {
+    for (int num : lis) {
         cout << num << " ";
     }
 

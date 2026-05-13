@@ -1,0 +1,10 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+# --- Indentation Overrides ---
+IndentWidth: 4
+ContinuationIndentWidth: 4
+TabWidth: 4
+UseTab: Never
+AccessModifierOffset: -4
+ColumnLimit: 120

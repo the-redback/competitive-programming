@@ -21,10 +21,7 @@ void printMaxHeap(priority_queue<int> pq) {
 /*                                  Min Heap                                  */
 /* -------------------------------------------------------------------------- */
 
-void printMinHeap(
-    priority_queue<int,
-        vector<int>,
-        greater<int> > pq) {
+void printMinHeap(priority_queue<int, vector<int>, greater<int> > pq) {
     while (!pq.empty()) {
         cout << pq.top() << " ";
         pq.pop();
@@ -36,13 +33,11 @@ void printMinHeap(
 /*                              Max Heap of Pair                              */
 /* -------------------------------------------------------------------------- */
 
-void printMaxPairHeap(
-    priority_queue<pair<int, int> > pq) {
+void printMaxPairHeap(priority_queue<pair<int, int> > pq) {
     while (!pq.empty()) {
         pair<int, int> top = pq.top();
 
-        cout << "(" << top.first << ", "
-                << top.second << ") ";
+        cout << "(" << top.first << ", " << top.second << ") ";
         pq.pop();
     }
     cout << '\n';
@@ -52,15 +47,11 @@ void printMaxPairHeap(
 /*                              Min Heap of Pair                              */
 /* -------------------------------------------------------------------------- */
 
-void printMinPairHeap(
-    priority_queue<pair<int, int>,
-        vector<pair<int, int> >,
-        greater<pair<int, int> > > pq) {
+void printMinPairHeap(priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > pq) {
     while (!pq.empty()) {
         pair<int, int> top = pq.top();
 
-        cout << "(" << top.first << ", "
-                << top.second << ") ";
+        cout << "(" << top.first << ", " << top.second << ") ";
         pq.pop();
     }
     cout << '\n';
@@ -80,9 +71,7 @@ int main() {
 
     // Min Heap
 
-    priority_queue<int,
-        vector<int>,
-        greater<int> > minHeap;
+    priority_queue<int, vector<int>, greater<int> > minHeap;
 
     minHeap.push(10);
     minHeap.push(30);
@@ -103,9 +92,7 @@ int main() {
 
     // Min Heap of Pair
 
-    priority_queue<pair<int, int>,
-        vector<pair<int, int> >,
-        greater<pair<int, int> > > minPairHeap;
+    priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > minPairHeap;
 
     minPairHeap.push({10, 200});
     minPairHeap.push({20, 100});

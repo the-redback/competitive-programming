@@ -1,5 +1,5 @@
-#include <cstdio>
 #include <algorithm>
+#include <cstdio>
 #include <iostream>
 using namespace std;
 
@@ -23,10 +23,13 @@ int main() {
             a[v][u] = w;
         }
 
-        for (k = 1; k <= n; k++)
-            for (i = 1; i <= n; i++)
-                for (j = 1; j <= n; j++)
+        for (k = 1; k <= n; k++) {
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= n; j++) {
                     a[i][j] = min(a[i][j], max(a[i][k], a[k][j]));
+                }
+            }
+        }
 
         if (t != 1) puts("");
         cout << "Case #" << t++ << "\n";

@@ -39,7 +39,7 @@ void sieve(int n) {
 vector<pair<int, int> > factorize(int n) {
     vector<pair<int, int> > factors;
 
-    for (int prime: primes) {
+    for (int prime : primes) {
         if (1LL * prime * prime > n) {
             break;
         }
@@ -70,9 +70,7 @@ int main() {
 
     sieve(n);
 
-    cout << "Primes up to "
-         << n
-         << ":\n";
+    cout << "Primes up to " << n << ":\n";
 
     for (int prime : primes) {
         cout << prime << " ";
@@ -84,18 +82,12 @@ int main() {
 
     int num = 60;
 
-    cout << "Prime factorization of "
-         << num
-         << ":\n";
+    cout << "Prime factorization of " << num << ":\n";
 
-    vector<pair<int, int> > factors =
-        factorize(num);
+    vector<pair<int, int> > factors = factorize(num);
 
     for (pair<int, int> factor : factors) {
-        cout << factor.first
-             << "^"
-             << factor.second
-             << '\n';
+        cout << factor.first << "^" << factor.second << '\n';
     }
 
     return 0;

@@ -1,7 +1,7 @@
 // header files
 
-#include <cstdio>
 #include <algorithm>
+#include <cstdio>
 #include <functional>
 #include <iostream>
 #include <string>
@@ -26,8 +26,9 @@ struct Bigint {
         return (*this);
     }
     Bigint normalize(int newSign) {  // removes leading 0, fixes sign
-        for (int i = a.size() - 1; i > 0 && a[i] == '0'; i--)
+        for (int i = a.size() - 1; i > 0 && a[i] == '0'; i--) {
             a.erase(a.begin() + i);
+        }
         sign = (a.size() == 1 && a[0] == '0') ? 1 : newSign;
         return (*this);
     }
@@ -42,11 +43,13 @@ struct Bigint {
     // conditional operators
     bool operator<(const Bigint& b) const {  // less than operator
         if (sign != b.sign) return sign < b.sign;
-        if (a.size() != b.a.size())
+        if (a.size() != b.a.size()) {
             return sign == 1 ? a.size() < b.a.size() : a.size() > b.a.size();
+        }
         for (int i = a.size() - 1; i >= 0; i--)
-            if (a[i] != b.a[i])
+            if (a[i] != b.a[i]) {
                 return sign == 1 ? a[i] < b.a[i] : a[i] > b.a[i];
+            }
         return false;
     }
     bool operator==(const Bigint& b) const {  // operator for equality
@@ -58,8 +61,7 @@ struct Bigint {
         if (sign != b.sign) return (*this) - b.inverseSign();
         Bigint c;
         for (int i = 0, carry = 0; i < a.size() || i < b.size() || carry; i++) {
-            carry += (i < a.size() ? a[i] - 48 : 0) +
-                     (i < b.a.size() ? b.a[i] - 48 : 0);
+            carry += (i < a.size() ? a[i] - 48 : 0) + (i < b.a.size() ? b.a[i] - 48 : 0);
             c.a += (carry % 10 + 48);
             carry /= 10;
         }
@@ -136,25 +138,25 @@ int main() {
     // Using mathematical operators //
     //////////////////////////////////
 
-    c = a + b;  // adding a and b
-    c.print();  // printing the Bigint
-    cout << "" << "\n";   // newline
+    c = a + b;           // adding a and b
+    c.print();           // printing the Bigint
+    cout << "" << "\n";  // newline
 
-    c = a - b;  // subtracting b from a
-    c.print();  // printing the Bigint
-    cout << "" << "\n";   // newline
+    c = a - b;           // subtracting b from a
+    c.print();           // printing the Bigint
+    cout << "" << "\n";  // newline
 
-    c = a * b;  // multiplying a and b
-    c.print();  // printing the Bigint
-    cout << "" << "\n";   // newline
+    c = a * b;           // multiplying a and b
+    c.print();           // printing the Bigint
+    cout << "" << "\n";  // newline
 
-    c = a / b;  // dividing a by b
-    c.print();  // printing the Bigint
-    cout << "" << "\n";   // newline
+    c = a / b;           // dividing a by b
+    c.print();           // printing the Bigint
+    cout << "" << "\n";  // newline
 
-    c = a % b;  // a modulo b
-    c.print();  // printing the Bigint
-    cout << "" << "\n";   // newline
+    c = a % b;           // a modulo b
+    c.print();           // printing the Bigint
+    cout << "" << "\n";  // newline
 
     /////////////////////////////////
     // Using conditional operators //

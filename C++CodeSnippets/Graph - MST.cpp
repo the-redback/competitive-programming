@@ -13,9 +13,7 @@ struct edge {
 
 vector<edge> edges;
 
-bool compare(edge a, edge b) {
-    return a.w > b.w;
-}
+bool compare(edge a, edge b) { return a.w > b.w; }
 
 int find(int u) {
     if (parent[u] == u) {
@@ -40,7 +38,7 @@ int mst(int nodes) {
     sort(edges.begin(), edges.end(), compare);
     int removedCost = 0;
 
-    for (edge e: edges) {
+    for (edge e : edges) {
         int u = find(e.u);
         int v = find(e.v);
 

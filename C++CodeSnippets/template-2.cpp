@@ -16,9 +16,6 @@ typedef unsigned long long llu;
 
 int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
-#ifdef redback
-    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
-#endif
 
     ll t = 1, tc;
     // scanf("%lld", &tc);

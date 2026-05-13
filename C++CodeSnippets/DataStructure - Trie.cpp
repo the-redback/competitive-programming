@@ -4,7 +4,7 @@ using namespace std;
 
 struct node {
     bool endmark;
-    node *next[26];
+    node* next[26];
 
     node() {
         endmark = false;
@@ -14,12 +14,12 @@ struct node {
     }
 };
 
-node *root = new node();
+node* root = new node();
 
-void insert(string &s) {
-    node *curr = root;
+void insert(string& s) {
+    node* curr = root;
 
-    for (char ch: s) {
+    for (char ch : s) {
         int id = ch - 'a';
         if (curr->next[id] == nullptr) {
             curr->next[id] = new node();
@@ -29,9 +29,9 @@ void insert(string &s) {
     curr->endmark = true;
 }
 
-bool search(string &s) {
-    node *curr = root;
-    for (char ch: s) {
+bool search(string& s) {
+    node* curr = root;
+    for (char ch : s) {
         int id = ch - 'a';
         if (curr->next[id] == nullptr) {
             return false;
@@ -41,7 +41,7 @@ bool search(string &s) {
     return curr->endmark;
 }
 
-void removeTrie(node *curr) {
+void removeTrie(node* curr) {
     for (int i = 0; i < 26; i++) {
         if (curr->next[i] != nullptr) {
             removeTrie(curr->next[i]);

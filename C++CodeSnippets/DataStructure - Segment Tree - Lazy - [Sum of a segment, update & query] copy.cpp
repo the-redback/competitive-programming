@@ -27,8 +27,7 @@ void update(int node, int low, int high, int qlow, int qhigh, int value) {
     update(left, low, mid, qlow, qhigh, value);
     update(right, mid + 1, high, qlow, qhigh, value);
 
-    tree[node].sum =
-        tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
+    tree[node].sum = tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
 }
 
 ll query(int node, int low, int high, int qlow, int qhigh, ll carry) {

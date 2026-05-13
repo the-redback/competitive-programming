@@ -14,6 +14,4 @@ double polygonArea(vector<Point>& polygon) {
     return abs(area) / 2.0;
 }
 
-double triangleArea(Point a, Point b, Point c) {
-    return abs(crossProduct(makeVector(a, b), makeVector(a, c))) / 2.0;
-}
+double triangleArea(Point a, Point b, Point c) { return abs(crossProduct(makeVector(a, b), makeVector(a, c))) / 2.0; }

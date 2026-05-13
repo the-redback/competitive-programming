@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void merge(vector<int> &nums, int left, int mid, int right) {
+void merge(vector<int>& nums, int left, int mid, int right) {
     vector<int> temp;
 
     int i = left;
@@ -30,7 +30,7 @@ void merge(vector<int> &nums, int left, int mid, int right) {
     return;
 }
 
-void mergeSort(vector<int> &nums, int left, int right) {
+void mergeSort(vector<int>& nums, int left, int right) {
     if (left >= right) {
         return;
     }
@@ -47,7 +47,7 @@ int main() {
 
     mergeSort(nums, 0, nums.size() - 1);
 
-    for (int num: nums) {
+    for (int num : nums) {
         cout << num << " ";
     }
     cout << '\n';

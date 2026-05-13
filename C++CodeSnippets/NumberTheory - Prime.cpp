@@ -82,7 +82,7 @@ bool isPrime(long long n) {
 vector<pair<int, int> > factorize(int n) {
     vector<pair<int, int> > factors;
 
-    for (int prime: primes) {
+    for (int prime : primes) {
         if (1LL * prime * prime > n) {
             break;
         }
@@ -112,7 +112,7 @@ vector<int> factors[MAXN + 1];
 void getFactors(int n) {
     int original = n;
 
-    for (int prime: primes) {
+    for (int prime : primes) {
         if (prime * prime > n) {
             break;
         }
@@ -169,18 +169,12 @@ int main() {
 
     int num = 60;
 
-    cout << "Prime factorization of "
-         << num
-         << ":\n";
+    cout << "Prime factorization of " << num << ":\n";
 
-    vector<pair<int, int> > factorsList =
-        factorize(num);
+    vector<pair<int, int> > factorsList = factorize(num);
 
     for (pair<int, int> factor : factorsList) {
-        cout << factor.first
-             << "^"
-             << factor.second
-             << '\n';
+        cout << factor.first << "^" << factor.second << '\n';
     }
 
     cout << "\n";

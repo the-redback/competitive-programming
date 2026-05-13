@@ -14,26 +14,20 @@ int main() {
     low = std::lower_bound(v.begin(), v.end(), 20);  // 0 index system
     up = std::upper_bound(v.begin(), v.end(), 20);   // 0 index system
 
-    std::cout << "lower_bound at position " << (low - v.begin())
-              << '\n';  // ans: 3
-    std::cout << "upper_bound at position " << (up - v.begin())
-              << '\n';  // ans: 6
+    std::cout << "lower_bound at position " << (low - v.begin()) << '\n';  // ans: 3
+    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 6
 
     low = std::lower_bound(v.begin(), v.end(), 25);  //
     up = std::upper_bound(v.begin(), v.end(), 25);   //
 
-    std::cout << "lower_bound at position " << (low - v.begin())
-              << '\n';  // ans: 6
-    std::cout << "upper_bound at position " << (up - v.begin())
-              << '\n';  // ans: 6
+    std::cout << "lower_bound at position " << (low - v.begin()) << '\n';  // ans: 6
+    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 6
 
     low = std::lower_bound(v.begin(), v.end(), 50);  //
     up = std::upper_bound(v.begin(), v.end(), 50);   //
 
-    std::cout << "lower_bound at position " << (low - v.begin())
-              << '\n';  // ans: 8
-    std::cout << "upper_bound at position " << (up - v.begin())
-              << '\n';  // ans: 8
+    std::cout << "lower_bound at position " << (low - v.begin()) << '\n';  // ans: 8
+    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 8
 
     return 0;
 }
