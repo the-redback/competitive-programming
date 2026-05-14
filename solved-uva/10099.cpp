@@ -16,7 +16,7 @@ using namespace std;
 int pr[NN + 7];
 int a[NN + 7][NN + 7];
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     // ios_base::sync_with_stdio(false);
     int i, j, k, l, n, r, c, count;

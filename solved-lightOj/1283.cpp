@@ -32,7 +32,7 @@ int go(int pos, int left, int right) {
     return t;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     a[105] = inf;

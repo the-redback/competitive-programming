@@ -14,7 +14,7 @@ int check(int i, int n) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, t, i, j, k, n, p;
     cin >> tc;
     gets(a);

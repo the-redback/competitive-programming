@@ -2,7 +2,7 @@
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
 
-main() {
+int main() {
     int a[20][20];
     bool b[20][20];
     int i, j, k, l, m, sum, t = 1, n, flag;

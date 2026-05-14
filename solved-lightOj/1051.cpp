@@ -49,7 +49,7 @@ int bad(int pos, int vowel, int cons) {
     return t;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     getchar();

@@ -49,7 +49,7 @@ long long divisor(long long n) {
     return res;
 }
 
-main() {
+int main() {
     sieve(MAX + 1);
     int tc, t = 1;
     long long K;

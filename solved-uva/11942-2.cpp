@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
-main() {
+int main() {
     int a[15], i, j, k, m, n, t;
     scanf("%d", &t);
     puts("Lumberjacks:");

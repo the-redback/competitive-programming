@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     long v, j, n, k, count, l;
     while (scanf("%ld", &n) == 1) {
         k = ceil(((double)sqrt(1 + 8 * n) - 1.0) / (double)2.0);

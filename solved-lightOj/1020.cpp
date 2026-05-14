@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     char a[10];
     long n;
     int i, t;

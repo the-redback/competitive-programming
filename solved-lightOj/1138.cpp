@@ -31,7 +31,7 @@ int call(int n) {
     return -1;
 }
 
-main() {
+int main() {
     int tc, t;
     cin >> tc;
     for (t = 1; t <= tc; t++) {

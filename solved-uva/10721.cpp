@@ -31,7 +31,7 @@ long long go(int pos, int value) {
     return ret;
 }
 
-main() {
+int main() {
     while (~scanf("%d%d%d", &V, &N, &K)) {
         memset(dp, -1, sizeof(dp));
         long long ret = go(0, 0);

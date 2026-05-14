@@ -22,7 +22,7 @@ int mod(int d) {
     return rem;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int res, ret, i, j, k, n;
     scanf("%d", &tc);

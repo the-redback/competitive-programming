@@ -16,7 +16,7 @@ int call(int i, int j) {
     return sum;
 }
 
-main() {
+int main() {
     int n, m, i, j, k, tc, t = 1;
     cin >> tc;
     getchar();

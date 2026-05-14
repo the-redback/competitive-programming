@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
-main() {
+int main() {
     char a[10];
     int i, j = 0, flag, k, m, l, n, t;
     double sum;

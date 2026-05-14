@@ -19,7 +19,7 @@ void call(int m) {
     }
 }
 
-main() {
+int main() {
     while (scanf("%s %d", arr, &n) == 2) {
         k = strlen(arr);
         sort(arr, arr + k);

@@ -34,7 +34,7 @@ char b[1010][1010];
 ll fl[NN];
 ll bl[NN];
 
-main() {
+int main() {
 // ios_base::sync_with_stdio(0); cin.tie(0);
 #ifdef redback
     // freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);

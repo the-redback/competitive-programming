@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     int a, b, c, d;
     int sum;
     while (scanf("%d %d %d %d", &a, &b, &c, &d) == 4) {

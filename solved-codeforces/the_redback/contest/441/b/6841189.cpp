@@ -20,7 +20,7 @@ using namespace std;
 
 long long a[3030];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

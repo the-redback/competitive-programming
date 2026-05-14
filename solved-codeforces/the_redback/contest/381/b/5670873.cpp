@@ -14,7 +14,7 @@ using namespace std;
 #define mod       1000000007
 int a[5050];
 
-main() {
+int main() {
     vector<int> v;
 
     int n, k, l, r, i;

@@ -42,7 +42,7 @@ void add(char b[201], char b1[201], char b2[201]) {
     b[j] = '\0';
 }
 
-main() {
+int main() {
     int i;
     char a[201], b[201], c[201];
     scanf("%d", &i);

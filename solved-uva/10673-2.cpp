@@ -12,7 +12,7 @@ using namespace std;
 #define inf       HUGE_VAL
 #define mem(a, b) memset(a, b, sizeof(a))
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, x;
     scanf("%d", &tc);

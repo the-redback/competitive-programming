@@ -29,7 +29,7 @@ void call(int n, int i, int j, int k) {
     call(n - 1, j, i, k);
 }
 
-main() {
+int main() {
     int n, m, i, t = 1;
     while (scanf("%d%d", &n, &m) == 2) {
         if (n == 0 && m == 0) return 0;

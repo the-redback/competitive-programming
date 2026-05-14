@@ -17,7 +17,7 @@ void prime(void) {
     }
 }
 
-main() {
+int main() {
     int b[1001];
     b[0] = 0;
     int c[1001];

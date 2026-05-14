@@ -2,7 +2,7 @@
 using namespace std;
 int a[100][100];
 
-main() {
+int main() {
     queue<int> q;
     char ch[10];
     int tc;

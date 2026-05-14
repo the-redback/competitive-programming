@@ -44,7 +44,7 @@ void call(int r, int c, int n) {
     return;
 }
 
-main() {
+int main() {
     int n, m, i, j, t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

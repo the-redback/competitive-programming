@@ -35,7 +35,7 @@ bool comp(string s, string x) {
         return s.size() < x.size();
 }
 
-main() {
+int main() {
     int tc, n;
     int t = 0;
     scanf("%d", &tc);

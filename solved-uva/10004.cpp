@@ -23,7 +23,7 @@ void bfs(int n) {
     }
 }
 
-main() {
+int main() {
     int i, j, k, l, n, e;
     while (scanf("%d", &N)) {
         if (N == 0) return 0;

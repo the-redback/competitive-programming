@@ -12,7 +12,7 @@ using namespace std;
 int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
 int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
-main() {
+int main() {
     char a[200][200];
     int n, m;
     while (scanf("%d %d", &n, &m) == 2) {

@@ -28,7 +28,7 @@ int root(int n) {
     return root(pr[n]);
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, m, n, count;
     // scanf("%d",&tc);

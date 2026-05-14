@@ -13,7 +13,7 @@ bool prime(long n) {
     return 0;
 }
 
-main() {
+int main() {
     long long k, i;
     int b, c;
     double avg;

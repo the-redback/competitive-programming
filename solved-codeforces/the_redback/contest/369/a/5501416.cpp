@@ -12,7 +12,7 @@ using namespace std;
 
 #define inf HUGE_VAL
 
-main() {
+int main() {
     int n, d, p;
     while (~scanf("%d%d%d", &n, &d, &p)) {
         int i, j, k, l;

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int a[101];
     int n, i, j, k, l;
     a[0] = 0;

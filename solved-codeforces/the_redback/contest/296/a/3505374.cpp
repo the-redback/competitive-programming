@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int a[101];
     int b[1001];
     memset(b, 0, sizeof(b));

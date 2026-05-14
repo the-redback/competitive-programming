@@ -36,7 +36,7 @@ void topological(int n) {
     }
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, m, n, count;
     // scanf("%d",&tc);

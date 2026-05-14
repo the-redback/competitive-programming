@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 __int64 m[30000];
-main() {
+int main() {
     int i, j, l, flag;
     int k;
     __int64 n;

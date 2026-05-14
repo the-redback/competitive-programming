@@ -41,7 +41,7 @@ LL call(int mask, int m) {
     return tc = res;
 }
 
-main() {
+int main() {
     int t, tc;
     int i, j, k, l;
     int u, w, p, x, y, z, m, q;

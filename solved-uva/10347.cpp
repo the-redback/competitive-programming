@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     double a, b, c, sum;
     while (scanf("%lf %lf %lf", &a, &b, &c) == 3) {
         sum = (a + b + c) / 2;

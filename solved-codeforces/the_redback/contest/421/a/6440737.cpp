@@ -19,7 +19,7 @@ using namespace std;
 #define NN        400010
 int a[1000];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

@@ -29,7 +29,7 @@ int warsh(int n) {
     return ret;
 }
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     // ios_base::sync_with_stdio(false);
     int i, j, k, l, n, r, c;

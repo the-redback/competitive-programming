@@ -38,7 +38,7 @@ int go(int pos, int prev, int flag) {
     return ret;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

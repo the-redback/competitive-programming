@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     queue<int> q;
     int i, k, n;
     while (scanf("%d", &n) == 1) {

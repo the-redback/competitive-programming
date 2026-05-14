@@ -14,7 +14,7 @@ int div(int n) {
     return count;
 }
 
-main() {
+int main() {
     int i, j, n, t, temp;
     int a[1001], b[1001];
     a[1] = 1;

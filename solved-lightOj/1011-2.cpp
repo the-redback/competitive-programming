@@ -23,7 +23,7 @@ int go(int x, int mask) {
     return dp[mask];
 }
 
-main() {
+int main() {
     int tc, t = 1;
     scanf("%d", &tc);
     while (tc--) {

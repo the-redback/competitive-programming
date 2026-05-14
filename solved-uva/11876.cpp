@@ -17,7 +17,7 @@ void call(void) {
     }
 }
 
-main() {
+int main() {
     call();
     int tc, i, j, k, l;
     scanf("%d", &tc);

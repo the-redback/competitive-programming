@@ -36,7 +36,7 @@ int go(int i, int j, int k) {
     return t;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     char aa[100];

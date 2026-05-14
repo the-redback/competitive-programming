@@ -21,7 +21,7 @@ int dfs(int i, int j) {
     return sum;
 }
 
-main() {
+int main() {
     int n, m, i, j, k, l;
     while (scanf("%d%d", &n, &m) == 2) {
         getchar();

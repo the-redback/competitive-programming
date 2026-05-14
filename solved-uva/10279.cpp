@@ -3,7 +3,7 @@ using namespace std;
 int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
 int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
-main() {
+int main() {
     char a[100][100], b[100][100];
     int n, m, tc, t = 1;
     cin >> tc;

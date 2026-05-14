@@ -29,7 +29,7 @@ long long call(int pos, int r, int flag) {
     return t;
 }
 
-main() {
+int main() {
     int tc, t, i, j, k, l;
     long long sum;
     scanf("%d", &tc);

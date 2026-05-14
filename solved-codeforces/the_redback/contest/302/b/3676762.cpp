@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int i, n, m, c, t;
     long j, k;
     vector<long> v;

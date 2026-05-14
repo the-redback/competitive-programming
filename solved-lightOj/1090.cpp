@@ -32,7 +32,7 @@ int pq(int n, int r) {
     return count;
 }
 
-main() {
+int main() {
     int n, k, l;
     int a, b, c, d;
     int tc, t = 1;

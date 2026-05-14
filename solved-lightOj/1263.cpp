@@ -34,7 +34,7 @@ void dfs(int u) {
     return;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     int q, r, j, k, l, n, i;
     int u, v, w;

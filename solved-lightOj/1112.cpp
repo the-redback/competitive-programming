@@ -68,7 +68,7 @@ void update(int node, int low, int high, int pos) {
     return;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int tc, i, t;
     cin >> tc;

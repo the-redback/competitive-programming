@@ -39,7 +39,7 @@ int bfs(int p, int q, char ch) {
     }
     return -1;
 }
-main() {
+int main() {
     int i, j, k, n;
     int sum, flag;
     int tc, t;

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[101], b[101];
     int l2, j, l1, n, m;
     while (scanf("%s %s", a, b) == 2) {

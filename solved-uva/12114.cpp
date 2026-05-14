@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     long n, m, i = 1;
     while (scanf("%ld %ld", &n, &m) == 2) {
         if (n == 0 && m == 0)

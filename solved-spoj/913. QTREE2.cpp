@@ -124,7 +124,7 @@ ll KTH(ll p, ll q, ll k) {
 
 char s[10];
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     scanf("%d", &tc);

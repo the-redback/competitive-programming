@@ -24,7 +24,7 @@ long long div(char a[], long long n, char c[]) {
     return rem;
 }
 
-main() {
+int main() {
     long long n;
     char a[100000], c[100000];
     char ch;

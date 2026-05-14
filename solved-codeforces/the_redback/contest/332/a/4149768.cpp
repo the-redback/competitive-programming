@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     char a[2010];
     int sum, i, j, k, l, m, n;
     scanf("%d", &n);

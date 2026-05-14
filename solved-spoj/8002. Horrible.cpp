@@ -53,7 +53,7 @@ long long query(int node, int l, int h, int rl, int rh, long long carry) {
     return L + R;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;

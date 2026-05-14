@@ -19,7 +19,7 @@ void work(char b[]) {
     }
 }
 
-main() {
+int main() {
     int i, j, k;
     while (gets(a)) {
         j = 0;

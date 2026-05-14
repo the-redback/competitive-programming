@@ -31,7 +31,7 @@ int test(int i, int j) {
     return dp[i][j];
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int i, j, k, l, t;

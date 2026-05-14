@@ -60,7 +60,7 @@ int query(int idx) {
 
 bool comp(D aa, D bb) { return aa.sd < bb.sd; }
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     // cin>>tc;

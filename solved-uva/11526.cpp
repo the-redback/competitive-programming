@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int t;
     long long last, i, n, j, sum;
     scanf("%d", &t);

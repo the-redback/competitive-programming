@@ -13,7 +13,7 @@ using namespace std;
 #define mem(a, b) memset(a, b, sizeof(a))
 #define mod       1000000007
 
-main() {
+int main() {
     vector<int> v;
     int n, k, l, r, i, s;
     int tc, t = 1;

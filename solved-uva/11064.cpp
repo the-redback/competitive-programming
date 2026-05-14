@@ -46,7 +46,7 @@ int phi(int n) {
     return res;
 }
 
-main() {
+int main() {
     sieve(MAX);
     int tc, t = 1;
     int i, j, k, l, x;

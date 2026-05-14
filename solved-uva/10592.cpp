@@ -38,7 +38,7 @@ void dfs(int i, int j) {
     return;
 }
 
-main() {
+int main() {
     int n, m, i, j, k, tc, t = 1;
     while (scanf("%d", &n) == 1) {
         if (n == 0) return 0;

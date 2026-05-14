@@ -15,7 +15,7 @@ void call(int i, int j) {
     return;
 }
 
-main() {
+int main() {
     int n, m, i, j, k, tc, t = 1;
     cin >> tc;
     getchar();

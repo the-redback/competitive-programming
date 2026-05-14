@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int sum, j, k, l, n, m, mi, ma;
     while (scanf("%d %d", &n, &m)) {
         if (n == 0 && m == 0) return 0;

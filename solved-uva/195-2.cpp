@@ -9,7 +9,7 @@ bool comp(char b, char c) {
         return tolower(b) < tolower(c);  // eki thakbe
 }
 
-main() {
+int main() {
     int l, T;
     scanf("%d", &T);
     getchar();

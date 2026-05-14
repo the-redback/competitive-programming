@@ -48,7 +48,7 @@ void factor(int n) {
     if (n > 1) a[n]++, mx = max(mx, n);
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, m, n, count, r;
     sieve(NN);

@@ -2,7 +2,7 @@
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
 
-main() {
+int main() {
     char a[10];
     int i, j, l, t;
     scanf("%d", &t);

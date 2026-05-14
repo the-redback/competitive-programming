@@ -34,7 +34,7 @@ int call(int k) {
     }
 }
 
-main() {
+int main() {
     int i = 0, t;
     scanf("%d", &t);
     while (t--) {

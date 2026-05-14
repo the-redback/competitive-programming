@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     char a[135];
     int i, j, k, l, flag, x;
     while (gets(a)) {

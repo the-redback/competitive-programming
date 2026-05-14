@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int m, n, i, j, k, A = 0, F = 0, I = 0;
     char a[200001];
     scanf("%d", &n);

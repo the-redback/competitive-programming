@@ -31,7 +31,7 @@ typedef unsigned long long llu;
 
 ll a[100];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll t = 1, tc;

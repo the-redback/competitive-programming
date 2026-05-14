@@ -19,7 +19,7 @@ using namespace std;
 #define NN        1050
 #define mod       1000000007
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t = 1, tc;

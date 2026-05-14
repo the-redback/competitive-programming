@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     long m;
     long long sum;
     int i, t, n;

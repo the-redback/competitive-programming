@@ -66,7 +66,7 @@ data query(int node, int low, int high, int rlow, int rhigh) {
     }
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;

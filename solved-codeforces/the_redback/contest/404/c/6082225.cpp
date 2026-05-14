@@ -28,7 +28,7 @@ int viw[NN];
 vector<int> e[NN];
 vector<int> vv[NN];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k, l;

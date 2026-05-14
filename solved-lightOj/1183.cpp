@@ -106,7 +106,7 @@ ll query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
     return p1 + p2;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     ll tc, t = 1;
     cin >> tc;

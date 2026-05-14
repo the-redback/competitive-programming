@@ -69,7 +69,7 @@ void factor(int n) {
     }
 }
 
-main() {
+int main() {
     sieve(NN);
     int n, k, l, r, i;
     int tc, t = 1;

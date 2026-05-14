@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     char s[10000];
     int i, j, k, l, n, sum, max;
     while (gets(s)) {

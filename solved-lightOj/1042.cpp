@@ -21,7 +21,7 @@ int con(int a[], int n) {
     return sum;
 }
 
-main() {
+int main() {
     int t, n, i, j, m, x, l, k, max;
     int a[10000];
     cin >> t;

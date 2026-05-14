@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int t, m, i, j, it, x1, y1, x2, y2;
     int a, b;
     cin >> t;

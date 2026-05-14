@@ -16,7 +16,7 @@ int call(int i, int j) {
     }
 }
 
-main() {
+int main() {
     int tc, i;
     scanf("%d", &tc);
     getchar();

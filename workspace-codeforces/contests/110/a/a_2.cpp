@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     char a[30];
     int i, j, k, l;
     while (gets(a)) {

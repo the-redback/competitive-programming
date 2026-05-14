@@ -39,7 +39,7 @@ bool comp(D x, D y) {
 
 bool cmp(A x, A y) { return x.j < y.j; }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

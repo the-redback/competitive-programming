@@ -14,7 +14,7 @@ int check(int n) {
     return 1;
 }
 
-main() {
+int main() {
     int i, j, n, t, t1, t2, count;
     a[0] = 0;
     for (i = 1; i <= 1000000; i++) {

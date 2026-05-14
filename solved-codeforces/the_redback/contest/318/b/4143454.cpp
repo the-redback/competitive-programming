@@ -2,7 +2,7 @@
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
 char a[1000010];
-main() {
+int main() {
     vector<int> v;
     vector<int> v2;
     char b[20];

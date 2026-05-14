@@ -14,7 +14,7 @@ void sieve(int n) {
     }
 }
 
-main() {
+int main() {
     vector<long long> v;
     sieve(50000);
     long long n, m;

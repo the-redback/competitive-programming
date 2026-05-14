@@ -19,7 +19,7 @@ long lcm(long a, long b) {
     return temp ? (a / temp * b) : 0;
 }
 
-main() {
+int main() {
     long x, y, a, b;
     scanf("%ld %ld %ld %ld", &x, &y, &a, &b);
     long sm = lcm(x, y);

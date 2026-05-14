@@ -49,7 +49,7 @@ void go(int n) {
     return;
 }
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     int i, j, k, l, n, r;
     int tc, t = 1;

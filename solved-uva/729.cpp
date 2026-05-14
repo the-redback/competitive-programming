@@ -25,7 +25,7 @@ void call(int k) {
     }
 }
 
-main() {
+int main() {
     int i, j = 0, k, l, n, t;
     scanf("%d", &t);
     while (t--) {

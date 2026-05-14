@@ -18,7 +18,7 @@ using namespace std;
 #define eps       1e-9
 #define NN        111
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int k, l, n, m, i, r;

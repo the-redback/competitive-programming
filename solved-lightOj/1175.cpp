@@ -72,7 +72,7 @@ int bfs(int r, int c) {
     return res;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, m, n, u, v, w, res, r;
     scanf("%d", &tc);

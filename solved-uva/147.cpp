@@ -24,7 +24,7 @@ long long call(int i, int rem) {
     return dp[i][rem] = x + y;
 }
 
-main() {
+int main() {
     double d;
     long long k;
     int n, m;

@@ -121,7 +121,7 @@ D query(ll node, ll low, ll high, ll rlow, ll rhigh, ll carry) {
     return merge(p1, p2, 0);
 }
 
-main() {
+int main() {
     ll t = 1, tc;
     read(tc);
     ll i, j, k, l, m, n;

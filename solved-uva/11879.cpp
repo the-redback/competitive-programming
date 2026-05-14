@@ -10,7 +10,7 @@ int mod(char a[]) {
     return b;
 }
 
-main() {
+int main() {
     int l, i, j, k;
     char a[1000000];
     while (gets(a)) {

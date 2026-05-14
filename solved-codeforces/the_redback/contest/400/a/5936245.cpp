@@ -18,7 +18,7 @@ using namespace std;
 char a[NN];
 vector<int> v;
 
-main() {
+int main() {
     int t, tc;
     int i, j, k, l;
     int res, u, w, p, n;

@@ -25,7 +25,7 @@ int lcs(int n, int m) {
     return c[n][m];
 }
 
-main() {
+int main() {
     int n, m, i, j, k, t;
     scanf("%d", &n);
 

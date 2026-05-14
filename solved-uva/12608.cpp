@@ -5,7 +5,7 @@ struct data {
     int x;
     int w;
 };
-main() {
+int main() {
     int k, y, m, n, t = 1, i, tc;
     long long sum, carry;
     data a[2000];

@@ -42,7 +42,7 @@ void dfs2(int u) {
     return;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 0, tc;
     int n, m, i, j, l, k;

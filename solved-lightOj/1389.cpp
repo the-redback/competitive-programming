@@ -31,7 +31,7 @@ typedef unsigned long long llu;
 
 char a[111];
 
-main() {
+int main() {
     ll t = 1, tc;
     read(tc);
     ll i, j, k, l, m, n;

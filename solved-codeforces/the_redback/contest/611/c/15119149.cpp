@@ -74,7 +74,7 @@ ll query(ll idx, ll idy) {
     return sum;
 }
 
-main() {
+int main() {
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif

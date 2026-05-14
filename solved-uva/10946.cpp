@@ -27,7 +27,7 @@ bool comp(data m, data n) {
         return m.x > n.x;
 }
 
-main() {
+int main() {
     data dd;
     vector<data> v;
     int n, m, tc, t = 1;

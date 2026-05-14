@@ -38,7 +38,7 @@ void get(int n) {
     return;
 }
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     ios_base::sync_with_stdio(false);
     int i, j, k, l, n, r, c, u, v, w;

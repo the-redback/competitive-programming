@@ -20,7 +20,7 @@ int LDS(int u) {
     return dp[u];
 }
 
-main() {
+int main() {
     int i = 0, k, n, j;
     while (scanf("%d", &n) == 1) {
         if (n == -1) return 0;

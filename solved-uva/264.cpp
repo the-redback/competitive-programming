@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<long> v;
-main() {
+int main() {
     long i, j, n, k, count, l;
     v.push_back(0);
     for (i = 1; 1; i++) {

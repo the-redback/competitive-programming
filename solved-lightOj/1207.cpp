@@ -79,7 +79,7 @@ void query(ll node, ll low, ll high) {
     return;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll tc, t = 1;

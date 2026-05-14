@@ -14,7 +14,7 @@ void call(int taken, int last) {
     return;
 }
 
-main() {
+int main() {
     int tc;
     scanf("%d", &tc);
     for (int t = 1; t <= tc; t++) {

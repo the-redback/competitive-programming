@@ -8,7 +8,7 @@ struct test {
 
 bool comp(test a, test b) { return b.sum > a.sum; }
 
-main() {
+int main() {
     test a[102];
     int i, j, k, t, n, b, c, d;
     scanf("%d", &t);

@@ -17,7 +17,7 @@ using namespace std;
 #define NN        2000100
 char a[NN];
 
-main() {
+int main() {
     int t, tc;
     int i, j, k, l;
     int res, u, w, p, n, x, y, z, m, q;

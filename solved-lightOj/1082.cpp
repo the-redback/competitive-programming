@@ -53,7 +53,7 @@ int minValue(int node, int low, int high, int rlow, int rhigh) {
     }
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int tc, i, t;
     cin >> tc;

@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     int n, i, j, k, r, c;
     for (i = 1; i <= 5; i++) {
         for (j = 1; j <= 5; j++) {

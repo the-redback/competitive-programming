@@ -13,7 +13,7 @@ using namespace std;
 #define mem(a, b) memset(a, b, sizeof(a))
 #define MM        1001
 
-main() {
+int main() {
     int n, k, i, m, c;
     int tc, t = 1;
     scanf("%d", &tc);

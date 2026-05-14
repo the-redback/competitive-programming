@@ -22,7 +22,7 @@ int a[NN];
 int arr[NN];
 int flag[NN];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t, tc;

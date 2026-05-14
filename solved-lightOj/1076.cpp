@@ -52,7 +52,7 @@ bool check(ll val) {
     return 0;
 }
 
-main() {
+int main() {
     ll t = 1, tc;
     read(tc);
     ll i, j, k, l, m, n;
@@ -134,7 +134,7 @@ bool check(ll val) {
     return 0;
 }
 
-main() {
+int main() {
     ll t = 1, tc;
     read(tc);
     ll i, j, k, l, m, n;

@@ -4,7 +4,7 @@ using namespace std;
 stack<char> mid;
 queue<char> ans;
 
-main() {
+int main() {
     int i = 0, n;
     char ch[10];
     scanf("%d", &n);

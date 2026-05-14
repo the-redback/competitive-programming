@@ -32,7 +32,7 @@ typedef unsigned long long llu;
 char a[NN];
 vector<int> v;
 
-main() {
+int main() {
 #ifdef redback
     // freopen("in.txt","r",stdin);
 #endif  // redback

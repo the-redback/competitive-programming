@@ -46,7 +46,7 @@ ll check(ll a, ll b, ll c, ll d) {
     return 0;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll mid, ran;

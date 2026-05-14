@@ -20,7 +20,7 @@ using namespace std;
 
 int a[NN];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int k, l, n, i;

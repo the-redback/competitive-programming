@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     __int64 a, b, x, sum, m, n;
     scanf("%I64d %I64d %I64d", &a, &b, &x);
     sum = 0;

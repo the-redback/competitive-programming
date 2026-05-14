@@ -19,7 +19,7 @@ void bfs(int src, int rem) {
         q.pop();
     }
 }
-main() {
+int main() {
     int i, j = 0, k, l, e, n, count;
     vector<int> view(50);
     map<int, int> mp;

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     long long n;
     long k;
     while (scanf("%lld", &n)) {

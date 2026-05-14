@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int i, j, r, count, flag, c, n;
     int a[101][101];
     while (scanf("%d", &n)) {

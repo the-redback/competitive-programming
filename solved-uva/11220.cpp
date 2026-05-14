@@ -2,7 +2,7 @@
 using namespace std;
 char a[5000];
 char b[5000][500];
-main() {
+int main() {
     int tc, i, j, k, l, m, ii, jj;
     char ch[100];
     scanf("%d", &tc);

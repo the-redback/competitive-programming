@@ -42,7 +42,7 @@ int bfs(int src, int dest) {
 }
 char a[10];
 char c[10];
-main() {
+int main() {
     int tc, t = 1;
     int n, i, j, k, l, p, r, m;
     puts("SHIPPING ROUTES OUTPUT\n");

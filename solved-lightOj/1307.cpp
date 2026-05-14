@@ -17,7 +17,7 @@ int khujo(int v, int l, int h) {
     return h;
 }
 
-main() {
+int main() {
     int sum, t, T, i, j, n;
     scanf("%d", &T);
     for (t = 1; t <= T; t++) {

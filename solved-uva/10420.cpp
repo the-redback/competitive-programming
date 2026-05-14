@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[50], c[200];
     int t, i = 0, j = 0, k, l = 0, b[202];
     for (i = 0; i < 200; i++) {

@@ -17,7 +17,7 @@ int call(int i, int j, char ch) {
     return sum;
 }
 
-main() {
+int main() {
     int n, m, tc, t = 1;
     while (scanf("%d", &n)) {
         if (n == 0) return 0;

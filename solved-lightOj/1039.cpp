@@ -23,7 +23,7 @@ char a[100];
 map<string, int> mymap;
 queue<string> q;
 
-main() {
+int main() {
     //    ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     cin >> tc;

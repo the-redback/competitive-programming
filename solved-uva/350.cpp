@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     bool a[10000];
     int Z, I, M, L, i, j = 0, seed, count;
     while (scanf("%d %d %d %d", &Z, &I, &M, &L) == 4) {

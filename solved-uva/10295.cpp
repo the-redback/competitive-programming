@@ -13,7 +13,7 @@ using namespace std;
 #define mem(a, b) memset(a, b, sizeof(a))
 #define mod       1000000007
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(false);
     map<string, int> mp;
     string s;

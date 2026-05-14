@@ -45,7 +45,7 @@ void sieve(ll n) {
     }
 }
 
-main() {
+int main() {
     sieve(NN);
     ll t = 1, tc;
     read(tc);

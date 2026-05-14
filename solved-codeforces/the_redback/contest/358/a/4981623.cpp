@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int k, y, m, n, t = 1, j, i, tc;
     long long sum, carry;
     int a[2000];

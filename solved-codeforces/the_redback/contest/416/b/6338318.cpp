@@ -20,7 +20,7 @@ using namespace std;
 
 __int64 a[50010][10];
 // vector<int>v;
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

@@ -31,7 +31,7 @@ typedef unsigned long long LLU;
 // cout << setfill('0') << setw(3) << a << endl;
 // cout << fixed << setprecision(20) << a << endl;
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t = 1, tc;

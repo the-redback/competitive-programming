@@ -85,7 +85,7 @@ ll power(ll n, ll k) {
     return sum;
 }
 
-main() {
+int main() {
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif  // redback

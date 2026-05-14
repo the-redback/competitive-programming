@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     char a[10000];
     int tc, t = 1;
     scanf("%d", &tc);

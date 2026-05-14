@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     long n, a, b, c;
     double d;
     int i, t;

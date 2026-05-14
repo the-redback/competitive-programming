@@ -20,7 +20,7 @@ int call(int k, int rem) {
     return dp[k][rem] = max(x, y);
 }
 
-main() {
+int main() {
     char ch;
     int i, j, k, S, sum, t;
     scanf("%d", &t);

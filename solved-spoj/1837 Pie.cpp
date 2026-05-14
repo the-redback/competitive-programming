@@ -25,7 +25,7 @@ void bisection(long long high) {
     return;
 }
 
-main() {
+int main() {
     int tc;
     long long m, n, xx;
     double mxx;

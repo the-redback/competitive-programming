@@ -16,7 +16,7 @@ map<string, int> mp;
 string s;
 string ss;
 vector<string> v;
-main() {
+int main() {
     char a[50];
     int ret = 0;
     int n, i;

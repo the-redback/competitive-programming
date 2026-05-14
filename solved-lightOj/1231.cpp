@@ -30,7 +30,7 @@ long long check(int i, int amount) {
     return t = y % 100000007;
 }
 
-main() {
+int main() {
     int i, j, t;
     long long m;
     scanf("%d", &t);

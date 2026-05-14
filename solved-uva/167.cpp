@@ -30,7 +30,7 @@ int call(int k) {
     }
 }
 
-main() {
+int main() {
     n = 8;
     int i, j, k, t;
     scanf("%d", &t);

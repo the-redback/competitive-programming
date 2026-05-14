@@ -24,7 +24,7 @@ void check(int remain, int m) {
     }
 }
 
-main() {
+int main() {
     int i, j, k, m;
     while (~scanf("%d%d", &m, &n)) {
         if (m == 0 && n == 0) return 0;

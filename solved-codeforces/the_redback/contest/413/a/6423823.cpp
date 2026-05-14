@@ -20,7 +20,7 @@ using namespace std;
 
 vector<int> v;
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k, l, m, n, mn, mx, mnf, mxf, fl;

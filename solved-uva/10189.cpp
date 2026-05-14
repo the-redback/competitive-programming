@@ -13,7 +13,7 @@ void check(int i, int j) {
     b[i + 1][j]++;
     b[i + 1][j + 1]++;
 }
-main() {
+int main() {
     char a[101][101];
     char ch;
     int i, j, n, k = 0, m, l;

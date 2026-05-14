@@ -27,7 +27,7 @@ int call(int k, int rem) {
     return dp[k][rem];
 }
 
-main() {
+int main() {
     char ch;
     int i, j, k, S, sum, t;
     scanf("%d", &t);

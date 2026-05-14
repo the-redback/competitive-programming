@@ -7,7 +7,7 @@ int swap(char a[], int n) {
         a[j] = t;
     }
 }
-main() {
+int main() {
     long a, b, c, d, p, q, r, s;
     int i, t, j;
     char m[10];

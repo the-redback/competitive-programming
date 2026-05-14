@@ -25,7 +25,7 @@ int call(int x, int y, int i) {
     return p | q | r;
 }
 
-main() {
+int main() {
     int t = 1, i, j, k, l;
     scanf("%d", &t);
     while (t--) {

@@ -14,7 +14,7 @@ using namespace std;
 #define mem(a, b) memset(a, b, sizeof(a))
 #define NN        200000
 // char a[1010][1010];
-main() {
+int main() {
     int tc, t = 1;
     int n, m, i, j, k, l, u, v;
     while (~scanf("%d%d%d", &n, &m, &k)) {

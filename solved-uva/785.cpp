@@ -16,7 +16,7 @@ void call(int i, int j, char ch) {
     return;
 }
 
-main() {
+int main() {
     // freopen("C:\\Users\\MARUF\\Desktop\\in.txt","r",stdin);
     //   freopen("C:\\Users\\MARUF\\Desktop\\out.txt","w",stdout);
     int n, i, j, k, tc, t = 1;

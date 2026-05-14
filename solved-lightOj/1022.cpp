@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     int a, i, t;
     double sum, n;
     scanf("%d", &t);

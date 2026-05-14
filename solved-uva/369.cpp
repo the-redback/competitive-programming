@@ -29,7 +29,7 @@ long long ncr(int n, int r) {
     return sum;
 }
 
-main() {
+int main() {
     int n, k, l, r;
     int tc, t = 1;
     // scanf("%d",&tc);

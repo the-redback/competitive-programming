@@ -38,7 +38,7 @@ int bfs(int src, int dst) {
     return 0;
 }
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
     int i, j, k, l, n, r, c;
     int tc, t = 1;

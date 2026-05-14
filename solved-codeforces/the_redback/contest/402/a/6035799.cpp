@@ -19,7 +19,7 @@ using namespace std;
 #define eps       10e-5
 #define NN        1000000
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int i, j, r, l, m, n, k;

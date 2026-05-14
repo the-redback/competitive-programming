@@ -13,7 +13,7 @@ void sieve(long n) {
     }
 }
 
-main() {
+int main() {
     int a[501][501], b[501], c[501];
     int i, j, k, m, n, min;
     sieve(1000006);

@@ -12,7 +12,7 @@ using namespace std;
 #define MAX 1010
 #define inf 99999
 
-main() {
+int main() {
     int tc, n;
     int a[10010];
     while (scanf("%d", &n) == 1) {

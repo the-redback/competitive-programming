@@ -14,7 +14,7 @@ using namespace std;
 #define mod       1000000007
 map<int, int> mp;
 vector<int> v;
-main() {
+int main() {
     char a[50];
     int ret = 0;
     int n, i, k, r, s;

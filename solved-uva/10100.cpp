@@ -30,7 +30,7 @@ int test(int i, int j) {
     return dp[i][j];
 }
 
-main() {
+int main() {
     char e[21];
     int i, j, k, l, p, r, t = 0;
     while (gets(a)) {

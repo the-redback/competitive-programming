@@ -28,7 +28,7 @@ void call(int r) {
     return;
 }
 
-main() {
+int main() {
     int tc, n, i, j, k;
     int t = 0;
     while (scanf("%d", &tc) == 1) {

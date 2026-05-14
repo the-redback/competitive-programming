@@ -29,7 +29,7 @@ long long rec(long long sum) {
     return sum;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

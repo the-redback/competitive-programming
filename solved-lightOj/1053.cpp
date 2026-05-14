@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     long long a[3];
     int i, t;
     scanf("%d", &t);

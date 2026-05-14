@@ -30,7 +30,7 @@ int dfs(int u) {
         if (viw[e[u][i]] == 0) dfs(e[u][i]);
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     cin >> tc;

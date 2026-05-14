@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-main() {
+int main() {
     int sum, x, y, n, t = 1, tc, i, j, k, l;
     long long a[200][200];
     char c[12];

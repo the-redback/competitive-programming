@@ -32,7 +32,7 @@ void go(void) {
     return;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     go();

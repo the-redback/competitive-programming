@@ -10,7 +10,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-main() {
+int main() {
     int sum, x, y, n, t = 1, tc, i, j, k, l, m;
     long long a[200];
     scanf("%d", &tc);

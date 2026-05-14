@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     long long sum, n, m, k, i, j;
     int t, tc;
     cin >> tc;

@@ -41,7 +41,7 @@ int add(int n) {
     reverse(ans, ans + strlen(ans));
 }
 
-main() {
+int main() {
     int i, j, k, l, n, m;
     while (~scanf("%d%d", &k, &n)) {
         if (k == 1) {

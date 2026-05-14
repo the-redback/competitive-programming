@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     stack<int> s;
     queue<int> q;
     queue<int> parent;

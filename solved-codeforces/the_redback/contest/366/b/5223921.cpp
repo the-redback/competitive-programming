@@ -3,7 +3,7 @@ using namespace std;
 int a[100050];
 long long mn = 99999999999999;
 long long sum;
-main() {
+int main() {
     int i, j, k, l, m, n;
     while (scanf("%d%d", &n, &k) == 2) {
         for (i = 0; i < n; i++) {

@@ -3,7 +3,7 @@ using namespace std;
 int a[100100];
 int b[100100];
 int c[100100];
-main() {
+int main() {
     int i, j, k, l, sum, d, n, m;
     scanf("%d%d", &n, &m);
     memset(a, 0, sizeof(a));

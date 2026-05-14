@@ -24,7 +24,7 @@ int call(int pos, int r, int value) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     scanf("%d", &tc);
     while (tc--) {

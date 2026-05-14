@@ -61,7 +61,7 @@ void show(void) {
     return;
 }
 
-main() {
+int main() {
     char a[10];
     int i, j, k, l, m, n, t = 0, T;
     scanf("%d", &T);

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int i, j, k, l, m, n;
     long c1, c2, c3, c4, sum1, sum2, sum3, sum;
     while (~scanf("%ld%ld%ld%ld", &c1, &c2, &c3, &c4)) {

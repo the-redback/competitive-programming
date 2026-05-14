@@ -34,7 +34,7 @@ int check(long n) {
     return sum;
 }
 
-main() {
+int main() {
     sieve(105000);
     long i, j, k, m, sum, n;
     int t, test;

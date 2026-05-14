@@ -39,7 +39,7 @@ int dfs(int x, int prev, int flag) {
     }
 }
 
-main() {
+int main() {
     int n;
     int i, j, k, l, m, t, x, y;
     while (~scanf("%d", &n)) {

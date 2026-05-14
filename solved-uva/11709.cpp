@@ -64,7 +64,7 @@ int scc(int n) {
 string s, ss;
 char a[100];
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(false);
     int t = 0, tc;
     int n, m, i, j, l, k;

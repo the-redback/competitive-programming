@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int a[10001], b[10001];
     int m = 0, n, q, i, j;
     while (scanf("%d %d", &n, &q)) {

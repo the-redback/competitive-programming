@@ -10,7 +10,7 @@ int LCS(int i, int j) {
     return dp[i][j] = max(LCS(i, j - 1), LCS(i - 1, j));
 }
 
-main() {
+int main() {
     int l, tc;
     cin >> tc;
     getchar();

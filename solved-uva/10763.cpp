@@ -7,7 +7,7 @@ int compare(const void* a, const void* b) {
     return (*ia - *ib);
 }
 
-main() {
+int main() {
     int i, j, n;
     while (scanf("%d", &n)) {
         if (n == 0) {

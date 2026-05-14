@@ -42,7 +42,7 @@ int valid2(void) {
     return 1;
 }
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

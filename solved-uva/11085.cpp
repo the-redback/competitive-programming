@@ -31,7 +31,7 @@ void call(int k) {
     return;
 }
 
-main() {
+int main() {
     int t = 1, i;
     while (scanf("%d", &b[1]) == 1) {
         for (i = 2; i <= 8; i++) scanf("%d", &b[i]);

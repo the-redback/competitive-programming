@@ -48,7 +48,7 @@ ll check(ll num) {
     return 0;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     ll t = 1, tc;

@@ -13,7 +13,7 @@ bool comp(point xx, point yy) {
     } else
         return xx.n < yy.n;
 }
-main() {
+int main() {
     int i, k, l, m;
     point a[11];
     point b[11];

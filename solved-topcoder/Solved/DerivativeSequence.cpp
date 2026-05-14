@@ -13,7 +13,7 @@ public:
     }
 };
 
-main() {
+int main() {
     vector<int> a = {5, 6, 3, 9, -1};
     DerivativeSequence d;
     d.derSeq(a, 1);

@@ -22,7 +22,7 @@ public:
     }
 };
 
-main() {
+int main() {
     int a[] = {1, 2, 3, 5};
     vector<int> v(a, a + 4);
     Haar1D d;

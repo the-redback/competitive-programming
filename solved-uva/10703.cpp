@@ -6,7 +6,7 @@ void swap(int* p, int* q) {
     *p = *q;
     *q = *p;
 }
-main() {
+int main() {
     bool a[510][510];
     int i, j, x1, y1, sum, k, h, l, x, n, y;
     while (scanf("%d %d %d", &k, &h, &n)) {

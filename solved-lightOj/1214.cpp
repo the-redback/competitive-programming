@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[100000];
     long long n, sum, mod;
     int i, j, t;

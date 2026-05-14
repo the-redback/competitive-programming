@@ -45,7 +45,7 @@ void phi(long long n) {
     sum -= 1;
 }
 
-main() {
+int main() {
     sieve(MAX);
     int tc, t = 1;
     // int i,j,k,l,x;

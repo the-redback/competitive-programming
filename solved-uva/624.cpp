@@ -20,7 +20,7 @@ int call(int i, int n) {
     }
     return dp[i][n];
 }
-main() {
+int main() {
     int i, n, l, j;
     while (scanf("%d %d", &k, &m) == 2) {
         memset(ans, -1, sizeof(ans));

@@ -39,7 +39,7 @@ int call(int i, int rem) {
     return z;
 }
 
-main() {
+int main() {
     int i, j = 0, k;
     while (scanf("%d %d %d %d %d", &a[0], &a[1], &a[2], &a[3], &a[4])) {
         v.clear();

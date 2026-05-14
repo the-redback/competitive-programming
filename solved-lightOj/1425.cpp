@@ -41,7 +41,7 @@ bool check(ll k) {
     return 1;
 }
 
-main() {
+int main() {
     ll t = 1, tc;
     read(tc);
     ll i, j, k, l, m, n;

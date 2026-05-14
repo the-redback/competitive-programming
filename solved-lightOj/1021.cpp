@@ -46,7 +46,7 @@ long long call(int pos, int mod) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     scanf("%d", &tc);
     while (tc--) {

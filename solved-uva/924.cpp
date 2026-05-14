@@ -43,7 +43,7 @@ int bfs(int src) {
     return ret;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int n, i, j, k, l, p, r, m;
     int sum = 0;

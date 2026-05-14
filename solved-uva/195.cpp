@@ -33,7 +33,7 @@ void call(int k) {
     return;
 }
 
-main() {
+int main() {
     int l, T;
     scanf("%d", &T);
     getchar();

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[15], b[15];
     int i, j, l, t, k;
     scanf("%d", &t);

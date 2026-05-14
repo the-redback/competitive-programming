@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 double a[1000002];
-main() {
+int main() {
     int i, j, t, k, n, m;
     for (i = 1; i <= 1000000; i++) a[i] = log(i) + a[i - 1];
 

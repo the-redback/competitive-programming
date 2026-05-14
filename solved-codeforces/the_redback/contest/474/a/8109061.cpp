@@ -32,7 +32,7 @@ char a[5][20] = {"qwertyuiop", "asdfghjkl;", "zxcvbnm,./"};
 char b[200];
 char s[10];
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
     int t = 1, tc;
     // cin>>tc;

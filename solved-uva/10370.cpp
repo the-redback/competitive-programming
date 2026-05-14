@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int i, j, test, a[1000], n, count, avg, sum;
     float xtra;
     scanf("%d", &test);

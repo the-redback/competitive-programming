@@ -96,7 +96,7 @@ ll area(ll low, ll high) {
     return max(max(R, L), cur);
 }
 
-main() {
+int main() {
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif

@@ -27,7 +27,7 @@ public:
     }
 };
 
-main() {
+int main() {
     LotteryTicket c;
     string g;
     g = c.buy(1000, 999, 998, 997, 996);

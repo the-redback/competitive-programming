@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     char a[1001], b[1001], c[1001];
     int i, j, k, l, m, n;
     while (gets(a)) {

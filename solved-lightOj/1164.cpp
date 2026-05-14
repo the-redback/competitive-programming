@@ -64,7 +64,7 @@ long long query(int node, int low, int high, int rlow, int rhigh, long long carr
     return p1 + p2;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int tc, t = 1;
     cin >> tc;

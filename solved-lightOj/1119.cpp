@@ -28,7 +28,7 @@ int go(int mask, int v) {
     return sum;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

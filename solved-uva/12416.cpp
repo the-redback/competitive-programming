@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 const int max = 1000000;
-main() {
+int main() {
     char a[max], b[max];
     int i, j, k, l, last, count;
     while (gets(a)) {

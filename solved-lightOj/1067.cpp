@@ -24,7 +24,7 @@ int go(int n, int q) {
     }
 }
 
-main() {
+int main() {
     int n, k, l, r, i;
     int tc, t = 1;
     fact[0] = 1;

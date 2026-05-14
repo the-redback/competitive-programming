@@ -14,7 +14,7 @@ int call(int i, int j) {
     return 0;
 }
 
-main() {
+int main() {
     int n, m, tc, t = 1;
     cin >> tc;
     while (tc--) {

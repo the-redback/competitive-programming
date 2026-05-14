@@ -16,7 +16,7 @@ using namespace std;
 #define inf       10000000
 #define NN        5000
 int a[1000];
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l, m, n, count;
     // scanf("%d",&tc);

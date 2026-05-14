@@ -31,7 +31,7 @@ int test(int i, int j) {
     return dp[i][j];
 }
 
-main() {
+int main() {
     int i, j, k, l, t;
     int b[3];
     scanf("%d", &t);

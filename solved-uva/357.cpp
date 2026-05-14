@@ -16,7 +16,7 @@ long long check(int i, int amount) {
     return dp[i][amount] = x + y;
 }
 
-main() {
+int main() {
     int n;
     long long m;
     memset(dp, -1, sizeof(dp));

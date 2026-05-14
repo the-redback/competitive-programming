@@ -15,7 +15,7 @@ int call(int i, int rem) {
     return dp[i][rem] = max(x, y);
 }
 
-main() {
+int main() {
     int i, sum, k, l, n, t;
     scanf("%d", &t);
     while (t--) {

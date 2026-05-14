@@ -40,7 +40,7 @@ int go(int mask, int flag, int value) {
     return ret;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     scanf("%d", &tc);
     while (tc--) {

@@ -23,7 +23,7 @@ int total[12];
 int arr[NN][12];
 int row[NN];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

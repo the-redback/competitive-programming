@@ -12,7 +12,7 @@ int prime(int n) {
     return 1;
 }
 
-main() {
+int main() {
     int n, t, l, i, j, c;
     int b[123];
     char a[5000];

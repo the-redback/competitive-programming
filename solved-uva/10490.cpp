@@ -11,7 +11,7 @@ int prime(long long n) {
     return 1;
 }
 
-main() {
+int main() {
     long long p;
     int n;
     while (scanf("%d", &n)) {

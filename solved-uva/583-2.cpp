@@ -29,7 +29,7 @@ void prime_diviser(long long n) {
     }
 }
 
-main() {
+int main() {
     sieve(50000);
     int j, t;
     long long m, n, i;

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int t, n, p, k, q, i, sum, count;
     scanf("%d", &t);
     for (i = 1; i <= t; i++) {

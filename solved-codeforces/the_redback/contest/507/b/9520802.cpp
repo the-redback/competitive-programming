@@ -31,7 +31,7 @@ typedef unsigned long long llu;
 
 double dist(ll x, ll y, ll xx, ll yy) { return sqrt((x - xx) * (x - xx) + (y - yy) * (y - yy)); }
 
-main() {
+int main() {
 // ios_base::sync_with_stdio(0); cin.tie(0);
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);

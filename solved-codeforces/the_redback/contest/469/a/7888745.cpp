@@ -33,7 +33,7 @@ typedef unsigned long long llu;
 
 int a[1000];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t = 1, tc;

@@ -38,7 +38,7 @@ ll power(ll n, ll m) {
     return sum;
 }
 
-main() {
+int main() {
 // ios_base::sync_with_stdio(0); cin.tie(0);
 #ifdef redback
     // freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);

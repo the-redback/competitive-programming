@@ -25,7 +25,7 @@ void check(void) {
     }
 }
 
-main() {
+int main() {
     int i = 0, t;
     scanf("%d", &t);
     while (t--) {

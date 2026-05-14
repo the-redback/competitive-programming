@@ -24,7 +24,7 @@ void copy(void) {
     }
 }
 
-main() {
+int main() {
     int tc, flag = 0;
     cin >> tc;
     getchar();

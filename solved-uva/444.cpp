@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[1000], b[1000];
     int i, j, l, k;
     while (gets(a)) {

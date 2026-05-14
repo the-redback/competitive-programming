@@ -31,7 +31,7 @@ typedef unsigned long long llu;
 
 pair<double, ll> a[2000010];
 
-main() {
+int main() {
     // freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
     ios_base::sync_with_stdio(0);
     cin.tie(0);

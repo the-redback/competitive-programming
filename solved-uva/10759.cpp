@@ -29,7 +29,7 @@ long long go(int pos, int v) {
     return t;
 }
 
-main() {
+int main() {
     while (~scanf("%d %d", &N, &K)) {
         if (N == 0 && K == 0) return 0;
         int n, l, i, j;

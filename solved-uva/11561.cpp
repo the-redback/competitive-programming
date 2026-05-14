@@ -21,7 +21,7 @@ int call(int i, int j) {
     return sum;
 }
 
-main() {
+int main() {
     int n, m, i, j, k, tc, t = 1;
     while (scanf("%d%d", &m, &n) == 2) {
         getchar();

@@ -46,7 +46,7 @@ void check(void) {
     }
 }
 
-main() {
+int main() {
     check();
     int n;
     while (scanf("%d", &n) == 1) {

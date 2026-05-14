@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     double a, b, sum;
     while (scanf("%lf:%lf", &a, &b)) {
         if (a == 0 && b == 0) {

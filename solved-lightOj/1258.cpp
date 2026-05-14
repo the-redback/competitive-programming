@@ -63,7 +63,7 @@ ll KMP(void) {
     return q;
 }
 
-main() {
+int main() {
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif

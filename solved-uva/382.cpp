@@ -14,7 +14,7 @@ int check(int n) {
     return count;
 }
 
-main() {
+int main() {
     int n, i, j;
     printf("PERFECTION OUTPUT\n");
     while (scanf("%d", &n)) {

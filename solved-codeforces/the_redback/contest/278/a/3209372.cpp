@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int a[150];
     int i, j, min, max, s, t, n;
     int sum1, sum2;

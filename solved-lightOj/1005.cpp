@@ -3,7 +3,7 @@ using namespace std;
 
 long long fact[35];
 
-main() {
+int main() {
     int i, n, mx, mn, k, t, T;
     long long sum;
     fact[0] = 1;

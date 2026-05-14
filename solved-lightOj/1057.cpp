@@ -25,7 +25,7 @@ int go(int mask, int r, int v, int x, int y) {
     return j;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

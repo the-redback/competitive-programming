@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[101][55];
     char b[10];
     int i, j, k, l, t, n;

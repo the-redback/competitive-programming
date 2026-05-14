@@ -65,7 +65,7 @@ void go(void) {
                     }
 }
 
-main() {
+int main() {
     go();
     char a[15];
     int ret = 0;

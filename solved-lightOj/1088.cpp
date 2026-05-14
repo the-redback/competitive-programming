@@ -17,7 +17,7 @@ int bsearch(int v, int l, int h) {
     return h;
 }
 
-main() {
+int main() {
     int i, j, t, T, n, q, x, y, sum;
     scanf("%d", &T);
     for (t = 1; t <= T; t++) {

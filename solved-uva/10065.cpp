@@ -92,7 +92,7 @@ double area(void) {
     return sum / 2.0;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     int i, j, k, l, m, n;

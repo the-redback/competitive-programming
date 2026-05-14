@@ -32,7 +32,7 @@ int go(int row, int col) {
     return t;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

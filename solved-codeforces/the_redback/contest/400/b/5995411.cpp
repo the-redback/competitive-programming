@@ -33,7 +33,7 @@ void check(int j) {
     return;
 }
 
-main() {
+int main() {
     int t, tc;
     int i, j, k, l;
     int u, w, p, x, y, z, m, q, cnt;

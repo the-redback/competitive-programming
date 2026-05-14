@@ -83,7 +83,7 @@ void update(int node, int low, int high, int pos, int val) {
     return;
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;

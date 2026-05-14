@@ -29,7 +29,7 @@ char check(int x) {
     return a[x];
 }
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k, l, m, n;

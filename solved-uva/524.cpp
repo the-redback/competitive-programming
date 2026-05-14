@@ -47,7 +47,7 @@ void check(int remain) {
     }
 }
 
-main() {
+int main() {
     v.push_back(1);
     int i = 1;
     while (~scanf("%d", &n)) {

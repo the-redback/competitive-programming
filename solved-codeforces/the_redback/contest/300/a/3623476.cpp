@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int v1[100], v2[100], v3[100];
     int a[101];
     int i, j = 0, l = 0, k = 0, n, neg = 0, pos = 0, zero = 0;

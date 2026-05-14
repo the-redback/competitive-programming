@@ -32,7 +32,7 @@ int call(int i, int j) {
     return sum;
 }
 
-main() {
+int main() {
     int total = 1;
     while (scanf("%d %d", &M, &N) == 2) {
         v.clear();

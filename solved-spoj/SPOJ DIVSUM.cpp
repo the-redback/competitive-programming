@@ -30,7 +30,7 @@ long long check(int n) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, t;
     cin >> tc;
     sieve(1000);

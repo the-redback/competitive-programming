@@ -15,7 +15,7 @@ void call(int i, int j) {
     return;
 }
 
-main() {
+int main() {
     int total = 1;
     while (scanf("%d", &N) == 1) {
         getchar();

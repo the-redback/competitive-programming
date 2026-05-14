@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     char a[51], b[51];
     int i, j = 0, k;
     gets(a);

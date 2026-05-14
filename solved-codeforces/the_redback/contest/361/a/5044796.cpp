@@ -2,7 +2,7 @@
 using namespace std;
 int a[200][200];
 
-main() {
+int main() {
     int i, j, k, l, t;
     int n;
     while (~scanf("%d%d", &k, &n)) {

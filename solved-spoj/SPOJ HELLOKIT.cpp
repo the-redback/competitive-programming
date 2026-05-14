@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int tc, t, i, j;
     cin >> tc;
     char a[1000], b[1000], c[1000];

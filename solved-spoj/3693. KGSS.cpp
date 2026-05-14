@@ -82,7 +82,7 @@ data query(int node, int l, int h, int ll, int lh) {
 
 char s[5];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     int i, j, k;

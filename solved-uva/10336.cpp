@@ -26,7 +26,7 @@ bool comp(data m, data n) {
         return m.x > n.x;
 }
 
-main() {
+int main() {
     data d[100];
     int n, m, tc, t = 1;
     cin >> tc;

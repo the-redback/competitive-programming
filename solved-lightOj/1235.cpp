@@ -39,7 +39,7 @@ void part2(int m, int n) {
     }
 }
 
-main() {
+int main() {
     int tc;
     scanf("%d", &tc);
     for (int t = 1; t <= tc; t++) {

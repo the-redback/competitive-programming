@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int view[20011];
     int parent[20011];
     vector<int> v[20010];

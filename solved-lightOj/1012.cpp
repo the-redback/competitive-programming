@@ -25,7 +25,7 @@ int call(int i, int j) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, flag = 0, i, j, k, sum;
     scanf("%d", &tc);
     while (tc--) {

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     long m, n, a, b;
 
     int i, j, l, t;

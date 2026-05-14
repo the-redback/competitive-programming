@@ -26,7 +26,7 @@ struct D {
 D a[NN];
 D ans[NN];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

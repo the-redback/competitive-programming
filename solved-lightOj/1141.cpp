@@ -71,7 +71,7 @@ int bfs(int src, int dist) {
     return -1;
 }
 
-main() {
+int main() {
     go(1000);
     int tc, t = 1;
     int i, j, k, l, m, n, u, v, w, res;

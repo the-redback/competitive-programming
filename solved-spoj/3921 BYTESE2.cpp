@@ -11,7 +11,7 @@ using namespace std;
 #define inf 999999999;
 vector<long> v;
 vector<long> u;
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

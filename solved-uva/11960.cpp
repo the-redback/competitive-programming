@@ -20,7 +20,7 @@ void prime(int n) {
         if (pr[i] == 0) v.push_back(i);
     }
 }
-main() {
+int main() {
     int t;
     long i, max, r, j, k, l, n;
     prime(2001);

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int t, i, sum, j, k, l, n, m, min, max;
     scanf("%d", &t);
     for (i = 1; i <= t; i++) {

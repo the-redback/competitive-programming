@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int a[10001];
     int i, j, n, t, m, path, max, min;
     while (scanf("%d", &t) == 1) {

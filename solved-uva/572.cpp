@@ -15,7 +15,7 @@ void call(int i, int j) {
     return;
 }
 
-main() {
+int main() {
     while (scanf("%d%d", &M, &N) == 2) {
         getchar();
         if (M == 0) return 0;

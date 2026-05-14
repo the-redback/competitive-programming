@@ -29,7 +29,7 @@ long long go(int pos, int v) {
     return t;
 }
 
-main() {
+int main() {
     int t = 1, tc;
     scanf("%d", &tc);
     while (tc--) {

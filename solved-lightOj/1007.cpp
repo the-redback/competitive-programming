@@ -30,7 +30,7 @@ void sieve(void) {
         }
 }
 
-main() {
+int main() {
     sieve();
     int tc, t = 1;
     int i, j, k, l, x;

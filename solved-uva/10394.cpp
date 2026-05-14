@@ -5,7 +5,7 @@ int const min = 100001;
 int a[max];
 long long b[min];
 
-main() {
+int main() {
     int i, j, n;
     for (i = 3; i <= max; i++) {
         a[i] = 1;

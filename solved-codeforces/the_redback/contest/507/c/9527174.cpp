@@ -37,7 +37,7 @@ ll power(ll n, ll k) {
     return ans;
 }
 
-main() {
+int main() {
     // ios_base::sync_with_stdio(0); cin.tie(0);
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);

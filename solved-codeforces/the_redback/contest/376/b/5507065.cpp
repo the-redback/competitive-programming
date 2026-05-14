@@ -12,7 +12,7 @@ using namespace std;
 
 #define inf HUGE_VAL
 
-main() {
+int main() {
     int a[1010];
     int n, m;
     int i, j, l, x, k, y, z;

@@ -68,7 +68,7 @@ void mult(int n, int r) {
     }
 }
 
-main() {
+int main() {
     sieve(101);
     int n, k, i, m, c;
     int tc, t = 1;

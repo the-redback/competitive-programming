@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int a, i, j, k, n, t = 1;
     while (scanf("%d", &n)) {
         if (n == 0) return 0;

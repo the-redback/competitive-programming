@@ -31,7 +31,7 @@ typedef unsigned long long llu;
 
 pair<double, ll> a[2000010];
 
-main() {
+int main() {
 #ifdef redback
     freopen("in.txt", "r", stdin);
 #endif  // redback

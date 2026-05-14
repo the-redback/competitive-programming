@@ -16,7 +16,7 @@ long long check(int i, int amount) {
     return dp[i][amount] = x + y;
 }
 
-main() {
+int main() {
     int n;
     long long m;
     for (n = 1; n <= 21; n++) coin[n - 1] = pow(n, 3);

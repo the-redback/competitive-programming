@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     double area, a, b, n;
     int t;
     scanf("%d", &t);

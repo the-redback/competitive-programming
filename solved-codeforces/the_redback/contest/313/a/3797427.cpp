@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int n, m, i, j, k, l;
     while (~scanf("%d", &n)) {
         i = n;

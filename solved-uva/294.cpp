@@ -14,7 +14,7 @@ void prime(int n) {
             }
     }
 }
-main() {
+int main() {
     int t;
     long i, max, r, num, j, k, l, m, n;
     prime(57701);

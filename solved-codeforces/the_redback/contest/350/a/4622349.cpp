@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int ret;
     int n, m, i, j, sum, k;
     vector<int> r;

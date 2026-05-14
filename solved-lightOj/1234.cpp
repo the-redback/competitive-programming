@@ -45,7 +45,7 @@ void pre(void) {
     return;
 }
 
-main() {
+int main() {
     pre();
     ll t = 1, tc;
     read(tc);

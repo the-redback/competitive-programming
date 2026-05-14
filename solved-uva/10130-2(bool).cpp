@@ -19,7 +19,7 @@ int check(int i, int w) {
     return dp[i][w];
 }
 
-main() {
+int main() {
     int i, k;
     int sum, t;
     scanf("%d", &t);

@@ -27,7 +27,7 @@ long long call(int n, int k, int l) {
     return sum;
 }
 
-main() {
+int main() {
     int tc, n;
     long long sum;
     int k, l;

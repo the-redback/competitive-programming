@@ -58,7 +58,7 @@ bool value(int node, int low, int high, int pos, int carry) {
         return value(right, mid + 1, high, pos, carry + flag[node]);
 }
 
-main() {
+int main() {
     int tc, t = 1;
     scanf("%d", &tc);
     for (t = 1; t <= tc; t++) {

@@ -2,7 +2,7 @@
 using namespace std;
 #define mem(x, y) memset(x, y, sizeof(x));
 
-main() {
+int main() {
     __int64 k, l, m, n, t;
 
     scanf("%I64d %I64d", &n, &k);

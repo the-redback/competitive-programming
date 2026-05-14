@@ -2,7 +2,7 @@
 using namespace std;
 char a[1000005];
 int b[1000005];
-main() {
+int main() {
     int i, j, k, n, t, l, T = 1;
     while (gets(a)) {
         l = strlen(a);

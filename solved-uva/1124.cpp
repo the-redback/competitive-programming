@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     char a[20];
     while (gets(a)) {
         puts(a);

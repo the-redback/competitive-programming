@@ -30,7 +30,7 @@ void work(char a[10000], char b[10000], int n) {
     swap(b);
 }
 
-main() {
+int main() {
     int i, j, n, c[10];
     strcpy(a[0], "1");
     strcpy(a[1], "1");

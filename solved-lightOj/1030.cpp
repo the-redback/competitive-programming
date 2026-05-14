@@ -48,7 +48,7 @@ double rec(ll pos) {
     return tc;
 }
 
-main() {
+int main() {
 #ifdef redback
     freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
 #endif  // redback

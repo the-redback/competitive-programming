@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 __int64 a[100002], b[100002];
-main() {
+int main() {
     bool c[100002];
     memset(c, 0, sizeof(c));
     __int64 xtra, l;

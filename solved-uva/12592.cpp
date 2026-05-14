@@ -12,7 +12,7 @@ using namespace std;
 #define inf       HUGE_VAL
 #define mem(a, b) memset(a, b, sizeof(a))
 
-main() {
+int main() {
     map<string, string> mp;
     string s, ss;
     char a[100];

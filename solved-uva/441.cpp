@@ -25,7 +25,7 @@ void call(int m) {
     return;
 }
 
-main() {
+int main() {
     int i, j = 0;
     while (scanf("%d", &n)) {
         memset(view, 0, sizeof(view));

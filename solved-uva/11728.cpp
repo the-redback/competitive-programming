@@ -30,7 +30,7 @@ void go(void) {
     return;
 }
 
-main() {
+int main() {
     go();
     int n, k;
     int tc, t = 1;

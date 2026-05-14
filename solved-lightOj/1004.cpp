@@ -35,7 +35,7 @@ int test(int i, int j) {
     return dp[i][j];
 }
 
-main() {
+int main() {
     int i, j, k, l, m, t, sum;
     scanf("%d", &t);
     for (l = 1; l <= t; l++) {

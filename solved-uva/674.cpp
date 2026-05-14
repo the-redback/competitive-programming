@@ -16,7 +16,7 @@ int check(int i, int amount) {
     return dp[i][amount] = x + y;
 }
 
-main() {
+int main() {
     long n;
     memset(dp, -1, sizeof(dp));
     while (scanf("%ld", &n) == 1) {

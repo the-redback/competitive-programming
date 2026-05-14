@@ -32,7 +32,7 @@ int call(int n, int r) {
     return sum % 100;
 }
 
-main() {
+int main() {
     int tc, t = 1;
     int i, j, k, l;
     // scanf("%d",&tc);

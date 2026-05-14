@@ -27,7 +27,7 @@ int LIS(void) {
     return I.size() - 1;
 }
 
-main() {
+int main() {
     v.clear();
     int i, j = 0, k = 0, l, n, m;
     while (scanf("%d", &n) == 1) {

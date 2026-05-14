@@ -8,7 +8,7 @@ void swap(int i, int j) {
         c[i][j] = 'o';
 }
 
-main() {
+int main() {
     int i, j, k, l, m, n;
     int a[4][4];
     for (i = 0; i < 3; i++)

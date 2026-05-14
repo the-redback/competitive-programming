@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     int i, j, a = 0, b = 0, n, m, k;
     scanf("%d %d", &n, &m);
     for (int i = 0; i < n; i++) {

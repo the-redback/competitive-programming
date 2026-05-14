@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-main() {
+int main() {
     long long n, m, a, b;
     int i, it, t, j;
     scanf("%d", &t);

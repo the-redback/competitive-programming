@@ -22,7 +22,7 @@ int big(int n, int k) {
     }
 }
 
-main() {
+int main() {
     double m;
     char s[50];
     int n, k;

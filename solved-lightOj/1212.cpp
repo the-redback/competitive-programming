@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-main() {
+int main() {
     deque<int> v;
     int i, j, k, l, m, n, t, T;
     char a[15];

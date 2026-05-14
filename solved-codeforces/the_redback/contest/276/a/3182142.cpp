@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int l;
     vector<long> v;
     long n, k, fi, ki;

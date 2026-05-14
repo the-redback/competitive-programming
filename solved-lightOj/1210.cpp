@@ -71,7 +71,7 @@ int scc(int n) {
     return max(src, si);
 }
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t = 1, tc;
     cin >> tc;

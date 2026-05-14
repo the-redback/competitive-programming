@@ -29,7 +29,7 @@ bool comp(D x, D y) { return x.x < y.x; }
 D arr[111];
 int pos[111];
 
-main() {
+int main() {
     ios_base::sync_with_stdio(false);
     int t, tc;
     // cin>>tc;

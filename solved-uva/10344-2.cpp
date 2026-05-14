@@ -39,7 +39,7 @@ int call(int i, int rem) {
     return z;
 }
 
-main() {
+int main() {
     int i, j = 0, k, b[7];
     memset(view, 0, sizeof(view));
     I = 0;

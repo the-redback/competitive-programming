@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-main() {
+int main() {
     int a[101];
     a[0] = 0;
     a[1] = 1;

@@ -18,7 +18,7 @@ bool call(int i, int rem) {
     return dp[i][rem];
 }
 
-main() {
+int main() {
     int i, k, n;
     int t;
     scanf("%d", &t);

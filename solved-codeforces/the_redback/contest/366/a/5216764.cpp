@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main() {
+int main() {
     int a[20];
     int i, j, k, l, m, n;
     while (scanf("%d", &n) == 1) {
