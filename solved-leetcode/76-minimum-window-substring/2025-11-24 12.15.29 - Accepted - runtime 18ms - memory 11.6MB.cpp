@@ -1,43 +1,39 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-         unordered_map<char, int> mapt, maps;
-         for(auto ch: t)
-            mapt[ch]++;
-        
+        unordered_map<char, int> mapt, maps;
+        for (auto ch : t) mapt[ch]++;
+
         int str_length = INT_MAX;
         int index = -1;
         int left = 0;
-        int counter=0;
+        int counter = 0;
 
-        for(int right = 0; right < s.size(); right++){
-            if(mapt.find(s[right]) == mapt.end())
-                continue;
+        for (int right = 0; right < s.size(); right++) {
+            if (mapt.find(s[right]) == mapt.end()) continue;
 
             maps[s[right]]++;
-            if(mapt[s[right]] == maps[s[right]]){
+            if (mapt[s[right]] == maps[s[right]]) {
                 counter++;
             }
 
-            while(counter == mapt.size() && left <=right){
-                if(mapt.find(s[left]) == mapt.end()){
+            while (counter == mapt.size() && left <= right) {
+                if (mapt.find(s[left]) == mapt.end()) {
                     left++;
                     continue;
                 }
-                
-                if(str_length > right - left + 1){
+
+                if (str_length > right - left + 1) {
                     str_length = right - left + 1;
                     index = left;
                 }
                 maps[s[left]]--;
-                if(maps[s[left]] < mapt[s[left]])
-                    counter--;
+                if (maps[s[left]] < mapt[s[left]]) counter--;
                 left++;
             }
         }
-        if(index == -1)
-            return "";
-        
+        if (index == -1) return "";
+
         return s.substr(index, str_length);
     }
 };

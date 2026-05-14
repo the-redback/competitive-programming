@@ -21,25 +21,25 @@ public:
 
 class Solution {
     unordered_map<Node*, Node*> visited;
+
 public:
     Node* cloneGraph(Node* node) {
-        if(node == nullptr)
-            return node;
-        
+        if (node == nullptr) return node;
+
         queue<Node*> q;
-        unordered_map<Node*, Node*>visited;
+        unordered_map<Node*, Node*> visited;
 
         q.push(node);
         Node* clonedGraph = new Node(node->val);
         visited[node] = clonedGraph;
 
-        while(!q.empty()){
+        while (!q.empty()) {
             auto u = q.front();
             q.pop();
             auto cloneU = visited[u];
-            
-            for(auto v: u->neighbors){
-                if(visited.find(v) == visited.end()){
+
+            for (auto v : u->neighbors) {
+                if (visited.find(v) == visited.end()) {
                     auto vClone = new Node(v->val);
                     visited[v] = vClone;
                     q.push(v);
@@ -49,6 +49,5 @@ public:
         }
 
         return clonedGraph;
-
     }
 };

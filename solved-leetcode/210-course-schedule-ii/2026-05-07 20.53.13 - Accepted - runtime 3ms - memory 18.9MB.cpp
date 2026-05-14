@@ -30,8 +30,7 @@ public:
             }
         }
 
-        if (ans.size() != numCourses)
-            return {};
+        if (ans.size() != numCourses) return {};
         return ans;
     }
 };

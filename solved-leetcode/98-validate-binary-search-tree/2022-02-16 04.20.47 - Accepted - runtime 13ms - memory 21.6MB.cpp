@@ -12,28 +12,27 @@
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        stack<TreeNode*>s;
+        stack<TreeNode*> s;
         TreeNode* curr = root;
-        TreeNode* prev=NULL;
-        
-        while(curr!=NULL || !s.empty()){
-            while(curr!=NULL){
+        TreeNode* prev = NULL;
+
+        while (curr != NULL || !s.empty()) {
+            while (curr != NULL) {
                 s.push(curr);
-                curr=curr->left;
+                curr = curr->left;
             }
-            curr=s.top();
+            curr = s.top();
             s.pop();
-            
-            //do the 
-            
-            if(prev != NULL && prev->val>= curr->val){
+
+            // do the
+
+            if (prev != NULL && prev->val >= curr->val) {
                 return false;
             }
-            
-            prev=curr;
-            curr=curr->right;
+
+            prev = curr;
+            curr = curr->right;
         }
         return true;
     }
-    
 };

@@ -4,23 +4,20 @@ public:
         unordered_set<string> unique_emails;
         int result = 0;
 
-        for(auto &email : emails){
+        for (auto& email : emails) {
             string str = "";
-            for(auto ch : email){
-                if(ch == '+' || ch == '@')
-                    break;
-                
-                if(ch == '.')
-                    continue;
+            for (auto ch : email) {
+                if (ch == '+' || ch == '@') break;
+
+                if (ch == '.') continue;
                 str += ch;
             }
 
             string domain = "";
-            for(int i = email.size() - 1 ; i>=0; i--) {
+            for (int i = email.size() - 1; i >= 0; i--) {
                 domain += email[i];
-                if(email[i] == '@')
-                    break;
-            } 
+                if (email[i] == '@') break;
+            }
 
             reverse(domain.begin(), domain.end());
             str += domain;

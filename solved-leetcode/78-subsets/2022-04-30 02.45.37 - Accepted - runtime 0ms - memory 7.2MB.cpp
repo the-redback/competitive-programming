@@ -4,16 +4,16 @@ public:
         backtrack(nums, 0);
         return result;
     }
-    
-    vector<vector<int>>result;
+
+    vector<vector<int>> result;
     vector<int> comb;
-    
-    void backtrack(vector<int>& candidates, int start){
+
+    void backtrack(vector<int>& candidates, int start) {
         result.push_back(comb);
-        for(int i=start; i<candidates.size(); i++){
+        for (int i = start; i < candidates.size(); i++) {
             comb.push_back(candidates[i]);
-            backtrack(candidates, i+1 );
-            comb.pop_back();                
+            backtrack(candidates, i + 1);
+            comb.pop_back();
         }
         return;
     }

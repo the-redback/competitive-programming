@@ -29,8 +29,7 @@ public:
             int xx = r + dx[i];
             int yy = c + dy[i];
 
-            if (xx < 0 || yy < 0 || xx >= mat.size() || yy >= mat[r].size() ||
-                mat[xx][yy] >= mat[r][c]) {
+            if (xx < 0 || yy < 0 || xx >= mat.size() || yy >= mat[r].size() || mat[xx][yy] >= mat[r][c]) {
                 continue;
             }
 

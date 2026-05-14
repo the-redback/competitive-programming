@@ -1,16 +1,14 @@
 class MyCalendarTwo {
 public:
-    MyCalendarTwo() {
-        
-    }
-    
+    MyCalendarTwo() {}
+
     bool book(int start, int end) {
         mp[start]++;
         mp[end]--;
         int sum = 0;
-        for(auto x : mp){
+        for (auto x : mp) {
             sum += x.second;
-            if(sum >= 3){
+            if (sum >= 3) {
                 mp[start]--;
                 mp[end]++;
                 return false;
@@ -18,6 +16,7 @@ public:
         }
         return true;
     }
+
 private:
     map<int, int> mp;
 };

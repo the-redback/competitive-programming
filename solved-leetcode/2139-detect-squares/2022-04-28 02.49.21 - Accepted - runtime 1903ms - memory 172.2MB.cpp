@@ -1,29 +1,24 @@
 class DetectSquares {
-    unordered_map<int, unordered_map<int,int>>m;
+    unordered_map<int, unordered_map<int, int>> m;
+
 public:
-    DetectSquares() {
-    }
-    
-    void add(vector<int> point) {
-        m[point[0]][point[1]]++;
-    }
-    
+    DetectSquares() {}
+
+    void add(vector<int> point) { m[point[0]][point[1]]++; }
+
     int count(vector<int> point) {
-        int ans=0;
-        int x=point[0];
-        int y=point[1];
-        
-        for(int xx=0;xx<=1000 ; xx++){
-            if(x == xx || m[xx][y] == 0)
-                continue;
-            int len=abs(xx-x);
-            
-            if(y+len <=1000)
-                ans += m[x][y+len]  * m[xx][y+len] * m[xx][y];
-            if(y-len >= 0)
-                ans += m[x][y-len] * m[xx][y-len] * m[xx][y];
+        int ans = 0;
+        int x = point[0];
+        int y = point[1];
+
+        for (int xx = 0; xx <= 1000; xx++) {
+            if (x == xx || m[xx][y] == 0) continue;
+            int len = abs(xx - x);
+
+            if (y + len <= 1000) ans += m[x][y + len] * m[xx][y + len] * m[xx][y];
+            if (y - len >= 0) ans += m[x][y - len] * m[xx][y - len] * m[xx][y];
         }
-        
+
         return ans;
     }
 };

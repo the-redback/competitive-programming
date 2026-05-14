@@ -5,8 +5,8 @@ public:
         int leftMax = 0, rightMax = 0;
         int ans = 0;
 
-        while(left < right){
-            if(height[left] < height[right]){
+        while (left < right) {
+            if (height[left] < height[right]) {
                 leftMax = max(leftMax, height[left]);
                 ans += leftMax - height[left];
                 left++;

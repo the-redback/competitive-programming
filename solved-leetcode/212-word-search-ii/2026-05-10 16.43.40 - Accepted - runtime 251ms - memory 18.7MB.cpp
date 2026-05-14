@@ -8,8 +8,7 @@ public:
         node() {
             endmark = false;
             word = "";
-            for (int i = 0; i < 26; i++)
-                next[i] = nullptr;
+            for (int i = 0; i < 26; i++) next[i] = nullptr;
         }
     };
 
@@ -19,8 +18,7 @@ public:
         node* curr = root;
         for (auto ch : s) {
             int id = ch - 'a';
-            if (curr->next[id] == nullptr)
-                curr->next[id] = new node();
+            if (curr->next[id] == nullptr) curr->next[id] = new node();
             curr = curr->next[id];
         }
 
@@ -48,13 +46,11 @@ public:
             int xx = x + dx[i];
             int yy = y + dy[i];
 
-            if (xx < 0 || yy < 0 || xx >= R || yy >= C || board[xx][yy] == '#')
-                continue;
+            if (xx < 0 || yy < 0 || xx >= R || yy >= C || board[xx][yy] == '#') continue;
 
             int id = board[xx][yy] - 'a';
 
-            if (curr->next[id] != nullptr)
-                dfs(board, xx, yy, curr->next[id]);
+            if (curr->next[id] != nullptr) dfs(board, xx, yy, curr->next[id]);
         }
 
         board[x][y] = temp;

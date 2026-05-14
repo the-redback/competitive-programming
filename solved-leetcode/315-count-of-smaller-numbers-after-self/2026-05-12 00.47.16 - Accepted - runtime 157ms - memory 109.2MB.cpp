@@ -3,8 +3,7 @@ public:
     vector<int> tree;
 
     void update(int node, int low, int high, int pos, int val) {
-        if (pos < low || pos > high)
-            return;
+        if (pos < low || pos > high) return;
         if (low == pos && high == pos) {
             tree[node] += val;
             return;
@@ -20,10 +19,8 @@ public:
     }
 
     int query(int node, int low, int high, int qlow, int qhigh) {
-        if (qlow > high || qhigh < low)
-            return 0;
-        if (qlow <= low && qhigh >= high)
-            return tree[node];
+        if (qlow > high || qhigh < low) return 0;
+        if (qlow <= low && qhigh >= high) return tree[node];
 
         int left = node * 2;
         int right = left + 1;

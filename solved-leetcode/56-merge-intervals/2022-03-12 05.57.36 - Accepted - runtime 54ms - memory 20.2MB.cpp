@@ -1,17 +1,17 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        sort(intervals.begin(),intervals.end());
-        
+        sort(intervals.begin(), intervals.end());
+
         int low = intervals[0][0];
         int high = intervals[0][1];
-        
+
         vector<vector<int>> ans;
-        
-        for(int i = 1; i<intervals.size(); i++){
-            auto interval=intervals[i];
-            
-            if(interval[0] > high){
+
+        for (int i = 1; i < intervals.size(); i++) {
+            auto interval = intervals[i];
+
+            if (interval[0] > high) {
                 ans.push_back({low, high});
                 low = interval[0];
                 high = interval[1];
@@ -20,9 +20,8 @@ public:
             }
         }
         ans.push_back({low, high});
-        
+
         return ans;
-        
     }
 };
 

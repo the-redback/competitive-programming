@@ -11,16 +11,14 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l, ListNode* r) {
-        if(l==NULL)
-            return r;
-        if(r==NULL)
+        if (l == NULL) return r;
+        if (r == NULL) return l;
+
+        if (l->val <= r->val) {
+            l->next = mergeTwoLists(l->next, r);
             return l;
-        
-        if(l->val <= r->val){
-            l->next=mergeTwoLists(l->next,r);
-            return l;
-        }else{
-            r->next=mergeTwoLists(l,r->next);
+        } else {
+            r->next = mergeTwoLists(l, r->next);
             return r;
         }
     }

@@ -1,24 +1,18 @@
 class SnapshotArray {
-    map<int, map<int,int>>mp;
-    int cur_snap=0;
+    map<int, map<int, int>> mp;
+    int cur_snap = 0;
+
 public:
-    SnapshotArray(int length) {
-        
-    }
-    
-    void set(int index, int val) {
-        mp[index][cur_snap] = val;
-    }
-    
-    int snap() {
-        return cur_snap++;
-    }
-    
+    SnapshotArray(int length) {}
+
+    void set(int index, int val) { mp[index][cur_snap] = val; }
+
+    int snap() { return cur_snap++; }
+
     int get(int index, int snap_id) {
-        auto it=mp[index].upper_bound(snap_id);
-        if(it==mp[index].begin())
-            return 0;
-        
+        auto it = mp[index].upper_bound(snap_id);
+        if (it == mp[index].begin()) return 0;
+
         return prev(it)->second;
     }
 };

@@ -6,12 +6,12 @@ public:
         int count = 0;
         int candidate = 0;
 
-        for(auto num : nums){
-            if(count == 0){
+        for (auto num : nums) {
+            if (count == 0) {
                 candidate = num;
             }
 
-            if(num == candidate){
+            if (num == candidate) {
                 count++;
             } else {
                 count--;

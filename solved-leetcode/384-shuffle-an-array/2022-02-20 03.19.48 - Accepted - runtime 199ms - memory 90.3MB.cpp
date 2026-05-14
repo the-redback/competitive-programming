@@ -1,25 +1,23 @@
 class Solution {
-private: 
-    vector<int>original;
-    vector<int>sf;
-    
+private:
+    vector<int> original;
+    vector<int> sf;
+
 public:
     Solution(vector<int>& nums) {
         srand(time(NULL));
-        original=nums;
-        sf=nums;
+        original = nums;
+        sf = nums;
     }
-    
-    vector<int> reset() {
-        return original;
-    }
-    
+
+    vector<int> reset() { return original; }
+
     vector<int> shuffle() {
-        for(int i=sf.size()-1;i>=0;i--){
-            int in=rand()%(i+1);
-            int temp=sf[in];
-            sf[in]=sf[i];
-            sf[i]=temp;
+        for (int i = sf.size() - 1; i >= 0; i--) {
+            int in = rand() % (i + 1);
+            int temp = sf[in];
+            sf[in] = sf[i];
+            sf[i] = temp;
         }
         return sf;
     }

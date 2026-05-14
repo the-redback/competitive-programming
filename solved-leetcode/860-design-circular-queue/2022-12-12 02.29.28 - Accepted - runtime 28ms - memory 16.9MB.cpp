@@ -1,8 +1,9 @@
 class MyCircularQueue {
-    vector<int>q;
+    vector<int> q;
     int head, tail;
     int count;
     int capacity;
+
 public:
     MyCircularQueue(int k) {
         capacity = k;
@@ -10,45 +11,37 @@ public:
         q.resize(k);
         head = 0;
     }
-    
+
     bool enQueue(int value) {
-        if(count == capacity)
-            return false;
+        if (count == capacity) return false;
         int index = (head + count) % capacity;
         q[index] = value;
         count++;
         return true;
     }
-    
+
     bool deQueue() {
-        if(count == 0)
-            return false;
+        if (count == 0) return false;
         head = (head + 1) % capacity;
         count--;
         return true;
     }
-    
+
     int Front() {
-        if(count == 0)
-            return -1;
+        if (count == 0) return -1;
         return q[head];
     }
-    
+
     int Rear() {
-        if(count == 0)
-            return -1;
-        int index = (head + count -1) % capacity;
+        if (count == 0) return -1;
+        int index = (head + count - 1) % capacity;
 
         return q[index];
     }
-    
-    bool isEmpty() {
-        return count == 0;
-    }
-    
-    bool isFull() {
-        return count == capacity;
-    }
+
+    bool isEmpty() { return count == 0; }
+
+    bool isFull() { return count == capacity; }
 };
 
 /**

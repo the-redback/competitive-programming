@@ -11,6 +11,7 @@
  */
 class Solution {
     int ans = INT_MIN;
+
 public:
     int maxPathSum(TreeNode* root) {
         ans = INT_MIN;
@@ -19,13 +20,12 @@ public:
     }
 
     int rec(TreeNode* root) {
-        if (root == nullptr)
-            return 0;
-        
+        if (root == nullptr) return 0;
+
         int left_gain = max(rec(root->left), 0);
         int right_gain = max(rec(root->right), 0);
 
-        ans = max(ans, root->val + left_gain + right_gain );
+        ans = max(ans, root->val + left_gain + right_gain);
 
         return max(root->val + left_gain, root->val + right_gain);
     }

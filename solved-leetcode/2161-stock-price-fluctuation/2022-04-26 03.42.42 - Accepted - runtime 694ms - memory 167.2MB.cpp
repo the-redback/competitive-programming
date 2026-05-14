@@ -1,36 +1,27 @@
 class StockPrice {
 public:
-    StockPrice() {
-        
-    }
-    
+    StockPrice() {}
+
     void update(int timestamp, int price) {
-        if(stock.find(timestamp) != stock.end()){
+        if (stock.find(timestamp) != stock.end()) {
             prices.erase(prices.find(stock[timestamp]));
         }
-        
-        stock[timestamp]=price;
+
+        stock[timestamp] = price;
         prices.insert(price);
-        
-        last_ts=max(last_ts, timestamp);
-        
+
+        last_ts = max(last_ts, timestamp);
     }
-    
-    int current() {
-        return stock[last_ts];
-    }
-    
-    int maximum() {
-        return *prices.rbegin();
-    }
-    
-    int minimum() {
-        return *prices.begin();
-    }
-    
-    unordered_map<int, int>stock;
-    multiset<int>prices;
-    int last_ts=0;
+
+    int current() { return stock[last_ts]; }
+
+    int maximum() { return *prices.rbegin(); }
+
+    int minimum() { return *prices.begin(); }
+
+    unordered_map<int, int> stock;
+    multiset<int> prices;
+    int last_ts = 0;
 };
 
 /**

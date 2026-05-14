@@ -1,23 +1,17 @@
 class SnapshotArray {
-    unordered_map<int, map<int,int> >mp;
-    int snap_counter=0;
-public:
-    SnapshotArray(int length) {
+    unordered_map<int, map<int, int> > mp;
+    int snap_counter = 0;
 
-    }
-    
-    void set(int index, int val) {
-        mp[index][snap_counter] = val;
-    }
-    
-    int snap() {
-        return snap_counter++;
-    }
-    
+public:
+    SnapshotArray(int length) {}
+
+    void set(int index, int val) { mp[index][snap_counter] = val; }
+
+    int snap() { return snap_counter++; }
+
     int get(int index, int snap_id) {
-        auto it=mp[index].upper_bound(snap_id);
-        if(it == mp[index].begin())
-            return 0;
+        auto it = mp[index].upper_bound(snap_id);
+        if (it == mp[index].begin()) return 0;
         it--;
         return it->second;
     }

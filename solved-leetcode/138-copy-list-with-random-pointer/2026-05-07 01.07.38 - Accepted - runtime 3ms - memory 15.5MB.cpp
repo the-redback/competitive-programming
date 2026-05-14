@@ -19,8 +19,7 @@ class Solution {
 
 public:
     Node* copyRandomList(Node* head) {
-        if (head == nullptr)
-            return head;
+        if (head == nullptr) return head;
         if (mp.find(head) != mp.end()) {
             return mp[head];
         }

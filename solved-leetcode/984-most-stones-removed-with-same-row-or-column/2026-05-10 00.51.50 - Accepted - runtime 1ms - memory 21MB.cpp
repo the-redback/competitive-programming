@@ -3,8 +3,7 @@ public:
     int root[2002];
 
     int find(int u) {
-        if (root[u] != u)
-            root[u] = find(root[u]);
+        if (root[u] != u) root[u] = find(root[u]);
         return root[u];
     }
 
@@ -12,14 +11,13 @@ public:
         int root_u = find(u);
         int root_v = find(v);
 
-        if (root_u != root_v)
-            root[root_u] = root_v;
+        if (root_u != root_v) root[root_u] = root_v;
     }
 
     int removeStones(vector<vector<int>>& stones) {
         int n = stones.size();
         n *= 2;
-        int delta = 100000; // Add delta to columns, so that it stays different.
+        int delta = 100000;  // Add delta to columns, so that it stays different.
 
         for (int i = 0; i < n; i++) {
             root[i] = i;
@@ -30,11 +28,9 @@ public:
             int x = stone[0];
             int y = stone[1] + delta;
 
-            if(mp.find(x) == mp.end())
-                mp[x] = mp.size();
-            if(mp.find(y) == mp.end())
-                mp[y] = mp.size();
-            
+            if (mp.find(x) == mp.end()) mp[x] = mp.size();
+            if (mp.find(y) == mp.end()) mp[y] = mp.size();
+
             Union(mp[x], mp[y]);
         }
 

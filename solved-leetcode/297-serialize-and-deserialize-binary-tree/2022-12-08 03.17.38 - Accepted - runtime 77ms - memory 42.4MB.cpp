@@ -9,15 +9,13 @@
  */
 class Codec {
 public:
-
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        if(root == nullptr)
-            return " null";
-        string s=" "+to_string(root->val);
+        if (root == nullptr) return " null";
+        string s = " " + to_string(root->val);
 
-        s+=serialize(root->left);
-        s+=serialize(root->right);
+        s += serialize(root->left);
+        s += serialize(root->right);
         return s;
     }
 
@@ -27,13 +25,12 @@ public:
         return buildTree(ss);
     }
 
-    TreeNode* buildTree(istringstream &ss){
+    TreeNode* buildTree(istringstream& ss) {
         string s;
         ss >> s;
 
-        if(s == "null")
-            return NULL;
-        TreeNode *node = new TreeNode(stoi(s));
+        if (s == "null") return NULL;
+        TreeNode* node = new TreeNode(stoi(s));
         node->left = buildTree(ss);
         node->right = buildTree(ss);
         return node;

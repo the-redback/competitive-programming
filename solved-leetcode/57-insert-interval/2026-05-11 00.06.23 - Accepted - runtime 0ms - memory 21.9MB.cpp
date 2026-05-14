@@ -6,9 +6,10 @@
 // Case 2:
 //         |  -------
 // +++++++ |
-// high is lower than array intervals. So, to determine that ranges have overlapped, flip condition (after ensuring 1st conditon has met).
+// high is lower than array intervals. So, to determine that ranges have overlapped, flip condition (after ensuring 1st
+// conditon has met).
 
-// case 3: 
+// case 3:
 //        -------
 //    +++++++
 

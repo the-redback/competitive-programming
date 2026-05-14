@@ -51,7 +51,5 @@ public:
         return;
     }
 
-    void cleanRoom(Robot& robot) {
-        dfs(robot, 0, 0, 0);
-    }
+    void cleanRoom(Robot& robot) { dfs(robot, 0, 0, 0); }
 };

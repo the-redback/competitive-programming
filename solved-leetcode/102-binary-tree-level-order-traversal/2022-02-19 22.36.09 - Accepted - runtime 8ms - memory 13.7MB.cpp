@@ -11,20 +11,19 @@
  */
 class Solution {
     vector<vector<int>> level;
+
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        helper(root,0);
+        helper(root, 0);
         return level;
     }
-    
-    void helper(TreeNode* node,int d){
-        if(node==NULL)
-            return ;
-        if(level.size()==d)
-            level.push_back(vector<int>());
+
+    void helper(TreeNode* node, int d) {
+        if (node == NULL) return;
+        if (level.size() == d) level.push_back(vector<int>());
         level[d].push_back(node->val);
-        helper(node->left,d+1);
-        helper(node->right,d+1);
+        helper(node->left, d + 1);
+        helper(node->right, d + 1);
         return;
     }
 };

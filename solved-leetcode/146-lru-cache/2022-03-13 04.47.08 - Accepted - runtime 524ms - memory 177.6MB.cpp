@@ -1,18 +1,15 @@
 class LRUCache {
 public:
-    LRUCache(int capacity) {
-        cap=capacity;
-    }
-    
+    LRUCache(int capacity) { cap = capacity; }
+
     int get(int key) {
-        if(keymap.find(key) == keymap.end() )
-            return -1;
+        if (keymap.find(key) == keymap.end()) return -1;
         moveToFirst(key);
         return keymap[key];
     }
-    
+
     void put(int key, int value) {
-        if(keymap.find(key) == keymap.end() ){
+        if (keymap.find(key) == keymap.end()) {
             q.push_front(key);
             qmap[key] = q.begin();
             cap--;
@@ -20,8 +17,8 @@ public:
             moveToFirst(key);
         }
         keymap[key] = value;
-        
-        if(cap<0){
+
+        if (cap < 0) {
             keymap.erase(q.back());
             qmap.erase(q.back());
             q.pop_back();
@@ -30,17 +27,16 @@ public:
     }
 
 private:
-    list<int>q;
+    list<int> q;
     map<int, list<int>::iterator> qmap;
     map<int, int> keymap;
     int cap;
-    
-    void moveToFirst(int key){
+
+    void moveToFirst(int key) {
         q.erase(qmap[key]);
         q.push_front(key);
-        qmap[key]=q.begin();
+        qmap[key] = q.begin();
     }
-    
 };
 
 /**

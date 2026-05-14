@@ -6,16 +6,13 @@ public:
         ans.clear();
         impossible = 0;
 
-        for (auto uv : prerequisites)
-            g[uv[1]].push_back(uv[0]);
-        
+        for (auto uv : prerequisites) g[uv[1]].push_back(uv[0]);
+
         for (int i = 0; i < numCourses; i++) {
-            if (visit[i] == 0)
-                dfs(i);
+            if (visit[i] == 0) dfs(i);
         }
-        
-        if (impossible)
-            return {};
+
+        if (impossible) return {};
 
         reverse(ans.begin(), ans.end());
         return ans;
@@ -23,10 +20,10 @@ public:
 
     bool impossible;
     vector<vector<int>> g;
-    vector<int>ans;
-    vector<int>visit;
+    vector<int> ans;
+    vector<int> visit;
 
-    void dfs(int u){
+    void dfs(int u) {
         visit[u] = 1;
         for (auto v : g[u]) {
             if (visit[v] == 0) {

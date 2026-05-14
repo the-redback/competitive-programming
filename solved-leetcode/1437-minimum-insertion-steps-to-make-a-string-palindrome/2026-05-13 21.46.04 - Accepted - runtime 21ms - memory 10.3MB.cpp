@@ -10,10 +10,8 @@ public:
     int dp[505][505];
 
     int rec(int i, int j, string& s) {
-        if (i > j)
-            return 0;
-        if (i == j)
-            return 1;
+        if (i > j) return 0;
+        if (i == j) return 1;
 
         int& tc = dp[i][j];
         if (tc != -1) {

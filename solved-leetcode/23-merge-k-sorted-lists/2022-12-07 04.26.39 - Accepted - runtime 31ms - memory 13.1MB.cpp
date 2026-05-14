@@ -13,9 +13,9 @@
 // Space: O(1)
 
 class Solution {
-    public: ListNode * mergeKLists(vector < ListNode * > & lists) {
-        if (lists.size() == 0)
-            return NULL;
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        if (lists.size() == 0) return NULL;
 
         int interval = 1;
         while (interval < lists.size()) {
@@ -27,42 +27,40 @@ class Solution {
         return lists[0];
     }
 
-    ListNode * merge2pair(ListNode * l, ListNode * r) {
+    ListNode* merge2pair(ListNode* l, ListNode* r) {
         // ListNode* head = new ListNode();
-        ListNode * head;
+        ListNode* head;
         if (l && r) {
-            if (l -> val < r -> val) {
+            if (l->val < r->val) {
                 head = l;
-                l = l -> next;
+                l = l->next;
             } else {
                 head = r;
-                r = r -> next;
+                r = r->next;
             }
         } else if (l) {
             head = l;
-            l = l -> next;
+            l = l->next;
         } else if (r) {
             head = r;
-            r = r -> next;
+            r = r->next;
         }
 
-        ListNode * it = head;
+        ListNode* it = head;
 
         while (l && r) {
-            if (l -> val < r -> val) {
-                it -> next = l;
-                l = l -> next;
+            if (l->val < r->val) {
+                it->next = l;
+                l = l->next;
             } else {
-                it -> next = r;
-                r = r -> next;
+                it->next = r;
+                r = r->next;
             }
-            it = it -> next;
+            it = it->next;
         }
 
-        if (l)
-            it -> next = l;
-        if (r)
-            it -> next = r;
+        if (l) it->next = l;
+        if (r) it->next = r;
         return head;
     }
 };

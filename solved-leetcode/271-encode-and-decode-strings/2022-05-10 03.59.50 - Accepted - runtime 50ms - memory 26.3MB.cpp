@@ -1,19 +1,17 @@
 class Codec {
 public:
-    
-    string int2str(int n){
+    string int2str(int n) {
         stringstream ss;
-        ss << setw(4) << setfill('0') << n; 
+        ss << setw(4) << setfill('0') << n;
         return ss.str();
     }
 
     // Encodes a list of strings to a single string.
     string encode(vector<string>& strs) {
-        if(strs.size() == 0)
-            return "";
-        string ans="";
-        
-        for(auto str: strs){
+        if (strs.size() == 0) return "";
+        string ans = "";
+
+        for (auto str : strs) {
             ans += int2str(str.size());
             ans += str;
         }
@@ -22,14 +20,13 @@ public:
 
     // Decodes a single string to a list of strings.
     vector<string> decode(string s) {
-        if(s == "")
-            return {""};
+        if (s == "") return {""};
         vector<string> ans;
-        for(int i=0; i<s.size()-3;){
-            int in = stoi(s.substr(i,4));
-            i+=4;
+        for (int i = 0; i < s.size() - 3;) {
+            int in = stoi(s.substr(i, 4));
+            i += 4;
             string str = s.substr(i, in);
-            i+=in;
+            i += in;
             ans.push_back(str);
         }
         return ans;

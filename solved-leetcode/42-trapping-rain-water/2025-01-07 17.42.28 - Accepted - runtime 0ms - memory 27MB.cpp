@@ -3,14 +3,14 @@ public:
     int trap(vector<int>& height) {
         int n = height.size();
         int ans = 0;
-        stack<int>st;
-        
+        stack<int> st;
+
         int i = 0;
-        while(i<n){
-            while(!st.empty() && height[i] > height[st.top()] ) {
+        while (i < n) {
+            while (!st.empty() && height[i] > height[st.top()]) {
                 int top = st.top();
                 st.pop();
-                if(st.empty()){
+                if (st.empty()) {
                     break;
                 }
 

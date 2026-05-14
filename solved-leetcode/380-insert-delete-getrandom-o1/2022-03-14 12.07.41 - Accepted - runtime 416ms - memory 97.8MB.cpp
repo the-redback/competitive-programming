@@ -1,29 +1,26 @@
 class RandomizedSet {
 public:
-    RandomizedSet() {
-        
-    }
-    
+    RandomizedSet() {}
+
     bool insert(int val) {
-        if(mp.find(val) != mp.end())
-            return false;
+        if (mp.find(val) != mp.end()) return false;
         mp[val] = true;
         return true;
     }
-    
+
     bool remove(int val) {
-        if(mp.find(val) == mp.end())
-            return false;
+        if (mp.find(val) == mp.end()) return false;
         mp.erase(val);
         return true;
     }
-    
+
     int getRandom() {
         auto it = mp.begin();
         int random = rand() % mp.size();
         advance(it, random);
         return it->first;
     }
+
 private:
     map<int, bool> mp;
 };

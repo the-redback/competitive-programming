@@ -12,7 +12,7 @@ public:
         ListNode* next = node->next;
         node->val = node->next->val;
         node->next = node->next->next;
-        
-        delete(next);
+
+        delete (next);
     }
 };

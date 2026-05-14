@@ -7,27 +7,23 @@ public:
         K = k;
         return rec(n, target);
     }
-    
+
     int K;
 
-    
     int dp[31][1001];
-    
-    int rec(int n, int target){
-        if(n==0){
-            if(target == 0)
-                return 1;
+
+    int rec(int n, int target) {
+        if (n == 0) {
+            if (target == 0) return 1;
             return 0;
         }
-        
-        int &tc=dp[n][target];
-        if(tc != -1)
-            return tc;
-        tc=0;
-        
-        for(int i=1; i<=K; i++){
-            if(target>=i)
-                tc=(tc + rec(n-1, target-i)%mod)%mod;
+
+        int& tc = dp[n][target];
+        if (tc != -1) return tc;
+        tc = 0;
+
+        for (int i = 1; i <= K; i++) {
+            if (target >= i) tc = (tc + rec(n - 1, target - i) % mod) % mod;
         }
         return tc;
     }

@@ -22,7 +22,7 @@ public:
             return head->next;
         }
 
-        while (curr->next != nullptr){
+        while (curr->next != nullptr) {
             curr = curr->next;
             prev = prev->next;
         }

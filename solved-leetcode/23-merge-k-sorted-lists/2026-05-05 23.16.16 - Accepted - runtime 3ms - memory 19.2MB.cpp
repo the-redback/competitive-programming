@@ -13,29 +13,27 @@
 // Space: O(1)
 
 struct Compare {
-    bool operator()(ListNode* l, ListNode* r){
-        return l->val > r->val;
-    }
+    bool operator()(ListNode* l, ListNode* r) { return l->val > r->val; }
 };
 
 class Solution {
-    public: ListNode * mergeKLists(vector < ListNode * > & lists) {
-       priority_queue<ListNode*, vector<ListNode*>, Compare> pq;
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        priority_queue<ListNode*, vector<ListNode*>, Compare> pq;
 
-        for(auto l : lists ){
-            if(l) pq.push(l);
+        for (auto l : lists) {
+            if (l) pq.push(l);
         }
 
         ListNode* head = new ListNode();
         ListNode* curr = head;
 
-        while(!pq.empty()){
+        while (!pq.empty()) {
             ListNode* node = pq.top();
             pq.pop();
 
             curr->next = new ListNode(node->val);
-            if(node->next)
-                pq.push(node->next);
+            if (node->next) pq.push(node->next);
 
             curr = curr->next;
         }

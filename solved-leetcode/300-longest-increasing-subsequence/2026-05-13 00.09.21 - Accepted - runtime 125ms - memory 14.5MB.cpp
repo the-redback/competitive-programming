@@ -2,13 +2,11 @@ class Solution {
 public:
     int LIS(int u, vector<int>& nums, vector<int>& dp) {
         int& tc = dp[u];
-        if (tc != -1)
-            return tc;
+        if (tc != -1) return tc;
 
         tc = 1;
         for (int i = u + 1; i < nums.size(); i++) {
-            if (nums[i] > nums[u])
-                tc = max(tc, LIS(i, nums, dp) + 1);
+            if (nums[i] > nums[u]) tc = max(tc, LIS(i, nums, dp) + 1);
         }
         return tc;
     }

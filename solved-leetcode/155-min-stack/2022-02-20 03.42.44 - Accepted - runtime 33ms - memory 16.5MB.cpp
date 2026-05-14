@@ -1,40 +1,44 @@
 class MinStack {
 public:
-    MinStack() {
-    }
-    
+    MinStack() {}
+
     void push(int val) {
-        Node* nw=new Node(val);
-        nw->prev=last;
-        last=nw;
-        if(nw->prev!=NULL && nw->prev->min < val)
-            nw->min=nw->prev->min;
+        Node* nw = new Node(val);
+        nw->prev = last;
+        last = nw;
+        if (nw->prev != NULL && nw->prev->min < val)
+            nw->min = nw->prev->min;
         else
-            nw->min=val;
+            nw->min = val;
     }
-    
+
     void pop() {
-        Node* tmp=last;
-        last=last->prev;
-        delete(tmp);
+        Node* tmp = last;
+        last = last->prev;
+        delete (tmp);
     }
-    
-    int top() {
-        return last->val;
-    }
-    
-    int getMin() {
-        return last->min;
-    }
+
+    int top() { return last->val; }
+
+    int getMin() { return last->min; }
+
 private:
-    struct Node{
+    struct Node {
         int val;
         int min;
         Node* prev;
-        Node(){val=0;min=INT_MAX;prev=NULL;}
-        Node(int v){val=v;min=INT_MAX;prev=NULL;}
+        Node() {
+            val = 0;
+            min = INT_MAX;
+            prev = NULL;
+        }
+        Node(int v) {
+            val = v;
+            min = INT_MAX;
+            prev = NULL;
+        }
     };
-    Node* last=NULL;
+    Node* last = NULL;
 };
 
 /**

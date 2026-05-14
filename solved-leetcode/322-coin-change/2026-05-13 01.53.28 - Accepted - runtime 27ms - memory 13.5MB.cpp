@@ -4,14 +4,11 @@ public:
     const int inf = 1e7;
 
     int rec(int rem, vector<int>& coins) {
-        if (rem == 0)
-            return 0;
-        if (rem < 0)
-            return inf;
+        if (rem == 0) return 0;
+        if (rem < 0) return inf;
 
         int& tc = dp[rem];
-        if (tc != -1)
-            return tc;
+        if (tc != -1) return tc;
 
         tc = inf;
         for (auto coin : coins) {
@@ -24,8 +21,7 @@ public:
         memset(dp, -1, sizeof(dp));
 
         int ans = rec(amount, coins);
-        if (ans >= inf)
-            return -1;
+        if (ans >= inf) return -1;
         return ans;
     }
 };

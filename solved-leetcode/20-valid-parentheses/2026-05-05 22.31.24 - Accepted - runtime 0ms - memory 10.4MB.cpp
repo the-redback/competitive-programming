@@ -12,12 +12,11 @@ public:
         mp['['] = 3;
         mp[']'] = -3;
 
-        for(char ch : s){
-            if(mp[ch] > 0){
+        for (char ch : s) {
+            if (mp[ch] > 0) {
                 st.push(ch);
             } else {
-                if(st.empty() || mp[ch] + mp[st.top()] != 0)
-                    return false;
+                if (st.empty() || mp[ch] + mp[st.top()] != 0) return false;
                 st.pop();
             }
         }

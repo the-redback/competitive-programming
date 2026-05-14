@@ -21,8 +21,7 @@ public:
         for (auto ch : word) {
             int id = ch - 'a';
 
-            if (curr->next[id] == nullptr)
-                curr->next[id] = new node();
+            if (curr->next[id] == nullptr) curr->next[id] = new node();
             curr = curr->next[id];
         }
         curr->endmark = true;
@@ -33,8 +32,7 @@ public:
         for (auto ch : word) {
             int id = ch - 'a';
 
-            if (curr->next[id] == nullptr)
-                return false;
+            if (curr->next[id] == nullptr) return false;
             curr = curr->next[id];
         }
         return curr->endmark;
@@ -45,8 +43,7 @@ public:
         for (auto ch : prefix) {
             int id = ch - 'a';
 
-            if (curr->next[id] == nullptr)
-                return false;
+            if (curr->next[id] == nullptr) return false;
             curr = curr->next[id];
         }
 

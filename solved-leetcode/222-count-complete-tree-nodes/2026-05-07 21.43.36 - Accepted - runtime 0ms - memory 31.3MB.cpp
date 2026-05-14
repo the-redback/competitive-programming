@@ -19,13 +19,12 @@ public:
 
         TreeNode* node = root;
         int d = 0;
-        while (node->left) { // calculate depth
+        while (node->left) {  // calculate depth
             d++;
             node = node->left;
         }
 
-        if (d == 0)
-            return 1;
+        if (d == 0) return 1;
 
         int low = 1;
         int high = 1 << d;
@@ -48,7 +47,7 @@ public:
 
         for (int i = 0; i < d; i++) {
             int mid = low + (high - low) / 2;
-            if (pivot <= mid){
+            if (pivot <= mid) {
                 high = mid;
                 root = root->left;
             } else {

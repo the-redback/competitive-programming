@@ -12,39 +12,36 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        if(lists.size() ==0)
-            return NULL;
-        
+        if (lists.size() == 0) return NULL;
+
         int interval = 1;
-        while(interval < lists.size()){
-            for(int i=0; i+interval < lists.size(); i+=2*interval){
-                lists[i] = merge2pair(lists[i], lists[i+interval]);
+        while (interval < lists.size()) {
+            for (int i = 0; i + interval < lists.size(); i += 2 * interval) {
+                lists[i] = merge2pair(lists[i], lists[i + interval]);
             }
             interval *= 2;
         }
         return lists[0];
     }
 
-    ListNode* merge2pair(ListNode* l, ListNode* r){
+    ListNode* merge2pair(ListNode* l, ListNode* r) {
         // ListNode* head = new ListNode();
         ListNode* head = new ListNode(-1);
         ListNode* it = head;
 
-        while(l && r){
-            if(l->val < r->val){
+        while (l && r) {
+            if (l->val < r->val) {
                 it->next = l;
-                l=l->next;
+                l = l->next;
             } else {
                 it->next = r;
-                r=r->next;
+                r = r->next;
             }
             it = it->next;
         }
 
-        if(l)
-            it->next = l;
-        if(r)
-            it->next = r;
+        if (l) it->next = l;
+        if (r) it->next = r;
         return head->next;
     }
 };

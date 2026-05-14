@@ -9,8 +9,8 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        auto next=node->next; //pointer
-        *node=*node->next; // value of next pointer
-        delete next; // delete former next pointer
+        auto next = node->next;  // pointer
+        *node = *node->next;     // value of next pointer
+        delete next;             // delete former next pointer
     }
 };

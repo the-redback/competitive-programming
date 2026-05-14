@@ -1,14 +1,14 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        map<string, int>mp;
+        map<string, int> mp;
         int n = wordList.size();
-        
+
         for (int i = 0; i < n; i++) {
             mp[wordList[i]] = i;
         }
 
-        vector<int>visited(n);
+        vector<int> visited(n);
         queue<pair<string, int>> q;
         q.push({beginWord, 1});
 
@@ -21,10 +21,9 @@ public:
                 for (int ch = 'a'; ch <= 'z'; ch++) {
                     str[i] = ch;
 
-                    if (mp.find(str) == mp.end() || visited[mp[str]])
-                        continue;
-                    
-                    if(str == endWord){
+                    if (mp.find(str) == mp.end() || visited[mp[str]]) continue;
+
+                    if (str == endWord) {
                         return u.second + 1;
                     }
                     visited[mp[str]] = 1;

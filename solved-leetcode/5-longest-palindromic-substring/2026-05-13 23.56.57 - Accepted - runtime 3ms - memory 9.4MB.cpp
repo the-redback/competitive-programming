@@ -13,8 +13,8 @@ public:
         int in = -1, result = 0;
 
         for (int i = 0; i < s.size(); i++) {
-            int len = expand(i, i, s);           // Odd length palindrome
-            len = max(len, expand(i, i + 1, s)); // Even length palindrome
+            int len = expand(i, i, s);            // Odd length palindrome
+            len = max(len, expand(i, i + 1, s));  // Even length palindrome
 
             if (len > result) {
                 in = i - (len - 1) / 2;

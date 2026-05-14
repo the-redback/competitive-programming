@@ -3,15 +3,12 @@ public:
     int dp[1010][1010];
 
     bool ispal(int i, int j, string& s) {
-        if (i >= j)
-            return true;
+        if (i >= j) return true;
         int& tc = dp[i][j];
-        if (tc != -1)
-            return tc;
+        if (tc != -1) return tc;
 
         tc = false;
-        if (s[i] == s[j])
-            tc = ispal(i + 1, j - 1, s);
+        if (s[i] == s[j]) tc = ispal(i + 1, j - 1, s);
         return tc;
     }
 

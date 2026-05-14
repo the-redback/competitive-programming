@@ -13,24 +13,23 @@ public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* curr = head;
 
-        int length = 0; 
-        while(curr){
+        int length = 0;
+        while (curr) {
             length++;
             curr = curr->next;
         }
 
-        if(length == n)
-            return head->next;
+        if (length == n) return head->next;
 
-        length = length - n; //node before nth node.
+        length = length - n;  // node before nth node.
 
         curr = head;
-        while(length > 1) {
+        while (length > 1) {
             curr = curr->next;
             length--;
         }
 
-        cout<< curr->val<<" ";
+        cout << curr->val << " ";
 
         curr->next = curr->next->next;
         return head;

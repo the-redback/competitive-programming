@@ -3,17 +3,16 @@ public:
     int longestConsecutive(vector<int>& nums) {
         sort(nums.begin(), nums.end());
 
-        if(nums.size()==0)
-            return 0;
+        if (nums.size() == 0) return 0;
 
         int long_streak = 0;
         int cnum = nums[0];
         int curr_streak = 1;
 
-        for(int i=1; i<nums.size(); i++){
-            if(cnum + 1 > nums[i])
+        for (int i = 1; i < nums.size(); i++) {
+            if (cnum + 1 > nums[i])
                 continue;
-            else if(cnum + 1 == nums[i]){
+            else if (cnum + 1 == nums[i]) {
                 cnum++;
                 curr_streak++;
             } else {

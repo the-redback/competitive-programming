@@ -5,18 +5,16 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
     }
-    
+
     bool insert(int val) {
-        if(mp.find(val) != mp.end())
-            return false;
+        if (mp.find(val) != mp.end()) return false;
         v.push_back(val);
-        mp[val]=v.size()-1;
+        mp[val] = v.size() - 1;
         return true;
     }
-    
+
     bool remove(int val) {
-        if(mp.find(val) == mp.end())
-            return false;
+        if (mp.find(val) == mp.end()) return false;
         int lastVal = v.back();
         int idx = mp[val];
 
@@ -27,7 +25,7 @@ public:
         v.pop_back();
         return true;
     }
-    
+
     int getRandom() {
         int random = rand() % mp.size();
         return v[random];
@@ -35,7 +33,7 @@ public:
 
 private:
     unordered_map<int, int> mp;
-    vector<int>v;
+    vector<int> v;
 };
 
 /**

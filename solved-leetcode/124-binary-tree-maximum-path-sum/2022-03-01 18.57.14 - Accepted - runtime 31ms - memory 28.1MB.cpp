@@ -10,23 +10,23 @@
  * };
  */
 class Solution {
-    int ans=-100000;
+    int ans = -100000;
+
 public:
     int maxPathSum(TreeNode* root) {
-        ans=-100000;
+        ans = -100000;
         maxgain(root);
         return ans;
     }
-    
-    int maxgain(TreeNode* root){
-        if(root==nullptr)
-            return -100000;
-        int left=maxgain(root->left);
-        int right=maxgain(root->right);
-        
-        int node=max(root->val, max(left,right)+root->val);
-        ans=max(node,ans);
-        ans=max(ans,root->val+left+right);
+
+    int maxgain(TreeNode* root) {
+        if (root == nullptr) return -100000;
+        int left = maxgain(root->left);
+        int right = maxgain(root->right);
+
+        int node = max(root->val, max(left, right) + root->val);
+        ans = max(node, ans);
+        ans = max(ans, root->val + left + right);
         return node;
     }
 };

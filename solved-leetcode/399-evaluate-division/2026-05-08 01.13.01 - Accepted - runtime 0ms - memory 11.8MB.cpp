@@ -1,7 +1,6 @@
 class Solution {
 public:
-    vector<double> calcEquation(vector<vector<string>>& equations,
-                                vector<double>& values,
+    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,
                                 vector<vector<string>>& queries) {
         // build adjacency list
         for (int i = 0; i < equations.size(); i++) {
@@ -33,11 +32,9 @@ public:
     unordered_set<string> visited;
 
     double dfs(string u, string& dest) {
-        if (visited.find(u) != visited.end())
-            return -1.0;
+        if (visited.find(u) != visited.end()) return -1.0;
 
-        if (u == dest)
-            return 1.0;
+        if (u == dest) return 1.0;
 
         visited.insert(u);
         for (auto [v, weight] : graph[u]) {

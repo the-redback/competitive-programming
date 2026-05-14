@@ -18,11 +18,10 @@ public:
     }
 
     int ans = 0;
-    
-    int rec(TreeNode* root){
-        if (root == nullptr)
-            return 0;
-        
+
+    int rec(TreeNode* root) {
+        if (root == nullptr) return 0;
+
         int left = rec(root->left);
         int right = rec(root->right);
 

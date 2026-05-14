@@ -12,26 +12,19 @@
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        stack<pair<TreeNode*,TreeNode*>>s;
-        s.push({root,root});
-        
-        while(!s.empty()){
-            pair<TreeNode*,TreeNode*>p = s.top();
+        stack<pair<TreeNode*, TreeNode*>> s;
+        s.push({root, root});
+
+        while (!s.empty()) {
+            pair<TreeNode*, TreeNode*> p = s.top();
             s.pop();
-            
-            if(p.first == NULL && p.second==NULL) 
-                continue;
-            if(p.first == NULL || p.second==NULL) 
-                return false;
-            if(p.first->val != p.second->val)
-                return false;
-            s.push({p.first->left,p.second->right});
-            s.push({p.first->right,p.second->left});
+
+            if (p.first == NULL && p.second == NULL) continue;
+            if (p.first == NULL || p.second == NULL) return false;
+            if (p.first->val != p.second->val) return false;
+            s.push({p.first->left, p.second->right});
+            s.push({p.first->right, p.second->left});
         }
         return true;
     }
 };
-
-
-
-

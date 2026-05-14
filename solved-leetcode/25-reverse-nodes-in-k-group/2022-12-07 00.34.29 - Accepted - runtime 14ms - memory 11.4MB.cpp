@@ -16,42 +16,36 @@ public:
         ListNode* ktail = NULL;
         ListNode* newHead = NULL;
 
-        while(curr){
+        while (curr) {
             int count = 0;
-            while(count <k && curr){
+            while (count < k && curr) {
                 curr = curr->next;
                 count++;
             }
 
-            if(count != k)
-                break;
-            
+            if (count != k) break;
+
             ListNode* newRevHead = reverseK(head, k);
-            if(newHead == NULL)
-                newHead = newRevHead;
-            
-            if(ktail != NULL)
-                ktail->next = newRevHead;
-            
+            if (newHead == NULL) newHead = newRevHead;
+
+            if (ktail != NULL) ktail->next = newRevHead;
+
             ktail = head;
             head = curr;
-
         }
 
-            if(newHead == NULL)
-                newHead = head;
-            
-            if(ktail != NULL)
-                ktail->next = head;
-            
-            return newHead;
+        if (newHead == NULL) newHead = head;
+
+        if (ktail != NULL) ktail->next = head;
+
+        return newHead;
     }
 
-    ListNode* reverseK(ListNode*  head, int k){
+    ListNode* reverseK(ListNode* head, int k) {
         ListNode* curr = head;
         ListNode* prev = NULL;
 
-        while(k){
+        while (k) {
             ListNode* next = curr->next;
             curr->next = prev;
 

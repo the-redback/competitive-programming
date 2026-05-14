@@ -5,7 +5,7 @@ public:
     int val;
     Node* next;
     Node* random;
-    
+
     Node(int _val) {
         val = _val;
         next = NULL;
@@ -21,11 +21,11 @@ public:
         Node* next;
 
         // include new nodes along with olders side by side
-        while(it){
+        while (it) {
             next = it->next;
 
             Node* copy = new Node(it->val);
-            
+
             it->next = copy;
             copy->next = next;
 
@@ -34,8 +34,8 @@ public:
 
         // Assign random pointers
         it = head;
-        while(it){
-            if(it->random){
+        while (it) {
+            if (it->random) {
                 it->next->random = it->random->next;
             }
             it = it->next->next;
@@ -46,7 +46,7 @@ public:
         Node* copyHead = new Node(-1);
         Node* prevCopy = copyHead;
 
-        while(it){
+        while (it) {
             next = it->next->next;
 
             // handle copy
@@ -54,12 +54,11 @@ public:
             prevCopy->next = copy;
             prevCopy = copy;
 
-            // Restore original 
+            // Restore original
             it->next = next;
             it = next;
         }
 
         return copyHead->next;
-
     }
 };

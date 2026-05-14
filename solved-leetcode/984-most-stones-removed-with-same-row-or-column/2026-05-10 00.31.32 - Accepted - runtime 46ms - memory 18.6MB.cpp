@@ -3,8 +3,7 @@ public:
     int root[2002];
 
     int find(int u) {
-        if (root[u] != u)
-            root[u] = find(root[u]);
+        if (root[u] != u) root[u] = find(root[u]);
         return root[u];
     }
 
@@ -12,8 +11,7 @@ public:
         int root_u = find(u);
         int root_v = find(v);
 
-        if (root_u != root_v)
-            root[root_u] = root_v;
+        if (root_u != root_v) root[root_u] = root_v;
     }
 
     int removeStones(vector<vector<int>>& stones) {
@@ -24,8 +22,7 @@ public:
 
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-                if (stones[i][0] == stones[j][0] ||
-                    stones[i][1] == stones[j][1]) {
+                if (stones[i][0] == stones[j][0] || stones[i][1] == stones[j][1]) {
                     Union(i, j);
                 }
             }

@@ -4,22 +4,21 @@ public:
         backtrack(candidates, target, 0);
         return result;
     }
-    
-    vector<vector<int>>result;
+
+    vector<vector<int>> result;
     vector<int> comb;
-    
-    void backtrack(vector<int>& candidates, int remain, int start){
-        if(remain <= 0){
-            if(remain == 0) 
-                result.push_back(comb);
+
+    void backtrack(vector<int>& candidates, int remain, int start) {
+        if (remain <= 0) {
+            if (remain == 0) result.push_back(comb);
             return;
         }
-        
-        for(int i=start; i<candidates.size(); i++){
-            if(remain - candidates[i] >= 0){
+
+        for (int i = start; i < candidates.size(); i++) {
+            if (remain - candidates[i] >= 0) {
                 comb.push_back(candidates[i]);
-                backtrack(candidates, remain-candidates[i], i);
-                comb.pop_back();                
+                backtrack(candidates, remain - candidates[i], i);
+                comb.pop_back();
             }
         }
         return;

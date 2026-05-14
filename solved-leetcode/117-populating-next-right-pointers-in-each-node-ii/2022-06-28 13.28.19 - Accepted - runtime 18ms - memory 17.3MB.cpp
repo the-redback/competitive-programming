@@ -20,42 +20,38 @@ class Solution {
     Node* leftmost;
     Node* curr;
     Node* prev;
-        
+
 public:
     Node* connect(Node* root) {
-        if(root == NULL)
-            return root;
-        
-        leftmost=root;
-        
-        
-        while(leftmost){
+        if (root == NULL) return root;
+
+        leftmost = root;
+
+        while (leftmost) {
             curr = leftmost;
             prev = NULL;
-            
+
             leftmost = NULL;
-            
-            while(curr){
+
+            while (curr) {
                 processChild(curr->left);
                 processChild(curr->right);
-                
+
                 curr = curr->next;
             }
-            
         }
-        
+
         return root;
     }
-    
-    void processChild(Node* child){
-        if(child == NULL)
-            return;
-        
-        if(prev != NULL)
+
+    void processChild(Node* child) {
+        if (child == NULL) return;
+
+        if (prev != NULL)
             prev->next = child;
         else
             leftmost = child;
-        
+
         prev = child;
     }
 };

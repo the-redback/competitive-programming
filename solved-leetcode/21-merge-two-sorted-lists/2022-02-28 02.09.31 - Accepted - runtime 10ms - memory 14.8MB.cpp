@@ -11,26 +11,26 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l, ListNode* r) {
-        ListNode* keepHead=new ListNode(-1);
-        
-        ListNode* cur=keepHead;
-        
-        while(l!=NULL && r!=NULL){
-            if(l->val <= r->val){
-                cur->next=l;
-                l=l->next;
+        ListNode* keepHead = new ListNode(-1);
+
+        ListNode* cur = keepHead;
+
+        while (l != NULL && r != NULL) {
+            if (l->val <= r->val) {
+                cur->next = l;
+                l = l->next;
             } else {
-                cur->next=r;
-                r=r->next;
+                cur->next = r;
+                r = r->next;
             }
-            cur=cur->next;
+            cur = cur->next;
         }
-        
-        if(l==NULL)
+
+        if (l == NULL)
             cur->next = r;
         else
             cur->next = l;
-        
+
         return keepHead->next;
     }
 };

@@ -4,7 +4,7 @@ public:
         while (i >= 0 && j < s.size() && s[i] == s[j]) {
             i--, j++;
         }
-        return j - i - 1; // because s[i] != s[j] after while loop.
+        return j - i - 1;  // because s[i] != s[j] after while loop.
     }
 
     string longestPalindrome(string s) {

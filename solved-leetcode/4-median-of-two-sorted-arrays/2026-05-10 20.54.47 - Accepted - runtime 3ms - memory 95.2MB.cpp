@@ -28,8 +28,7 @@ public:
             }
         }
 
-        if (total % 2 == 1)
-            return curr;
+        if (total % 2 == 1) return curr;
         return (prev + curr) / 2.0;
     }
 };

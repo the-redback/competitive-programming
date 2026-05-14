@@ -1,10 +1,10 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        k = k%nums.size();
-        int count=0;
+        k = k % nums.size();
+        int count = 0;
 
-        for(int start =0; count<nums.size();start++){
+        for (int start = 0; count < nums.size(); start++) {
             int current = start;
             int prev = nums[current];
             do {
@@ -14,7 +14,7 @@ public:
                 prev = temp;
                 current = next;
                 count++;
-            }while(start != current);
+            } while (start != current);
         }
     }
 };

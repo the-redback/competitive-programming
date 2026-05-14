@@ -5,9 +5,9 @@ public:
         return rec(s);
     }
 
-    int i; // i needs to be shared to track index globally.
+    int i;  // i needs to be shared to track index globally.
 
-    string rec(string& s){ 
+    string rec(string& s) {
         string str;
 
         while (i < s.size() && s[i] != ']') {
@@ -22,16 +22,15 @@ public:
                     i++;
                 }
 
-                i++; // skip '['
+                i++;  // skip '['
                 string decodedString = rec(s);
 
-                i++; // ignore the closing bracket ']'
+                i++;  // ignore the closing bracket ']'
                 while (k--) {
                     str += decodedString;
                 }
             }
-            cout<<i<<" ";
-
+            cout << i << " ";
         }
         return str;
     }

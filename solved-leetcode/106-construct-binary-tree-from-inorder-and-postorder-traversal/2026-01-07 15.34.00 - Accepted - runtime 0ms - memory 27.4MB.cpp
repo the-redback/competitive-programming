@@ -12,8 +12,8 @@
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-        index = postorder.size()-1;
-        for(int i = 0; i < inorder.size(); i++){
+        index = postorder.size() - 1;
+        for (int i = 0; i < inorder.size(); i++) {
             inorderMap[inorder[i]] = i;
         }
 
@@ -23,10 +23,9 @@ public:
     unordered_map<int, int> inorderMap;
     int index;
 
-    TreeNode* arrayToTree(vector<int> & postorder, int i, int j){
-        if( i > j )
-            return nullptr;
-        
+    TreeNode* arrayToTree(vector<int>& postorder, int i, int j) {
+        if (i > j) return nullptr;
+
         int rootvalue = postorder[index--];
         TreeNode* root = new TreeNode(rootvalue);
 

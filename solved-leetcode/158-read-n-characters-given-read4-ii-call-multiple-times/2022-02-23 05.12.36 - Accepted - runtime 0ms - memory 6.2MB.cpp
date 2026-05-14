@@ -5,8 +5,8 @@
 
 class Solution {
 private:
-    int length=0;
-    string s="";
+    int length = 0;
+    string s = "";
 
 public:
     /**
@@ -14,28 +14,26 @@ public:
      * @param n   Number of characters to read
      * @return    The number of actual characters read
      */
-    int read(char *buf, int n) {
-        while(length<n){
+    int read(char* buf, int n) {
+        while (length < n) {
             char buf4[5];
 
-            int tmp=read4(buf4);
-            if(tmp==0)
-                break;
-            length+=tmp;
+            int tmp = read4(buf4);
+            if (tmp == 0) break;
+            length += tmp;
 
-            buf4[tmp]=0; //null pointer
+            buf4[tmp] = 0;  // null pointer
 
             s.append(buf4);
         }
-        if(length<n)
-            n=length;
-        strcpy(buf, s.substr(0,n).c_str());
-        
+        if (length < n) n = length;
+        strcpy(buf, s.substr(0, n).c_str());
+
         // if(length>n)
-            s=s.substr(n);
-        // else 
-            // s="";
-        length-=n;
+        s = s.substr(n);
+        // else
+        // s="";
+        length -= n;
         // cout<<s<<"\n";
         return n;
     }

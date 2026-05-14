@@ -3,16 +3,16 @@ public:
     int findKthLargest(vector<int>& nums, int k) {
         srand(time(NULL));
         int k_small = nums.size() - k;
-        int left = 0, right = nums.size()-1;
+        int left = 0, right = nums.size() - 1;
         int pivot_counter;
 
-        while(left < right){
+        while (left < right) {
             pivot_counter = 0;
             int index = partition(nums, left, right, pivot_counter);
-            if(index == k_small || index >= k_small - pivot_counter + 1 && index <= k_small){
+            if (index == k_small || index >= k_small - pivot_counter + 1 && index <= k_small) {
                 return nums[index];
             }
-            if(index < k_small){
+            if (index < k_small) {
                 left = index + 1;
             } else {
                 right = index - 1;
@@ -22,19 +22,18 @@ public:
         return nums[right];
     }
 
-    int partition(vector<int> &nums, int left, int right, int &pivot_counter){
-        if(left == right)
-            return left;
-        int pivot = left + rand() % ( right - left + 1);
+    int partition(vector<int>& nums, int left, int right, int& pivot_counter) {
+        if (left == right) return left;
+        int pivot = left + rand() % (right - left + 1);
         pivot_counter = 0;
 
         swap(nums[pivot], nums[right]);
         int l = left;
-        for(int i = left; i < right; i++){
-            if(nums[i] < nums[right]){
+        for (int i = left; i < right; i++) {
+            if (nums[i] < nums[right]) {
                 swap(nums[l], nums[i]);
                 l++;
-            } else if(nums[i] == nums[right])
+            } else if (nums[i] == nums[right])
                 pivot_counter++;
         }
 

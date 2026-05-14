@@ -9,8 +9,8 @@
  * };
  */
 
- // Time: O(N logk)
- // Space: O(k) for priority_queue
+// Time: O(N logk)
+// Space: O(k) for priority_queue
 
 class Solution {
 public:
@@ -21,26 +21,24 @@ public:
                 q.push(l);
             }
         }
-        
-        ListNode* pre= new ListNode(0);
-        ListNode *it = pre;
+
+        ListNode* pre = new ListNode(0);
+        ListNode* it = pre;
         while (q.size()) {
-            ListNode *top = q.top();
+            ListNode* top = q.top();
             q.pop();
 
             it->next = top;
             it = it->next;
-            
+
             if (top->next) {
                 q.push(top->next);
             }
         }
         return pre->next;
     }
-    
+
     struct compare {
-        bool operator()(const ListNode* l1, const ListNode* l2) {
-            return l1->val > l2->val;
-        }
+        bool operator()(const ListNode* l1, const ListNode* l2) { return l1->val > l2->val; }
     };
 };

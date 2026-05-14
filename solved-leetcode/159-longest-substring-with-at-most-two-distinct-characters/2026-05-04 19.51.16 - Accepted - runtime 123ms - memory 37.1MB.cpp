@@ -5,15 +5,14 @@ public:
         int left = 0;
         unordered_map<char, int> mp;
 
-        for(int right = 0; right < s.size(); right++){
+        for (int right = 0; right < s.size(); right++) {
             mp[s[right]]++;
-            while(mp.size() > 2){
+            while (mp.size() > 2) {
                 mp[s[left]]--;
-                if(mp[s[left]] == 0)
-                    mp.erase(s[left]);
+                if (mp[s[left]] == 0) mp.erase(s[left]);
                 left++;
             }
-            result = max(result, right - left +1);
+            result = max(result, right - left + 1);
         }
         return result;
     }

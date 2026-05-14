@@ -11,20 +11,20 @@
  */
 class Solution {
     int cnt, ans;
-    void rec(TreeNode* root){
-        if(root == NULL)
-            return;
+    void rec(TreeNode* root) {
+        if (root == NULL) return;
         rec(root->left);
         cnt--;
-        if(cnt==0){
-            ans=root->val;
+        if (cnt == 0) {
+            ans = root->val;
         }
         rec(root->right);
         return;
     }
+
 public:
     int kthSmallest(TreeNode* root, int k) {
-        cnt=k;
+        cnt = k;
         rec(root);
         return ans;
     }

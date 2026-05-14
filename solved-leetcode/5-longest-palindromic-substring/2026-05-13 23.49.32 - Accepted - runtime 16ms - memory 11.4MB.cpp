@@ -5,8 +5,7 @@ public:
     // ^ and $ signs are sentinels appended to each end to avoid bounds checking
     string preprocess(string& s) {
         int n = s.size();
-        if (n == 0)
-            return "^$";
+        if (n == 0) return "^$";
 
         string s_prime = "^";
         for (auto ch : s) {

@@ -4,24 +4,24 @@ public:
         int n = ratings.size();
         int ans = n;
 
-        for( int i=1; i<n; ){
-            if(ratings[i] == ratings[i-1]){
+        for (int i = 1; i < n;) {
+            if (ratings[i] == ratings[i - 1]) {
                 i++;
                 continue;
             }
 
-            int peak=0;
-            while(i<n && ratings[i] > ratings[i-1]){
+            int peak = 0;
+            while (i < n && ratings[i] > ratings[i - 1]) {
                 i++;
                 peak++;
                 ans += peak;
             }
 
-            int valley=0;
-            while(i<n && ratings[i] < ratings[i-1]){
+            int valley = 0;
+            while (i < n && ratings[i] < ratings[i - 1]) {
                 i++;
                 valley++;
-                ans+=valley;
+                ans += valley;
             }
 
             ans -= min(peak, valley);

@@ -1,18 +1,14 @@
 class MedianFinder {
-    multiset<int>m;
+    multiset<int> m;
+
 public:
-    MedianFinder() {
-        
-    }
-    
-    void addNum(int num) {
-        m.insert(num);
-    }
-    
+    MedianFinder() {}
+
+    void addNum(int num) { m.insert(num); }
+
     double findMedian() {
         auto mid = next(m.begin(), m.size() / 2);
-        return ((double) *mid + *next(mid, m.size() % 2 - 1)) * 0.5;
-
+        return ((double)*mid + *next(mid, m.size() % 2 - 1)) * 0.5;
     }
 };
 

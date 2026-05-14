@@ -16,21 +16,19 @@ public:
         getHeight(root);
         return ans;
     }
-    
-    vector<vector<int>>ans;
-    
-    int getHeight(TreeNode *root){
-        if(root == nullptr)
-            return -1;
-        
-        int left=getHeight(root->left);
-        int right=getHeight(root->right);
-        int height=max(left, right)+1;
-        
-        if(ans.size()==height) 
-            ans.push_back({});
+
+    vector<vector<int>> ans;
+
+    int getHeight(TreeNode* root) {
+        if (root == nullptr) return -1;
+
+        int left = getHeight(root->left);
+        int right = getHeight(root->right);
+        int height = max(left, right) + 1;
+
+        if (ans.size() == height) ans.push_back({});
         ans[height].push_back(root->val);
-        
+
         return height;
     }
 };

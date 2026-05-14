@@ -16,8 +16,7 @@ public:
         }
 
         for (int i = low + 1; i < high; i++) {
-            if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1])
-                return i;
+            if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) return i;
         }
 
         return -1;

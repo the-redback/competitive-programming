@@ -7,8 +7,7 @@ public:
         for (int i = 0; i < k; i++) {
             string newString = s + char(i + '0');
 
-            if (visited.find(newString) != visited.end())
-                continue;
+            if (visited.find(newString) != visited.end()) continue;
 
             visited.insert(newString);
             dfs(newString.substr(1), k);

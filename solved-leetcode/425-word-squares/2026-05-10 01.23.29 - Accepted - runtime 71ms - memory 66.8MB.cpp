@@ -14,8 +14,7 @@ public:
         return;
     }
 
-    void backtrack(vector<string>& word_square, int i,
-                   vector<vector<string>>& ans) {
+    void backtrack(vector<string>& word_square, int i, vector<vector<string>>& ans) {
         if (i == N) {
             ans.push_back(word_square);
             return;

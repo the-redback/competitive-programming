@@ -8,34 +8,33 @@ public:
         head->next = tail;
         tail->prev = head;
     }
-    
+
     int get(int key) {
-        if(mp.find(key) == mp.end())
-            return -1;
-        
-        DLL *node = mp[key];
+        if (mp.find(key) == mp.end()) return -1;
+
+        DLL* node = mp[key];
         remove(node);
         insert(node);
         return node->value;
     }
-    
+
     void put(int key, int value) {
-        if(mp.find(key) == mp.end()){
+        if (mp.find(key) == mp.end()) {
             // new key
-            DLL *node = new DLL(key, value);
+            DLL* node = new DLL(key, value);
             insert(node);
             mp[key] = node;
-        } else{
+        } else {
             // existing key
-            DLL *node = mp[key];
+            DLL* node = mp[key];
             node->value = value;
 
             remove(node);
             insert(node);
         }
 
-        if(mp.size() > cap){
-            DLL *node = tail->prev;
+        if (mp.size() > cap) {
+            DLL* node = tail->prev;
             remove(node);
             mp.erase(node->key);
             delete node;
@@ -43,27 +42,27 @@ public:
     }
 
 private:
-    struct DLL{
+    struct DLL {
         int key, value;
         DLL *prev, *next;
-        DLL(){
-            key=0, value=0;
+        DLL() {
+            key = 0, value = 0;
             prev = NULL, next = NULL;
         }
 
-        DLL(int k, int v){
-            key = k, value=v;
+        DLL(int k, int v) {
+            key = k, value = v;
             prev = NULL, next = NULL;
         }
     };
 
-    DLL *head = new DLL();
-    DLL *tail = new DLL();
+    DLL* head = new DLL();
+    DLL* tail = new DLL();
     int cap;
-    unordered_map<int, DLL*>mp;
+    unordered_map<int, DLL*> mp;
 
     // insert node at the begining of DLL
-    void insert(DLL *node){
+    void insert(DLL* node) {
         node->prev = head;
         node->next = head->next;
 
@@ -72,18 +71,17 @@ private:
     }
 
     // remove node from DLL
-    void remove(DLL *node){
-        DLL *prev = node->prev;
-        DLL *next = node->next;
+    void remove(DLL* node) {
+        DLL* prev = node->prev;
+        DLL* next = node->next;
 
         next->prev = prev;
         prev->next = next;
     }
-
 };
 
 static bool _foo = ios::sync_with_stdio(false);
-static ostream * _bar = cin.tie(NULL);
+static ostream* _bar = cin.tie(NULL);
 
 /**
  * Your LRUCache object will be instantiated and called as such:

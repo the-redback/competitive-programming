@@ -4,35 +4,28 @@ private:
     vector<int> rows;
     vector<int> cols;
     int diagonal, antidiagonal;
+
 public:
     TicTacToe(int n) {
-        N=n;
+        N = n;
         rows = vector<int>(n);
         cols = vector<int>(n);
         diagonal = 0;
         antidiagonal = 0;
     }
-    
+
     int move(int row, int col, int player) {
         int val = 1;
-        if(player == 2)
-            val = -1;
-        
-        rows[row]+=val;
-        cols[col]+=val;
-        if(row == col)
-            diagonal += val;
-        if(col == N-row-1)
-            antidiagonal += val;
+        if (player == 2) val = -1;
 
-        if(abs(rows[row]) == N ||
-           abs(cols[col]) == N ||
-           abs(diagonal) == N ||
-           abs(antidiagonal) == N)
-               return player;
+        rows[row] += val;
+        cols[col] += val;
+        if (row == col) diagonal += val;
+        if (col == N - row - 1) antidiagonal += val;
+
+        if (abs(rows[row]) == N || abs(cols[col]) == N || abs(diagonal) == N || abs(antidiagonal) == N) return player;
         return 0;
     }
-
 };
 
 /**
