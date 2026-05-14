@@ -83,19 +83,14 @@ int main() {
     Solution sol;
 
     vector<int> nums = {10, 9, 2, 5, 3, 7, 101, 18};
-
     int length = sol.lengthOfLIS(nums);
-
     cout << "LIS Length: " << length << '\n';
 
     vector<int> lis = sol.buildLIS(nums);
-
     cout << "LIS: ";
-
     for (int num : lis) {
         cout << num << " ";
     }
-
     cout << '\n';
 
     return 0;
