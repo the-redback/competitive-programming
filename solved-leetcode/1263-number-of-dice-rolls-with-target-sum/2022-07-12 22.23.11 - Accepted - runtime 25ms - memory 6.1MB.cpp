@@ -1,3 +1,7 @@
+#include <cstring>
+
+using namespace std;
+
 int mod = 1000000007;
 
 class Solution {

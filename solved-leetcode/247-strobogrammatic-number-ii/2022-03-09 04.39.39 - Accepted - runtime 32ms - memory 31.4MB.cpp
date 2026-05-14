@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     vector<string> findStrobogrammatic(int n) {

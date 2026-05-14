@@ -1,3 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
 class NumMatrix {
 public:
     NumMatrix(vector<vector<int>>& matrix) {

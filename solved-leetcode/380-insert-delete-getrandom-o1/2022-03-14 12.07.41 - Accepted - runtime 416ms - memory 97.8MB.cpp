@@ -1,3 +1,11 @@
+#include <iostream>
+#include <map>
+#include <algorithm>
+#include <tuple>
+#include <cstdlib>
+
+using namespace std;
+
 class RandomizedSet {
 public:
     RandomizedSet() {}

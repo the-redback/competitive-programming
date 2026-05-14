@@ -1,3 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     int largestComponentSize(vector<int>& nums) {

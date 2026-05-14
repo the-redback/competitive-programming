@@ -1,3 +1,6 @@
+
+using namespace std;
+#include <cstdint>
 class Solution {
 public:
     int hammingWeight(uint32_t n) {

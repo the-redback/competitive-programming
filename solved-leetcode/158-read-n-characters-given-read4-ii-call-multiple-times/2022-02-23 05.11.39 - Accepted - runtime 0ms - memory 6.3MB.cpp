@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int read4(char *buf);
+
+
 /**
  * The read4 API is defined in the parent class Reader4.
  *     int read4(char *buf4);

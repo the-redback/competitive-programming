@@ -1,3 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+#include <climits>
+
+using namespace std;
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) { return findBest(nums, 0, nums.size() - 1); }

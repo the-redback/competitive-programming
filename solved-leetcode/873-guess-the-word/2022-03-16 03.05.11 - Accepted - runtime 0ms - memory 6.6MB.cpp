@@ -1,3 +1,16 @@
+#include <string>
+#include <vector>
+#include <cstdlib>
+#include <cstddef>
+
+using namespace std;
+
+class Master {
+public:
+    int guess(string word);
+};
+
+
 /**
  * // This is the Master's API interface.
  * // You should not implement it, or speculate about its implementation

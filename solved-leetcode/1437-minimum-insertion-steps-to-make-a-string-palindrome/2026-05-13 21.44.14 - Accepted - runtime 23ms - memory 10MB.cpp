@@ -1,3 +1,9 @@
+#include <string>
+#include <algorithm>
+#include <cstring>
+
+using namespace std;
+
 class Solution {
 public:
     int dp[505][505];

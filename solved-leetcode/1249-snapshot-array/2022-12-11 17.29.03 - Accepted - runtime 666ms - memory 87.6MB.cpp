@@ -1,3 +1,10 @@
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <algorithm>
+
+using namespace std;
+
 class SnapshotArray {
     unordered_map<int, map<int, int> > mp;
     int snap_counter = 0;

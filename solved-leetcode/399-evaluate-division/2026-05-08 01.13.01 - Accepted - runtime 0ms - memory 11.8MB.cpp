@@ -1,3 +1,12 @@
+#include <string>
+#include <vector>
+#include <list>
+#include <unordered_map>
+#include <unordered_set>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,

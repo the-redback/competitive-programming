@@ -1,3 +1,9 @@
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
 class DetectSquares {
     int m[1001][1001] = {};
 

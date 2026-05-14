@@ -1,3 +1,9 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     // Transform S into s_prime.

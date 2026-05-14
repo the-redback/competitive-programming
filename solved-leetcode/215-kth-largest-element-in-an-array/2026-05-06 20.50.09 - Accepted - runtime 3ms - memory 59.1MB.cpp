@@ -1,3 +1,10 @@
+#include <vector>
+#include <algorithm>
+#include <utility>
+#include <cstdlib>
+
+using namespace std;
+
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {

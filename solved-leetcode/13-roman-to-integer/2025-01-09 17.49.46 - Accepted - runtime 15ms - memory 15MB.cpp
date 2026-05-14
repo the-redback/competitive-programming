@@ -1,3 +1,8 @@
+#include <string>
+#include <map>
+
+using namespace std;
+
 
 class Solution {
     map<string, int> mp;

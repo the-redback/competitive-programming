@@ -1,3 +1,9 @@
+#include <map>
+#include <algorithm>
+#include <cstdlib>
+
+using namespace std;
+
 class RandomizedSet {
 public:
     RandomizedSet() {}

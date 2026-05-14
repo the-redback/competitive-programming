@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     string longestPalindrome(string s) {

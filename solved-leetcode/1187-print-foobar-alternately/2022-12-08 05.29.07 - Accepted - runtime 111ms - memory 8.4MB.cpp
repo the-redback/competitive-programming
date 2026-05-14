@@ -1,3 +1,7 @@
+#include <functional>
+
+using namespace std;
+
 #include <semaphore.h>
 
 class FooBar {

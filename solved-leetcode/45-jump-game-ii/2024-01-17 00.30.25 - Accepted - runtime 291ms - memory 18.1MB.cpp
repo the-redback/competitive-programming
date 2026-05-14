@@ -1,3 +1,8 @@
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     int rec(vector<int>& nums, vector<int>& dp, int pos) {

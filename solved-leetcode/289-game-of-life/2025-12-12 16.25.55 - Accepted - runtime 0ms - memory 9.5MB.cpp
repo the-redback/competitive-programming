@@ -1,3 +1,8 @@
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
 class Solution {
 public:
     void gameOfLife(vector<vector<int>>& board) {

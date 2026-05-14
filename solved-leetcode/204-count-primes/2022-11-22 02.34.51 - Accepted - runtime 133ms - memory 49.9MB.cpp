@@ -1,3 +1,7 @@
+#include <vector>
+
+using namespace std;
+
 class Solution {
 private:
     int dp[5000001];

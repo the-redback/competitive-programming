@@ -1,3 +1,9 @@
+#include <vector>
+#include <utility>
+#include <cmath>
+
+using namespace std;
+
 class TicTacToe {
     int N;
     vector<int> rows;

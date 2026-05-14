@@ -1,3 +1,9 @@
+#include <iostream>
+#include <map>
+#include <tuple>
+
+using namespace std;
+
 class MyCalendarTwo {
 public:
     MyCalendarTwo() {}

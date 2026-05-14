@@ -1,3 +1,9 @@
+#include <vector>
+#include <map>
+#include <algorithm>
+
+using namespace std;
+
 #define delta 100000
 class Solution {
 public:

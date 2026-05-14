@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 class Solution {
     long long mod = 1000000007;
     long f[100010];

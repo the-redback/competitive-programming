@@ -1,3 +1,7 @@
+#include <set>
+
+using namespace std;
+
 class MedianFinder {
     multiset<int> m;
 

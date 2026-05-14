@@ -1,3 +1,10 @@
+#include <string>
+#include <map>
+#include <algorithm>
+#include <climits>
+
+using namespace std;
+
 class Solution {
 public:
     string minWindow(string s, string t) {

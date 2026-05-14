@@ -1,3 +1,8 @@
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 bool comp(vector<int>& u, vector<int>& v) { return u[1] < v[1]; }
 
 class Solution {

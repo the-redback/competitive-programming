@@ -1,3 +1,9 @@
+#include <string>
+#include <vector>
+#include <utility>
+
+using namespace std;
+
 class Solution {
 public:
     int expressiveWords(string s, vector<string>& words) {

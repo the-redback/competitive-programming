@@ -1,3 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+#include <cstring>
+#include <climits>
+
+using namespace std;
+
 class Solution {
 public:
     int splitArray(vector<int>& nums, int m) {

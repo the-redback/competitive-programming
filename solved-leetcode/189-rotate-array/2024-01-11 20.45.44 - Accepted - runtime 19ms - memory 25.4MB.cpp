@@ -1,3 +1,9 @@
+#include <vector>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
 class Solution {
     void rev(vector<int>& nums, int low, int high) {
         while (low < high) {

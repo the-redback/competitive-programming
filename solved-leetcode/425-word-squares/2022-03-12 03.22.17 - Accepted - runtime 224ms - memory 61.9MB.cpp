@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     vector<vector<string>> wordSquares(vector<string>& words) {

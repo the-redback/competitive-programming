@@ -1,3 +1,8 @@
+#include <string>
+#include <cstring>
+
+using namespace std;
+
 class Solution {
 public:
     int uniqueLetterString(string s) {

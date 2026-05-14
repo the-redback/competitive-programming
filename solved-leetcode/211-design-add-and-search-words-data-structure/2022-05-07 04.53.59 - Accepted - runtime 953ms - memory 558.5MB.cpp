@@ -1,3 +1,7 @@
+#include <string>
+
+using namespace std;
+
 class WordDictionary {
     struct node {
         bool endmark;

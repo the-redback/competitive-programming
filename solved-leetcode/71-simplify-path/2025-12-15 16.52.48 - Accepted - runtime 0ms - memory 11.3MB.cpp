@@ -1,3 +1,10 @@
+#include <sstream>
+#include <string>
+#include <vector>
+#include <stack>
+
+using namespace std;
+
 class Solution {
 public:
     string simplifyPath(string path) {

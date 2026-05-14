@@ -1,3 +1,18 @@
+#include <map>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
+class Robot {
+public:
+    bool move();
+    void turnLeft();
+    void turnRight();
+    void clean();
+};
+
+
 /**
  * // This is the robot's control interface.
  * // You should not implement it, or speculate about its implementation

@@ -1,3 +1,11 @@
+#include <sstream>
+#include <string>
+#include <vector>
+#include <list>
+#include <iomanip>
+
+using namespace std;
+
 class Codec {
 public:
     string int2str(int n) {

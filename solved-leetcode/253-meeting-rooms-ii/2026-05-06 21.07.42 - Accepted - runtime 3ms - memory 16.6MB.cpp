@@ -1,3 +1,10 @@
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include <functional>
+
+using namespace std;
+
 class Solution {
 public:
     static bool comp(vector<int>& v1, const vector<int>& v2) { return v1[0] < v2[0]; }

@@ -1,3 +1,8 @@
+
+using namespace std;
+
+bool isBadVersion(int version);
+
 // The API isBadVersion is defined for you.
 // bool isBadVersion(int version);
 

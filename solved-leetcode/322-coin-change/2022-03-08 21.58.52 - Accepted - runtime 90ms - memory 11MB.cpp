@@ -1,3 +1,9 @@
+#include <vector>
+#include <algorithm>
+#include <cstring>
+
+using namespace std;
+
 #define inf 10000007
 
 class Solution {

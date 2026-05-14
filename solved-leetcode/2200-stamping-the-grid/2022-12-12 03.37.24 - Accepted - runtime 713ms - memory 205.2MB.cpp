@@ -1,3 +1,8 @@
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
     void preCal(vector<vector<int>>& v, int m, int n, vector<vector<int>>& p) {
         for (int i = 0; i < m; i++) {

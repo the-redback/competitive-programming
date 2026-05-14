@@ -1,3 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <tuple>
+#include <cstring>
+
+using namespace std;
+
 class Solution {
 public:
     vector<int> countSmaller(vector<int>& nums) {

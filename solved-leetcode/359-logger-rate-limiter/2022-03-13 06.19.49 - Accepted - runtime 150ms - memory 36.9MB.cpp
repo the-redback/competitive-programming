@@ -1,3 +1,11 @@
+#include <string>
+#include <deque>
+#include <map>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
 class Logger {
 public:
     Logger() {}

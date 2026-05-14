@@ -1,3 +1,7 @@
+#include <vector>
+
+using namespace std;
+
 class NumArray {
 private:
     vector<int> tree;

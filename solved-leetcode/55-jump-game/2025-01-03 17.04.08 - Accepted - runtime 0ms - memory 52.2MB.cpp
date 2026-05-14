@@ -1,3 +1,10 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     bool canJump(vector<int>& nums) {

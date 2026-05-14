@@ -1,3 +1,9 @@
+#include <unordered_map>
+#include <stack>
+#include <algorithm>
+
+using namespace std;
+
 class FreqStack {
     unordered_map<int, int> freq;
     unordered_map<int, stack<int>> m;

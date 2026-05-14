@@ -1,3 +1,23 @@
+#include <iostream>
+#include <list>
+#include <tuple>
+
+using namespace std;
+
+class Node {
+public:
+    int val;
+    vector<Node*> children;
+    Node* left;
+    Node* right;
+    Node* next;
+    Node* random;
+    Node() : val(0), left(nullptr), right(nullptr), next(nullptr), random(nullptr) {}
+    Node(int _val) : val(_val), left(nullptr), right(nullptr), next(nullptr), random(nullptr) {}
+    Node(int _val, vector<Node*> _children) : val(_val), children(_children), left(nullptr), right(nullptr), next(nullptr), random(nullptr) {}
+};
+
+
 /*
 // Definition for a Node.
 class Node {

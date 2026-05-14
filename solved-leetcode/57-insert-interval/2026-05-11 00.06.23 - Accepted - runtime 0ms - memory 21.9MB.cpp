@@ -1,3 +1,8 @@
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 // Case 1;
 // ------- |
 //         | +++++++ (new interval {low, high})

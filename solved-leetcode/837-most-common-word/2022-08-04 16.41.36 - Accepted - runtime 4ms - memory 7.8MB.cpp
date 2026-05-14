@@ -1,3 +1,12 @@
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
+#include <algorithm>
+#include <cctype>
+
+using namespace std;
+
 class Solution {
 public:
     string mostCommonWord(string paragraph, vector<string>& banned) {

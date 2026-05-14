@@ -1,3 +1,7 @@
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     int uniquePaths(int m, int n) { return nCr(m + n - 2, m - 1); }

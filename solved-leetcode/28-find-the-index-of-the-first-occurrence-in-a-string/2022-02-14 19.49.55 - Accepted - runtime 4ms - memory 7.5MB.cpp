@@ -1,3 +1,8 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
 class Solution {
 public:
     void failure(string p, vector<int>& fail) {

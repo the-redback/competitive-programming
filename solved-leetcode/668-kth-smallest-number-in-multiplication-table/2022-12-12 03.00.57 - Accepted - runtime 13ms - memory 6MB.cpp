@@ -1,3 +1,7 @@
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
     bool isEnough(int x, int m, int n, int k) {
         int count = 0;

@@ -1,3 +1,9 @@
+#include <string>
+#include <map>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     string crackSafe(int n, int k) {

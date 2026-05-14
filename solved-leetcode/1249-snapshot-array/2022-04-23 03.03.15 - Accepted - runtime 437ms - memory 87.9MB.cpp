@@ -1,3 +1,9 @@
+#include <map>
+#include <set>
+#include <algorithm>
+
+using namespace std;
+
 class SnapshotArray {
     map<int, map<int, int>> mp;
     int cur_snap = 0;

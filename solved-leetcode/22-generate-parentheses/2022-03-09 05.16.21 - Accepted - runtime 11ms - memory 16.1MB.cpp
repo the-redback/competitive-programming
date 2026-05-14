@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     vector<string> generateParenthesis(int n) {

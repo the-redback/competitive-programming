@@ -1,3 +1,12 @@
+#include <vector>
+#include <set>
+#include <queue>
+#include <algorithm>
+#include <utility>
+#include <climits>
+
+using namespace std;
+
 class Solution {
 public:
     double mincostToHireWorkers(vector<int>& quality, vector<int>& wage, int k) {

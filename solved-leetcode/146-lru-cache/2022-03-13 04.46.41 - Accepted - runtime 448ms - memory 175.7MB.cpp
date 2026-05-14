@@ -1,3 +1,9 @@
+#include <list>
+#include <unordered_map>
+#include <algorithm>
+
+using namespace std;
+
 class LRUCache {
 public:
     LRUCache(int capacity) { cap = capacity; }

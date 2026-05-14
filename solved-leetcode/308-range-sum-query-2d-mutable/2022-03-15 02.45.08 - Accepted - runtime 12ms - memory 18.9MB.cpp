@@ -1,3 +1,10 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+#include <cstring>
+
+using namespace std;
+
 class NumMatrix {
 public:
     NumMatrix(vector<vector<int>>& matrix) {

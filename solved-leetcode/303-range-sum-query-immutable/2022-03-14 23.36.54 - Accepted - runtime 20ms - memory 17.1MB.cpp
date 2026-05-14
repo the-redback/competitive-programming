@@ -1,3 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+
+using namespace std;
+
 class NumArray {
     vector<int> pre;
 

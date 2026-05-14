@@ -1,3 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+#include <cstring>
+
+using namespace std;
+
 class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {

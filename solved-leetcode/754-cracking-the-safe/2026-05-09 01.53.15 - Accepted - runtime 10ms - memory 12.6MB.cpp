@@ -1,3 +1,9 @@
+#include <string>
+#include <unordered_set>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     unordered_set<string> visited;

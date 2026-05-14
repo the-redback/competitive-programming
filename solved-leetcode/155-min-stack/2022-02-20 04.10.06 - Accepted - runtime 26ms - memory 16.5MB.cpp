@@ -1,3 +1,8 @@
+#include <stack>
+#include <algorithm>
+
+using namespace std;
+
 class MinStack {
 public:
     MinStack() {}

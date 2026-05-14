@@ -1,3 +1,11 @@
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
     vector<string> findAllRecipes(vector<string>& recipes, vector<vector<string>>& ingredients,

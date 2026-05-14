@@ -1,3 +1,8 @@
+#include <vector>
+#include <stack>
+
+using namespace std;
+
 int mod = 1000000007;
 
 class Solution {

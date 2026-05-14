@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <algorithm>
+#include <tuple>
+
+using namespace std;
+
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {

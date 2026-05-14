@@ -1,3 +1,7 @@
+#include <cstring>
+
+using namespace std;
+
 class Solution {
 public:
     int skip[10][10];

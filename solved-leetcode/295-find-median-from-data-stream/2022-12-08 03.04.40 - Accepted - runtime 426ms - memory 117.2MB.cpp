@@ -1,3 +1,9 @@
+#include <vector>
+#include <queue>
+#include <functional>
+
+using namespace std;
+
 class MedianFinder {
     priority_queue<int> low;                              // max heap
     priority_queue<int, vector<int>, greater<int>> high;  // min heap

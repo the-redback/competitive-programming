@@ -1,3 +1,9 @@
+#include <string>
+#include <climits>
+#include <cctype>
+
+using namespace std;
+
 enum State { q0, q1, q2, qd };
 
 class Solution {

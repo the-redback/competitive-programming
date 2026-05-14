@@ -1,3 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+
+using namespace std;
+
 class NumMatrix {
     vector<vector<int>> pre;
 

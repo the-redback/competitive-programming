@@ -1,3 +1,9 @@
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
 class Solution {
 public:
     unordered_map<char, char> sub_numbers = {{'0', '0'}, {'1', '1'}, {'6', '9'}, {'8', '8'}, {'9', '6'}};

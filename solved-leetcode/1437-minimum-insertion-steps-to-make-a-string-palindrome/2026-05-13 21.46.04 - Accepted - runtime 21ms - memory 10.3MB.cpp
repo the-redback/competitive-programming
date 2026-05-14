@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <tuple>
+#include <cstring>
+
+using namespace std;
+
 static const auto fastIO = []() {
     ios::sync_with_stdio(false);
     cin.tie(0);

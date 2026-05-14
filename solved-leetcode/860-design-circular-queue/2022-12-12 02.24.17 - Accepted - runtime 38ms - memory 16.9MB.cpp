@@ -1,3 +1,7 @@
+#include <vector>
+
+using namespace std;
+
 class MyCircularQueue {
     vector<int> q;
     int head;
