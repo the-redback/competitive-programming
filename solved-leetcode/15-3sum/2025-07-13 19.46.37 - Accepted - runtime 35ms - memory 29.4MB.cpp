@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>>result;
+        for(int i=0; i<nums.size() && nums[i]<=0; i++){
+            if(i==0 || nums[i]!=nums[i-1])
+                twoSum(nums, result, i);
+        }
+        return result;
+    }
+    
+    void twoSum(vector<int> &nums, vector<vector<int>> &result, int k){
+        for(int i=k+1, j=nums.size()-1; i<j; ){
+            int sum=nums[i]+nums[j]+nums[k];
+            if(sum==0){
+                result.push_back({nums[i], nums[k], nums[j]});
+                i++;
+                j--;
+                while(nums[i]==nums[i-1] && i<j)
+                    i++;
+            } else if(sum < 0){
+                i++;
+            } else{
+                j--;
+            }
+        }
+    }
+};
