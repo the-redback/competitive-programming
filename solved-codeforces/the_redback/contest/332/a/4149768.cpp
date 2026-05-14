@@ -1,24 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-main()
-{
+main() {
     char a[2010];
-    int sum,i,j,k,l,m,n;
-    scanf("%d",&n);
+    int sum, i, j, k, l, m, n;
+    scanf("%d", &n);
     getchar();
     gets(a);
-    l=strlen(a);
-    sum=0;
-    for(i=n;i<l;i+=n)
-    {
-        for(j=i-2;j<i;j++)
-        {
-            if(a[j-1]!=a[j])
-                break;
+    l = strlen(a);
+    sum = 0;
+    for (i = n; i < l; i += n) {
+        for (j = i - 2; j < i; j++) {
+            if (a[j - 1] != a[j]) break;
         }
-        if(i==j)
-            sum++;
+        if (i == j) sum++;
     }
-    printf("%d\n",sum);
+    printf("%d\n", sum);
     return 0;
 }

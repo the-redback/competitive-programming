@@ -57,8 +57,7 @@ void solve() {
     cin >> n >> m;
     ll sum = (m + n) / 3;
 
-    if (sum > m || sum > n)
-        sum = min(m, n);
+    if (sum > m || sum > n) sum = min(m, n);
 
     cout << sum << "\n";
     return;

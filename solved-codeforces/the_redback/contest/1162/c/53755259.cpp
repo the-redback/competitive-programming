@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -33,19 +32,19 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 
 int L[NN], R[NN], a[NN];
 
-
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 #ifdef redback
     freopen("input2", "r", stdin);
-    //freopen("output.in", "w", stdout);
-    //test by input1, input2  files for codeforces
+    // freopen("output.in", "w", stdout);
+    // test by input1, input2  files for codeforces
 #endif
 
     ll t = 1, tc;
-    //cin >> tc ;
+    // cin >> tc ;
     ll n, m;
-    while (cin >> n >> m ) {
+    while (cin >> n >> m) {
         ll i, j, k;
         mem(L, -1);
         mem(R, -1);
@@ -55,10 +54,10 @@ int main() {
             cin >> k;
             a[k] = 1;
 
-            if ( a[k - 1] != -1) {
+            if (a[k - 1] != -1) {
                 L[k] = 1;
             }
-            if ( a[k + 1] != -1) {
+            if (a[k + 1] != -1) {
                 R[k] = 1;
             }
         }
@@ -66,14 +65,12 @@ int main() {
         ll sum = 0;
 
         for (int i = 1; i <= n; ++i) {
-            debug(a[i],L[i],R[i])
-            if (a[i] == -1) sum++;
-            if (i!=1 && L[i] == -1) sum++;
-            if (i!=n && R[i] == -1) sum++;
+            debug(a[i], L[i], R[i]) if (a[i] == -1) sum++;
+            if (i != 1 && L[i] == -1) sum++;
+            if (i != n && R[i] == -1) sum++;
         }
 
         cout << sum << "\n";
-
     }
     return 0;
 }

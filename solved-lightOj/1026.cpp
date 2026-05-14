@@ -10,95 +10,80 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mp make_pair
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1e9
-#define eps 1e-9
-#define NN 10010
+#define mp        make_pair
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define NN        10010
 
-vector<int>e[NN];
-vector< pair<int,int> >bridge;
+vector<int> e[NN];
+vector<pair<int, int> > bridge;
 int dis[NN];
 int par[NN];
 int low[NN];
 bool color[NN];
 int Time;
 
-int dfs(int u)
-{
-    low[u]=dis[u]=++Time;
-    color[u]=true;
+int dfs(int u) {
+    low[u] = dis[u] = ++Time;
+    color[u] = true;
     int i;
-    for(i=0; i<e[u].size(); i++)
-    {
-        int v=e[u][i];
-        if(!color[v])
-        {
-            par[v]=u;
+    for (i = 0; i < e[u].size(); i++) {
+        int v = e[u][i];
+        if (!color[v]) {
+            par[v] = u;
             dfs(v);
-            low[u]=min(low[u],low[v]);
-            if(dis[u]<low[v])
-                bridge.pb(mp(min(u,v),max(u,v)));
-        }
-        else if(v!=par[u])
-            low[u]=min(low[u],dis[v]);
+            low[u] = min(low[u], low[v]);
+            if (dis[u] < low[v]) bridge.pb(mp(min(u, v), max(u, v)));
+        } else if (v != par[u])
+            low[u] = min(low[u], dis[v]);
     }
     return 0;
 }
 
-bool comp(pair<int,int>a , pair<int,int>b )
-{
-    if(a.first==b.first)
-        return a.second<b.second;
-    return a.first<b.first;
+bool comp(pair<int, int> a, pair<int, int> b) {
+    if (a.first == b.first) return a.second < b.second;
+    return a.first < b.first;
 }
 
-int articulation_Point(int n)
-{
-    mem(dis,0);
-    mem(par,-1);
-    mem(low,0);
-    mem(color,0);
-    Time=0;
+int articulation_Point(int n) {
+    mem(dis, 0);
+    mem(par, -1);
+    mem(low, 0);
+    mem(color, 0);
+    Time = 0;
     bridge.clear();
 
-    for(int i=0; i<n; i++)
-        if(!color[i])
-            dfs(i);
+    for (int i = 0; i < n; i++)
+        if (!color[i]) dfs(i);
 
-    int ans=bridge.size();
-    printf("%d critical links\n",ans);
-    sort(all(bridge),comp);
-    for(int i=0; i<bridge.size(); i++)
-        printf("%d - %d\n",bridge[i].first,bridge[i].second);
+    int ans = bridge.size();
+    printf("%d critical links\n", ans);
+    sort(all(bridge), comp);
+    for (int i = 0; i < bridge.size(); i++) printf("%d - %d\n", bridge[i].first, bridge[i].second);
     return 0;
 }
 
-main()
-{
-    //ios_base::sync_with_stdio(false);
-    int t=1,tc;
-    cin>>tc;          //Test Case
-    int i,j,k,l,m,r,n;
-    int node,edge;
-    while(tc--)
-    {
-        scanf("%d",&node);
-        for(i=0; i<node; i++)
-        {
-            scanf("%d (%d)",&k,&r);
-            while(r--)
-            {
-                scanf("%d",&l);
+main() {
+    // ios_base::sync_with_stdio(false);
+    int t = 1, tc;
+    cin >> tc;  // Test Case
+    int i, j, k, l, m, r, n;
+    int node, edge;
+    while (tc--) {
+        scanf("%d", &node);
+        for (i = 0; i < node; i++) {
+            scanf("%d (%d)", &k, &r);
+            while (r--) {
+                scanf("%d", &l);
                 e[k].pb(l);
             }
         }
-        printf("Case %d:\n",t++);
+        printf("Case %d:\n", t++);
         articulation_Point(node);
-        for(i=0; i<=node; i++)
-            e[i].clear();
+        for (i = 0; i <= node; i++) e[i].clear();
     }
     return 0;
 }

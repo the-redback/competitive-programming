@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -34,17 +33,18 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 ll a[60][60], b[60][60];
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 #ifdef redback
     freopen("input1", "r", stdin);
-    //freopen("output.in", "w", stdout);
-    //test by input1, input2  files for codeforces
+    // freopen("output.in", "w", stdout);
+    // test by input1, input2  files for codeforces
 #endif
 
     ll t = 1, tc;
-    //cin >> tc ;
+    // cin >> tc ;
     ll n, m;
-    while (cin >> n >> m ) {
+    while (cin >> n >> m) {
         ll i, j, k;
 
         for (int i = 0; i < n; ++i) {
@@ -61,7 +61,6 @@ int main() {
 
         bool result = true;
 
-
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
                 ll x = min(a[i][j], b[i][j]);
@@ -73,7 +72,8 @@ int main() {
 
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
-                if ((i != 0 && a[i][j] <= a[i - 1][j] ) || (j != 0 && a[i][j] <= a[i][j - 1] ) || ( i != 0 && b[i][j] <= b[i - 1][j]) || (j != 0 && b[i][j] <= b[i][j - 1]) ) {
+                if ((i != 0 && a[i][j] <= a[i - 1][j]) || (j != 0 && a[i][j] <= a[i][j - 1]) ||
+                    (i != 0 && b[i][j] <= b[i - 1][j]) || (j != 0 && b[i][j] <= b[i][j - 1])) {
                     result = false;
                     break;
                 }

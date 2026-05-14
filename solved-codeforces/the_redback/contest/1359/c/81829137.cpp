@@ -52,16 +52,16 @@ void _print_out(const char* name, T a[], int n) {
 
 double chk(ll n, ll h, ll c) {
     double sum;
-    ll     k = (n + 1ll) / 2ll;
-    ll     l = n - k;
+    ll k = (n + 1ll) / 2ll;
+    ll l = n - k;
     sum = ((k * h) + (c * l)) / (1.0 * n);
     dbg(sum, k, l);
     return sum;
 }
 
 void solve() {
-    ll     i, j, k;
-    ll     n, m;
+    ll i, j, k;
+    ll n, m;
     double h, c, t;
     cin >> h >> c >> t;
 
@@ -99,7 +99,7 @@ void solve() {
     }
 
     double ans = inf;
-    ll     cnt = 0;
+    ll cnt = 0;
 
     for (i = low; i <= high; i++) {
         dbg(i);

@@ -97,8 +97,7 @@ void solve(ll n) {
     ll sec = prev;
     while (sec == prev) {
         k = 1 + rand() % n;
-        if (k == x || k == y)
-            continue;
+        if (k == x || k == y) continue;
         cout << "? " << x << " " << k << "\n";
         cout.flush();
 
@@ -126,8 +125,7 @@ void solve(ll n) {
     vector<ll> v(n + 1);
 
     for (i = 1; i <= n; i++) {
-        if (i == z)
-            continue;
+        if (i == z) continue;
         cout << "? " << z << " " << i << "\n";
         cout.flush();
 

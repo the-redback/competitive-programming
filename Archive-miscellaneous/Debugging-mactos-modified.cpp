@@ -12,7 +12,7 @@ string to_string(const pair<T, V>& p) {
 }
 template <typename T>
 string to_string(const T& a) {
-    int    f = 0;
+    int f = 0;
     string r;
     for (auto& i : a) r += (f++ ? " " : "") + to_string(i);
     return '{' + r + '}';
@@ -33,20 +33,20 @@ void _print(T t, V... v) {
 #endif
 
 int main() {
-    int               n = 5;
-    vector<int>       v = {1, 2, 3, 4};
+    int n = 5;
+    vector<int> v = {1, 2, 3, 4};
     pair<int, string> p = {1, "codeforces"};
     debug(n, v, p);
 
-    pair<int, int>             pa = {1, 2};
-    pair<string, bool>         pb = {"abcd", false};
-    pair<char, float>          pc = {'x', 0.5};
-    string                     pd = "This is a string";
+    pair<int, int> pa = {1, 2};
+    pair<string, bool> pb = {"abcd", false};
+    pair<char, float> pc = {'x', 0.5};
+    string pd = "This is a string";
     pair<int, pair<int, int> > pe = {1, {2, 3}};
     debug(pa, pb, pc, pd, pe);
 
-    vector<int>      va = {1, 2, 3, 4};
-    set<int>         vb = {1, 2, 2, 3, 3, 4, 4, 5};
+    vector<int> va = {1, 2, 3, 4};
+    set<int> vb = {1, 2, 2, 3, 3, 4, 4, 5};
     map<string, int> vc;
     vc["string 1"] = 1;
     vc["string 2"] = 2;

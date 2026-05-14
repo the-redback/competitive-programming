@@ -1,12 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
 
-main()
-{
-    int a,b,c;
-    while(scanf("%d%d",&a,&b)!=EOF)
-    {
-        c=a^b;
-        printf("%d\n",c);
+main() {
+    int a, b, c;
+    while (scanf("%d%d", &a, &b) != EOF) {
+        c = a ^ b;
+        printf("%d\n", c);
     }
     return 0;
 }

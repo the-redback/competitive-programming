@@ -45,7 +45,7 @@ void _print_out(const char* name, T a[], int n) {
 /* -------------------------------------------------------------------------- */
 
 string ans;
-ll     N, M;
+ll N, M;
 
 vector<string> str(20);
 
@@ -89,7 +89,7 @@ void solve(ll t) {
     for (i = 0; i < m; i++) {
         for (j = 'a'; j <= 'z'; j++) {
             string s = str[0];
-            s[i]     = j;
+            s[i] = j;
             if (check(s)) {
                 cout << s << "\n";
                 return;

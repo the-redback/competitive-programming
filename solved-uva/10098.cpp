@@ -10,34 +10,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define inf 10000000
-#define mem(a,b) memset(a,b,sizeof(a))
-#define NN 100010
+#define inf       10000000
+#define mem(a, b) memset(a, b, sizeof(a))
+#define NN        100010
 char a[100];
 string s;
-main()
-{
-    //freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
-    //ios_base::sync_with_stdio(false);
-    int i,j,k,l,n,r,c,u,v,w;
-    int tc,t=1,x=-1;
-    scanf("%d",&tc);
-    while(tc--)
-    {
-        scanf("%s",&a);
-        l=strlen(a);
-        sort(a,a+l);
-        do
-        {
+main() {
+    // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
+    // ios_base::sync_with_stdio(false);
+    int i, j, k, l, n, r, c, u, v, w;
+    int tc, t = 1, x = -1;
+    scanf("%d", &tc);
+    while (tc--) {
+        scanf("%s", &a);
+        l = strlen(a);
+        sort(a, a + l);
+        do {
             puts(a);
-        }while(next_permutation(a,a+l));
+        } while (next_permutation(a, a + l));
         puts("");
     }
     return 0;
 }
-
-
-
-
-
-

@@ -37,7 +37,7 @@ void solve() {
     ll x, y;
     cin >> n >> x >> y;
 
-    vector<ll> v[n+2], ans(n), vis(n+2), a(n);
+    vector<ll> v[n + 2], ans(n), vis(n + 2), a(n);
     priority_queue<pair<int, int>> pq;
 
     for (i = 0; i < n; i++) {

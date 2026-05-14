@@ -32,11 +32,11 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
-int         color[NN];
-vector<int> arr;              // topological sorted node
-vector<int> Graph[NN];        // Graph Before SCC
-vector<int> transGraph[NN];   // Transpose Graph Before SCC
-int         id[NN];           // Id of Nodes After SCC
+int color[NN];
+vector<int> arr;             // topological sorted node
+vector<int> Graph[NN];       // Graph Before SCC
+vector<int> transGraph[NN];  // Transpose Graph Before SCC
+int id[NN];                  // Id of Nodes After SCC
 // in a SCC node
 
 void dfs_1st(int u) {
@@ -49,7 +49,7 @@ void dfs_1st(int u) {
 
 void dfs_2nd(int u, int k) {
     color[u] = true;
-    id[u]    = k;
+    id[u] = k;
 
     for (int i = 0; i < transGraph[u].size(); i++) {
         if (!color[transGraph[u][i]]) dfs_2nd(transGraph[u][i], k);
@@ -61,7 +61,7 @@ int scc(int n) {
     mem(color, 0);
     int i, j, k, l;
 
-    for (i = 1; i <= n; i++)   // Topological Sort
+    for (i = 1; i <= n; i++)  // Topological Sort
         if (color[i] == 0) dfs_1st(i);
 
     reverse(all(arr));
@@ -70,14 +70,14 @@ int scc(int n) {
     mem(color, 0);
     k = 0;
 
-    for (i = 0; i < arr.size(); i++) {   // Identify SCC
+    for (i = 0; i < arr.size(); i++) {  // Identify SCC
         if (!color[arr[i]]) {
             dfs_2nd(arr[i], k + 1);
             // in SCC node
             k++;
         }
     }
-    return k;   // Number of SCC node.
+    return k;  // Number of SCC node.
 }
 
 void solve(ll n) {
@@ -112,7 +112,7 @@ void solve(ll n) {
         k = id[i + 1];
         if (mscc[k] > arr[i]) {
             mscc[k] = arr[i];
-            cnt[k]  = 1;
+            cnt[k] = 1;
         } else if (mscc[k] == arr[i]) {
             cnt[k]++;
         }

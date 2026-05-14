@@ -59,10 +59,8 @@ void solve() {
     for (i = 0; i < n; i++) {
         cin >> j;
         j = k - (j % k);
-        if (j == k)
-            continue;
-        if (mp.find(j) == mp.end())
-            mp[j] = 0;
+        if (j == k) continue;
+        if (mp.find(j) == mp.end()) mp[j] = 0;
         mp[j]++;
     }
 

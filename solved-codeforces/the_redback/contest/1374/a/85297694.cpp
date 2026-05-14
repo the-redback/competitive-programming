@@ -58,8 +58,7 @@ void solve() {
     cin >> x >> y >> n;
     k = n / x;
 
-    if (k * x + y > n)
-        k--;
+    if (k * x + y > n) k--;
 
     cout << k * x + y << "\n";
     return;

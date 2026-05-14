@@ -110,11 +110,11 @@ void solve() {
 
     for (i = 0; i < n; i++) {
         for (j = 0; j < m; j++) {
-            dbg(i,j,a[i][j],vis[i][j])
-            if (a[i][j] == 'G' && vis[i][j] != 1) {
+            dbg(i, j, a[i][j], vis[i][j]) if (a[i][j] == 'G' && vis[i][j] != 1) {
                 cout << "No\n";
                 return;
-            } else if (a[i][j] == 'B' && vis[i][j] == 1) {
+            }
+            else if (a[i][j] == 'B' && vis[i][j] == 1) {
                 cout << "No\n";
                 return;
             }

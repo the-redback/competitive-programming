@@ -14,52 +14,45 @@ bool taken[60][60][60];
 char a[100];
 char b[100];
 char c[100];
-int N,M,L;
-int check(int x,int y,int z)
-{
-    int sum=max(x,y);
-    sum=max(sum,z);
+int N, M, L;
+int check(int x, int y, int z) {
+    int sum = max(x, y);
+    sum = max(sum, z);
     return sum;
 }
-int go(int i,int j,int k)
-{
-    if(i<0 || j<0 || k<0)
-    {
+int go(int i, int j, int k) {
+    if (i < 0 || j < 0 || k < 0) {
         return 0;
     }
-    int &t=dp[i][j][k];
-    bool &bl=taken[i][j][k];
-    if(bl)
-        return t;
-    if(a[i]==b[j] && a[i]==c[k])
-        t=1+go(i-1,j-1,k-1);
-    else
-    {
-        t=check(go(i-1,j,k),go(i,j-1,k),go(i,j,k-1));
+    int& t = dp[i][j][k];
+    bool& bl = taken[i][j][k];
+    if (bl) return t;
+    if (a[i] == b[j] && a[i] == c[k])
+        t = 1 + go(i - 1, j - 1, k - 1);
+    else {
+        t = check(go(i - 1, j, k), go(i, j - 1, k), go(i, j, k - 1));
     }
-    bl=1;
+    bl = 1;
     return t;
 }
 
-main()
-{
-    int t=1,tc;
-    scanf("%d",&tc);
+main() {
+    int t = 1, tc;
+    scanf("%d", &tc);
     char aa[100];
     char bb[100];
     char cc[100];
-    while(tc--)
-    {
-        int sum=inf;
-        scanf("%s",a);
-        scanf("%s",b);
-        scanf("%s",c);
-        N=strlen(a);
-        M=strlen(b);
-        L=strlen(c);
-        memset(taken,0,sizeof(taken));
-        sum=go(N-1,M-1,L-1);
-        printf("Case %d: %d\n",t++,sum);
+    while (tc--) {
+        int sum = inf;
+        scanf("%s", a);
+        scanf("%s", b);
+        scanf("%s", c);
+        N = strlen(a);
+        M = strlen(b);
+        L = strlen(c);
+        memset(taken, 0, sizeof(taken));
+        sum = go(N - 1, M - 1, L - 1);
+        printf("Case %d: %d\n", t++, sum);
     }
     return 0;
 }

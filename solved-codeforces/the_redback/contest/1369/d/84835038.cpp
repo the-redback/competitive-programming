@@ -68,8 +68,7 @@ void pre() {
     pr[1] = 0;
     for (ll i = 2; i < n; i++) {
         pr[i] = (pr[i - 1] + 2 * pr[i - 2]) % mod;
-        if (i % 3 == 0)
-            pr[i] = (pr[i] + 1) % mod;
+        if (i % 3 == 0) pr[i] = (pr[i] + 1) % mod;
     }
 }
 

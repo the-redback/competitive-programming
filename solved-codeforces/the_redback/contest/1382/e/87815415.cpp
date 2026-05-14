@@ -46,7 +46,7 @@ void solve() {
         v[k].pb(i);
         vis[k]++;
     }
-    
+
     ll in = 0, sum = n;
     for (i = 1; i <= n + 1; i++) {
         if (vis[i] > 0) {

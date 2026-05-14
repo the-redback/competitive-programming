@@ -31,7 +31,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 void solve(ll tc) {
-    ll     i, j, k, n;
+    ll i, j, k, n;
     string str;
     cin >> str;
     bool f1 = true;

@@ -1,23 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main()
-{
-    int t,n,i,j,count=1;
+main() {
+    int t, n, i, j, count = 1;
     int a[100001];
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
-    for(i=n-2;i>=0;i--)
-    {
-        if(a[i]>a[i+1])
+    for (i = n - 2; i >= 0; i--) {
+        if (a[i] > a[i + 1])
             break;
         else
-        count++;
+            count++;
     }
-    count=n-count;
-    printf("%d\n",count);
+    count = n - count;
+    printf("%d\n", count);
     return 0;
 }

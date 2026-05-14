@@ -53,7 +53,7 @@ void pre() {
     a[0] = 0;
     for (i = 1; a[i - 1] < 1000000000; i++) {
         ll sum = (i * (i + 1)) / 2ll;
-        a[i]   = (2ll * sum) + sum - i;
+        a[i] = (2ll * sum) + sum - i;
     }
     N = i;
     return;

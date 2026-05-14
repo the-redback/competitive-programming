@@ -10,91 +10,75 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ppb pop_back
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1000000000
-#define eps 1e-9
-#define NN 1010
+#define ppb       pop_back
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1000000000
+#define eps       1e-9
+#define NN        1010
 
-vector<int>e[NN];
-vector<int>te[NN];
-map<string,int>mp;
+vector<int> e[NN];
+vector<int> te[NN];
+map<string, int> mp;
 int color[NN];
-vector<int>arr;
+vector<int> arr;
 
-void dfs1(int u)
-{
-    color[u]=1;
-    for(int i=0; i<e[u].size(); i++)
-    {
-        int v=e[u][i];
-        if(!color[v])
-            dfs1(v);
+void dfs1(int u) {
+    color[u] = 1;
+    for (int i = 0; i < e[u].size(); i++) {
+        int v = e[u][i];
+        if (!color[v]) dfs1(v);
     }
     arr.pb(u);
     return;
 }
 
-void dfs2(int u,int flag)
-{
-    color[u]=flag;
-    for(int i=0; i<te[u].size(); i++)
-    {
-        int v=te[u][i];
-        if(!color[v])
-            dfs2(v,flag);
+void dfs2(int u, int flag) {
+    color[u] = flag;
+    for (int i = 0; i < te[u].size(); i++) {
+        int v = te[u][i];
+        if (!color[v]) dfs2(v, flag);
     }
     return;
 }
 
-int scc(int n)
-{
+int scc(int n) {
     int i;
-    mem(color,0);
-    for(i=1; i<=n; i++)
-    {
-        if(!color[i])
-            dfs1(i);
+    mem(color, 0);
+    for (i = 1; i <= n; i++) {
+        if (!color[i]) dfs1(i);
     }
-    mem(color,0);
-    int cnt=0;
-    int r=0;
+    mem(color, 0);
+    int cnt = 0;
+    int r = 0;
     reverse(all(arr));
-    for(i=0; i<arr.size(); i++)
-    {
-        if(!color[arr[i]])
-        {
-            dfs2(arr[i],++r);
+    for (i = 0; i < arr.size(); i++) {
+        if (!color[arr[i]]) {
+            dfs2(arr[i], ++r);
             cnt++;
         }
     }
     return cnt;
 }
-string s,ss;
+string s, ss;
 char a[100];
 
-main()
-{
-    //ios_base::sync_with_stdio(false);
-    int t=0,tc;
-    int n,m,i,j,l,k;
-    //cin>>tc;
-    while(cin>>n>>m)
-    {
-        if(n==0 && m==0)
-            return 0;
+main() {
+    // ios_base::sync_with_stdio(false);
+    int t = 0, tc;
+    int n, m, i, j, l, k;
+    // cin>>tc;
+    while (cin >> n >> m) {
+        if (n == 0 && m == 0) return 0;
         getchar();
-        int r=1;
-        for(i=0; i<n; i++)
-        {
+        int r = 1;
+        for (i = 0; i < n; i++) {
             gets(a);
             s.assign(a);
-            mp[s]=r++;
+            mp[s] = r++;
         }
-        for(i=0; i<m; i++)
-        {
+        for (i = 0; i < m; i++) {
             gets(a);
             s.assign(a);
             gets(a);
@@ -103,10 +87,9 @@ main()
             te[mp[ss]].pb(mp[s]);
         }
 
-        int cnt=scc(n);
-        printf("%d\n",cnt);
-        for(i=0; i<=n; i++)
-            e[i].clear(),te[i].clear();
+        int cnt = scc(n);
+        printf("%d\n", cnt);
+        for (i = 0; i <= n; i++) e[i].clear(), te[i].clear();
         arr.clear();
         mp.clear();
     }

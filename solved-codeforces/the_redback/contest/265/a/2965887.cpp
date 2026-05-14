@@ -1,20 +1,16 @@
 #include <bits/stdc++.h>
 
-
-main()
-{
-    char a[51],b[51];
-    int i,j=0,k;
+main() {
+    char a[51], b[51];
+    int i, j = 0, k;
     gets(a);
     gets(b);
-    for(i=0;b[i]!='\0';i++)
-    {
-        if(a[j]==b[i])
-        {
+    for (i = 0; b[i] != '\0'; i++) {
+        if (a[j] == b[i]) {
             j++;
         }
     }
     j++;
-    printf("%d\n",j);
+    printf("%d\n", j);
     return 0;
 }

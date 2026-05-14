@@ -73,13 +73,11 @@ void solve() {
                 }
                 fl = 1;
             }
-        if (fl)
-            break;
+        if (fl) break;
     }
 
     dbg(last, str, v[0]);
-    if (last != -1)
-        v[last] = 0;
+    if (last != -1) v[last] = 0;
 
     fl = 0;
     for (int i = n - 1; i >= 0; i--) {
@@ -92,8 +90,7 @@ void solve() {
             }
             fl = 1;
         }
-        if (fl)
-            break;
+        if (fl) break;
     }
     dbg(last, str, v[0]);
 

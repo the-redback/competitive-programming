@@ -56,11 +56,9 @@ void solve() {
     ll n, m;
     cin >> n;
 
-    for ( i = 0; i < n; i++)
-    {
-        cout<<"1 ";
+    for (i = 0; i < n; i++) {
+        cout << "1 ";
     }
-    
 
     cout << "\n";
     return;

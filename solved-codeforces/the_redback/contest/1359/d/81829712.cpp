@@ -51,8 +51,8 @@ void _print_out(const char* name, T a[], int n) {
 /* -------------------------------------------------------------------------- */
 
 void solve(ll n) {
-    ll         i, j, k;
-    ll         m;
+    ll i, j, k;
+    ll m;
     vector<ll> v(n);
 
     for (i = 0; i < n; i++) {

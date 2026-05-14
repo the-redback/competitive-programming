@@ -96,8 +96,7 @@ void solve() {
             ans[j] = ch + 'a';
             v[j] = inf;
             for (k = 0; k < n; k++) {
-                if (v[k] == inf)
-                    continue;
+                if (v[k] == inf) continue;
                 v[k] -= abs(j - k);
             }
         }

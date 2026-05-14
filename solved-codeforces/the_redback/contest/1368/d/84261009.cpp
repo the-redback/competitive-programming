@@ -68,8 +68,7 @@ void solve(ll n) {
     while (n--) {
         k = 0;
         for (i = 0; i < 20; i++) {
-            if (v[i] > 0)
-                k = k | (1ll << i);
+            if (v[i] > 0) k = k | (1ll << i);
             v[i] = max(0ll, v[i] - 1);
         }
         sum += k * k;

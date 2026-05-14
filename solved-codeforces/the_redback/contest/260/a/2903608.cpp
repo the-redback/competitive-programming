@@ -1,30 +1,23 @@
 #include <bits/stdc++.h>
 
-main()
-{
-    int n,m,p,i,j,l;
-    scanf("%d %d %d",&p,&n,&m);
-        for(i=0;i<=9;i++)
-        {
-            if((p*10+i)%n==0)
-            {
-                p=p*10+i;
-                break;
-            }
+main() {
+    int n, m, p, i, j, l;
+    scanf("%d %d %d", &p, &n, &m);
+    for (i = 0; i <= 9; i++) {
+        if ((p * 10 + i) % n == 0) {
+            p = p * 10 + i;
+            break;
         }
-        if(i==10)
-        {
-            printf("-1\n");
+    }
+    if (i == 10) {
+        printf("-1\n");
+    } else {
+        printf("%d", p);
+        m--;
+        for (i = 0; i < m; i++) {
+            printf("0");
         }
-        else
-        {
-            printf("%d",p);
-            m--;
-            for(i=0;i<m;i++)
-            {
-                printf("0");
-            }
-            printf("\n");
-        }
+        printf("\n");
+    }
     return 0;
 }

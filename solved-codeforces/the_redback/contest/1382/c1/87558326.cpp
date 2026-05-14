@@ -53,7 +53,7 @@ void solve() {
         }
         if (cnt % 2 == 1) l ^= 1;
         // dbg(k,l,b[k])
-        if (b[k]-'0' == l) {
+        if (b[k] - '0' == l) {
             an.pb(1);
             // dbg(an);
         }

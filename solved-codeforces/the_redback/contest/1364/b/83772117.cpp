@@ -64,9 +64,9 @@ void solve() {
 
     v.pb(a[0]);
     for (i = 1; i < n - 1; i++) {
-        if (a[i] > a[i - 1] && a[i] > a[i + 1])   // local maxima
+        if (a[i] > a[i - 1] && a[i] > a[i + 1])  // local maxima
             v.pb(a[i]);
-        else if (a[i] < a[i - 1] && a[i] < a[i + 1])   // local minima
+        else if (a[i] < a[i - 1] && a[i] < a[i + 1])  // local minima
             v.pb(a[i]);
     }
     v.pb(a[n - 1]);

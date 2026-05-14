@@ -20,7 +20,7 @@ typedef long long ll;
 #define NN        200010
 
 // clang-format on
-#ifdef redback   // debugging macros
+#ifdef redback  // debugging macros
 #include "prettyprint.hpp"
 #define debug(...)                          \
     {                                       \
@@ -47,7 +47,7 @@ void __f(const char* name, T a[], int n) {
 // clang-format on
 
 string ans;
-ll     N, M;
+ll N, M;
 
 vector<string> str(20);
 
@@ -91,7 +91,7 @@ void solve(ll t) {
     for (i = 0; i < m; i++) {
         for (j = 'a'; j <= 'z'; j++) {
             string s = str[0];
-            s[i]     = j;
+            s[i] = j;
             if (check(s)) {
                 cout << s << "\n";
                 return;

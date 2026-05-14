@@ -41,14 +41,14 @@ ll rec(ll u) {
 
     for (ll i = 0; i < e[u].size(); i++) {
         ll v = e[u][i];
-        ret  = max(ret, rec(v) + 1);
+        ret = max(ret, rec(v) + 1);
     }
     return ret;
 }
 
 void solve(ll n) {
-    ll         i, j, k;
-    ll         m;
+    ll i, j, k;
+    ll m;
     vector<ll> v(2020);
     for (i = 0; i < n; i++) {
         e[i].clear();

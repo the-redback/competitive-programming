@@ -10,61 +10,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ppb pop_back
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1000000000
-#define eps 1e-9
-#define NN 400010
-string ss="AHIMOTUVWXY";
+#define ppb       pop_back
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1000000000
+#define eps       1e-9
+#define NN        400010
+string ss = "AHIMOTUVWXY";
 string s;
 
-int valid1(void)
-{
-    int i,j;
-    for(i=0;i<s.size();i++)
-    {
-        int fl=1;
-        for(j=0;j<ss.size();j++)
-        {
-            if(s[i]==ss[j])
-            {
-                fl=0;
+int valid1(void) {
+    int i, j;
+    for (i = 0; i < s.size(); i++) {
+        int fl = 1;
+        for (j = 0; j < ss.size(); j++) {
+            if (s[i] == ss[j]) {
+                fl = 0;
                 break;
             }
         }
-        if(fl)
-            return 0;
+        if (fl) return 0;
     }
     return 1;
 }
 
-int valid2(void)
-{
-    int i=0,j=s.size()-1;
-    for(;i<j;i++,j--)
-        if(s[i]!=s[j])
-            return 0;
+int valid2(void) {
+    int i = 0, j = s.size() - 1;
+    for (; i < j; i++, j--)
+        if (s[i] != s[j]) return 0;
     return 1;
 }
 
-main()
-{
-    //ios_base::sync_with_stdio(false);
-    int t,tc;
-    //cin>>tc;
-    int i,j,k,l,n,m;
-    while(cin>>s)
-    {
-        if(valid1())
-        {
-            if(valid2())
+main() {
+    // ios_base::sync_with_stdio(false);
+    int t, tc;
+    // cin>>tc;
+    int i, j, k, l, n, m;
+    while (cin >> s) {
+        if (valid1()) {
+            if (valid2())
                 puts("YES");
             else
                 puts("NO");
-        }
-        else
+        } else
             puts("NO");
     }
     return 0;

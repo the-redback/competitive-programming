@@ -92,8 +92,7 @@ void solve(ll n) {
     ll sum = 1;
 
     for (i = 0; i < n && j < m; i++) {
-        if (cnt[i] != b[j])
-            continue;
+        if (cnt[i] != b[j]) continue;
 
         auto it = upper_bound(all(cnt), b[j]);
         k = (int)(it - cnt.begin()) - 1;

@@ -4,9 +4,9 @@ using namespace std;
 
 typedef long long ll;
 
-#define inf       1e9
-#define eps       1e-9
-#define NN        100010
+#define inf 1e9
+#define eps 1e-9
+#define NN  100010
 
 #define read(a) scanf("%lld", &a)
 
@@ -84,8 +84,7 @@ ll query(ll node, ll low, ll high, ll qlow, ll qhigh, ll carry) {
     ll right = left + 1;
     ll mid = (low + high) / 2;
 
-    if ((high - low + 1) * tree[node].xtra == tree[node].sum)
-        carry = tree[node].xtra;
+    if ((high - low + 1) * tree[node].xtra == tree[node].sum) carry = tree[node].xtra;
 
     ll p1 = query(left, low, mid, qlow, qhigh, carry);
     ll p2 = query(right, mid + 1, high, qlow, qhigh, carry);

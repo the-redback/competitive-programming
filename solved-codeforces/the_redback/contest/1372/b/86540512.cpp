@@ -50,8 +50,8 @@ void _print_out(const char* name, T a[], int n) {
 #define dbg(args...)
 #endif
 /* -------------------------------------------------------------------------- */
-bool p[NN + 7];   // Hashing
-vector<ll> pr;    // storing prime
+bool p[NN + 7];  // Hashing
+vector<ll> pr;   // storing prime
 void sieve(ll n) {
     ll i, j, k, l;
     p[1] = 1;

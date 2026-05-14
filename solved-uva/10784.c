@@ -1,20 +1,17 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
-main()
-{
+main() {
     long long l;
-    int i=0;
-    while(scanf("%lld",&l)!=EOF)
-    {
+    int i = 0;
+    while (scanf("%lld", &l) != EOF) {
         i++;
-        if(l == 0)
-        {
+        if (l == 0) {
             break;
         }
-        l=ceil((3+sqrt(9+4*2*l))/2);
+        l = ceil((3 + sqrt(9 + 4 * 2 * l)) / 2);
 
-        printf("Case %d: %lld\n",i,l);
+        printf("Case %d: %lld\n", i, l);
     }
     return 0;
 }

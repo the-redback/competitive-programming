@@ -10,36 +10,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ppb pop_back
-#define pb(x) push_back(x)
-#define all(x) x.begin(),x.end()
-#define mem(a,b) memset(a,b,sizeof(a))
-#define inf 1000000000
-#define eps 1e-9
-#define NN 400010
+#define ppb       pop_back
+#define pb(x)     push_back(x)
+#define all(x)    x.begin(), x.end()
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1000000000
+#define eps       1e-9
+#define NN        400010
 
-main()
-{
+main() {
     ios_base::sync_with_stdio(false);
-    int t,tc;
-    //cin>>tc;
-    int i,j,k,l,n,m;
-    vector<long long>v;
-    while(cin>>n>>m)
-    {
-        __int64 sum,an;
-        for(i=0;i<n;i++)
-            cin>>k,v.pb(k);
+    int t, tc;
+    // cin>>tc;
+    int i, j, k, l, n, m;
+    vector<long long> v;
+    while (cin >> n >> m) {
+        __int64 sum, an;
+        for (i = 0; i < n; i++) cin >> k, v.pb(k);
         sort(all(v));
-        sum=0;
-        an=m;
-        for(i=0;i<v.size();i++)
-        {
-            sum+=v[i]*an;
-            if(an>1)
-                an--;
+        sum = 0;
+        an = m;
+        for (i = 0; i < v.size(); i++) {
+            sum += v[i] * an;
+            if (an > 1) an--;
         }
-        printf("%I64d\n",sum);
+        printf("%I64d\n", sum);
         v.clear();
     }
     return 0;

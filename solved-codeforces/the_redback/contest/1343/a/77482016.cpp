@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -31,26 +30,24 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
-
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 
     ll t = 1, tc;
-    cin >> tc ;
+    cin >> tc;
     ll n, m;
-    while (tc-- ) {
+    while (tc--) {
         cin >> n;
         ll i, j, k;
-        ll ans=0;
+        ll ans = 0;
 
-        for ( i = 1; i < 30; i++)
-        {
+        for (i = 1; i < 30; i++) {
             k = n / ((2 << i) - 1);
-            if (n%k==0 ){
+            if (n % k == 0) {
                 ans = k;
                 break;
             }
-
         }
 
         cout << ans << "\n";

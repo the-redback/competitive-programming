@@ -1,19 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main()
-{
-    long n,m,i=1;
-    while(scanf("%ld %ld",&n,&m)==2)
-    {
-        if(n==0 && m==0)
+main() {
+    long n, m, i = 1;
+    while (scanf("%ld %ld", &n, &m) == 2) {
+        if (n == 0 && m == 0)
             return 0;
-        else if(n==1)
-            printf("Case %d: :-\\\n",i++);
-        else if(n<=m)
-            printf("Case %d: :-|\n",i++);
+        else if (n == 1)
+            printf("Case %d: :-\\\n", i++);
+        else if (n <= m)
+            printf("Case %d: :-|\n", i++);
         else
-            printf("Case %d: :-(\n",i++);
+            printf("Case %d: :-(\n", i++);
     }
     return 0;
 }

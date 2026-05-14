@@ -67,8 +67,7 @@ ll call(ll x, ll y, ll xx, ll yy) {
     }
 
     ll& tc = dp[x][y][xx][yy];
-    if (tc != -1)
-        return tc;
+    if (tc != -1) return tc;
 
     ll fl = 1;
     for (ll i = x; i <= xx && fl; i++) {

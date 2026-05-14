@@ -64,7 +64,7 @@ int main() {
 
     ll t = 1, tc;
     // cin >> tc;
-    ll     n, m;
+    ll n, m;
     string str;
     while (cin >> str) {
         solve(t++, str);

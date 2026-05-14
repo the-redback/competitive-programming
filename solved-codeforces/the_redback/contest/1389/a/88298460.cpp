@@ -34,14 +34,14 @@ const ll NN = 1e5 + 10;
 void solve() {
     ll i, j, k;
     ll n, m, ans = 0;
-    cin >> n >>m;
-    ll y=n*2;
-    if(y>m){
-        cout<<"-1 -1\n";
+    cin >> n >> m;
+    ll y = n * 2;
+    if (y > m) {
+        cout << "-1 -1\n";
         return;
     }
 
-    cout << n <<" "<< y << "\n";
+    cout << n << " " << y << "\n";
     return;
 }
 

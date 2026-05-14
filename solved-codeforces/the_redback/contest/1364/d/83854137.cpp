@@ -64,8 +64,7 @@ ll dfs(ll u, ll l) {
         if (color[v] != -1) {
             if (l + 1 - dist[v] > 2 && l + 1 - dist[v] <= x) {
                 cnt = l + 1 - dist[v];
-                if (ans.size() < cnt)
-                    ans.pb(u);
+                if (ans.size() < cnt) ans.pb(u);
                 fl = 1;
                 return l;
             }
@@ -75,8 +74,7 @@ ll dfs(ll u, ll l) {
         } else {
             ll ret = dfs(v, l + 1);
             if (ret != 0) {
-                if (ans.size() < cnt)
-                    ans.pb(u);
+                if (ans.size() < cnt) ans.pb(u);
                 return 1;
             }
         }

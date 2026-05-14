@@ -76,8 +76,7 @@ void solve(ll n) {
     sort(allr(alice));
     sort(allr(bob));
 
-    if ((int)both.size() + (int)alice.size() < k ||
-        (int)both.size() + (int)bob.size() < k) {
+    if ((int)both.size() + (int)alice.size() < k || (int)both.size() + (int)bob.size() < k) {
         cout << "-1\n";
         return;
     }

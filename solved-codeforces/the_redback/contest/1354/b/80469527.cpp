@@ -31,27 +31,27 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 void solve(ll tc) {
-    ll     i, j, k, n;
+    ll i, j, k, n;
     string str;
     cin >> str;
 
     ll a[5];
-    a[1]=-1;
-    a[2]=-1;
-    a[3]=-1;
-    ll ans=inf;
-    for(i=0;i<str.size(); i++){
-        a[str[i]-'0']=i;
+    a[1] = -1;
+    a[2] = -1;
+    a[3] = -1;
+    ll ans = inf;
+    for (i = 0; i < str.size(); i++) {
+        a[str[i] - '0'] = i;
 
-        if(a[1]!= -1 && a[2] != -1 && a[3] != -1){
-            ll mx=min(a[1],a[2]);
-            mx=min(mx,a[3]);
-            ans=min((i-mx+1),ans);
+        if (a[1] != -1 && a[2] != -1 && a[3] != -1) {
+            ll mx = min(a[1], a[2]);
+            mx = min(mx, a[3]);
+            ans = min((i - mx + 1), ans);
         }
     }
 
-    if(ans==inf){
-        cout<<"0\n";
+    if (ans == inf) {
+        cout << "0\n";
         return;
     }
 

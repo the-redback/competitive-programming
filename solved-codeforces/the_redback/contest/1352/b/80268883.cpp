@@ -34,8 +34,7 @@ void solve(ll tc) {
     ll i, j, k, n;
     cin >> n >> k;
 
-    if (n < k || (n > k && (n < k + 2 || (n % 2==0 && k % 2)) && n < k * 2) ||
-        (n % 2 && k % 2 == 0)) {
+    if (n < k || (n > k && (n < k + 2 || (n % 2 == 0 && k % 2)) && n < k * 2) || (n % 2 && k % 2 == 0)) {
         cout << "NO\n";
         return;
     }

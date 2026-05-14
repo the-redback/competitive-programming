@@ -17,35 +17,35 @@ template <typename T> void __f(const char* name, T a[], int n) {cout << name << 
 // clang-format on
 
 int main() {
-    int               n = 5;
-    vector<int>       v = {1, 2, 3, 4};
+    int n = 5;
+    vector<int> v = {1, 2, 3, 4};
     pair<int, string> p = {1, "codeforces"};
-    dbg(n, v[0], p.first, p.second)
-    dbg(v[1])
+    dbg(n, v[0], p.first, p.second) dbg(v[1])
 
-    pair<int, int>             pa = {1, 2};
-    pair<string, bool>         pb = {"abcd", false};
-    pair<char, float>          pc = {'x', 0.5};
-    string                     pd = "This is a string";
+        pair<int, int>
+            pa = {1, 2};
+    pair<string, bool> pb = {"abcd", false};
+    pair<char, float> pc = {'x', 0.5};
+    string pd = "This is a string";
     pair<int, pair<int, int> > pe = {1, {2, 3}};
     dbg(pa, pb, pc, pd, pe);
     dbg(n);
-    dbg(v[0],n);
+    dbg(v[0], n);
 
-    vector<int>      va = {1, 2, 3, 4};
-    set<int>         vb = {1, 2, 2, 3, 3, 4, 4, 5};
+    vector<int> va = {1, 2, 3, 4};
+    set<int> vb = {1, 2, 2, 3, 3, 4, 4, 5};
     map<string, int> vc;
     vc["string 1"] = 1;
     vc["string 2"] = 2;
     dbg(va, vb, vc);
 
     int arr[10];
-    arr[0]=5;
-    arr[1]=6;
-    arr[2]=7;
-    arr[3]=8;
-    dbg(arr,n);
+    arr[0] = 5;
+    arr[1] = 6;
+    arr[2] = 7;
+    arr[3] = 8;
+    dbg(arr, n);
 
-    char ch='c';
+    char ch = 'c';
     dbg(ch);
 }

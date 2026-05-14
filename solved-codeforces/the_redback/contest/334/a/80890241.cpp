@@ -34,30 +34,24 @@ void solve(ll n) {
     ll i, j, k;
     ll m;
 
-    k=1;
+    k = 1;
 
-    vector<ll> v[n+10];
+    vector<ll> v[n + 10];
 
-    for ( i = 0; i < n; i++)
-    {
-        for ( j = 0; j < n; j++)
-        {
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
             v[j].push_back(k++);
         }
-        for ( j = n-1; j >=0; j--)
-        {
+        for (j = n - 1; j >= 0; j--) {
             v[j].push_back(k++);
         }
-        
     }
 
-    for ( i = 0; i < n; i++)
-    {
-        for ( j = 0; j < n; j++)
-        {
-            cout<<v[i][j]<<" ";
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            cout << v[i][j] << " ";
         }
-        cout<<"\n";
+        cout << "\n";
     }
 
     return;

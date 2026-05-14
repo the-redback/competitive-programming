@@ -82,8 +82,7 @@ void solve(ll n) {
         cur2 += v[i];
         mx = max(mx, cur1);
         mx = max(mx, -1 * cur2);
-        if (cur1 < 0)
-            cur1 = 0;
+        if (cur1 < 0) cur1 = 0;
         if (cur2 > 0) {
             cur2 = 0;
         }

@@ -64,8 +64,7 @@ void solve() {
     ll fl = 0;
     ll sum = 0;
     for (i = 0; i < n; i++) {
-        if (v[i] % 2 == i % 2)
-            continue;
+        if (v[i] % 2 == i % 2) continue;
         for (j = i + 1; j < n; j++) {
             if (j % 2 != v[j] % 2 && v[i] % 2 != v[j] % 2) {
                 sum++;
@@ -73,8 +72,8 @@ void solve() {
                 break;
             }
         }
-        if(j==n){
-            cout<<"-1\n";
+        if (j == n) {
+            cout << "-1\n";
             return;
         }
     }

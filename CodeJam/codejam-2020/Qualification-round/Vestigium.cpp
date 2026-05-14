@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -35,15 +34,14 @@ int row[111][111];
 int col[111][111];
 
 bool dupl(int a[], int n) {
-    sort(a,a+n);
+    sort(a, a + n);
     for (int i = 0; i < n; ++i) {
-        if(a[i]!=i+1){
+        if (a[i] != i + 1) {
             return true;
         }
     }
     return false;
 }
-
 
 int main() {
 #ifdef redback
@@ -51,40 +49,39 @@ int main() {
     freopen("output.in", "w", stdout);
 #endif
     ll t = 1, tc;
-    cin >> tc ;
+    cin >> tc;
     ll n, m;
-    while ( tc--) {
+    while (tc--) {
         cin >> n;
-        ll i, j, k, sum=0;
+        ll i, j, k, sum = 0;
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
-                cin>>k;
+                cin >> k;
 
-                if (i==j) {
-                    sum+=k;
+                if (i == j) {
+                    sum += k;
                 }
 
-                row[i][j]=k;
-                col[j][i]=k;
+                row[i][j] = k;
+                col[j][i] = k;
             }
         }
 
-        int r=0,c=0;
+        int r = 0, c = 0;
 
         for (int i = 0; i < n; ++i) {
-            if(dupl(row[i], n)){
+            if (dupl(row[i], n)) {
                 r++;
             }
         }
 
         for (int i = 0; i < n; ++i) {
-            if(dupl(col[i], n)){
+            if (dupl(col[i], n)) {
                 c++;
             }
         }
 
-        printf("Case #%d: %d %d %d\n",t++,sum,r,c);
-
+        printf("Case #%d: %d %d %d\n", t++, sum, r, c);
     }
     return 0;
 }

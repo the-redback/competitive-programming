@@ -90,8 +90,7 @@ void solve(ll n) {
     while (last <= n && (l[last] >= 0 || ans.find(last) != ans.end())) {
         last++;
     }
-    if (last < 0)
-        last = n;
+    if (last < 0) last = n;
     ans.insert(last);
     v.pb(last);
 

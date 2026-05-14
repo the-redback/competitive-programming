@@ -10,90 +10,69 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define inf 10000000
-#define mem(a,b) memset(a,b,sizeof(a))
-#define NN 2010
-int prnt[NN+7];
-map<string,int>mp;
-string s,ss;
+#define inf       10000000
+#define mem(a, b) memset(a, b, sizeof(a))
+#define NN        2010
+int prnt[NN + 7];
+map<string, int> mp;
+string s, ss;
 char a[20];
 char b[20];
-struct data
-{
-    int u,v,w;
+struct data {
+    int u, v, w;
 };
-vector<data>e;
-bool comp(data n,data m)
-{
-    return n.w<m.w;
-}
+vector<data> e;
+bool comp(data n, data m) { return n.w < m.w; }
 
-int root(int n)
-{
-    if(prnt[n]==n)
-        return n;
+int root(int n) {
+    if (prnt[n] == n) return n;
     return root(prnt[n]);
 }
 
-int mst(int n)
-{
-    sort(e.begin(),e.end(),comp);
-    int i,j,k,node,dist;
-    for(i=0;i<=n;i++)
-        prnt[i]=i;
-    node=dist=0;
-    for(i=0;i<e.size() && node<n-1;i++)
-    {
-        int u=root(e[i].v);
-        int v=root(e[i].u);
-        if(u!=v)
-        {
-            prnt[u]=v;
+int mst(int n) {
+    sort(e.begin(), e.end(), comp);
+    int i, j, k, node, dist;
+    for (i = 0; i <= n; i++) prnt[i] = i;
+    node = dist = 0;
+    for (i = 0; i < e.size() && node < n - 1; i++) {
+        int u = root(e[i].v);
+        int v = root(e[i].u);
+        if (u != v) {
+            prnt[u] = v;
             node++;
-            dist+=e[i].w;
+            dist += e[i].w;
         }
     }
     return dist;
 }
 
-main()
-{
-    //freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
-    //ios_base::sync_with_stdio(false);
-    int i,j,k,l,n,r,c;
-    int tc,t=1;
-    scanf("%d",&tc);
-    while(tc--)
-    {
-        scanf("%d%d",&n,&r);
-        k=0;
-        for(i=0;i<r;i++)
-        {
-            scanf("%s%s%d",&a,&b,&l);
+main() {
+    // freopen("C:\\Users\\Maruf Tuhin\\Desktop\\in.txt","r",stdin);
+    // ios_base::sync_with_stdio(false);
+    int i, j, k, l, n, r, c;
+    int tc, t = 1;
+    scanf("%d", &tc);
+    while (tc--) {
+        scanf("%d%d", &n, &r);
+        k = 0;
+        for (i = 0; i < r; i++) {
+            scanf("%s%s%d", &a, &b, &l);
             s.assign(a);
             ss.assign(b);
-            if(mp.find(s)==mp.end())
-                mp[s]=k++;
-            if(mp.find(ss)==mp.end())
-                mp[ss]=k++;
+            if (mp.find(s) == mp.end()) mp[s] = k++;
+            if (mp.find(ss) == mp.end()) mp[ss] = k++;
             data d;
-            d.u=mp[s];
-            d.v=mp[ss];
-            d.w=l;
+            d.u = mp[s];
+            d.v = mp[ss];
+            d.w = l;
             e.push_back(d);
         }
-        int ret=mst(n);
-        if(t!=1)
-            printf("\n");
+        int ret = mst(n);
+        if (t != 1) printf("\n");
         t++;
-        printf("%d\n",ret);
+        printf("%d\n", ret);
         mp.clear();
         e.clear();
     }
     return 0;
 }
-
-
-
-
-

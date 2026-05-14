@@ -70,7 +70,7 @@ void solve() {
         odd--;
     }
 
-    if(even == 0 && m%2 == 0){
+    if (even == 0 && m % 2 == 0) {
         cout << "No\n";
         return;
     }

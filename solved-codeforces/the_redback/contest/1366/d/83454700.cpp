@@ -51,8 +51,8 @@ void _print_out(const char* name, T a[], int n) {
 /* -------------------------------------------------------------------------- */
 const ll NN = 1e7;
 
-bool p[NN + 7];   // Hashing
-int pr[NN + 7];   // storing prime
+bool p[NN + 7];  // Hashing
+int pr[NN + 7];  // storing prime
 
 void sieve(ll n) {
     ll i, j, k, l;
@@ -94,7 +94,7 @@ void solve(ll n) {
         while (j % pr[k] == 0) {
             j /= pr[k];
         }
-        if ( j> 1 && __gcd(j + pr[k], k) == 1) {
+        if (j > 1 && __gcd(j + pr[k], k) == 1) {
             a[i] = pr[k];
             b[i] = j;
             continue;
@@ -106,14 +106,12 @@ void solve(ll n) {
     }
 
     for (i = 0; i < n; i++) {
-        if (i)
-            cout << " ";
+        if (i) cout << " ";
         cout << a[i];
     }
     cout << "\n";
     for (i = 0; i < n; i++) {
-        if (i)
-            cout << " ";
+        if (i) cout << " ";
         cout << b[i];
     }
     cout << "\n";

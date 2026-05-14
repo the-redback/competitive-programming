@@ -97,8 +97,7 @@ void solve() {
     for (i = 0; i < (n + m - 1) / 2; i++) {
         ll on1 = 0, on2 = 0, zr1 = 0, zr2 = 0;
         dbg("--------------", i);
-        for (r = min(i, n - 1), c = max(i - n + 1, 0ll); r >= 0 && c < m;
-             r--, c++) {
+        for (r = min(i, n - 1), c = max(i - n + 1, 0ll); r >= 0 && c < m; r--, c++) {
             dbg(r, c, n - 1 - r, m - 1 - c);
             dbg(a[r][c], a[n - 1 - r][m - 1 - c]);
             if (a[r][c] == 1) {

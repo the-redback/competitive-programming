@@ -11,24 +11,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft         first
-#define sd         second
-#define mp         make_pair
-#define pb(x)      push_back(x)
-#define all(x)     x.begin(),x.end()
-#define allr(x)    x.rbegin(),x.rend()
-#define mem(a,b)   memset(a,b,sizeof(a))
-#define sf(a)      scanf("%lld",&a)
-#define ssf(a)     scanf("%s",&a)
-#define sf2(a,b)   scanf("%lld %lld",&a,&b)
-#define sf3(a,b,c) scanf("%lld %lld %lld",&a,&b,&c)
-#define inf        1e9
-#define eps        1e-9
-#define mod        1000000007
-#define NN         100010
+#define ft           first
+#define sd           second
+#define mp           make_pair
+#define pb(x)        push_back(x)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", &a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
+#define inf          1e9
+#define eps          1e-9
+#define mod          1000000007
+#define NN           100010
 
 // clang-format off
 #ifdef  redback
@@ -44,54 +44,44 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 ll a[1000010];
 bool b[1000010];
 
-int main()
-{
-    #ifdef redback
-        freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
-    #endif
+int main() {
+#ifdef redback
+    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
+#endif
 
-    ll t=1,tc;
-    //sf(tc);
-    ll l,m,n;
-    while(~sf3(n,m,l)) {
-        ll i,j,k,r;
-        mem(b,0);
+    ll t = 1, tc;
+    // sf(tc);
+    ll l, m, n;
+    while (~sf3(n, m, l)) {
+        ll i, j, k, r;
+        mem(b, 0);
 
-        for(i=0;i<m;i++)
-        {
+        for (i = 0; i < m; i++) {
             sf(k);
-            b[k]=1;
+            b[k] = 1;
         }
-        ll flag=0;
-        for(i=0;i<=n;i++)
-            a[i]=i;
+        ll flag = 0;
+        for (i = 0; i <= n; i++) a[i] = i;
 
-        while(l--)
-        {
-            sf2(k,r);
-            if(a[k]==1 && b[k] && !flag)
-            {
-                flag=k;
-            }
-            else if(a[r]==1 && b[r] && !flag)
-                flag=r;
-            swap(a[k],a[r]);
+        while (l--) {
+            sf2(k, r);
+            if (a[k] == 1 && b[k] && !flag) {
+                flag = k;
+            } else if (a[r] == 1 && b[r] && !flag)
+                flag = r;
+            swap(a[k], a[r]);
         }
-        if(flag!=0)
-        {
-            printf("%lld\n",flag);
+        if (flag != 0) {
+            printf("%lld\n", flag);
             continue;
         }
 
-        for(i=1;i<=n;i++)
-        {
-            if(a[i]==1)
-            {
-                printf("%lld\n",i);
+        for (i = 1; i <= n; i++) {
+            if (a[i] == 1) {
+                printf("%lld\n", i);
                 break;
             }
         }
-
     }
     return 0;
 }

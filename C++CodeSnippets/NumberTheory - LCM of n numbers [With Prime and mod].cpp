@@ -15,7 +15,7 @@
 using namespace std;
 
 #define inf 1e9
-#define NN 10010
+#define NN  10010
 
 vector<int> arr;
 

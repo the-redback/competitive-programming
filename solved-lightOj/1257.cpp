@@ -10,94 +10,77 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mem(a,b) memset(a,b,sizeof(a))
-#define pb push_back
-#define pp pop_back
-#define inf 1000000000
-#define NN 30000
-vector<int>e[NN+7],cost[NN+7];
+#define mem(a, b) memset(a, b, sizeof(a))
+#define pb        push_back
+#define pp        pop_back
+#define inf       1000000000
+#define NN        30000
+vector<int> e[NN + 7], cost[NN + 7];
 
-int dir[NN+7];
-int view[NN+7];
-int dis,node;
+int dir[NN + 7];
+int view[NN + 7];
+int dis, node;
 
-void dfs1st(int u)
-{
-    if(dis<view[u])
-    {
-        node=u;
-        dis=view[u];
+void dfs1st(int u) {
+    if (dis < view[u]) {
+        node = u;
+        dis = view[u];
     }
     int i;
-    for(i=0;i<e[u].size();i++)
-    {
-        if(view[e[u][i]]==-1)
-        {
-            view[e[u][i]]=view[u]+cost[u][i];
+    for (i = 0; i < e[u].size(); i++) {
+        if (view[e[u][i]] == -1) {
+            view[e[u][i]] = view[u] + cost[u][i];
             dfs1st(e[u][i]);
         }
     }
     return;
 }
 
-void dfs2nd(int u)
-{
-    if(dis<view[u])
-    {
-        node=u;
-        dis=view[u];
+void dfs2nd(int u) {
+    if (dis < view[u]) {
+        node = u;
+        dis = view[u];
     }
-    dir[u]=max(dir[u],view[u]);
-    int i,res=0;
-    for(i=0;i<e[u].size();i++)
-    {
-        if(view[e[u][i]]==-1)
-        {
-            view[e[u][i]]=view[u]+cost[u][i];
+    dir[u] = max(dir[u], view[u]);
+    int i, res = 0;
+    for (i = 0; i < e[u].size(); i++) {
+        if (view[e[u][i]] == -1) {
+            view[e[u][i]] = view[u] + cost[u][i];
             dfs2nd(e[u][i]);
         }
     }
     return;
 }
 
-main()
-{
-    int t=1,tc;
-    int q,r,j,k,l,n,i;
-    int u,v,w;
-    scanf("%d",&tc);
-    while(tc--)
-    {
-        scanf("%d",&n);
-        for(i=0;i<n-1;i++)
-        {
-            scanf("%d%d%d",&u,&v,&w);
+main() {
+    int t = 1, tc;
+    int q, r, j, k, l, n, i;
+    int u, v, w;
+    scanf("%d", &tc);
+    while (tc--) {
+        scanf("%d", &n);
+        for (i = 0; i < n - 1; i++) {
+            scanf("%d%d%d", &u, &v, &w);
             e[u].pb(v);
             e[v].pb(u);
             cost[u].pb(w);
             cost[v].pb(w);
         }
-        mem(view,-1);
-        node=0,dis=0,view[0]=0;
+        mem(view, -1);
+        node = 0, dis = 0, view[0] = 0;
         dfs1st(0);
-        mem(view,-1),mem(dir,-1);
-        dis=0,view[node]=0;
+        mem(view, -1), mem(dir, -1);
+        dis = 0, view[node] = 0;
         dfs2nd(node);
-        mem(view,-1);
-        view[node]=0;
+        mem(view, -1);
+        view[node] = 0;
         dfs2nd(node);
-        printf("Case %d:\n",t++);
-        for(i=0;i<n;i++)
-        {
-            printf("%d\n",dir[i]);
+        printf("Case %d:\n", t++);
+        for (i = 0; i < n; i++) {
+            printf("%d\n", dir[i]);
             e[i].clear();
             cost[i].clear();
         }
     }
     return 0;
 }
-
-
-
-
-

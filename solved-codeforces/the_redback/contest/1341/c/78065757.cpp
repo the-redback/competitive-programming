@@ -54,7 +54,7 @@ void solve() {
             cout << "No\n";
             return;
         }
-        next    = a[i] + 1;
+        next = a[i] + 1;
         b[a[i]] = -1;
     }
     cout << "Yes\n";

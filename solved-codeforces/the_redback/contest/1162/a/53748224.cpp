@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -31,21 +30,21 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #endif  //debugging macros
 // clang-format on
 
-
 ll arr[100];
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 #ifdef redback
-    //freopen("input.in", "r", stdin);
-    //freopen("output.in", "w", stdout);
-    //test by input1, input2  files for codeforces
+    // freopen("input.in", "r", stdin);
+    // freopen("output.in", "w", stdout);
+    // test by input1, input2  files for codeforces
 #endif
 
     ll t = 1, tc;
-    //cin >> tc ;
+    // cin >> tc ;
     ll n, m, h;
-    while (cin >> n >> h >> m ) {
+    while (cin >> n >> h >> m) {
         ll i, j, k, l, r, x;
 
         mem(arr, -1);
@@ -53,8 +52,7 @@ int main() {
         for (i = 0; i < m; ++i) {
             cin >> l >> r >> x;
             for (j = l; j <= r; ++j) {
-                if (arr[j] == -1)
-                    arr[j] = h;
+                if (arr[j] == -1) arr[j] = h;
                 arr[j] = min(x, arr[j]);
             }
         }
@@ -67,7 +65,6 @@ int main() {
         }
 
         cout << sum << "\n";
-
     }
     return 0;
 }

@@ -59,40 +59,36 @@ void solve() {
     cin >> n;
 
     bit.reset();
-    ll mx=0;
+    ll mx = 0;
 
     for (i = 0; i < n; i++) {
         cin >> arr[i];
-        mx=max(mx,arr[i]);
+        mx = max(mx, arr[i]);
     }
 
-    ll limit=0;
-    for(i=0;i<=10;i++){
-        if(mx & 1ll<<i){
-            limit=(1ll<<(i+1))-1;
+    ll limit = 0;
+    for (i = 0; i <= 10; i++) {
+        if (mx & 1ll << i) {
+            limit = (1ll << (i + 1)) - 1;
         }
     }
 
-    for ( i = 1; i <= limit; i++)
-    {
+    for (i = 1; i <= limit; i++) {
         bit.reset();
-        for ( j = 0; j < n; j++)
-        {
-            bit[arr[j]^i]=1;
+        for (j = 0; j < n; j++) {
+            bit[arr[j] ^ i] = 1;
         }
-        for ( j = 0; j < n; j++)
-        {
-            if(bit[arr[j]] == 0){
+        for (j = 0; j < n; j++) {
+            if (bit[arr[j]] == 0) {
                 break;
             }
         }
-        if(j==n){
-            cout<<i<<"\n";
+        if (j == n) {
+            cout << i << "\n";
             return;
         }
-        
     }
-    
+
     cout << "-1\n";
     return;
 }

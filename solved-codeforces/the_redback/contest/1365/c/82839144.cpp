@@ -64,7 +64,7 @@ void solve(ll n) {
     }
 
     ll cnt = 0;
-    ll in=0;
+    ll in = 0;
     for (i = 0; i < n; i++) {
         cin >> k;
         j = i - v[k];

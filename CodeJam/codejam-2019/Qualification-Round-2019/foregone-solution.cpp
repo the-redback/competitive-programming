@@ -19,18 +19,17 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
 #define NN           100010
-
 
 // clang-format off
 #ifdef  redback
@@ -45,8 +44,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cerr <<
 
 char a[111], b[111], s[111];
 
-int main()
-{
+int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
@@ -60,13 +58,11 @@ int main()
         ll l = strlen(s);
         ll i, j, k;
 
-        for (i = 0; i < l; i++)
-        {
+        for (i = 0; i < l; i++) {
             k = s[i] - '0';
             a[i] = s[i];
             b[i] = '0';
-            if (k == 4)
-            {
+            if (k == 4) {
                 a[i] = '3';
                 b[i] = '1';
             }
@@ -75,14 +71,11 @@ int main()
         b[l] = 0;
         printf("Case #%lld: ", t++);
         int fl = 0;
-        for (i = 0; i < l; i++)
-        {
-            if (a[i] != '0')
-            {
-                fl=1;
+        for (i = 0; i < l; i++) {
+            if (a[i] != '0') {
+                fl = 1;
             }
-            if (fl)
-            {
+            if (fl) {
                 printf("%c", a[i]);
                 continue;
             }
@@ -90,20 +83,16 @@ int main()
         printf(" ");
 
         fl = 0;
-        for (i = 0; i < l; i++)
-        {
-            if (b[i] != '0')
-            {
-                fl=1;
+        for (i = 0; i < l; i++) {
+            if (b[i] != '0') {
+                fl = 1;
             }
-            if (fl)
-            {
+            if (fl) {
                 printf("%c", b[i]);
                 continue;
             }
         }
         printf("\n");
-
     }
     return 0;
 }

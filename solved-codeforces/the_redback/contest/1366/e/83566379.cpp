@@ -95,8 +95,7 @@ void solve(ll n) {
         //     continue;
         // }
 
-        if (cnt[i] != b[j])
-            continue;
+        if (cnt[i] != b[j]) continue;
 
         auto it = upper_bound(all(cnt), b[j]);
         k = (int)(it - cnt.begin()) - 1;

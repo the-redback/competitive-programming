@@ -65,13 +65,13 @@ void solve() {
     v.pb(a[0]);
     ll last = a[0];
     for (i = 1; i < n; i++) {
-        if (a[i] > a[i-1]) {
-            while (i+1 < n && a[i] < a[i+1]) {
+        if (a[i] > a[i - 1]) {
+            while (i + 1 < n && a[i] < a[i + 1]) {
                 i++;
             }
             v.pb(a[i]);
-        } else if (a[i] < a[i-1]) {
-            while (i+1 < n && a[i] > a[i+1]) {
+        } else if (a[i] < a[i - 1]) {
+            while (i + 1 < n && a[i] > a[i + 1]) {
                 i++;
             }
             v.pb(a[i]);

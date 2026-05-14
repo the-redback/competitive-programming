@@ -83,7 +83,7 @@ void solve(ll n) {
     }
 
     vector<pair<ll, pair<ll, ll>>> v;
-    ll                             x, y, vv;
+    ll x, y, vv;
     for (i = 1; i <= m; i++) {
         cin >> x >> y >> vv;
         v.emplace_back(vv, make_pair(x, y));

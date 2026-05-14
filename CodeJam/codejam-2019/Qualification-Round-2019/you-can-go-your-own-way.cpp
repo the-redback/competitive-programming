@@ -19,18 +19,17 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
 #define NN           100010
-
 
 // clang-format off
 #ifdef  redback
@@ -54,31 +53,26 @@ bool poss(ll i, ll x, ll y, ll xi, ll yi, char dir) {
     } else {
         xx = x + 1;
     }
-    if (xx >= N || yy >= N)
-        return false;
+    if (xx >= N || yy >= N) return false;
 
     if (s[i] == 'E') {
         yyi = y + 1;
     } else {
         xxi = x + 1;
     }
-    if (x == xi && y == yi && xx == xxi && yy == yyi)
-        return false;
+    if (x == xi && y == yi && xx == xxi && yy == yyi) return false;
 
-    if (xx != xxi || yy != yyi)
-        return true;
+    if (xx != xxi || yy != yyi) return true;
 
     // two future point at same position
-    if (s[i + 1] == 0)
-        return true;
+    if (s[i + 1] == 0) return true;
 
     if (s[i + 1] == 'E') {
         xx += 1;
     } else if (s[i + 1] == 'S') {
         yy += 1;
     }
-    if (xx >= N || yy >= N)
-        return false;
+    if (xx >= N || yy >= N) return false;
     return true;
 }
 
@@ -127,7 +121,6 @@ int main() {
             }
         }
         ans[l] = 0;
-
 
         printf("Case #%lld: %s\n", t++, ans);
     }

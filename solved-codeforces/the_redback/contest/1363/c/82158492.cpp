@@ -55,7 +55,7 @@ void solve() {
     ll n, m;
     ll x;
     cin >> n >> x;
-    vector<ll> arr[n+1];
+    vector<ll> arr[n + 1];
 
     for (i = 0; i < n - 1; i++) {
         cin >> j >> k;

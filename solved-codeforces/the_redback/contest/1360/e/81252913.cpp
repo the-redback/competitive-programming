@@ -42,10 +42,9 @@ void solve(ll t) {
 
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
-            if (str[i][j] == '1' && i != n - 1 && j != n - 1 &&
-                str[i][j + 1] != '1' && str[i + 1][j] != '1') {
-                    cout<<"NO\n";
-                    return;
+            if (str[i][j] == '1' && i != n - 1 && j != n - 1 && str[i][j + 1] != '1' && str[i + 1][j] != '1') {
+                cout << "NO\n";
+                return;
             }
         }
     }

@@ -47,7 +47,7 @@ int main() {
         }
 
         ll last = a[0];
-        ll sum  = a[0];
+        ll sum = a[0];
 
         for (i = 1; i < n; i++) {
             if (a[i] < 0 && a[i - 1] < 0) {

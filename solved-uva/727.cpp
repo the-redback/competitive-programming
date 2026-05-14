@@ -1,67 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define mem(x,y) memset(x,y,sizeof(x));
+#define mem(x, y) memset(x, y, sizeof(x));
 stack<char> mid;
-queue <char> ans;
+queue<char> ans;
 
-main()
-{
-    int i=0,n;
+main() {
+    int i = 0, n;
     char ch[10];
-    scanf("%d",&n);
+    scanf("%d", &n);
     getchar();
     getchar();
-    while(n--)
-    {
+    while (n--) {
         i++;
         mid.push('(');
-        while(gets(ch) && strlen(ch))
-        {
-            if(ch[0]>='0' && ch[0]<='9')
-            {
+        while (gets(ch) && strlen(ch)) {
+            if (ch[0] >= '0' && ch[0] <= '9') {
                 ans.push(ch[0]);
-            }
-            else if(ch[0]==')')
-            {
-                while(mid.top()!='(')
-                {
+            } else if (ch[0] == ')') {
+                while (mid.top() != '(') {
                     ans.push(mid.top());
                     mid.pop();
                 }
                 mid.pop();
-            }
-            else if(ch[0]=='+' || ch[0]=='-')
-            {
-                while(mid.top()!='(')
-                {
+            } else if (ch[0] == '+' || ch[0] == '-') {
+                while (mid.top() != '(') {
                     ans.push(mid.top());
                     mid.pop();
                 }
                 mid.push(ch[0]);
-            }
-            else if(ch[0]=='*' || ch[0]=='/')
-            {
-                while(mid.top()=='/' || mid.top()=='*')
-                {
+            } else if (ch[0] == '*' || ch[0] == '/') {
+                while (mid.top() == '/' || mid.top() == '*') {
                     ans.push(mid.top());
                     mid.pop();
                 }
                 mid.push(ch[0]);
-            }
-            else
+            } else
                 mid.push(ch[0]);
         }
-        while(mid.top()!='(')
-        {
+        while (mid.top() != '(') {
             ans.push(mid.top());
             mid.pop();
         }
         mid.pop();
-        if(i!=1)
-            puts("");
-        while(ans.size())
-        {
-            printf("%c",ans.front());
+        if (i != 1) puts("");
+        while (ans.size()) {
+            printf("%c", ans.front());
             ans.pop();
         }
         puts("");

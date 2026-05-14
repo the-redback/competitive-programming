@@ -11,26 +11,21 @@
 using namespace std;
 #define inf HUGE_VAL
 
+int main() {
+    int tc, t = 1;
+    int i, j, k, n, c;
 
-int main()
-{
-    int tc,t=1;
-    int i,j,k,n,c;
-
-    while(~scanf("%d%d",&n,&c))
-    {
-        int d=n;
-        int xtra=0;
-        int sum=n;
-        while(d>=c)
-        {
-            xtra=d%c;
-            sum=sum+(d/c);
-            d=(d/c);
-            d=d+xtra;
+    while (~scanf("%d%d", &n, &c)) {
+        int d = n;
+        int xtra = 0;
+        int sum = n;
+        while (d >= c) {
+            xtra = d % c;
+            sum = sum + (d / c);
+            d = (d / c);
+            d = d + xtra;
         }
-        printf("%d\n",sum);
-
+        printf("%d\n", sum);
     }
     return 0;
 }

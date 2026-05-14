@@ -1,61 +1,47 @@
 #include <bits/stdc++.h>
 
-main()
-{
+main() {
     char a[15][15];
-    int i,j,k,l,sum=0,s;
-    scanf("%d %d",&k,&l);
-    for(i=0;i<k;i++)
-        scanf("%s",&a[i]);
+    int i, j, k, l, sum = 0, s;
+    scanf("%d %d", &k, &l);
+    for (i = 0; i < k; i++) scanf("%s", &a[i]);
     int flag;
-    for(i=0;i<k;i++)
-    {
-        s=0;
-        flag=0;
-        for(j=0;j<l;j++)
-        {
-            if(a[i][j]=='S')
-            {
-                flag=1;
+    for (i = 0; i < k; i++) {
+        s = 0;
+        flag = 0;
+        for (j = 0; j < l; j++) {
+            if (a[i][j] == 'S') {
+                flag = 1;
                 break;
             }
         }
-        if(flag==1)
-            continue;
-        for(j=0;j<l;j++)
-        {
-            if(a[i][j]!='*')
-            {
+        if (flag == 1) continue;
+        for (j = 0; j < l; j++) {
+            if (a[i][j] != '*') {
                 s++;
-                a[i][j]='*';
+                a[i][j] = '*';
             }
         }
-            sum+=s;
+        sum += s;
     }
-    for(j=0;j<l;j++)
-    {
-        s=0;
-        flag=0;
-        for(i=0;i<k;i++)
-        {
-            if(a[i][j]=='S')
-            {
-                flag=1;
+    for (j = 0; j < l; j++) {
+        s = 0;
+        flag = 0;
+        for (i = 0; i < k; i++) {
+            if (a[i][j] == 'S') {
+                flag = 1;
                 break;
             }
         }
-        if(flag==1)
-            continue;
-        for(i=0;i<k;i++)
-        {
-            if(a[i][j]!='*')
-            {
+        if (flag == 1) continue;
+        for (i = 0; i < k; i++) {
+            if (a[i][j] != '*') {
                 s++;
-                a[i][j]='*';
+                a[i][j] = '*';
             }
         }
-            sum+=s;
+        sum += s;
     }
-    printf("%d\n",sum);
+    printf("%d\n", sum);
     return 0;
 }

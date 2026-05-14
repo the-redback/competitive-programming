@@ -19,17 +19,16 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%d",&a)
-#define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%d %d",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%d", &a)
+#define ssf(a)       scanf("%s", a)
+#define sf2(a, b)    scanf("%d %d", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
-
 
 // clang-format off
 #ifdef  redback
@@ -50,14 +49,13 @@ struct trie {
     int next[26];
     trie() {
         endmark = 0;
-        for (ll i = 0; i < 26; i++)
-            next[i] = -1;
+        for (ll i = 0; i < 26; i++) next[i] = -1;
     }
 };
 
-vector<trie>tree;
+vector<trie> tree;
 
-void Insert(string arr, int start) { ///Insert arr string
+void Insert(string arr, int start) {  /// Insert arr string
     ll node = 0;
     for (ll i = start; i < arr.size(); i++) {
         ll id = arr[i] - 'A';
@@ -68,7 +66,7 @@ void Insert(string arr, int start) { ///Insert arr string
         }
         node = tree[node].next[id];
     }
-    tree[node].endmark = 1; ///endmark marks the ending of a string
+    tree[node].endmark = 1;  /// endmark marks the ending of a string
 }
 
 int rec(int node) {
@@ -79,11 +77,9 @@ int rec(int node) {
     }
 
     for (int i = 0; i < 26; i++) {
-        if (tree[node].next[i] != -1)
-            sum += rec(tree[node].next[i]);
+        if (tree[node].next[i] != -1) sum += rec(tree[node].next[i]);
     }
-    if (node != 0  && sum > 1)
-        sum -= 2;
+    if (node != 0 && sum > 1) sum -= 2;
     return sum;
 }
 
@@ -96,24 +92,23 @@ int main() {
     char arr[100];
     string str;
 
-
     int t = 1, tc;
     sf(tc);
     int i, j, k, l, m, n;
     while (tc--) {
-        tree.pb(trie());  ///Root node actually.
+        tree.pb(trie());  /// Root node actually.
 
-        sf(n);      ///No of word in dictionary.
+        sf(n);  /// No of word in dictionary.
         for (i = 0; i < n; i++) {
             scanf("%s", arr);
             str.assign(arr);
-            Insert(string(str.rbegin(), str.rend()), 0);  ///Insert arr string into dictionary.
+            Insert(string(str.rbegin(), str.rend()), 0);  /// Insert arr string into dictionary.
         }
 
         int sum = rec(0);
-        printf("Case #%d: %d\n", t++, n - sum );
+        printf("Case #%d: %d\n", t++, n - sum);
 
-        tree.clear(); ///Delete The Memory.
+        tree.clear();  /// Delete The Memory.
     }
     return 0;
 }

@@ -1,41 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-	int b, d;
-	char a, c;
+int main() {
+    int b, d;
+    char a, c;
 
-	scanf("%c%d", &a, &b);
-	getchar();
-	scanf("%c%d", &c, &d);
-	getchar();
+    scanf("%c%d", &a, &b);
+    getchar();
+    scanf("%c%d", &c, &d);
+    getchar();
 
-	printf("%d\n", max(abs(a-c), abs(b-d)));
+    printf("%d\n", max(abs(a - c), abs(b - d)));
 
+    while (a != c || b != d) {
+        if (a > c) {
+            printf("L");
+            a--;
+        } else if (a < c) {
+            printf("R");
+            a++;
+        }
 
-	while(a != c || b != d) {
-		if(a > c) {
-			printf("L");
-			a--;
-		}
-		else if(a < c) {
-			printf("R");
-			a++;
-		}
+        if (b > d) {
+            printf("D");
+            b--;
+        } else if (b < d) {
+            printf("U");
+            b++;
+        }
 
-		if(b > d) {
-			printf("D");
-			b--;
-		}
-		else if(b < d) {
-			printf("U");
-			b++;
-		}
+        printf("\n");
+    }
 
-		printf("\n");
-	}
-
-
-	return 0;
+    return 0;
 }

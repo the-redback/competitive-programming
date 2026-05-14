@@ -30,8 +30,8 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 #define NN 1000010
-bool       p[NN + 7];   // Hashing
-vector<ll> pr;          // storing prime
+bool p[NN + 7];  // Hashing
+vector<ll> pr;   // storing prime
 
 void sieve(ll n) {
     ll i, j, k, l;

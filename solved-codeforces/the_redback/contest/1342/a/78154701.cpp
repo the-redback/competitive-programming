@@ -36,8 +36,8 @@ void solve(ll tc) {
     cin >> x >> y >> a >> b;
     ll ans = abs(x) * a + abs(y) * a;
     if ((x > 0 && y > 0) || (x < 0 && y < 0)) {
-        n     = min(abs(x), abs(y));
-        m     = max(abs(x), abs(y));
+        n = min(abs(x), abs(y));
+        m = max(abs(x), abs(y));
         ll x2 = n * b;
         x2 += (m - n) * a;
         ans = min(ans, x2);

@@ -53,15 +53,15 @@ void _print_out(const char* name, T a[], int n) {
 // n+1 hot, n cold
 double chk(ll n, ll h, ll c) {
     double sum;
-    ll     k = (n + 1) * h;
-    ll     l = n * c;
+    ll k = (n + 1) * h;
+    ll l = n * c;
     sum = (k + l) / ((2.0 * n) + 1);
     return sum;
 }
 
 void solve() {
-    ll     i, j, k;
-    ll     n, m;
+    ll i, j, k;
+    ll n, m;
     double h, c, t;
     cin >> h >> c >> t;
 
@@ -88,7 +88,7 @@ void solve() {
     }
 
     double ans = inf;
-    ll     cnt = 0;
+    ll cnt = 0;
 
     for (i = low; i <= high; i++) {
         double temp = chk(i, h, c);

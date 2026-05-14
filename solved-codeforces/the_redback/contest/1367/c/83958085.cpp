@@ -60,8 +60,7 @@ void solve() {
 
     vector<ll> v(n);
     v[n - 1] = inf;
-    if (str[n - 1] == '1')
-        v[n - 1] = n - 1;
+    if (str[n - 1] == '1') v[n - 1] = n - 1;
 
     for (i = n - 2; i >= 0; i--) {
         if (str[i] == '1')

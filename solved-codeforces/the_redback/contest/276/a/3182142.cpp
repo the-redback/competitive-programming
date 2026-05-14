@@ -1,24 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-main()
-{
+main() {
     int l;
-    vector <long>v;
-    long n,k,fi,ki;
-    scanf("%ld %ld",&n,&k);
-    l=n;
-    while(n--)
-    {
-        scanf("%ld %ld",&fi,&ki);
-        if(ki<=k)
+    vector<long> v;
+    long n, k, fi, ki;
+    scanf("%ld %ld", &n, &k);
+    l = n;
+    while (n--) {
+        scanf("%ld %ld", &fi, &ki);
+        if (ki <= k)
             v.push_back(fi);
-        else
-        {
-            v.push_back(fi-(ki-k));
+        else {
+            v.push_back(fi - (ki - k));
         }
     }
-    sort(v.begin(),v.end());
-    printf("%ld\n",v[l-1]);
+    sort(v.begin(), v.end());
+    printf("%ld\n", v[l - 1]);
     return 0;
 }

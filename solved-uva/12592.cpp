@@ -9,33 +9,30 @@
  */
 #include <bits/stdc++.h>
 using namespace std;
-#define inf HUGE_VAL
-#define mem(a,b) memset(a,b,sizeof(a))
+#define inf       HUGE_VAL
+#define mem(a, b) memset(a, b, sizeof(a))
 
-main()
-{
-    map<string,string>mp;
-    string s,ss;
+main() {
+    map<string, string> mp;
+    string s, ss;
     char a[100];
     char b[100];
-    int tc,t=1;
-    scanf("%d",&tc);
+    int tc, t = 1;
+    scanf("%d", &tc);
     getchar();
-    while(tc--)
-    {
+    while (tc--) {
         gets(a);
         gets(b);
         s.assign(a);
         ss.assign(b);
-        mp[s]=ss;
+        mp[s] = ss;
     }
-    scanf("%d",&tc);
+    scanf("%d", &tc);
     getchar();
-    while(tc--)
-    {
+    while (tc--) {
         gets(a);
         s.assign(a);
-        printf("%s\n",mp[s].c_str());
+        printf("%s\n", mp[s].c_str());
     }
     return 0;
 }

@@ -21,30 +21,30 @@ typedef long long ll;
 
 // debugging macros
 #ifdef redback
-    #include "prettyprint.hpp"
-    #define dbg(...)                        \
-        cout << "L-" << __LINE__ << " :: "; \
-        _print_out(#__VA_ARGS__, __VA_ARGS__);
-    template <typename T>
-    void _print_out(const char* name, T&& arg1) {
-        cout << name << " = " << arg1 << endl;
-    }
-    template <typename T1, typename... Args>
-    void _print_out(const char* names, T1&& arg1, Args&&... args) {
-        const char* comma = strchr(names + 1, ',');
-        cout.write(names, comma - names) << " = " << arg1 << " | ";
-        _print_out(comma + 1, args...);
-    }
-    template <typename T>
-    void _print_out(const char* name, T a[], int n) {
-        cout << name << " = " << pretty_print_array(a, n) << endl;
-    }
+#include "prettyprint.hpp"
+#define dbg(...)                        \
+    cout << "L-" << __LINE__ << " :: "; \
+    _print_out(#__VA_ARGS__, __VA_ARGS__);
+template <typename T>
+void _print_out(const char* name, T&& arg1) {
+    cout << name << " = " << arg1 << endl;
+}
+template <typename T1, typename... Args>
+void _print_out(const char* names, T1&& arg1, Args&&... args) {
+    const char* comma = strchr(names + 1, ',');
+    cout.write(names, comma - names) << " = " << arg1 << " | ";
+    _print_out(comma + 1, args...);
+}
+template <typename T>
+void _print_out(const char* name, T a[], int n) {
+    cout << name << " = " << pretty_print_array(a, n) << endl;
+}
 #else
 #define dbg(args...)
 #endif
 
 string ans;
-ll     N, M;
+ll N, M;
 
 vector<string> str(20);
 
@@ -88,7 +88,7 @@ void solve(ll t) {
     for (i = 0; i < m; i++) {
         for (j = 'a'; j <= 'z'; j++) {
             string s = str[0];
-            s[i]     = j;
+            s[i] = j;
             if (check(s)) {
                 cout << s << "\n";
                 return;

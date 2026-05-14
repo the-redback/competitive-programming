@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
-main()
-{
+main() {
     char a[20];
-    while(gets(a))
-    {
+    while (gets(a)) {
         puts(a);
     }
     return 0;

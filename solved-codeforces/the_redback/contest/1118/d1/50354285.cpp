@@ -19,18 +19,17 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",&a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", &a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
 #define NN           200010
-
 
 // clang-format off
 #ifdef  redback
@@ -45,19 +44,16 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cerr <<
 
 ll a[NN];
 
-bool compare(ll n, ll m) {
-    return n > m;
-}
+bool compare(ll n, ll m) { return n > m; }
 
-int main()
-{
+int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     // freopen("output.in", "w", stdout);
 #endif
 
     ll t = 1, tc;
-    //sf(tc);
+    // sf(tc);
     ll n, m;
     while (~sf2(n, m)) {
         ll i, j, k = 0;
@@ -76,8 +72,7 @@ int main()
         while (low <= high) {
             ll mid = (low + high) / 2.0;
             k = 0;
-            for (i = 0; i < n; i++)
-            {
+            for (i = 0; i < n; i++) {
                 k += max(0ll, a[i] - (i / mid));
             }
             if (k >= m) {
@@ -89,7 +84,6 @@ int main()
         }
 
         printf("%lld\n", ans);
-
     }
     return 0;
 }

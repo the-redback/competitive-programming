@@ -34,7 +34,7 @@ void solve(ll tc) {
     ll i, j, k, n;
     cin >> n >> k;
     vector<ll> f(n + 10), arr;
-    ll         fr = 0;
+    ll fr = 0;
 
     for (i = 0; i < n; i++) {
         cin >> j;

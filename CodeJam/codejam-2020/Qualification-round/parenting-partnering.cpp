@@ -12,13 +12,12 @@
 
 using namespace std;
 
-typedef long long   ll;
-#define mem(a, b)   memset(a,b,sizeof(a))
-#define inf         1e9
-#define eps         1e-9
-#define mod         1000000007
-#define NN          100010
-
+typedef long long ll;
+#define mem(a, b) memset(a, b, sizeof(a))
+#define inf       1e9
+#define eps       1e-9
+#define mod       1000000007
+#define NN        100010
 
 // clang-format off
 #ifdef  redback
@@ -36,13 +35,13 @@ struct node {
     int y;
     int in;
     char user;
-    
-    node(){}
 
-    node(int X, int Y, int IN){
-        x=X;
-        y=Y;
-        in=IN;
+    node() {}
+
+    node(int X, int Y, int IN) {
+        x = X;
+        y = Y;
+        in = IN;
     }
 };
 
@@ -55,57 +54,55 @@ bool comp(node a, node b) {
     return a.x < b.x;
 }
 
-
 int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
 #endif
     ll t = 1, tc;
-    cin >> tc ;
+    cin >> tc;
     ll n, m;
-    while ( tc--) {
+    while (tc--) {
         cin >> n;
-        ll i,c, j, k;
+        ll i, c, j, k;
         for (int i = 0; i < n; ++i) {
-            cin>>j>>k;
-            arr[i]=node(j,k,i);
+            cin >> j >> k;
+            arr[i] = node(j, k, i);
         }
 
-        sort(arr,arr+n,comp);
-        c=-1,j=-1;
-        ll flag=0;
+        sort(arr, arr + n, comp);
+        c = -1, j = -1;
+        ll flag = 0;
 
         for (int i = 0; i < n; ++i) {
             // debug(arr[i].x, arr[i].y, c, j)
-            if(arr[i].x>=c){
-                arr[i].user='C';
-                c=arr[i].y;
-            } else if (arr[i].x>=j) {
+            if (arr[i].x >= c) {
+                arr[i].user = 'C';
+                c = arr[i].y;
+            } else if (arr[i].x >= j) {
                 arr[i].user = 'J';
-                j=arr[i].y;
+                j = arr[i].y;
             } else {
-                flag=1;
+                flag = 1;
                 break;
             }
         }
 
-        printf("Case #%d: ",t++);
+        printf("Case #%d: ", t++);
 
         if (flag) {
-           printf("IMPOSSIBLE\n");
-           continue;
+            printf("IMPOSSIBLE\n");
+            continue;
         }
 
         char ans[1010];
 
         for (int i = 0; i < n; ++i) {
-            ans[arr[i].in]=arr[i].user;
+            ans[arr[i].in] = arr[i].user;
         }
-        ans[n]=0;
+        ans[n] = 0;
 
-        printf("%s\n",ans );
-
+        printf("%s\n", ans);
     }
     return 0;
 }

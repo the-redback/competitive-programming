@@ -1,41 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-main()
-{
-    stack<char>s;
+main() {
+    stack<char> s;
     char a[500];
     int tc;
-    cin>>tc;
+    cin >> tc;
     getchar();
-    while(tc--)
-    {
+    while (tc--) {
         gets(a);
-        int l=strlen(a);
-        while(s.size())
-            s.pop();
-        int flag=0;
-        for(int i=0;i<l;i++)
-        {
-            if(a[i]=='('||a[i]=='[')
-               s.push(a[i]);
-            else if(a[i]==')')
-            {
-                if(s.size() && s.top()=='(')
-                   s.pop();
+        int l = strlen(a);
+        while (s.size()) s.pop();
+        int flag = 0;
+        for (int i = 0; i < l; i++) {
+            if (a[i] == '(' || a[i] == '[')
+                s.push(a[i]);
+            else if (a[i] == ')') {
+                if (s.size() && s.top() == '(')
+                    s.pop();
                 else
-                    flag=1;
-            }
-            else if(a[i]==']')
-            {
-                if(s.size() &&s.top()=='[')
-                   s.pop();
+                    flag = 1;
+            } else if (a[i] == ']') {
+                if (s.size() && s.top() == '[')
+                    s.pop();
                 else
-                    flag=1;
+                    flag = 1;
             }
-            if(flag)
-                break;
+            if (flag) break;
         }
-        if(flag||s.size())
+        if (flag || s.size())
             printf("No\n");
         else
             printf("Yes\n");

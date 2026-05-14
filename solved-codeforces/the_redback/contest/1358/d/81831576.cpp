@@ -80,13 +80,13 @@ void solve(ll n) {
         }
         k = day[i] - m;
         auto low = lower_bound(all(day), k);
-        ll   in = low - day.begin();
+        ll in = low - day.begin();
 
         if (day[in] > k) {
             in--;
         }
 
-        dbg(in,day[in], point[in]);
+        dbg(in, day[in], point[in]);
 
         ll dif = k - day[in];
         ll ret = point[i] - point[in];

@@ -80,8 +80,7 @@ void solve() {
         dbg(mx, cnt);
 
         for (j = 0; j < n; j++) {
-            if (v[j] == mx)
-                cnt++;
+            if (v[j] == mx) cnt++;
         }
         dbg(mx, cnt);
 
@@ -96,7 +95,7 @@ void solve() {
 
         dbg(in, j);
 
-        vector<ll>vv;
+        vector<ll> vv;
 
         for (j = 0; j < n; j++) {
             if (v[j] == mx) {
@@ -105,14 +104,12 @@ void solve() {
             }
         }
         dbg(vv);
-        for (auto j:vv) {
-            dbg("---------",j)
-                v[j]=inf;
-                for (k = 0; k < n; k++) {
-                    if (v[k] == inf)
-                        continue;
-                    v[k] -= abs(j - k);
-                }
+        for (auto j : vv) {
+            dbg("---------", j) v[j] = inf;
+            for (k = 0; k < n; k++) {
+                if (v[k] == inf) continue;
+                v[k] -= abs(j - k);
+            }
         }
 
         string s = "";

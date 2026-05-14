@@ -19,18 +19,17 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
 #define NN           100010
-
 
 // clang-format off
 #ifdef  redback
@@ -43,50 +42,43 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #endif  //debugging macros
 // clang-format on
 
-vector<pair<ll,ll> >v;
+vector<pair<ll, ll> > v;
 
-bool comp(pair<ll,ll> a, pair<ll,ll> b)
-{
-    return a.second>b.second;
-}
+bool comp(pair<ll, ll> a, pair<ll, ll> b) { return a.second > b.second; }
 
-int main()
-{
+int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
 #endif
 
     ll t = 1, tc;
-    //sf(tc);
+    // sf(tc);
     ll n, m;
-    while (~sf2(n,m)) {
+    while (~sf2(n, m)) {
         ll i, j, k;
-        for(i=0;i<n;i++)
-        {
-            sf2(j,k);
-            v.pb(mp(j,k));
+        for (i = 0; i < n; i++) {
+            sf2(j, k);
+            v.pb(mp(j, k));
         }
-        sort(v.begin(),v.end(),comp);
+        sort(v.begin(), v.end(), comp);
 
-        ll ret=0,len=0,mx=0;
+        ll ret = 0, len = 0, mx = 0;
 
-        set<pair<ll,ll> > s;
+        set<pair<ll, ll> > s;
 
-        for(i=0;i<n;i++)
-        {
-            s.insert(mp(v[i].first,i));
-            len+=v[i].first;
-            while(s.size()>m){
+        for (i = 0; i < n; i++) {
+            s.insert(mp(v[i].first, i));
+            len += v[i].first;
+            while (s.size() > m) {
                 auto it = s.begin();
-                len-=it->first;
+                len -= it->first;
                 s.erase(it);
             }
-            ret=max(ret,len*v[i].second);
+            ret = max(ret, len * v[i].second);
         }
 
-        printf("%lld\n",ret);
-
+        printf("%lld\n", ret);
     }
     return 0;
 }

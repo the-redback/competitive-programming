@@ -34,7 +34,7 @@ string str, ans;
 
 bool poss(ll k) {
     ll i, j;
-    ll fl=0;
+    ll fl = 0;
     for (i = k - 1; i < str.size(); i += k) {
         j = i - k + 1;
         ans += str[i];
@@ -42,7 +42,6 @@ bool poss(ll k) {
             return false;
         }
     }
-    
 
     return true;
 }
@@ -53,7 +52,7 @@ void solve(ll tc) {
     cin >> str;
     sort(str.begin(), str.end());
 
-    ans   = "";
+    ans = "";
     ll fl = 0;
     for (i = 1; i < str.size(); i++) {
         if (str[i] != str[i - 1]) {
@@ -84,14 +83,14 @@ void solve(ll tc) {
 
     string ans3 = ans2;
 
-    ll   ret = ceil(n / (1.0 * k));
+    ll ret = ceil(n / (1.0 * k));
     bool pos = poss(k);
     if ((ret * k) == n && pos) {
         if (ans3 > ans) {
             ans3 = ans;
         }
-    } else if (pos){
-        ans+=str[n-1];
+    } else if (pos) {
+        ans += str[n - 1];
         if (ans3 > ans) {
             ans3 = ans;
         }

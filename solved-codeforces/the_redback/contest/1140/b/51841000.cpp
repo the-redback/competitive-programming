@@ -19,18 +19,17 @@ typedef unsigned long long llu;
 #define sd           second
 #define mp           make_pair
 #define pb(x)        push_back(x)
-#define all(x)       x.begin(),x.end()
-#define allr(x)      x.rbegin(),x.rend()
-#define mem(a, b)    memset(a,b,sizeof(a))
-#define sf(a)        scanf("%lld",&a)
-#define ssf(a)       scanf("%s",a)
-#define sf2(a, b)    scanf("%lld %lld",&a,&b)
-#define sf3(a, b, c) scanf("%lld %lld %lld",&a,&b,&c)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define sf(a)        scanf("%lld", &a)
+#define ssf(a)       scanf("%s", a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
 #define inf          1e9
 #define eps          1e-9
 #define mod          1000000007
 #define NN           100010
-
 
 // clang-format off
 #ifdef  redback
@@ -46,8 +45,7 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 char a[110];
 int b[110];
 
-int main()
-{
+int main() {
 #ifdef redback
     freopen("input.in", "r", stdin);
     freopen("output.in", "w", stdout);
@@ -59,27 +57,22 @@ int main()
     while (tc--) {
         sf(n);
         ssf(a);
-        mem(b,0);
-        ll i, j=0, k=0;
+        mem(b, 0);
+        ll i, j = 0, k = 0;
 
-        for(i=0;i<n;i++)
-        {
-            if(a[i]=='>')
-                break;
+        for (i = 0; i < n; i++) {
+            if (a[i] == '>') break;
             k++;
         }
 
-        for(i=n-1;i>=0;i--)
-        {
-            if(a[i]=='<')
-                break;
+        for (i = n - 1; i >= 0; i--) {
+            if (a[i] == '<') break;
             j++;
         }
 
-        ll ret=min(k,j);
+        ll ret = min(k, j);
 
-        printf("%lld\n",ret);
-
+        printf("%lld\n", ret);
     }
     return 0;
 }

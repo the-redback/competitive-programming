@@ -85,8 +85,7 @@ void solve(ll n) {
     ll cnt = pow(pw - 1, 10);
 
     for (i = 0; i < v.size(); i++) {
-        if (cnt >= n)
-            break;
+        if (cnt >= n) break;
         cnt /= pw - 1;
         cnt *= pw;
         v[i] = pw;

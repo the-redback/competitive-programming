@@ -33,8 +33,8 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 void solve(ll tc) {
     ll i, j, k, n, m;
     cin >> n >> m;
-    if (n == 1 || m == 1 || (n==2 && m==2)){
-        cout<<"YES\n";
+    if (n == 1 || m == 1 || (n == 2 && m == 2)) {
+        cout << "YES\n";
         return;
     }
 

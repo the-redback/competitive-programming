@@ -9,54 +9,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define inf 999999999;
-vector<long>v;
-vector<long>u;
-main()
-{
-    int t=1,tc;
-    scanf("%d",&tc);
-    while(tc--)
-    {
-        int n,i,j;
-        long k,l;
-        scanf("%d",&n);
-        for(i=0;i<n;i++)
-        {
-            scanf("%ld%ld",&k,&l);
+vector<long> v;
+vector<long> u;
+main() {
+    int t = 1, tc;
+    scanf("%d", &tc);
+    while (tc--) {
+        int n, i, j;
+        long k, l;
+        scanf("%d", &n);
+        for (i = 0; i < n; i++) {
+            scanf("%ld%ld", &k, &l);
             u.push_back(k);
             v.push_back(l);
         }
-        sort(v.rbegin(),v.rend());
-        sort(u.rbegin(),u.rend());
-        int s=-inf;
-        int sum=0;
-        while(1)
-        {
-            if(u.size()>0)
-            {
-                if(u[u.size()-1]<v[v.size()-1])
-                {
+        sort(v.rbegin(), v.rend());
+        sort(u.rbegin(), u.rend());
+        int s = -inf;
+        int sum = 0;
+        while (1) {
+            if (u.size() > 0) {
+                if (u[u.size() - 1] < v[v.size() - 1]) {
                     sum++;
-                    s=max(s,sum);
+                    s = max(s, sum);
                     u.pop_back();
-                }
-                else
-                {
+                } else {
                     sum--;
-                    s=max(s,sum);
+                    s = max(s, sum);
                     v.pop_back();
                 }
-            }
-            else if(v.size()>0)
-            {
-                    sum--;
-                    s=max(s,sum);
-                    v.pop_back();
-            }
-            else
+            } else if (v.size() > 0) {
+                sum--;
+                s = max(s, sum);
+                v.pop_back();
+            } else
                 break;
         }
-        printf("%d\n",s);
+        printf("%d\n", s);
     }
     return 0;
 }

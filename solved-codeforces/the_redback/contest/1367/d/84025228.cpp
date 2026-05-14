@@ -77,8 +77,7 @@ void solve() {
                 cnt++;
         }
 
-        if (mn == inf)
-            break;
+        if (mn == inf) break;
 
         ll in;
         for (int j = str.size() - 1; j - cnt + 1 >= 0; j--)
@@ -97,8 +96,7 @@ void solve() {
         for (auto j : vv) {
             v[j] = inf;
             for (k = 0; k < n; k++) {
-                if (v[k] == inf)
-                    continue;
+                if (v[k] == inf) continue;
                 v[k] -= abs(j - k);
             }
         }

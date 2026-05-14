@@ -105,7 +105,7 @@ void solve(ll n) {
 
     for (i = 0; i < n; i++) {
         ll xx = v[i].second;
-        dbg(i,xx,v[i]);
+        dbg(i, xx, v[i]);
         fl.reset();
 
         for (j = 0; j < e[xx].size(); j++) {
@@ -115,8 +115,8 @@ void solve(ll n) {
                 cout << "-1\n";
                 return;
             }
-            if(vis[yy]!=0){
-                fl[th[yy]]=1;
+            if (vis[yy] != 0) {
+                fl[th[yy]] = 1;
             }
         }
         for (j = 1; j < v[i].first; j++) {
@@ -127,7 +127,7 @@ void solve(ll n) {
             }
         }
         fl[v[i].first] = 1;
-        vis[xx]=1;
+        vis[xx] = 1;
     }
 
     for (i = 0; i < n; i++) {

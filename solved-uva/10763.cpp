@@ -1,41 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
-int arr[500001],ab[500001];
-int compare(const void *a, const void *b)
-{
-    int *ia=(int*) a;
-    int *ib=(int*) b;
-    return (*ia-*ib);
+int arr[500001], ab[500001];
+int compare(const void* a, const void* b) {
+    int* ia = (int*)a;
+    int* ib = (int*)b;
+    return (*ia - *ib);
 }
 
-main()
-{
-    int i,j,n;
-    while(scanf("%d",&n))
-    {
-        if(n==0)
-        {
+main() {
+    int i, j, n;
+    while (scanf("%d", &n)) {
+        if (n == 0) {
             break;
         }
-        for(i=0;i<n;i++)
-        {
-            scanf("%d %d",&arr[i],&ab[i]);
+        for (i = 0; i < n; i++) {
+            scanf("%d %d", &arr[i], &ab[i]);
         }
-        qsort(arr,n,sizeof(int),compare);
-        qsort(ab,n,sizeof(int),compare);
-        for(i=0;i<n;i++)
-        {
-            if(arr[i]!=ab[i])
-            {
+        qsort(arr, n, sizeof(int), compare);
+        qsort(ab, n, sizeof(int), compare);
+        for (i = 0; i < n; i++) {
+            if (arr[i] != ab[i]) {
                 break;
             }
         }
-        if(i==n)
-        {
+        if (i == n) {
             printf("YES\n");
-        }
-        else
-        {
+        } else {
             printf("NO\n");
         }
     }

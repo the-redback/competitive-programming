@@ -13,41 +13,36 @@ using namespace std;
 #define MAX 1010
 #define inf 99999
 
-long long call(int n,int k,int l)
-{
-    long long sum=1;
+long long call(int n, int k, int l) {
+    long long sum = 1;
     long long i;
-    int j=1;
-    for(i=k+1;i<=n;i++)
-    {
-        sum*=i;
-        if(j<=l && sum%j==0)
-        {
-            sum/=j;
+    int j = 1;
+    for (i = k + 1; i <= n; i++) {
+        sum *= i;
+        if (j <= l && sum % j == 0) {
+            sum /= j;
             j++;
         }
     }
     return sum;
 }
 
-main()
-{
-    int tc,n;
+main() {
+    int tc, n;
     long long sum;
-    int k,l;
-    scanf("%d",&tc);
-    while(tc--)
-    {
-        int i,j;
-        scanf("%d%d",&n,&k);
-        l=(n-1)-(k-1);
-        if(n==k)
-            sum=1;
-        else if(l>(k-1))
-            sum=call(n-1,l,k-1);
+    int k, l;
+    scanf("%d", &tc);
+    while (tc--) {
+        int i, j;
+        scanf("%d%d", &n, &k);
+        l = (n - 1) - (k - 1);
+        if (n == k)
+            sum = 1;
+        else if (l > (k - 1))
+            sum = call(n - 1, l, k - 1);
         else
-            sum=call(n-1,k-1,l);
-        printf("%lld\n",sum);
+            sum = call(n - 1, k - 1, l);
+        printf("%lld\n", sum);
     }
     return 0;
 }

@@ -48,7 +48,7 @@ void solve(ll t) {
     for (i = 1; i <= k; i++) {
         if (n % i == 0) {
             ans = min(ans, n / i);
-            j   = n / i;
+            j = n / i;
             if (j <= m) {
                 ans = min(ans, n / j);
             }

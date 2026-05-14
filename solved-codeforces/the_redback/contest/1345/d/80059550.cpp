@@ -31,11 +31,11 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 char a[1010][1010];
-ll   row[1010], col[1010];
-ll   r, c;
+ll row[1010], col[1010];
+ll r, c;
 
-int  dx[] = {-1, 0, 0, 1};
-int  dy[] = {0, -1, 1, 0};
+int dx[] = {-1, 0, 0, 1};
+int dy[] = {0, -1, 1, 0};
 void rec(ll i, ll j) {
     if (i < 0 || j < 0 || i >= r || j >= c) {
         return;
@@ -57,7 +57,7 @@ void solve(ll n, ll m) {
     r = n;
     c = m;
     string str;
-    ll     total = 0, fl1 = 0, fl2 = 0;
+    ll total = 0, fl1 = 0, fl2 = 0;
     for (i = 0; i < n; i++) {
         cin >> str;
         for (j = 0; j < m; j++) {

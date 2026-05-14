@@ -55,7 +55,7 @@ ll chk(ll o, ll t, ll n) {
         return n * o;
     }
 
-    ll k   = n / 2;
+    ll k = n / 2;
     ll sum = k * t;
     sum += (n % 2) * o;
 

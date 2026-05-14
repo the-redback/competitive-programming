@@ -79,8 +79,7 @@ void solve(ll n) {
 
     dbg(both, alice, bob);
 
-    if ((int)both.size() + (int)alice.size() < k ||
-        (int)both.size() + (int)bob.size() < k) {
+    if ((int)both.size() + (int)alice.size() < k || (int)both.size() + (int)bob.size() < k) {
         cout << "-1\n";
         return;
     }

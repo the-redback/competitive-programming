@@ -31,7 +31,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 void solve(ll n, ll k) {
-    ll         i, j;
+    ll i, j;
     vector<ll> a(n);
     vector<ll> f(k + 1);
     vector<ll> ck(k + 1);
@@ -49,7 +49,7 @@ void solve(ll n, ll k) {
     ll pos = 0;
     for (i = 1; i <= k; i++) {
         ll l = ceil(sum1 / ((1.0) * ck[i]));
-        pos  = max(pos, l);
+        pos = max(pos, l);
         if (f[i]) {
             sum1 -= f[i];
         }

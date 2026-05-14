@@ -95,8 +95,7 @@ void solve() {
                 dbg(j, n);
                 for (k = 0; k < i; k++) {
                     ll l = i - k;
-                    if (k == 0)
-                        l = 0;
+                    if (k == 0) l = 0;
                     dbg(k, l);
                     ll v1 = -1, v2 = -1;
                     if (fr[k].size() > 0 && fr[l].size() > 0) {

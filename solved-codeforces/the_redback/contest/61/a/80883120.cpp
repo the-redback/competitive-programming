@@ -44,7 +44,7 @@ int main() {
 
     ll t = 1, tc;
     // cin >> tc;
-    ll     n, m;
+    ll n, m;
     string str1, str2;
     while (cin >> str1 >> str2) {
         string str;

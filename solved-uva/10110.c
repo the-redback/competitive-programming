@@ -1,24 +1,18 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
-main()
-{
+main() {
     long long n;
     long k;
-    while(scanf("%lld",&n))
-    {
-        if(n==0)
-        {
+    while (scanf("%lld", &n)) {
+        if (n == 0) {
             break;
         }
-        k=sqrt(n);
-        k=k*k;
-        if(k==n)
-        {
+        k = sqrt(n);
+        k = k * k;
+        if (k == n) {
             printf("yes\n");
-        }
-        else
-        {
+        } else {
             printf("no\n");
         }
     }

@@ -84,8 +84,8 @@ void solve() {
 
     for (i = 1; i < n; i++) {
         ll tmp1 = 0, tmp2 = 0;
-        ll single_even=0, single_odd=0;
-        ll long_even=0, long_odd=0;
+        ll single_even = 0, single_odd = 0;
+        ll long_even = 0, long_odd = 0;
         if (i % 2 == 0 && v[i] < v[i - 1]) {
             single_even = v[i];
             single_odd = v[i - 1];

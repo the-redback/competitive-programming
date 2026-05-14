@@ -38,7 +38,7 @@ int main() {
     // cin >> tc;
     ll n, m, k;
     while (cin >> n >> k) {
-        ll         i, j;
+        ll i, j;
         vector<ll> a(n);
         vector<ll> f(k + 1);
         vector<ll> ck(k + 1);
@@ -56,13 +56,8 @@ int main() {
         ll pos = 0;
         for (i = 1; i <= k; i++) {
             ll l = ceil(sum1 / ((1.0) * ck[i]));
-            debug(sum1, ck[i], l, pos)
-            pos  = max(pos, l);
-            debug(i,f[i])
-            if(f[i]){
-            sum1 -= f[i];
-            }
-
+            debug(sum1, ck[i], l, pos) pos = max(pos, l);
+            debug(i, f[i]) if (f[i]) { sum1 -= f[i]; }
         }
 
         vector<ll> ans[pos];

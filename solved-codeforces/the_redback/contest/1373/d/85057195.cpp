@@ -87,8 +87,7 @@ void solve() {
     ll res = even[n - 1];
 
     for (i = 1; i < n; i++) {
-        if (i % 2 == 0)
-            continue;
+        if (i % 2 == 0) continue;
 
         ll tmp1 = 0, tmp2 = 0;
         ll l1 = 0, l2 = 0;
@@ -117,8 +116,7 @@ void solve() {
     last = 1;
 
     for (i = 2; i < n; i++) {
-        if (i % 2 == 1)
-            continue;
+        if (i % 2 == 1) continue;
 
         dbg(i);
 
@@ -136,9 +134,9 @@ void solve() {
         ll longTOdd = odd[i] - odd[last] + v[last];
 
         tmp1 = total - singleEv + singleOdd;
-        dbg(total,singleEv,singleOdd)
+        dbg(total, singleEv, singleOdd)
 
-        tmp2 = total - longTEv + longTOdd;
+            tmp2 = total - longTEv + longTOdd;
 
         if (tmp1 > tmp2) {
             last = i - 1;

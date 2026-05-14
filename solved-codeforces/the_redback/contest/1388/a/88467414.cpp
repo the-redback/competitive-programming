@@ -49,8 +49,7 @@ void solve() {
                 ans = n - v[i] - v[j] - v[k];
                 if (ans > 0 && ans != v[i] && ans != v[j] && ans != v[k]) {
                     cout << "YES\n";
-                    cout << v[i] << " " << v[j] << " " << v[k] << " " << ans
-                         << "\n";
+                    cout << v[i] << " " << v[j] << " " << v[k] << " " << ans << "\n";
                     return;
                 }
             }

@@ -3,7 +3,7 @@
 using namespace std;
 
 #define inf 1e9
-#define NN 10010
+#define NN  10010
 
 struct Data {
     int totalsum, maxsum, leftmax, rightmax;

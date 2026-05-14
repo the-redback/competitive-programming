@@ -20,8 +20,8 @@ string to_string(pair<A, B> p) {
 
 template <typename A>
 string to_string(A v) {
-    bool   first = true;
-    string res   = "{";
+    bool first = true;
+    string res = "{";
     for (const auto& x : v) {
         if (!first) {
             res += ", ";
@@ -50,8 +50,8 @@ void debug_out(Head H, Tail... T) {
 // http://e-maxx.ru/algo/ukkonen
 
 int main() {
-    int               n = 5;
-    vector<int>       v = {1, 2, 3, 4};
+    int n = 5;
+    vector<int> v = {1, 2, 3, 4};
     pair<int, string> p = {1, "codeforces"};
     debug(n, v, p);
 }

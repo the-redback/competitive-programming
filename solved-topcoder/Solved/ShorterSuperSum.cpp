@@ -1,34 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
-int call(int k,int n)
-{
-    int sum=0,i=0;
-    if(k==0)
-        return (n*(n+1))/2;
-    while(i!=n)
-    {
-        sum+=call(k-1,i+1);
+int call(int k, int n) {
+    int sum = 0, i = 0;
+    if (k == 0) return (n * (n + 1)) / 2;
+    while (i != n) {
+        sum += call(k - 1, i + 1);
         i++;
     }
     return sum;
 }
 
-struct ShorterSuperSum
-{
-    int calculate(int k, int n)
-    {
-        int ret=0;
-        ret=call(k-1,n);
+struct ShorterSuperSum {
+    int calculate(int k, int n) {
+        int ret = 0;
+        ret = call(k - 1, n);
         return ret;
     }
 };
 
-
-
 // Powered by FileEdit
 // Powered by TZTester 1.01 [25-Feb-2003]
 // Powered by CodeProcessor
-
 
 // Powered by FileEdit
 // Powered by TZTester 1.01 [25-Feb-2003]

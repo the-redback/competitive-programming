@@ -56,7 +56,7 @@ void solve() {
     ll n, m;
     cin >> n;
 
-    cout << n/2 << "\n";
+    cout << n / 2 << "\n";
     return;
 }
 

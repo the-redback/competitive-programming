@@ -31,7 +31,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 // clang-format on
 
 vector<ll> arr;
-int        main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 

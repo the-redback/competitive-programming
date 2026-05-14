@@ -34,7 +34,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 ll leng(ll x, ll y) {
     ll sum = 1;
     ll len = 1;
-    ll l   = abs(x) + abs(y);
+    ll l = abs(x) + abs(y);
 
     for (ll i = 1; sum < l;) {
         i *= 2;
@@ -83,12 +83,12 @@ int main() {
     cin >> tc;
     ll n, m;
     while (tc--) {
-        ll i, j, k, l;   // v
-        ll x, y;         // b
-        cin >> x >> y;   // a
+        ll i, j, k, l;  // v
+        ll x, y;        // b
+        cin >> x >> y;  // a
 
-        str       = "";
-        ll   len  = leng(x, y);
+        str = "";
+        ll len = leng(x, y);
         bool poss = rec(x, y, len);
 
         if (!poss) {

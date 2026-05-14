@@ -36,12 +36,12 @@ int main() {
 
     ll t = 1, tc;
     // cin >> tc;
-    ll     n, m;
+    ll n, m;
     string str;
     while (cin >> str) {
         ll i, j, k;
 
-        ll     l = 0, u = 0;
+        ll l = 0, u = 0;
         string lw, up;
 
         for (i = 0; i < str.size(); i++) {

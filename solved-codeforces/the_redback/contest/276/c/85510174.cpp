@@ -62,8 +62,7 @@ void solve(ll n) {
     for (i = 0; i < q; i++) {
         cin >> j >> k;
         fr[j - 1]++;
-        if (k != n)
-            fr[k]--;
+        if (k != n) fr[k]--;
     }
 
     ll carry = 0;

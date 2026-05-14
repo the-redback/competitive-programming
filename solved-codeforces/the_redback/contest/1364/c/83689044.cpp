@@ -56,8 +56,8 @@ void solve(ll n) {
     ll m;
     vector<ll> a(n), v;
     set<ll> ans;
-    ll l[n+1];
-    mem(l,-1);
+    ll l[n + 1];
+    mem(l, -1);
     for (i = 0; i < n; i++) {
         cin >> a[i];
         l[a[i]] = i;
@@ -72,7 +72,7 @@ void solve(ll n) {
         }
         dbg(last);
 
-        if (a[i - 1] < a[i] && ans.find(a[i-1]) == ans.end() ) {
+        if (a[i - 1] < a[i] && ans.find(a[i - 1]) == ans.end()) {
             ans.insert(a[i - 1]);
             v.pb(a[i - 1]);
             continue;
@@ -91,13 +91,12 @@ void solve(ll n) {
 
     last = 0;
     dbg(ans);
-    dbg(l,10);
+    dbg(l, 10);
     while (last <= n && (l[last] >= 0 || ans.find(last) != ans.end())) {
         dbg(">>", last, l[last]);
         last++;
     }
-    if (last < 0)
-        last = n;
+    if (last < 0) last = n;
     ans.insert(last);
     v.pb(last);
 

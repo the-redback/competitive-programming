@@ -61,8 +61,7 @@ void solve() {
     ll fl = 0;
     ll mx = 0;
     for (i = 0; i < n; i++) {
-        if (a[str[i] - 'a'] == 0)
-            fl++;
+        if (a[str[i] - 'a'] == 0) fl++;
         a[str[i] - 'a']++;
         mx = max(mx, a[str[i] - 'a']);
     }

@@ -10,48 +10,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define mem(a,b) memset(a,b,sizeof(a))
-#define pb push_back
-#define pp pop_back
-#define inf 1000000000
-#define NN 30
+#define mem(a, b) memset(a, b, sizeof(a))
+#define pb        push_back
+#define pp        pop_back
+#define inf       1000000000
+#define NN        30
 
-vector<int>v;
+vector<int> v;
 
-int main()
-{
-    int tc,t=1,ret=0;
-    int i,j,k,l,r,cc;
-    int n,m,x=0,y=0;
-    scanf("%d",&n);
-    while(n--)
-    {
-        scanf("%d",&r);
-        if(r%2==0)
-        {
-            for(i=0;i<r/2;i++)
-                scanf("%d",&k),x+=k;
-            for(i=0;i<r/2;i++)
-                scanf("%d",&k),y+=k;
-        }
-        else
-        {
-            for(i=0;i<r/2;i++)
-                scanf("%d",&k),x+=k;
-            scanf("%d",&k);
+int main() {
+    int tc, t = 1, ret = 0;
+    int i, j, k, l, r, cc;
+    int n, m, x = 0, y = 0;
+    scanf("%d", &n);
+    while (n--) {
+        scanf("%d", &r);
+        if (r % 2 == 0) {
+            for (i = 0; i < r / 2; i++) scanf("%d", &k), x += k;
+            for (i = 0; i < r / 2; i++) scanf("%d", &k), y += k;
+        } else {
+            for (i = 0; i < r / 2; i++) scanf("%d", &k), x += k;
+            scanf("%d", &k);
             v.pb(k);
-            for(i=0;i<r/2;i++)
-                scanf("%d",&k),y+=k;
+            for (i = 0; i < r / 2; i++) scanf("%d", &k), y += k;
         }
     }
-    sort(v.rbegin(),v.rend());
-    for(i=0;i<v.size();i++)
-    {
-        if(i%2==0)
-            x+=v[i];
+    sort(v.rbegin(), v.rend());
+    for (i = 0; i < v.size(); i++) {
+        if (i % 2 == 0)
+            x += v[i];
         else
-            y+=v[i];
+            y += v[i];
     }
-    printf("%d %d\n",x,y);
+    printf("%d %d\n", x, y);
     return 0;
 }

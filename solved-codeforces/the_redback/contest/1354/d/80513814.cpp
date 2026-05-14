@@ -37,9 +37,9 @@ void update(int node, int low, int high, int pos, int val) {
         tree[node] += val;
         return;
     }
-    int left  = node * 2;
+    int left = node * 2;
     int right = left + 1;
-    int mid   = (low + high) / 2;
+    int mid = (low + high) / 2;
 
     if (pos <= mid)
         update(left, low, mid, pos, val);
@@ -53,8 +53,8 @@ int query(int node, int low, int high, int k) {
     if (low == high) {
         return low;
     }
-    int mid   = (low + high) / 2;
-    int left  = node * 2;
+    int mid = (low + high) / 2;
+    int left = node * 2;
     int right = left + 1;
     if (k > tree[node]) {
         return 0;

@@ -11,27 +11,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long          ll;
+typedef long long ll;
 typedef unsigned long long llu;
 
-#define ft         first
-#define sd         second
-#define mp         make_pair
-#define pb(x)      push_back(x)
-#define all(x)     x.begin(),x.end()
-#define allr(x)    x.rbegin(),x.rend()
-#define mem(a,b)   memset(a,b,sizeof(a))
-#define repv(i,a)  for(i=0;i<(ll)a.size();i++)
-#define revv(i,a)  for(i=(ll)a.size()-1;i>=0;i--)
-#define rep(i,a,b) for(i=a;i<=b;i++)
-#define rev(i,a,b) for(i=a;i>=b;i--)
-#define sf(a)      scanf("%lld",&a)
-#define sf2(a,b)   scanf("%lld %lld",&a,&b)
-#define sf3(a,b,c) scanf("%lld %lld %lld",&a,&b,&c)
-#define inf        1e9
-#define eps        1e-9
-#define mod        1000000007
-#define NN         100010
+#define ft           first
+#define sd           second
+#define mp           make_pair
+#define pb(x)        push_back(x)
+#define all(x)       x.begin(), x.end()
+#define allr(x)      x.rbegin(), x.rend()
+#define mem(a, b)    memset(a, b, sizeof(a))
+#define repv(i, a)   for (i = 0; i < (ll)a.size(); i++)
+#define revv(i, a)   for (i = (ll)a.size() - 1; i >= 0; i--)
+#define rep(i, a, b) for (i = a; i <= b; i++)
+#define rev(i, a, b) for (i = a; i >= b; i--)
+#define sf(a)        scanf("%lld", &a)
+#define sf2(a, b)    scanf("%lld %lld", &a, &b)
+#define sf3(a, b, c) scanf("%lld %lld %lld", &a, &b, &c)
+#define inf          1e9
+#define eps          1e-9
+#define mod          1000000007
+#define NN           100010
 
 // clang-format off
 #ifdef  redback
@@ -44,30 +44,25 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #endif  //debugging macros
 // clang-format on
 
+int main() {
+#ifdef redback
+    freopen("C:\\Users\\Maruf\\Desktop\\in.txt", "r", stdin);
+#endif
 
+    ll t = 1, tc;
+    // sf(tc);
+    ll l, m, n;
+    ll d, v1, v2;
+    while (~sf(d)) {
+        ll i, j, k;
+        sf3(l, v1, v2);
 
-int main()
-{
-    #ifdef redback
-        freopen("C:\\Users\\Maruf\\Desktop\\in.txt","r",stdin);
-    #endif
+        double ans = 0;
 
-    ll t=1,tc;
-    //sf(tc);
-    ll l,m,n;
-    ll d,v1,v2;
-    while(~sf(d)) {
-        ll i,j,k;
-        sf3(l,v1,v2);
-
-        double ans=0;
-
-        l-=d;
-        if(l<0.0)
-            l=0;
-        ans=l/(double)(v1+v2);
-        printf("%.6lf\n",ans);
-
+        l -= d;
+        if (l < 0.0) l = 0;
+        ans = l / (double)(v1 + v2);
+        printf("%.6lf\n", ans);
     }
     return 0;
 }

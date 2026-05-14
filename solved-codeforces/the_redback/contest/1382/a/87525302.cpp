@@ -34,29 +34,27 @@ bool a[1010];
 void solve() {
     ll i, j, k;
     ll n, m, ans = 0;
-    cin >> n >>m;
-    mem(a,0);
+    cin >> n >> m;
+    mem(a, 0);
 
-    for ( i = 0; i < n; i++)
-    {
-        cin>>k;
-        a[k]=1;
+    for (i = 0; i < n; i++) {
+        cin >> k;
+        a[k] = 1;
     }
-    ans=-1;
-    for ( i = 0; i < m; i++)
-    {
-        cin>>k;
-        if(a[k]){
-            ans=k;
+    ans = -1;
+    for (i = 0; i < m; i++) {
+        cin >> k;
+        if (a[k]) {
+            ans = k;
         }
     }
-    
-    if(ans==-1){
-        cout<<"NO\n";
+
+    if (ans == -1) {
+        cout << "NO\n";
         return;
     }
-    cout<<"YES\n";
-    cout <<"1 " << ans << "\n";
+    cout << "YES\n";
+    cout << "1 " << ans << "\n";
     return;
 }
 

@@ -59,18 +59,17 @@ int main() {
 
         freq[n - 1] = freq[n - 2];
 
-        ll ret  = -1;
+        ll ret = -1;
         ll left = -1;
         for (i = k - 1; i < n; i++) {
             j = freq[i] - freq[i - k + 1];
-            debug(j, i, i - k + 1, freq[i], freq[i - k + 1])
-            if (freq[i] > freq[i - 1]) j--;
+            debug(j, i, i - k + 1, freq[i], freq[i - k + 1]) if (freq[i] > freq[i - 1]) j--;
             if (j > ret) {
-                ret  = j;
+                ret = j;
                 left = i - k + 2;
             }
         }
-        cout << ret+1 << " " << left << "\n";
+        cout << ret + 1 << " " << left << "\n";
     }
     return 0;
 }

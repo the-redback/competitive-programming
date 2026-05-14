@@ -1,22 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define mem(x,y) memset(x,y,sizeof(x));
+#define mem(x, y) memset(x, y, sizeof(x));
 
-main()
-{
+main() {
     char a[10];
-    int i,j,l,t;
-    scanf("%d",&t);
+    int i, j, l, t;
+    scanf("%d", &t);
     getchar();
-    while(t--)
-    {
+    while (t--) {
         gets(a);
-        l=strlen(a);
-        if(l==5)
+        l = strlen(a);
+        if (l == 5)
             puts("3");
-        else if(l==3)
-        {
-            if(a[0]=='o' && a[1]=='n'||a[0]=='o' && a[2]=='e'||a[1]=='n' && a[2]=='e')
+        else if (l == 3) {
+            if (a[0] == 'o' && a[1] == 'n' || a[0] == 'o' && a[2] == 'e' || a[1] == 'n' && a[2] == 'e')
                 puts("1");
             else
                 puts("2");
