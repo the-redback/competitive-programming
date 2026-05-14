@@ -28,4 +28,5 @@ int main() {
     sum -= ceil((double)a / sm);
     sum++;
     printf("%ld\n", sum);
+    return 0;
 }

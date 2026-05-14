@@ -44,5 +44,6 @@ int main() {
     cin >> s1;
     int j = LittleElephantAndString().getNumber(s, s1);
     cout << j;
+    return 0;
 }
 // END CUT HERE

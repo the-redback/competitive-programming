@@ -25,4 +25,5 @@ int main() {
         }
         printf("%d\n", ret);
     }
+    return 0;
 }

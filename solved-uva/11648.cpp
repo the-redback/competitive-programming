@@ -52,4 +52,5 @@ int main() {
         y = bc - yy;
         printf("Land #%d: %.6lf %.6lf\n", t++, x, y);
     }
+    return 0;
 }

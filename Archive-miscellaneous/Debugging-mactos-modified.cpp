@@ -51,4 +51,5 @@ int main() {
     vc["string 1"] = 1;
     vc["string 2"] = 2;
     debug(va, vb, vc);
+    return 0;
 }

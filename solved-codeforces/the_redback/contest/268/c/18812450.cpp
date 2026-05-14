@@ -55,4 +55,5 @@ int main() {
             printf("%lld %lld\n", i, j);
         }
     }
+    return 0;
 }

@@ -48,4 +48,5 @@ int main() {
         memset(dc, 0, sizeof(dc));
         printf("Case %d: %d\n", t++, go(0, 0, 0, X, Y));
     }
+    return 0;
 }

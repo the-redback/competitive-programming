@@ -24,4 +24,5 @@ int main() {
         else
             printf("TERM %ld IS %ld/%ld\n", n, l, j);
     }
+    return 0;
 }

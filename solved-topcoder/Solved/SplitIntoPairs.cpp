@@ -131,5 +131,6 @@ int main() {
     vector<int> v(a, a + 40);
     n = SplitIntoPairs().makepairs(v, n);
     cout << n;
+    return 0;
 }
 // END CUT HERE

@@ -33,4 +33,5 @@ int main() {
         }
         printf("Peter should buy books whose prices are %d and %d.\n\n", a[min], a[max]);
     }
+    return 0;
 }

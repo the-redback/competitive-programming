@@ -31,4 +31,5 @@ int main() {
         K = sum - k;
         printf("%d\n", abs(k - K));
     }
+    return 0;
 }

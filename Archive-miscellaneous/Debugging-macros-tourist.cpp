@@ -54,4 +54,5 @@ int main() {
     vector<int> v = {1, 2, 3, 4};
     pair<int, string> p = {1, "codeforces"};
     debug(n, v, p);
+    return 0;
 }

@@ -48,4 +48,5 @@ int main() {
 
     char ch = 'c';
     dbg(ch);
+    return 0;
 }

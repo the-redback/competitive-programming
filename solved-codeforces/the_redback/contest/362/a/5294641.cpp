@@ -26,4 +26,5 @@ int main() {
         else
             puts("NO");
     }
+    return 0;
 }

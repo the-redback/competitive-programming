@@ -23,4 +23,5 @@ int main() {
         }
         if (!flag) puts("0");
     }
+    return 0;
 }

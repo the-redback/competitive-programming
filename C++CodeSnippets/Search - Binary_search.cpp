@@ -25,4 +25,5 @@ int main() {
     int target = 7;
 
     cout << binarySearch(nums, target) << '\n';
+    return 0;
 }

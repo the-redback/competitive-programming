@@ -67,4 +67,5 @@ int main() {
     long long i = 10, j = 9, k = 45, l = 4, m = 23;
     debug(i, j, k, l, m);
     // cout<<pretty_print_array(arr, 4);
+    return 0;
 }
