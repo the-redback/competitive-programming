@@ -20,6 +20,7 @@ typedef long long   ll;
 #define NN          100010
 
 
+// clang-format off
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
 #define debug(args...) {cout<<":: "; dbg,args; cout<<endl;}
@@ -28,6 +29,7 @@ struct  debugger {template<typename T>debugger& operator , (const T& v) {cout <<
 #define bug
 #define debug(args...)
 #endif  //debugging macros
+// clang-format on
 
 ll a[60][60], b[60][60];
 

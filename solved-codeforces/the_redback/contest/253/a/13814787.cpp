@@ -34,6 +34,7 @@ typedef unsigned long long llu;
 #define mod        1000000007
 #define NN         100010
 
+// clang-format off
 #ifdef  redback
 #define bug printf("line=%d\n",__LINE__);
 #define debug(args...) {cout<<":: "; dbg,args; cerr<<endl;}
@@ -42,6 +43,7 @@ struct  debugger{template<typename T>debugger& operator ,(const T& v){cerr<<v<<"
 #define bug
 #define debug(args...)
 #endif  //debugging macros
+// clang-format on
 
 
 

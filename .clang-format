@@ -8,3 +8,6 @@ TabWidth: 4
 UseTab: Never
 AccessModifierOffset: -4
 ColumnLimit: 120
+
+# macros alignment
+AlignConsecutiveMacros: true
