@@ -1,7 +1,4 @@
-#include <vector>
 #include <queue>
-#include <functional>
-
 using namespace std;
 
 class MedianFinder {

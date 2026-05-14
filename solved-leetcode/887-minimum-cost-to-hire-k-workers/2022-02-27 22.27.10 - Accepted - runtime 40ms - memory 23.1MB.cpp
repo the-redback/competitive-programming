@@ -1,8 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <queue>
-#include <algorithm>
-#include <utility>
 #include <cfloat>
 
 using namespace std;

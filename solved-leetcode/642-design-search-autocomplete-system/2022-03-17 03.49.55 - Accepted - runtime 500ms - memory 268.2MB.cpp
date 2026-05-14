@@ -1,12 +1,5 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include <map>
-#include <queue>
-#include <algorithm>
-#include <utility>
-#include <tuple>
-
 using namespace std;
 
 class AutocompleteSystem {

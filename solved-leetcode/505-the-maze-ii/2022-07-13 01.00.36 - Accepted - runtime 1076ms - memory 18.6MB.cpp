@@ -1,6 +1,4 @@
 #include <vector>
-#include <cstring>
-
 using namespace std;
 
 int inf = 1000000007;

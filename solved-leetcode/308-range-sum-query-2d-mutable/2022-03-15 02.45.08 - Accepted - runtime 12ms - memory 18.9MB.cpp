@@ -1,8 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <tuple>
-#include <cstring>
-
 using namespace std;
 
 class NumMatrix {

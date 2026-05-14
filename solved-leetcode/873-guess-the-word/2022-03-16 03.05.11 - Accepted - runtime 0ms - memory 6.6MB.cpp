@@ -1,8 +1,4 @@
-#include <string>
 #include <vector>
-#include <cstdlib>
-#include <cstddef>
-
 using namespace std;
 
 class Master {

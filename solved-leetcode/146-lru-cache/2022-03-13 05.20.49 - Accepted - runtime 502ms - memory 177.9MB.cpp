@@ -1,8 +1,4 @@
 #include <iostream>
-#include <unordered_map>
-#include <algorithm>
-#include <tuple>
-
 using namespace std;
 
 class LRUCache {

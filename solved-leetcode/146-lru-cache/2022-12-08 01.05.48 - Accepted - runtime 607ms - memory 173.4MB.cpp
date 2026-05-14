@@ -1,10 +1,5 @@
 #include <iostream>
 #include <list>
-#include <unordered_map>
-#include <algorithm>
-#include <utility>
-#include <tuple>
-
 using namespace std;
 
 class LRUCache {

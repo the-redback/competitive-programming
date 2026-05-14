@@ -1,7 +1,4 @@
 #include <string>
-#include <algorithm>
-#include <cstring>
-
 using namespace std;
 
 class Solution {

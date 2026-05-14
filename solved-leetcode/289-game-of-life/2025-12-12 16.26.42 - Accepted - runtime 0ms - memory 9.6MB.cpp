@@ -1,6 +1,4 @@
 #include <vector>
-#include <cmath>
-
 using namespace std;
 
 // Set -1 to denote "new zero"

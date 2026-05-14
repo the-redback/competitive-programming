@@ -1,9 +1,4 @@
-#include <vector>
 #include <queue>
-#include <mutex>
-#include <condition_variable>
-#include <thread>
-
 using namespace std;
 
 // Time:  O(n)

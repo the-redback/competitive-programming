@@ -1,8 +1,4 @@
 #include <iostream>
-#include <string>
-#include <tuple>
-#include <cstring>
-
 using namespace std;
 
 class Solution {

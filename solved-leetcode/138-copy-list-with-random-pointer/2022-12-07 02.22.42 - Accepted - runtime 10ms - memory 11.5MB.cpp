@@ -1,7 +1,4 @@
 #include <iostream>
-#include <list>
-#include <tuple>
-
 using namespace std;
 
 class Node {

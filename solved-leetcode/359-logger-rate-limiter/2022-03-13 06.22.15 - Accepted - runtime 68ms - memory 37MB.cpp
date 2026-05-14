@@ -1,11 +1,4 @@
 #include <iostream>
-#include <string>
-#include <deque>
-#include <unordered_map>
-#include <algorithm>
-#include <utility>
-#include <tuple>
-
 using namespace std;
 
 class Logger {

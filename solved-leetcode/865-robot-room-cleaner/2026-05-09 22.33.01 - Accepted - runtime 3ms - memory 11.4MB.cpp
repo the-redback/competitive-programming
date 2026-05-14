@@ -1,7 +1,4 @@
 #include <set>
-#include <algorithm>
-#include <utility>
-
 using namespace std;
 
 class Robot {

@@ -1,7 +1,4 @@
 #include <vector>
-#include <algorithm>
-#include <utility>
-
 using namespace std;
 
 class Solution {

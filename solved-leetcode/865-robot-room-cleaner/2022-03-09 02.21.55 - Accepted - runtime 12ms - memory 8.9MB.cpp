@@ -1,9 +1,5 @@
 #include <iostream>
 #include <map>
-#include <utility>
-#include <tuple>
-#include <cstddef>
-
 using namespace std;
 
 class Robot {

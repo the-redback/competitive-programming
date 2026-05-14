@@ -1,7 +1,4 @@
 #include <map>
-#include <algorithm>
-#include <utility>
-
 using namespace std;
 
 class Robot {

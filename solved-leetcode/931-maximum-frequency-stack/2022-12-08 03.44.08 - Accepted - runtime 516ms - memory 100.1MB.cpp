@@ -1,7 +1,4 @@
-#include <unordered_map>
 #include <stack>
-#include <algorithm>
-
 using namespace std;
 
 class FreqStack {

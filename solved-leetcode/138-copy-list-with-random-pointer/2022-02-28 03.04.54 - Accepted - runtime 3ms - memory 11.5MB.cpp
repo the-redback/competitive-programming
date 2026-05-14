@@ -1,8 +1,5 @@
 #include <iostream>
 #include <map>
-#include <algorithm>
-#include <tuple>
-
 using namespace std;
 
 class Node {

@@ -1,7 +1,4 @@
-#include <unordered_map>
 #include <set>
-#include <algorithm>
-
 using namespace std;
 
 class StockPrice {

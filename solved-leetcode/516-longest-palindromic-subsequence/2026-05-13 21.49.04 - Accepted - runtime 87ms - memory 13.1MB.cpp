@@ -1,9 +1,4 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
-#include <tuple>
-#include <cstring>
-
 using namespace std;
 
 

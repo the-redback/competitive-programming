@@ -1,7 +1,4 @@
 #include <string>
-#include <climits>
-#include <cctype>
-
 using namespace std;
 
 class Solution {

@@ -1,9 +1,4 @@
-#include <string>
 #include <vector>
-#include <algorithm>
-#include <utility>
-#include <cctype>
-
 using namespace std;
 
 static bool comp(pair<string, string> a, pair<string, string> b) {

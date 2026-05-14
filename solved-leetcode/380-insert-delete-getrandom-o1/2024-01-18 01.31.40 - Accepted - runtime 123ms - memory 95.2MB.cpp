@@ -1,11 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <algorithm>
-#include <utility>
-#include <tuple>
-#include <cstdlib>
-
 using namespace std;
 
 class RandomizedSet {

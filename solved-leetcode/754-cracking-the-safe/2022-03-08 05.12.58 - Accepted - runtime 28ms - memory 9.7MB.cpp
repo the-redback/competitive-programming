@@ -1,9 +1,5 @@
 #include <iostream>
-#include <string>
 #include <map>
-#include <algorithm>
-#include <tuple>
-
 using namespace std;
 
 class Solution {

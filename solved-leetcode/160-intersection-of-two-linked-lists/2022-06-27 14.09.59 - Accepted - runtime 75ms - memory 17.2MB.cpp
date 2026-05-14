@@ -1,7 +1,4 @@
-#include <list>
 #include <unordered_set>
-#include <algorithm>
-
 using namespace std;
 
 struct ListNode {
