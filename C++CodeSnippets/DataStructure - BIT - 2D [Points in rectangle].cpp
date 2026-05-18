@@ -11,6 +11,7 @@
 #include <cstring>
 #include <iostream>
 #include <tuple>
+#include <unordered_map>
 using namespace std;
 
 typedef long long ll;
@@ -32,7 +33,6 @@ typedef unsigned long long llu;
 */
 
 int tree[NN][NN];
-bool flag[NN][NN];
 int max_x, max_y;
 
 void update(int idx, int idy, int val) {
@@ -61,6 +61,8 @@ int query(int idx, int idy) {
     return sum;
 }
 
+bool flag[NN][NN];
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
@@ -68,6 +70,7 @@ int main() {
     cin >> tc;
     int j, n;
     int x1, x2, y1, y2;
+    unordered_map<int, unordered_map<int, int>> flag;
     while (tc--) {
         cout << "Case " << t++ << ":" << "\n";
         cin >> n;
