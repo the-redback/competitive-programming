@@ -5,7 +5,6 @@ using namespace std;
 struct node {
     bool endmark;
     node* next[26];
-
     node() {
         endmark = false;
         for (int i = 0; i < 26; i++) {
@@ -18,7 +17,6 @@ node* root = new node();
 
 void insert(string& s) {
     node* curr = root;
-
     for (char ch : s) {
         int id = ch - 'a';
         if (curr->next[id] == nullptr) {
