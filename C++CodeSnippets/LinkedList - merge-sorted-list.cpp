@@ -34,17 +34,8 @@ public:
     }
 };
 
-void printList(ListNode* head) {
-    while (head) {
-        cout << head->val;
-        if (head->next) cout << " -> ";
-        head = head->next;
-    }
-
-    cout << "\n";
-}
-
 int main() {
+
     // List 1: 1 -> 2 -> 4
     ListNode* list1 = new ListNode(1);
     list1->next = new ListNode(2);
@@ -56,7 +47,19 @@ int main() {
     list2->next->next = new ListNode(4);
 
     Solution sol;
+
     ListNode* merged = sol.mergeTwoLists(list1, list2);
-    printList(merged);
+
+    while (merged) {
+        cout << merged->val;
+
+        if (merged->next)
+            cout << " -> ";
+
+        merged = merged->next;
+    }
+
+    cout << "\n";
+
     return 0;
 }

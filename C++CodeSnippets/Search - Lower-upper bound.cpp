@@ -11,8 +11,8 @@ int main() {
 
     std::vector<int>::iterator low, up;
 
-    low = std::lower_bound(v.begin(), v.end(), 20);  // 0 index system
-    up = std::upper_bound(v.begin(), v.end(), 20);   // 0 index system
+    low = std::lower_bound(v.begin(), v.end(), 15);  // 0 index system
+    up = std::upper_bound(v.begin(), v.end(), 15);   // 0 index system
 
     std::cout << "lower_bound at position " << (low - v.begin()) << '\n';  // ans: 3
     std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 6
@@ -33,7 +33,7 @@ int main() {
 }
 
 // Alternate
-
-int m = lower_bound(v.begin, v.end(), 30) - v.begin();
-
-int m = lower_bound(v, v + 10, 30) - v;
+//
+// int m = lower_bound(v.begin, v.end(), 30) - v.begin();
+//
+// int m = lower_bound(v, v + 10, 30) - v;

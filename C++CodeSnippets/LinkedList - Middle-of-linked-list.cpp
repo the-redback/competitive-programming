@@ -12,26 +12,15 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* curr = head;
-        ListNode* prev = head;
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
 
-        for (int i = 0; i < n && curr; i++) {
-            curr = curr->next;
+        while (fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
         }
-
-        if (curr == nullptr) {
-            return head->next;
-        }
-
-        while (curr->next != nullptr) {
-            curr = curr->next;
-            prev = prev->next;
-        }
-
-        prev->next = prev->next->next;
-
-        return head;
+        return slow;
     }
 };
 
@@ -58,19 +47,18 @@ int main() {
 
     cout << "\n";
 
-    int n = 2;
     Solution sol;
 
-    ListNode* updated = sol.removeNthFromEnd(head, n);
+    ListNode* mid = sol.middleNode(head);
 
-    // Print updated list
-    while (updated) {
-        cout << updated->val;
+    // Print middle node onward
+    while (mid) {
+        cout << mid->val;
 
-        if (updated->next)
+        if (mid->next)
             cout << " -> ";
 
-        updated = updated->next;
+        mid = mid->next;
     }
 
     cout << "\n";
