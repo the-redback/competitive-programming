@@ -56,8 +56,8 @@ int KMP(string& str, string& pattern) {
 }
 
 int main() {
-    string s = "abababa";
-    string p = "aba";
+    string s = "ababababababbababababbababababba";
+    string p = "ababababba";
 
     cout << KMP(s, p) << '\n';
 

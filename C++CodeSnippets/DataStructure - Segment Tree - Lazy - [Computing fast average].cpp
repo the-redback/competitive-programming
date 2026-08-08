@@ -7,58 +7,67 @@ using namespace std;
 
 typedef long long ll;
 
-#define NN 10010
+#define NN 100010
 
 struct Data {
     ll sum;
-    ll xtra;
+    ll lazy;  // pending assignment (-1 means no pending update)
 };
 
-Data tree[300010];
+Data tree[4 * NN];
 ll a[NN];
 
 void init(ll node, ll low, ll high) {
-    tree[node].xtra = -1;
+    tree[node].lazy = -1;
 
     if (low == high) {
         tree[node].sum = a[low];
         return;
     }
+    ll mid = (low + high) / 2;
     ll left = node * 2;
     ll right = left + 1;
-    ll mid = (low + high) / 2;
 
     init(left, low, mid);
     init(right, mid + 1, high);
-    tree[node].sum = tree[node * 2].sum + tree[node * 2 + 1].sum;
-    return;
+
+    tree[node].sum = tree[left].sum + tree[right].sum;
+}
+
+void push(ll node, ll low, ll high) {
+    if (tree[node].lazy == -1 || low == high) return;
+
+    ll mid = (low + high) / 2;
+    ll left = node * 2;
+    ll right = left + 1;
+
+    tree[left].lazy = tree[node].lazy;
+    tree[right].lazy = tree[node].lazy;
+
+    tree[left].sum = (mid - low + 1) * tree[node].lazy;
+    tree[right].sum = (high - mid) * tree[node].lazy;
+
+    tree[node].lazy = -1;
 }
 
 void update(ll node, ll low, ll high, ll qlow, ll qhigh, ll value) {
     // No overlap
-    if (qhigh < low || qlow > high) return;
+    if (qhigh < low || qlow > high) {
+        return;
+    }
 
     // Complete overlap
     if (qlow <= low && high <= qhigh) {
         tree[node].sum = (high - low + 1) * value;
-        tree[node].xtra = value;
+        tree[node].lazy = value;
         return;
     }
 
+    push(node, low, high);
+
+    ll mid = (low + high) / 2;
     ll left = node * 2;
     ll right = left + 1;
-    ll mid = (low + high) / 2;
-
-    // Lazy propagation
-    if (tree[node].xtra != -1) {
-        tree[left].xtra = tree[node].xtra;
-        tree[right].xtra = tree[node].xtra;
-
-        tree[left].sum = (mid - low + 1) * tree[left].xtra;
-        tree[right].sum = (high - mid) * tree[right].xtra;
-
-        tree[node].xtra = -1;
-    }
 
     update(left, low, mid, qlow, qhigh, value);
     update(right, mid + 1, high, qlow, qhigh, value);
@@ -66,12 +75,10 @@ void update(ll node, ll low, ll high, ll qlow, ll qhigh, ll value) {
     tree[node].sum = tree[left].sum + tree[right].sum;
 }
 
-ll query(ll node, ll low, ll high, ll qlow, ll qhigh, ll carry) {
+ll query(ll node, ll low, ll high, ll qlow, ll qhigh) {
     // No overlap
-    if (qhigh < low || qlow > high) return 0;
-
-    if (carry != -1) {
-        return (min(high, qhigh) - max(low, qlow) + 1) * carry;
+    if (qhigh < low || qlow > high) {
+        return 0;
     }
 
     // Complete overlap
@@ -79,48 +86,53 @@ ll query(ll node, ll low, ll high, ll qlow, ll qhigh, ll carry) {
         return tree[node].sum;
     }
 
+    push(node, low, high);
+
+    ll mid = (low + high) / 2;
     ll left = node * 2;
     ll right = left + 1;
-    ll mid = (low + high) / 2;
 
-    if ((high - low + 1) * tree[node].xtra == tree[node].sum) {
-        carry = tree[node].xtra;
-    }
-
-    ll p1 = query(left, low, mid, qlow, qhigh, carry);
-    ll p2 = query(right, mid + 1, high, qlow, qhigh, carry);
+    ll p1 = query(left, low, mid, qlow, qhigh);
+    ll p2 = query(right, mid + 1, high, qlow, qhigh);
 
     return p1 + p2;
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     ll tc, t = 1;
     cin >> tc;
+
     while (tc--) {
         ll n, q;
         cin >> n >> q;
-        cout << "Case " << t++ << ":" << "\n";
+
+        cout << "Case " << t++ << ":\n";
 
         memset(a, 0, sizeof(a));
         init(1, 1, n);
+
         while (q--) {
-            ll i, j, k, l;
+            ll i, l, r, val;
             cin >> i;
 
             if (i == 1) {
-                cin >> j >> k >> l;
-                update(1, 1, n, j + 1, k + 1, l);
-            } else if (i == 2) {
-                cin >> j >> k;
-                ll ans = query(1, 1, n, j + 1, k + 1, -1);
-                ll res = (k - j + 1);
-                ll g = gcd(res, ans);
+                cin >> l >> r >> val;
 
-                if (res / g > 1)
-                    cout << ans / g << "/" << res / g << "\n";
+                update(1, 1, n, l + 1, r + 1, val);
+            } else if (i == 2) {
+                cin >> l >> r;
+
+                ll sum = query(1, 1, n, l + 1, r + 1);
+                ll len = r - l + 1;
+                ll g = gcd(sum, len);
+
+                if (len / g == 1)
+                    cout << sum / g << '\n';
                 else
-                    cout << ans / g << "\n";
+                    cout << sum / g << "/" << len / g << '\n';
             }
         }
     }

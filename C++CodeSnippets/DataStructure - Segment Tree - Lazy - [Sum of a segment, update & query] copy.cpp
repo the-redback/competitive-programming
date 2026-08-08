@@ -4,69 +4,96 @@ using namespace std;
 
 typedef long long ll;
 
-struct data {
-    ll sum;
-    ll xtra;
-} tree[300010];
+#define NN 100010
 
-void update(int node, int low, int high, int qlow, int qhigh, int value) {
+struct Data {
+    ll sum;
+    ll lazy;  // pending addition
+};
+
+Data tree[4 * NN];
+
+void push(ll node, ll low, ll high) {
+    if (tree[node].lazy == 0 || low == high) return;
+
+    ll mid = (low + high) / 2;
+    ll left = node * 2;
+    ll right = left + 1;
+
+    tree[left].lazy += tree[node].lazy;
+    tree[right].lazy += tree[node].lazy;
+
+    tree[left].sum += (mid - low + 1) * tree[node].lazy;
+    tree[right].sum += (high - mid) * tree[node].lazy;
+
+    tree[node].lazy = 0;
+}
+
+void update(ll node, ll low, ll high, ll qlow, ll qhigh, ll value) {
     // No overlap
     if (qhigh < low || qlow > high) return;
 
     // Complete overlap
     if (qlow <= low && high <= qhigh) {
-        tree[node].sum += 1LL * (high - low + 1) * value;
-        tree[node].xtra += value;
+        tree[node].sum += (high - low + 1) * value;
+        tree[node].lazy += value;
         return;
     }
 
-    int left = node * 2;
-    int right = left + 1;
-    int mid = (low + high) / 2;
+    push(node, low, high);
+
+    ll mid = (low + high) / 2;
+    ll left = node * 2;
+    ll right = left + 1;
 
     update(left, low, mid, qlow, qhigh, value);
     update(right, mid + 1, high, qlow, qhigh, value);
 
-    tree[node].sum = tree[left].sum + tree[right].sum + tree[node].xtra * (high - low + 1);
+    tree[node].sum = tree[left].sum + tree[right].sum;
 }
 
-ll query(int node, int low, int high, int qlow, int qhigh, ll carry) {
+ll query(ll node, ll low, ll high, ll qlow, ll qhigh) {
     // No overlap
     if (qhigh < low || qlow > high) return 0;
 
     // Complete overlap
-    if (qlow <= low && high <= qhigh) {
-        return tree[node].sum + carry * (high - low + 1);
-    }
+    if (qlow <= low && high <= qhigh) return tree[node].sum;
 
-    int left = node * 2;
-    int right = left + 1;
-    int mid = (low + high) / 2;
+    push(node, low, high);
 
-    carry += tree[node].xtra;
-    ll p1 = query(left, low, mid, qlow, qhigh, carry);
-    ll p2 = query(right, mid + 1, high, qlow, qhigh, carry);
-    return p1 + p2;
+    ll mid = (low + high) / 2;
+    ll left = node * 2;
+    ll right = left + 1;
+
+    return query(left, low, mid, qlow, qhigh) + query(right, mid + 1, high, qlow, qhigh);
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int tc, t = 1;
     cin >> tc;
+
     while (tc--) {
         int n, q;
         cin >> n >> q;
-        cout << "Case " << t++ << ":" << "\n";
+
+        cout << "Case " << t++ << ":\n";
+
         memset(tree, 0, sizeof(tree));
+
         while (q--) {
-            int i, j, k, l;
+            int i, j, k, l, r, val;
             cin >> i;
             if (i == 0) {
-                cin >> j >> k >> l;
-                update(1, 1, n, j + 1, k + 1, l);
+                cin >> l >> r >> val;
+
+                update(1, 1, n, l + 1, r + 1, val);
             } else if (i == 1) {
-                cin >> j >> k;
-                ll ans = query(1, 1, n, j + 1, k + 1, 0);
+                cin >> l >> r;
+
+                ll ans = query(1, 1, n, l + 1, r + 1);
                 cout << ans << "\n";
             }
         }

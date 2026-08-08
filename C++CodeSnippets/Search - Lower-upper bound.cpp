@@ -15,7 +15,7 @@ int main() {
     up = std::upper_bound(v.begin(), v.end(), 15);   // 0 index system
 
     std::cout << "lower_bound at position " << (low - v.begin()) << '\n';  // ans: 3
-    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 6
+    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';   // ans: 2
 
     low = std::lower_bound(v.begin(), v.end(), 25);  //
     up = std::upper_bound(v.begin(), v.end(), 25);   //
